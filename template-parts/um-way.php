@@ -3,7 +3,7 @@
         <div class="overlay"></div>
         <div class="container">
             <div class="section-content">
-                <h2 class="way-title">The <span class="brand-highlight">United Mortgages&trade; Way</h2>
+                <h2 class="way-title">The <span class="brand-highlight">United Mortgages&reg; Way</h2>
                 <p class="way-subtitle">Unsure of how to take the first step toward your next home? <strong>That's what we're here for.</strong></p>
                 
                 <div class="process-steps">

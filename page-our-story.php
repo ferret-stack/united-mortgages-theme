@@ -11,10 +11,11 @@ get_header(); ?>
         <div class="story-hero-overlay"></div>
         <div class="container">
             <div class="story-hero-content">
-                <h1 class="story-hero-title"><span style="color:#bba177;">"</span>Our mission is to become Britain's <span style="font-weight:600;">most trusted</span> team of mortgage advisors.<span style="color:#bba177;">"</span></h1>
+                <h1 class="story-hero-title">The Mortgage Process Is Broken.<br><span style="font-weight:600;">We're here to fix it.</span></h1>
                 
                 <div class="story-hero-text">
-                    <p>Founded by David Woodford and Daniel Holloway, United Mortgages&trade; was built with a clear mission: to revolutionise the mortgage process through cutting-edge technology and client-first service. With over a decade of experience in start-ups and financial services, the founders saw an opportunity to eliminate the inefficiencies of traditional mortgage applications. <strong>Welcome to the future of mortgages.</strong></p>
+                    <p>Founded by David Woodford and Daniel Holloway, United Mortgages&reg; was built with a clear mission: to revolutionise the mortgage process and put their clients first. No theatre. No fluff. Just a faster, cleaner way to help you secure your dream home.</p>
+                    <p style="font-weight:600;">Welcome to the future of mortgages</p>
                 </div>
             </div>
         </div>
@@ -25,24 +26,23 @@ get_header(); ?>
         <div class="container">
             <div class="section-header">
                 <h2 class="team-section-title">Our <span class="bold-text">Founding Team</span></h2>
-                <p class="team-section-subtitle">Meet the changemakers responsible for leading the United Mortgages&trade; mission</p>
+                <p class="team-section-subtitle">Meet the changemakers responsible for leading the United Mortgages&reg; mission</p>
             </div>
             
             <div class="founders-grid">
                 <!-- David -->
                 <div class="founder-card">
                     <div class="founder-image-wrapper">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/david-bw.png" alt="David Woodford" class="founder-image bw-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/david-colour.png?v=2" alt="David Woodford" class="founder-image color-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/david-bw.png?v=3" alt="David Woodford" class="founder-image bw-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/david-col.png" alt="David Woodford" class="founder-image color-image">
                     </div>
                     <div class="founder-info">
                         <h3 class="founder-name">DAVID WOODFORD <a href="https://www.linkedin.com/in/davidwoodforduk" target="_blank" class="linkedin-link">in</a></h3>
                         <p class="founder-title">Chief Executive Officer</p>
                         <div class="founder-bio">
-                            <p>Co-Founder and Chief Executive Officer of United Mortgages&trade;  with responsibility for overall leadership, GTM, and strategy, in addition to adeptly leading the firm's sales operations.</p>
-                            <p>A tech and customer experience evangelist, David co-founded United Mortgages&trade;  after nearly a decade of CX tech, working on the transition to no-code for Fortune 500 firms, and as Head and Business Director at the utterly hailing scale Hypervolt, Britain's fastest growing EV charging start-up from 2022.</p>
+                            <p>Co-Founder and Chief Executive Officer of United Mortgages&reg;  with responsibility for overall leadership, GTM, and strategy, in addition to adeptly leading the firm's commercial advisory operations.</p>
+                            <p>A tech and customer experience evangelist, David has spent nearly a decade working at the intersection of innovation, sustainability, and growth. Before co-founding United, he held management roles at two Fortune 500 firms (Renault Group and Geely), and later helped scale Deloitte Fast 50 and Fast 500 recipients, Hypervolt, where he built enterprise and partnership channels with a relentless focus on the customer journey. </p>
                             <p>An alumnus of Edinburgh Business School, David's penchant for invoking in the long-term, energetic leadership, and relentless focus on the customer experience enables him to build and scale high-performance teams, and mutually profitable partnerships.</p>
-                            <p>David's personal philosophy revolves around a relentless work ethic, and the notion of using lessons his strategic outlook in years and decades, rather than days and weeks.</p>
                         </div>
                     </div>
                 </div>
@@ -50,16 +50,17 @@ get_header(); ?>
                 <!-- Daniel -->
                 <div class="founder-card">
                     <div class="founder-image-wrapper">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/daniel-bw.png" alt="Daniel Holloway" class="founder-image bw-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/daniel-colour.png?v=2" alt="Daniel Holloway" class="founder-image color-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/daniel-bw.png?v=2" alt="Daniel Holloway" class="founder-image bw-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/daniel-col.png" alt="Daniel Holloway" class="founder-image color-image">
                     </div>
                     <div class="founder-info">
                         <h3 class="founder-name">DANIEL HOLLOWAY <a href="https://www.linkedin.com/in/boolean-daniel" target="_blank" class="linkedin-link">in</a></h3>
                         <p class="founder-title">Chief Technical Officer</p>
                         <div class="founder-bio">
                             <p>Co-founder and Chief Technical Officer, Daniel leads the engineering, build, and implementation of our suite of proprietary software.</p>
-							<p>As passionate about streamlining the mortgage process as he is the Oxford comma, he approaches each development challenge with genuine curiosity about what's possible to further enhance solutions and to build the best products possible.</p>
-							<p>With a Master's in Economics and Finance from King's College London and a background in Philosophy, Politics & Economics, Daniel views software development as much an art as a science and combines deep financial industry knowledge with technical expertise. His experience spans five years in finance alongside extensive work in econometrics and algorithmic trading, bringing a unique perspective to mortgage technology that consistently delivers better outcomes for our clients.</p>
+							<p>As passionate about streamlining the mortgage process as he is the Oxford comma, he approaches each development challenge with the systematic rigor of a quantitative analyst and the curiosity of a philosopher asking "why?"</p>
+							<p>With a Master's in Economics and Finance from King's College London and a Bachelor's in Philosophy, Politics &amp; Economics, Daniel views software development as much an art as a science and combines deep financial industry knowledge with technical expertise.</p>
+                            <p>His experience spans algorithmic systems development, full-stack web engineering, and five years in finance, bringing a unique perspective to mortgage technology that treats every line of code as both a technical solution and a bet on better outcomes for our clients.</p>
                         </div>
                     </div>
                 </div>
@@ -79,16 +80,16 @@ get_header(); ?>
                 <!-- Muki -->
                 <div class="founder-card">
                     <div class="founder-image-wrapper">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/muki_bw.png" alt="Muki Liu" class="founder-image bw-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/muki_col.png?v=2" alt="Muki Liu" class="founder-image color-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/muki-bw.png" alt="Muki Liu" class="founder-image bw-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/muki-col.png" alt="Muki Liu" class="founder-image color-image">
                     </div>
                     <div class="founder-info">
                         <h3 class="founder-name">MUKI LIU <a href="https://www.linkedin.com/in/muki-liu-844444193" target="_blank" class="linkedin-link">in</a></h3>
                         <p class="founder-title">Associate Vice President, Communications</p>
                         <div class="founder-bio">
-                            <p>A visionary and empathetic communicator, Muki built a career in communications across the value chain of the green energy sector, with the likes of Evident, Drax Group, and National Grid.</p>
-                            <p>Educated at Beijing International Studies University, and the University of Edinburgh, Muki embraces the diversity of voices and believes in the power of listening: communication comes after understanding what is truly desired. </p>
-                            <p>Joining as an advisor for the United Mortgages&trade; founding team in the Spring of 2025, she creatively and enthusiastically leads the firm’s marketing and communication efforts.</p>
+                            <p>A visionary and empathetic communicator, Muki built her career in communications across the green energy sector, working with Evident, Drax Group, and National Grid.</p>
+                            <p>Educated at Beijing International Studies University and the University of Edinburgh, Muki embraces diverse voices and believes in the power of listening: communication comes after understanding what is truly desired.</p>
+                            <p>As Communications Advisor at United Mortgages&reg;, she creatively leads the firm's marketing and communications strategy, bringing her collaborative mindset and sector expertise to shape accessible, purpose-driven financial narratives.</p>
                         </div>
                     </div>
                 </div>
@@ -96,16 +97,16 @@ get_header(); ?>
                 <!-- Sarina -->
                 <div class="founder-card">
                     <div class="founder-image-wrapper">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/sarina-bw.png" alt="Sarina Kiayani" class="founder-image bw-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/sarina-colour.png" alt="Sarina Kiayani" class="founder-image color-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/sarina-bw-1.png" alt="Sarina Kiayani" class="founder-image bw-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/sarina-col.png" alt="Sarina Kiayani" class="founder-image color-image sarina">
                     </div>
                     <div class="founder-info">
                         <h3 class="founder-name">Sarina Kiayani <a href="https:linkedin.com/in/sarinakiayani" target="_blank" class="linkedin-link">in</a></h3>
                         <p class="founder-title">Non-Executive Director &amp; Policy Advisor</p>
                         <div class="founder-bio">
-                            <p>Sarina, an alumna of the London School of Economics, brings a thoughtful, people-centred approach to policy development and stakeholder engagement in her role as Policy and External Affairs Manager at ARCO (Associated Retirement Community Operators), the UK’s leading trade body for Housing-with-Care. She advocates for more inclusive and sustainable housing solutions, particularly for vulnerable and older people.</p>
-                            <p>A natural communicator, Sarina regularly contributes to public debates on housing—through media appearances and written commentary—drawing on both academic grounding and emotional intelligence to translate complex policy into accessible, human-focused narratives.</p>
-                            <p>She also serves on the Executive Committee of the Fabian Society, where her collaborative mindset fosters forward-thinking policy dialogue. In addition, she is a Non-Executive Director and Policy Advisor at United Mortgages™, having helped shape the organisation’s GTM vision around ethical and accessible housing finance.</p>
+                            <p>Sarina, an alumna of the London School of Economics, brings a thoughtful, people-centred approach to policy development in her role as Policy and External Affairs Manager at ARCO (Associated Retirement Community Operators), the UK's leading trade body for Housing-with-Care.</p>
+                            <p>A natural communicator, she regularly contributes to public debates on housing through media appearances and written commentary, translating complex policy into accessible, human-focused narratives.</p>
+                            <p>Policy Advisor at United Mortgages™, she helps shape the organisation's vision around ethical and accessible housing finance, bringing both her collaborative mindset and advocacy for inclusive, sustainable housing solutions.</p>
                         </div>
                     </div>
                 </div>

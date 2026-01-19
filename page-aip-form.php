@@ -145,18 +145,18 @@ get_header(); ?>
                     </div>
                     <h2 class="success-title">What <strong>Happens Next?</strong></h2>
                     <p class="success-message">
-                        Congratulations, you're one step closer to your next home! A member of the United Mortgages™ will be in touch within 24 hours
+                        Congratulations, you're one step closer to your next home! A member of the United Mortgagesâ„¢ will be in touch within 24 hours
                     </p>
                     <p class="success-submessage">
                         Should you have any questions in the meantime, please don't hesitate to reach out
                     </p>
                     <div class="contact-options">
                         <a href="tel:02084464488" class="contact-link">
-                            <span class="contact-icon">📞</span>
+                            <span class="contact-icon">ðŸ“ž</span>
                             0208 446 4488
                         </a>
                         <a href="mailto:hello@united-mortgages.com" class="contact-link">
-                            <span class="contact-icon">✉️</span>
+                            <span class="contact-icon">âœ‰ï¸</span>
                             hello@united-mortgages.com
                         </a>
                     </div>

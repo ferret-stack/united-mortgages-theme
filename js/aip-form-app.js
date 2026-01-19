@@ -76,7 +76,7 @@ const app = createApp({
         };
     },
     mounted() {
-        console.log('✓ AIP Form Vue app mounted');
+        console.log('âœ“ AIP Form Vue app mounted');
         this.loadDraft();
     },
     watch: {
@@ -330,7 +330,7 @@ const app = createApp({
                     const parsed = JSON.parse(draft);
                     this.formData = parsed.data;
                     this.currentStep = parsed.currentStep || 1;
-                    console.log('✓ Draft loaded from', parsed.timestamp);
+                    console.log('âœ“ Draft loaded from', parsed.timestamp);
                 }
             } catch (error) {
                 console.error('Error loading draft:', error);
@@ -340,7 +340,7 @@ const app = createApp({
         clearDraft() {
             try {
                 localStorage.removeItem(STORAGE_KEY);
-                console.log('✓ Draft cleared');
+                console.log('âœ“ Draft cleared');
             } catch (error) {
                 console.error('Error clearing draft:', error);
             }

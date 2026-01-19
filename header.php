@@ -10,29 +10,6 @@
 
 <?php wp_body_open(); ?>
 
-<!-- Under Construction Popup !-->
-<!--<div id="construction-popup" class="popup-overlay">
-    <div class="popup-content">
-        <div class="popup-header">
-            <h2>🚧 Website Under Construction</h2>
-            <button class="popup-close" onclick="closeConstructionPopup()">&times;</button>
-        </div>
-        <div class="popup-body">
-            <p>Welcome to United Mortgages!</p>
-            <p>We're currently working hard to improve your experience. While we're building our new website, some features and functionality may be limited.</p>
-            <p>For immediate assistance, please contact us at:</p>
-            <ul>
-                <li>📞 <a href="tel:02034517973">0203 451 7973</a></li>
-                <li>✉️ <a href="mailto:hello@united-mortgages.com">hello@united-mortgages.com</a></li>
-            </ul>
-            <p>Thank you for your patience!<br>- David & Daniel</p>
-        </div>
-        <div class="popup-footer">
-            <button class="popup-button" onclick="closeConstructionPopup()">I Understand</button>
-        </div>
-    </div>
-</div>!-->
-
 <header id="masthead" class="site-header">
     <div class="header-top">
         <div class="container">
@@ -46,10 +23,10 @@
                     0203 451 7973
                 </a>
             </div>
-          <div class="header-actions">
-                <a href="https://api.whatsapp.com/send?phone=447451201210">
+          <div class="header-actions" style="text-decoration: none;">
+                <a href="https://api.whatsapp.com/send?phone=447451201210" target="_blank" rel="noopener noreferrer">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/chat.svg" class="contact-icon" alt="Chat">
-                    <span style="color:grey;">Chat now</span>
+                    <span style="color:grey; text-decoration: none;">Chat now</span>
                 </a>
                 <a href="<?php echo home_url('/aip-overview'); ?>" class="btn-primary">Start your journey</a>
             </div>

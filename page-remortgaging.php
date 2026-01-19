@@ -15,14 +15,14 @@ get_header(); ?>
             <div class="hero-content-split">
                 <!-- Left side - Text content -->
                 <div class="hero-text-content">
-                    <h1 class="hero-title">First Time Buyers</h1>
-                    <p class="hero-description">
+                    <h1 class="hero-title mortgage">Remortgaging</h1>
+                    <p class="hero-description mortgage">
                        Whether you're looking to save on monthly payments, release equity, or switch deals, we'll find your optimal remortgage option suited to your needs.
                     </p>
                 </div>
                 
                 <!-- Right side - Contact Form -->
-                <div class="hero-form-wrapper">
+                <div class="hero-form-wrapper mortgage">
                     <div class="contact-form hero-contact-form">
                         <!-- HubSpot Form Embed -->
                         <script src="https://js-eu1.hsforms.net/forms/embed/146069825.js" defer></script>
@@ -33,8 +33,7 @@ get_header(); ?>
         </div>
     </section>
 
-<?php get_template_part('template-parts/process'); ?>
-<?php get_template_part('template-parts/UM-way'); ?>
+
 <?php get_template_part('template-parts/team-contact'); ?>
 
 <?php

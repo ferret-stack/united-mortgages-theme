@@ -220,12 +220,12 @@ const FinancialDetails = {
                     <label>Employment Type *</label>
                     <select v-model="applicant.employment_type" @change="update">
                         <option value="">Select...</option>
-                            <option value="Employed – Permanent Full-Time">Employed – Permanent Full-Time</option>
-                            <option value="Employed – Permanent Part-Time">Employed – Permanent Part-Time</option>
-                            <option value="Employed – Fixed-Term Contract">Employed – Fixed-Term Contract</option>
-                            <option value="Self-Employed – Sole Trader">Self-Employed – Sole Trader</option>
-                            <option value="Self-Employed – Partnership">Self-Employed – Partnership</option>
-                            <option value="Self-Employed – Limited Company Director">Self-Employed – Limited Company Director</option>
+                            <option value="Employed â€“ Permanent Full-Time">Employed â€“ Permanent Full-Time</option>
+                            <option value="Employed â€“ Permanent Part-Time">Employed â€“ Permanent Part-Time</option>
+                            <option value="Employed â€“ Fixed-Term Contract">Employed â€“ Fixed-Term Contract</option>
+                            <option value="Self-Employed â€“ Sole Trader">Self-Employed â€“ Sole Trader</option>
+                            <option value="Self-Employed â€“ Partnership">Self-Employed â€“ Partnership</option>
+                            <option value="Self-Employed â€“ Limited Company Director">Self-Employed â€“ Limited Company Director</option>
                             <option value="Agency Worker / Zero-Hour Contract">Agency Worker / Zero-Hour Contract</option>
                             <option value="Retired">Retired</option>
                             <option value="High Net-Worth Individual (HNWI)">High Net-Worth Individual (HNWI)</option>
@@ -266,13 +266,13 @@ const FinancialDetails = {
                             <input type="text" v-model="applicant.employer_postcode" placeholder="SW1A 1AA" @input="update" style="text-transform: uppercase" />
                         </div>
                         <div class="form-field">
-                            <label>Total Annual Salary (£) *</label>
+                            <label>Total Annual Salary (Â£) *</label>
                             <input type="number" v-model="applicant.total_annual_salary" min="0" placeholder="50000" @input="update" />
                         </div>
                     </div>
                     
                     <div class="form-field">
-                        <label>Annual Additional Income (£)</label>
+                        <label>Annual Additional Income (Â£)</label>
                         <input type="number" v-model="applicant.annual_additional_income" min="0" placeholder="0" @input="update" />
                         <span class="helper-text">Bonuses, commission, overtime, etc.</span>
                     </div>
@@ -287,7 +287,7 @@ const FinancialDetails = {
                     
                     <div class="form-row">
                         <div class="form-field">
-                            <label>Latest Financial Year Net Profit (£) *</label>
+                            <label>Latest Financial Year Net Profit (Â£) *</label>
                             <input type="number" v-model="applicant.latest_fy_net_profit" min="0" placeholder="50000" @input="update" />
                         </div>
                         <div class="form-field">
@@ -298,7 +298,7 @@ const FinancialDetails = {
                     
                     <div class="form-row">
                         <div class="form-field">
-                            <label>Previous Financial Year Net Profit (£) *</label>
+                            <label>Previous Financial Year Net Profit (Â£) *</label>
                             <input type="number" v-model="applicant.previous_fy_net_profit" min="0" placeholder="45000" @input="update" />
                         </div>
                         <div class="form-field">
@@ -311,7 +311,7 @@ const FinancialDetails = {
                 <!-- Retired Fields -->
                 <template v-if="isRetired">
                     <div class="form-field">
-                        <label>Annual Retirement Income (£) *</label>
+                        <label>Annual Retirement Income (Â£) *</label>
                         <input type="number" v-model="applicant.annual_retirement_income" min="0" placeholder="20000" @input="update" />
                     </div>
                 </template>
@@ -319,12 +319,12 @@ const FinancialDetails = {
                 <!-- High Net Worth Fields -->
                 <template v-if="isHighNetWorth">
                     <div class="form-field">
-                        <label>Total Value of Assets and Liabilities (£) *</label>
+                        <label>Total Value of Assets and Liabilities (Â£) *</label>
                         <input type="number" v-model="applicant.total_assets_liabilities" min="0" placeholder="1000000" @input="update" />
                     </div>
                     
                     <div class="form-field">
-                        <label>Annual Income (£) *</label>
+                        <label>Annual Income (Â£) *</label>
                         <input type="number" v-model="applicant.annual_income_hnw" min="0" placeholder="100000" @input="update" />
                     </div>
                 </template>
@@ -361,7 +361,7 @@ const FinancialDetails = {
                                 <input type="text" v-model="loan.provider" placeholder="Enter provider name" @input="update" />
                             </div>
                             <div class="form-field">
-                                <label>Monthly Payment (£) *</label>
+                                <label>Monthly Payment (Â£) *</label>
                                 <input type="number" v-model="loan.monthly_payment" min="0" placeholder="250" @input="update" />
                             </div>
                             <div class="form-field">
@@ -408,11 +408,11 @@ const FinancialDetails = {
                             </div>
                             <div class="form-row">
                                 <div class="form-field">
-                                    <label>Current Balance (£) *</label>
+                                    <label>Current Balance (Â£) *</label>
                                     <input type="number" v-model="card.current_balance" min="0" placeholder="1500" @input="update" />
                                 </div>
                                 <div class="form-field">
-                                    <label>Monthly Payment (£) *</label>
+                                    <label>Monthly Payment (Â£) *</label>
                                     <input type="number" v-model="card.monthly_payment" min="0" placeholder="100" @input="update" />
                                 </div>
                             </div>

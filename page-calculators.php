@@ -4,7 +4,7 @@
  * 
  * @package UnitedMortgages
  */
-/*V1.1*/
+/*V1.3 - Added inter-calculator navigation (borrow→repayment→overpayment) + AIP CTAs*/
 get_header(); ?>
 
 <!-- Calculator Container -->
@@ -59,7 +59,7 @@ get_header(); ?>
                                 <div class="form-group">
                                     <label for="borrow-deposit">
                                         Deposit Amount (£)
-                                        <span class="info-tooltip" data-tooltip="A higher deposit will result in a higher overall budget">ⓘ</span>
+                                        <span class="info-tooltip" data-tooltip="A higher deposit may result in a higher overall budget">ⓘ</span>
                                     </label>
                                     <input type="text" id="borrow-deposit" name="deposit" class="number-input" placeholder="Optional">
                                 </div>
@@ -145,7 +145,7 @@ get_header(); ?>
                             <!-- Info Box -->
                             <div class="info-box-container" style="margin-top: 30px;">
                                 <div class="calc-info-box" style="grid-column: 1 / -1;">
-                                    <h4>UK Stamp Duty Rates (2025/26)</h4>
+                                    <h4>UK Stamp Duty Rates (April 2025 onwards)</h4>
                                     <p><strong>Standard Buyers:</strong> 0% up to £125k, 2% up to £250k, 5% up to £925k, 10% up to £1.5m, 12% above</p>
                                     <p><strong>First Time Buyers:</strong> 0% up to £300k, 5% up to £500k, then standard rates</p>
                                     <p><strong>Additional Properties:</strong> Standard rates + 5% surcharge on entire amount</p>
@@ -181,8 +181,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const SALARY_WEIGHT = 1.0; // 100%
     const BONUS_WEIGHT = 0.6; // 60%
 
-    // Variable to store the last calculated borrow amount
+    // Variables to store calculated values for inter-calculator navigation
     window.lastBorrowAmount = 0;
+    window.lastRepaymentLoan = 0;
+    window.lastRepaymentRate = 0;
+    window.lastRepaymentTerm = 0;
 
     // Format number input with commas
     function formatNumberInput(input) {
@@ -356,11 +359,16 @@ document.addEventListener('DOMContentLoaded', function() {
         
         displayResults(results, 'borrow');
         
-        // Add button to use borrow amount in repayment calculator
+        // Add buttons: use in repayment calculator + AIP CTA
         const resultsDisplay = document.getElementById('results-display');
         if (resultsDisplay && borrowingCapacity > 0) {
-            const buttonHtml = '<button class="use-borrow-button" onclick="useBorrowAmount()">Use this amount in Repayment Calculator</button>';
-            resultsDisplay.innerHTML += buttonHtml;
+            const buttonsHtml = '<div class="results-actions">' +
+                '<button class="use-borrow-button" onclick="useBorrowAmount()">Use this amount in Repayment Calculator</button>' +
+                '</div>' +
+                '<div class="results-cta">' +
+                '<a href="<?php echo home_url('/aip-overview'); ?>" class="btn-primary">Get your agreement in principle today!</a>' +
+                '</div>';
+            resultsDisplay.innerHTML += buttonsHtml;
         }
     }
     
@@ -369,6 +377,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const loanAmount = parseNumberInput(document.getElementById('repayment-loan'));
         const annualRate = parseFloat(document.getElementById('repayment-rate').value) || 0;
         const loanTermYears = parseFloat(document.getElementById('repayment-term').value) || 0;
+        
+        // Store for use in overpayment calculator
+        window.lastRepaymentLoan = loanAmount;
+        window.lastRepaymentRate = annualRate;
+        window.lastRepaymentTerm = loanTermYears;
         
         // Convert to monthly values
         const monthlyRate = annualRate / 100 / 12;
@@ -392,6 +405,18 @@ document.addEventListener('DOMContentLoaded', function() {
             'Total Payment': '£' + formatNumber(totalPayment),
             'Total Interest': '<span class="highlight-blue">£' + formatNumber(totalInterest) + '</span>'
         }, 'repayment');
+        
+        // Add buttons: use in overpayment calculator + AIP CTA
+        const resultsDisplay = document.getElementById('results-display');
+        if (resultsDisplay && loanAmount > 0) {
+            const buttonsHtml = '<div class="results-actions">' +
+                '<button class="use-borrow-button" onclick="useRepaymentAmount()">Use these values in Overpayment Calculator</button>' +
+                '</div>';
+            resultsDisplay.innerHTML += buttonsHtml;
+        }
+        
+        // Add AIP CTA
+        addAipCta();
     }
     
     // Overpayment Calculator
@@ -456,6 +481,9 @@ document.addEventListener('DOMContentLoaded', function() {
             'Interest Saved': '<span class="highlight-gold">£' + formatNumber(interestSaved) + '</span>',
             'Time Saved': '<span class="highlight-blue">' + timeSaved.toFixed(1) + ' years</span>'
         }, 'overpayment');
+        
+        // Add AIP CTA
+        addAipCta();
     }
 
     // Stamp Duty Calculator - UPDATED FOR 2025/26 RATES
@@ -550,6 +578,9 @@ document.addEventListener('DOMContentLoaded', function() {
         results['Effective Rate'] = effectiveRate.toFixed(2) + '%';
         
         displayResults(results, 'stampduty');
+        
+        // Add AIP CTA
+        addAipCta();
     }
     
     // Display results function
@@ -574,17 +605,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const resultsDisplay = document.getElementById('results-display');
         if (resultsDisplay) {
             resultsDisplay.innerHTML = html;
-            
-            // Add CTA button after a small delay to ensure DOM is ready
-            setTimeout(function() {
-                // Check if CTA already exists to avoid duplicates
-                if (!resultsDisplay.querySelector('.results-cta')) {
-                    const ctaDiv = document.createElement('div');
-                    ctaDiv.className = 'results-cta';
-                    ctaDiv.innerHTML = '<a href="<?php echo home_url('/aip-overview'); ?>" class="btn-primary" style="cursor: pointer; display: inline-block;">Get your mortgage in principle today!</a>';
-                    resultsDisplay.appendChild(ctaDiv);
-                }
-            }, 100);
+        }
+    }
+    
+    // Add AIP CTA button to results
+    function addAipCta() {
+        const resultsDisplay = document.getElementById('results-display');
+        if (resultsDisplay && !resultsDisplay.querySelector('.results-cta')) {
+            const ctaHtml = '<div class="results-cta">' +
+                '<a href="<?php echo home_url('/aip-overview'); ?>" class="btn-primary">Get your agreement in principle today!</a>' +
+                '</div>';
+            resultsDisplay.innerHTML += ctaHtml;
         }
     }
 
@@ -631,6 +662,40 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (rateInput) {
                         rateInput.focus();
                     }
+                }
+            }, 100);
+        }
+    };
+
+    // Function to use repayment values in overpayment calculator
+    window.useRepaymentAmount = function() {
+        // Find the overpayment tab button
+        const overpaymentTab = document.querySelector('[data-calculator="overpayment"]');
+        
+        if (overpaymentTab) {
+            // Trigger click on the tab
+            overpaymentTab.click();
+            
+            // Small delay to ensure tab has switched
+            setTimeout(function() {
+                // Set the loan amount
+                const loanInput = document.getElementById('overpayment-loan');
+                const rateInput = document.getElementById('overpayment-rate');
+                const termInput = document.getElementById('overpayment-term');
+                const overpaymentInput = document.getElementById('overpayment-amount');
+                
+                if (loanInput) {
+                    loanInput.value = Math.round(window.lastRepaymentLoan).toLocaleString('en-GB');
+                }
+                if (rateInput) {
+                    rateInput.value = window.lastRepaymentRate;
+                }
+                if (termInput) {
+                    termInput.value = window.lastRepaymentTerm;
+                }
+                // Focus on the overpayment amount field
+                if (overpaymentInput) {
+                    overpaymentInput.focus();
                 }
             }, 100);
         }

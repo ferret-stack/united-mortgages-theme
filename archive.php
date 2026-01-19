@@ -22,7 +22,7 @@ if (is_page('blog')) {
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="blog-title"><span style="font-weight:500;">United Mortgages&trade;</span> Blog</h1>
+                <h1 class="blog-title"><span style="font-weight:500;">United Mortgages&reg;</span> Blog</h1>
                 <p class="blog-subtitle">Expert insights, mortgage tips, and property market updates</p>
             </div>
         </div>

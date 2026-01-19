@@ -1,19 +1,20 @@
-    <!-- Speak to Our Team Section -->
+<!-- Speak to Our Team Section -->
     <section class="team-contact-section" id="contact-form">
         <div class="container">
             <div class="team-contact-wrapper">
                 <div class="team-info">
-<!--                    <div class="team-avatars">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/team-david.jpg" alt="Team Member" class="team-avatar">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/team-daniel.jpg" alt="Team Member" class="team-avatar">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/team-muki.jpg" alt="Team Member" class="team-avatar">
-
+                    <div class="team-avatars">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/daniel-team.png" alt="Team Member" class="team-avatar">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/muki-team.png" alt="Team Member" class="team-avatar">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/david-team.png" alt="Team Member" class="team-avatar">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/sarina-team.png" alt="Team Member" class="team-avatar">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/jeff-team.png" alt="Team Member" class="team-avatar">
                     </div>
--->       
+      
                     <h2 class="team-title">Speak to <span class="bold-text">Our Team</span></h2>
                     
                     <p class="team-description">
-                        At <strong>United Mortgages</strong>&trade;, our expert team works 365 days a year to support clients and partners, ensuring seamless, stress-free financing. Reach out to begin your journey with us now!
+                        Our team is available <strong>365 days a year.</strong> Yep; that includes evenings, weekends, and bank holidays. Questions at 10pm on a Sunday? We're here. Reach out to begin your journey with us.
                     </p>
                     
                     <div class="trustpilot-widget">
