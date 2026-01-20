@@ -119,7 +119,7 @@ get_header(); ?>
                         '1drifthome.svg' => 'https://drifthome.ai/',
                         '6mn-eXp.svg' => 'https://marknewton.exp.uk.com/',
                         '5fiberpay.svg' => 'https://fiberpay.com/',
-                        '7pb-exp.svg' => 'https://paulberg.exp.uk.com/',
+                        '7pb-exp.png' => 'https://paulberg.exp.uk.com/',
                         '99novello.svg' => 'https://novellosurveyors.co.uk/',
                     ];
                     
