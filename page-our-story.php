@@ -42,7 +42,7 @@ get_header(); ?>
                         <div class="founder-bio">
                             <p>Co-Founder and Chief Executive Officer of United Mortgages&reg;  with responsibility for overall leadership, GTM, and strategy, in addition to adeptly leading the firm's commercial advisory operations.</p>
                             <p>A tech and customer experience evangelist, David has spent nearly a decade working at the intersection of innovation, sustainability, and growth. Before co-founding United, he held management roles at two Fortune 500 firms (Renault Group and Geely), and later helped scale Deloitte Fast 50 and Fast 500 recipients, Hypervolt, where he built enterprise and partnership channels with a relentless focus on the customer journey. </p>
-                            <p>An alumnus of Edinburgh Business School, David's penchant for invoking in the long-term, energetic leadership, and relentless focus on the customer experience enables him to build and scale high-performance teams, and mutually profitable partnerships.</p>
+                            <p>An alumnus of Edinburgh Business School, David's penchant for thinking in the long-term, energetic leadership, and relentless focus on the customer experience enables him to build and scale high-performance teams, and mutually profitable partnerships.</p>
                         </div>
                     </div>
                 </div>
