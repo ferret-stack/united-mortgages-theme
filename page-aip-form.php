@@ -94,7 +94,7 @@ get_header(); ?>
                 
                 <!-- Applicant 2 Details (conditional) -->
                 <applicant-details 
-                    v-if="formData.applicant_type === 'joint'"
+                    v-if="formData.applicant_type === 'Joint applicant'"
                     :applicant="formData.applicant2" 
                     applicant-number="2"
                     @update="updateApplicant2">
@@ -110,7 +110,7 @@ get_header(); ?>
                 </financial-details>
                 
                 <financial-details 
-                    v-if="formData.applicant_type === 'joint'"
+                    v-if="formData.applicant_type === 'Joint applicant'"
                     :applicant="formData.applicant2"
                     applicant-number="2"
                     @update="updateApplicant2">
@@ -130,6 +130,11 @@ get_header(); ?>
 						   target="_blank" 
 						   class="privacy-link">
 							Privacy Policy
+						</a> and 						
+                        <a href="<?php echo home_url('/fee-structure'); ?>" 
+						   target="_blank" 
+						   class="privacy-link">
+							Fee Structure
 						</a> *
 					</span>
 				</label>
@@ -145,18 +150,18 @@ get_header(); ?>
                     </div>
                     <h2 class="success-title">What <strong>Happens Next?</strong></h2>
                     <p class="success-message">
-                        Congratulations, you're one step closer to your next home! A member of the United Mortgagesâ„¢ will be in touch within 24 hours
+                        Congratulations, you're one step closer to your next home! A member of the United Mortgages™ will be in touch within 24 hours
                     </p>
                     <p class="success-submessage">
                         Should you have any questions in the meantime, please don't hesitate to reach out
                     </p>
                     <div class="contact-options">
                         <a href="tel:02084464488" class="contact-link">
-                            <span class="contact-icon">ðŸ“ž</span>
+                            <span class="contact-icon">📞</span>
                             0208 446 4488
                         </a>
                         <a href="mailto:hello@united-mortgages.com" class="contact-link">
-                            <span class="contact-icon">âœ‰ï¸</span>
+                            <span class="contact-icon">✉️</span>
                             hello@united-mortgages.com
                         </a>
                     </div>
