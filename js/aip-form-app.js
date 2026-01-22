@@ -12,12 +12,12 @@ function createEmptyApplicant() {
         date_of_birth: '',
         marital_status: '',
         nationality: '',
-        national_insurance_number: '',
+        national__insurance__number: '',
         current_address_street: '',
         current_address_town: '',
         current_address_county: '',
-        current_address_postcode: '',
-        electoral_register: false,
+        address_postcode: '',
+        electoral_register: '',
         months_at_address: '',
         previous_address_street: '',
         previous_address_town: '',
@@ -31,27 +31,42 @@ function createEmptyApplicant() {
         occupation_job_title: '',
         employer_name: '',
         employer_address_street: '',
-        employer_address_town: '',
+        employer_address_city: '',
         employer_county: '',
         employer_postcode: '',
         total_annual_salary: '',
-        annual_additional_income: '',
+        annual_bonus: '',
+        annual_overtime: '',
+        annual_commission: '',
+        other_annual_income: '',
+        // Contract fields
+        contract_day_rate: '',
+        contract_days_per_month: '',
+        contract_end_date: '',
         // Self-employed fields
+        business_name: '',
         latest_fy_net_profit: '',
         latest_fy_end: '',
+        latest_fy_salary: '',
+        latest_fy_dividends: '',
         previous_fy_net_profit: '',
         previous_fy_end: '',
+        previous_fy_salary: '',
+        previous_fy_dividends: '',
         // Retired
-        annual_retirement_income: '',
+        state_pension_annual: '',
+        private_pension_annual: '',
+        other_retirement_income: '',
         // High net worth
         total_assets_liabilities: '',
         hnw_annual_income: '',
+        hnw_income_source: '',
         // Financial
         has_outstanding_loans: '',
         loans: [],
         has_credit_cards: '',
         credit_cards: [],
-        has_deposit: '',
+        deposit_amount: '',
         deposit_source: '',
         credit_history_issues: ''
     };
@@ -69,14 +84,14 @@ const app = createApp({
             formData: {
                 applicant_type: '',
                 applicant_situation: '',
-				privacy_accepted: false,
+                privacy_accepted: false,
                 applicant1: createEmptyApplicant(),
                 applicant2: createEmptyApplicant()
             }
         };
     },
     mounted() {
-        console.log('âœ“ AIP Form Vue app mounted');
+        console.log('✓ AIP Form Vue app mounted');
         this.loadDraft();
     },
     watch: {
@@ -122,16 +137,16 @@ const app = createApp({
             if (!this.formData.applicant_situation) {
                 errors.push('Please select your situation');
             }
-			
-			if (!this.formData.privacy_accepted) {
-        		errors.push('You must accept the Privacy Policy to continue');
-    		}
+            
+            if (!this.formData.privacy_accepted) {
+                errors.push('You must accept the Privacy Policy to continue');
+            }
             
             // Step 2 validation (Applicant 1)
             errors.push(...this.validateApplicant(this.formData.applicant1, '1'));
             
             // Step 2 validation (Applicant 2 if joint)
-            if (this.formData.applicant_type === 'joint') {
+            if (this.formData.applicant_type === 'Joint applicant') {
                 errors.push(...this.validateApplicant(this.formData.applicant2, '2'));
             }
             
@@ -150,12 +165,12 @@ const app = createApp({
             if (!applicant.date_of_birth) errors.push(`${label}: Date of birth is required`);
             if (!applicant.marital_status) errors.push(`${label}: Marital status is required`);
             if (!applicant.nationality) errors.push(`${label}: Nationality is required`);
-            if (!applicant.national_insurance_number) errors.push(`${label}: National Insurance number is required`);
+            if (!applicant.national__insurance__number) errors.push(`${label}: National Insurance number is required`);
             
             // Address
             if (!applicant.current_address_street) errors.push(`${label}: Current address street is required`);
             if (!applicant.current_address_town) errors.push(`${label}: Current address town is required`);
-            if (!applicant.current_address_postcode) errors.push(`${label}: Current address postcode is required`);
+            if (!applicant.address_postcode) errors.push(`${label}: Current address postcode is required`);
             if (!applicant.months_at_address) errors.push(`${label}: Months at current address is required`);
             
             // Previous address if < 36 months
@@ -176,14 +191,22 @@ const app = createApp({
                 if (!applicant.occupation_job_title) errors.push(`${label}: Job title is required`);
                 if (!applicant.employer_name) errors.push(`${label}: Employer name is required`);
                 if (!applicant.employer_address_street) errors.push(`${label}: Employer address is required`);
-                if (!applicant.employer_address_town) errors.push(`${label}: Employer town is required`);
+                if (!applicant.employer_address_city) errors.push(`${label}: Employer town is required`);
                 if (!applicant.employer_postcode) errors.push(`${label}: Employer postcode is required`);
                 if (!applicant.total_annual_salary) errors.push(`${label}: Annual salary is required`);
             }
             
+            // Contract validation
+            if (employmentType === 'contract') {
+                if (!applicant.occupation_job_title) errors.push(`${label}: Job title is required`);
+                if (!applicant.contract_day_rate) errors.push(`${label}: Day rate is required`);
+                if (!applicant.contract_days_per_month) errors.push(`${label}: Days per month is required`);
+            }
+            
             // Self-employed validation
             if (['sole-trader', 'partnership', 'limited-director'].includes(employmentType)) {
-                if (!applicant.occupation_job_title) errors.push(`${label}: Occupation is required`);
+                if (!applicant.business_name) errors.push(`${label}: Business name is required`);
+                if (!applicant.occupation_job_title) errors.push(`${label}: Nature of business is required`);
                 if (!applicant.latest_fy_net_profit) errors.push(`${label}: Latest year net profit is required`);
                 if (!applicant.latest_fy_end) errors.push(`${label}: Latest year end date is required`);
                 if (!applicant.previous_fy_net_profit) errors.push(`${label}: Previous year net profit is required`);
@@ -192,19 +215,20 @@ const app = createApp({
             
             // Retired validation
             if (employmentType === 'retired') {
-                if (!applicant.annual_retirement_income) errors.push(`${label}: Annual retirement income is required`);
+                if (!applicant.state_pension_annual) errors.push(`${label}: State pension income is required`);
             }
             
             // High net worth validation
             if (employmentType === 'high-net-worth') {
-                if (!applicant.total_assets_liabilities) errors.push(`${label}: Total assets/liabilities is required`);
-                if (!applicant.annual_income_hnw) errors.push(`${label}: Annual income is required`);
+                if (!applicant.total_assets_liabilities) errors.push(`${label}: Total net worth is required`);
+                if (!applicant.hnw_annual_income) errors.push(`${label}: Annual income is required`);
+                if (!applicant.hnw_income_source) errors.push(`${label}: Income source is required`);
             }
             
             // Financial validation
             if (!applicant.has_outstanding_loans) errors.push(`${label}: Please indicate if you have outstanding loans`);
             if (!applicant.has_credit_cards) errors.push(`${label}: Please indicate if you have credit cards`);
-            if (!applicant.has_deposit) errors.push(`${label}: Please indicate if you have a deposit`);
+            if (applicant.deposit_amount === '') errors.push(`${label}: Please enter deposit amount (0 if none)`);
             if (!applicant.credit_history_issues) errors.push(`${label}: Please indicate if you have credit history issues`);
             
             // Loans validation
@@ -213,7 +237,9 @@ const app = createApp({
                     errors.push(`${label}: Please add at least one loan or select 'No' for outstanding loans`);
                 } else {
                     applicant.loans.forEach((loan, index) => {
+                        if (!loan.type) errors.push(`${label} Loan ${index + 1}: Type is required`);
                         if (!loan.provider) errors.push(`${label} Loan ${index + 1}: Provider is required`);
+                        if (!loan.outstanding_balance) errors.push(`${label} Loan ${index + 1}: Outstanding balance is required`);
                         if (!loan.monthly_payment) errors.push(`${label} Loan ${index + 1}: Monthly payment is required`);
                     });
                 }
@@ -226,6 +252,7 @@ const app = createApp({
                 } else {
                     applicant.credit_cards.forEach((card, index) => {
                         if (!card.provider) errors.push(`${label} Card ${index + 1}: Provider is required`);
+                        if (!card.credit_limit) errors.push(`${label} Card ${index + 1}: Credit limit is required`);
                         if (!card.current_balance) errors.push(`${label} Card ${index + 1}: Current balance is required`);
                         if (!card.monthly_payment) errors.push(`${label} Card ${index + 1}: Monthly payment is required`);
                     });
@@ -233,7 +260,7 @@ const app = createApp({
             }
             
             // Deposit source validation
-            if (applicant.has_deposit === 'yes' && !applicant.deposit_source) {
+            if (applicant.deposit_amount > 0 && !applicant.deposit_source) {
                 errors.push(`${label}: Please select deposit source`);
             }
             
@@ -249,7 +276,7 @@ const app = createApp({
                 
                 console.log('Submitting to Flask:', hubspotData); // Debug log
                 
-                const response = await fetch('https://unitedmortgages.eu.pythonanywhere.com/api/submit-aip', {
+                const response = await fetch('http://localhost:5000/api/submit-aip', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -262,6 +289,7 @@ const app = createApp({
                 
                 if (response.ok && result.success) {
                     console.log('Success! Contacts:', result.contacts_created);
+                    this.clearDraft(); // Clear saved draft on success
                     this.currentStep = 4; // Show success screen
                 } else {
                     console.error('Submission failed:', result);
@@ -269,12 +297,11 @@ const app = createApp({
                 }
             } catch (error) {
                 console.error('Network error:', error);
-                alert('Failed to connect to server. Is Flask running?');
+                alert('Failed to connect to server. Please try again or contact us directly.');
             } finally {
                 this.isSubmitting = false;
             }
         },
-
 
         
         prepareHubSpotData() {
@@ -284,7 +311,7 @@ const app = createApp({
                 applicant1: this.flattenApplicantData(this.formData.applicant1)
             };
             
-            if (this.formData.applicant_type === 'joint') {
+            if (this.formData.applicant_type === 'Joint applicant') {
                 data.applicant2 = this.flattenApplicantData(this.formData.applicant2);
             }
             
@@ -330,7 +357,7 @@ const app = createApp({
                     const parsed = JSON.parse(draft);
                     this.formData = parsed.data;
                     this.currentStep = parsed.currentStep || 1;
-                    console.log('âœ“ Draft loaded from', parsed.timestamp);
+                    console.log('✓ Draft loaded from', parsed.timestamp);
                 }
             } catch (error) {
                 console.error('Error loading draft:', error);
@@ -340,7 +367,7 @@ const app = createApp({
         clearDraft() {
             try {
                 localStorage.removeItem(STORAGE_KEY);
-                console.log('âœ“ Draft cleared');
+                console.log('✓ Draft cleared');
             } catch (error) {
                 console.error('Error clearing draft:', error);
             }
