@@ -111,12 +111,12 @@ get_header(); ?>
                     $files = scandir($directory);
                                     
                     $partner_links = [
-                        '9charterwells.svg' => 'https://www.charterwells.co.uk/',
-                        '8fortress.svg' => 'https://2eys75.share-eu1.hsforms.com/2TSSmWsJnRJCGLQHLexp-mw',
-                        '3key-conveyencing.svg' => 'https://www.keyconveyancing.co.uk/',
+                        '1charterwells.svg' => 'https://www.charterwells.co.uk/',
+                        '9fortress.svg' => 'https://2eys75.share-eu1.hsforms.com/2TSSmWsJnRJCGLQHLexp-mw',
+                        '4key-conveyencing.svg' => 'https://www.keyconveyancing.co.uk/',
                         '2thomas-legal.svg' => 'https://thomaslegal.co.uk/',
-                        '4david-charles.svg' => 'https://david-charles.co.uk/',
-                        '1drifthome.svg' => 'https://drifthome.ai/',
+                        '5david-charles.svg' => 'https://david-charles.co.uk/',
+                        '3drifthome.svg' => 'https://drifthome.ai/',
                         '6mn-eXp.svg' => 'https://marknewton.exp.uk.com/',
                         '5fiberpay.svg' => 'https://fiberpay.com/',
                         '7pb-exp.png' => 'https://paulberg.exp.uk.com/',
