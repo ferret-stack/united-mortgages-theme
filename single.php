@@ -92,7 +92,7 @@ get_header(); ?>
                             <?php echo get_avatar( get_the_author_meta( 'ID' ), 96 ); ?>
                             <div class="author-bio-content">
                                 <h3>About <?php the_author(); ?></h3>
-                                <p><?php the_author_meta('description'); ?></p>
+                                <p>United Mortgages® is here 365 days for the next generation of homeowners. We specialise in young professionals and first-time buyers, making mortgags fast, modern, and stress-free. No fax machines. No endless email chains. Just a smarter way to <strong>unlocking your next home.</strong></p>
                             </div>
                         </div>
                         
@@ -146,7 +146,7 @@ get_header(); ?>
                         <div class="sidebar-widget cta-widget sticky-widget">
                             <h3>Ready to Get Started?</h3>
                             <p>Let our mortgage experts help you find the perfect solution</p>
-                            <a href="/contact" class="btn-secondary">Book Consultation</a>
+                            <a href="#contact-form" class="btn-secondary">REQUEST A CALL BACK</a>
                             <p class="cta-phone">Or call us: <a href="tel:02034889773">0203 488 9773</a></p>
                         </div>
                         
@@ -171,6 +171,9 @@ get_header(); ?>
         </section>
         
     <?php endwhile; ?>
+
+        <!-- Speak to Our Team Section -->
+    <?php get_template_part('template-parts/team-contact'); ?>
 
 </main>
 
