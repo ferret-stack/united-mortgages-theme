@@ -1191,7 +1191,7 @@ blockquote {
 .team-info {
     padding-right: 40px;
     padding-top:40px;
-    margin-top: 100px;
+    margin-top: 25px;
 }
 
 .team-avatars {
@@ -5711,7 +5711,7 @@ input#borrow-deposit::placeholder {
 }
 
 .calculator-more-link a {
-    color: var(--um-gold);
+    color: grey;
     text-decoration: none;
     font-size: 2rem;
     font-weight: 600;
@@ -6400,7 +6400,7 @@ Version: 2.1
 @media (max-width: 768px) {
     .hero-section {
         background-attachment: scroll; /* Changed from fixed - better mobile performance */
-        background-position: center center; /* Better centering */
+        background-position: 67%;
         min-height: 100vh;
     }
     
@@ -11904,7 +11904,7 @@ input#borrow-deposit::placeholder {
 }
 
 .calculator-more-link a {
-    color: var(--um-gold);
+    color: grey;
     text-decoration: none;
     font-size: 2rem;
     font-weight: 600;
