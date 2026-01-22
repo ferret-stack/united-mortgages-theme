@@ -186,7 +186,7 @@ get_header(); ?>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/aip-form-components.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/aip-form-app.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/aip-form-components-v2.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/aip-form-app-v2.js"></script>
 
 <?php get_footer(); ?>
