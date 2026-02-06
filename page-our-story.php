@@ -134,7 +134,7 @@ get_header(); ?>
                     <p>City professionals, consultants, and senior executives deserve mortgage advice 
                     that respects their time. We work with lenders who understand complex income 
                     structures, bonuses, and international assignments <strong>and we move fast.</strong></p>
-                    <a href="<?php echo home_url('/remortgaging'); ?>" class="btn-service">I'M A HIGH EARNER</a>
+                    <a href="<?php echo home_url('/high-earners'); ?>" class="btn-service">I'M A HIGH EARNER</a>
                 </div>
 
                     <div class="mortgage-service-card">
@@ -145,7 +145,7 @@ get_header(); ?>
                     <p>Building a property portfolio requires lenders who understand rental yields, 
                     stress tests, and portfolio strategies. We work with specialist BTL lenders 
                     who see investment properties as business assets, not consumer purchases.</p>
-                    <a href="<?php echo home_url('/other-mortgages'); ?>" class="btn-service">I'M AN INVESTOR</a>
+                    <a href="<?php echo home_url('/buy-to-let'); ?>" class="btn-service">I'M AN INVESTOR</a>
                 </div>
             </div>
     </div>
