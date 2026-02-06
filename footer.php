@@ -14,11 +14,11 @@
             <ul class="footer-links">
               <li><a href="<?php echo home_url('/aip-overview'); ?>">Start your mortgage journey</a></li>
               <li><a href="/our-mortgages">Our Mortgages</a></li>
-              <li><a href="/calculators#borrow">How much can I borrow?</a></li>
+              <li><a href="/calculators#borrow">How Much Can I Borrow?</a></li>
               <li><a href="/calculators#repayment">Repayment Calculator</a></li>
               <li><a href="/calculators#overpayment">Overpayment Calculator</a></li>
-              <li><a href="/calculators#stamp-duty">Calculate your stamp duty</a></li>
-              <li><a href="/privacy-policy">Privacy Policy</a></li>
+              <li><a href="/calculators#stamp-duty">Calculate Your Stamp Duty</a></li>
+              <li><a href="https://www.propertylikeapro.co.uk/">Buy-to-let Investment</a></li>
             </ul>
           </div>
           
@@ -37,6 +37,7 @@
               <li><a href="/our-story">Our story</a></li>
               <li><a href="our-story#tegridy">Integrity and Ethics</a></li>
               <li><a href="/fee-structure">Our fees</a></li>
+              <li><a href="/privacy-policy">Privacy Policy</a></li>
             </ul>
           </div>
         </div>
