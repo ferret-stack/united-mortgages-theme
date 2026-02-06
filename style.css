@@ -2357,14 +2357,9 @@ blockquote {
     background-image: url('assets/our-mortgages/remortgage-hero.png');
 }
 
-/* Self Employed */
-.hero-section.efse-hero {
-    background-image: url('assets/our-mortgages/efse-hero.png');
-}
-
 /* Other Services */
 .hero-section.other-mortgages-hero {
-    background-image: url('assets/our-mortgages/other-mortgages-hero.png');
+    background-color: purple;
 }
 
 .checklist {
