@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: EFSE2
+ * Template Name: Buy-to-Let
  * 
  * @package UnitedMortgages
  */
@@ -15,10 +15,9 @@ get_header(); ?>
             <div class="hero-content-split">
                 <!-- Left side - Text content -->
                 <div class="hero-text-content">
-                    <h1 class="hero-title mortgage">Entrepreneurs, Founders, and Self-Employed</h1>
+                    <h1 class="hero-title mortgage">Buy-to-Let Investors</h1>
                     <p class="hero-description mortgage">
-                        Traditional lenders don't understand your business model. We do. Whether you're a contractor on day rates, a director taking dividends, or a founder with equity compensation, we know how to present your income in a way that gets you approved.
-                    </p>
+                        Building a property portfolio requires lenders who understand rental yields, stress tests, and portfolio strategies. We work with specialist BTL lenders who see investment properties as business assets, not consumer purchases.
                 </div>
                 
                 <!-- Right side - Contact Form -->

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: EFSE2
+ * Template Name: High Earners
  * 
  * @package UnitedMortgages
  */
@@ -15,9 +15,9 @@ get_header(); ?>
             <div class="hero-content-split">
                 <!-- Left side - Text content -->
                 <div class="hero-text-content">
-                    <h1 class="hero-title mortgage">Entrepreneurs, Founders, and Self-Employed</h1>
+                    <h1 class="hero-title mortgage">High Earners &amp; Professionals</h1>
                     <p class="hero-description mortgage">
-                        Traditional lenders don't understand your business model. We do. Whether you're a contractor on day rates, a director taking dividends, or a founder with equity compensation, we know how to present your income in a way that gets you approved.
+                       City professionals, consultants, and senior executives deserve mortgage advice that respects their time. We work with lenders who understand complex income structures, bonuses, and international assignments and we move fast.
                     </p>
                 </div>
                 
@@ -32,6 +32,8 @@ get_header(); ?>
             </div>
         </div>
     </section>
+
+
 <?php get_template_part('template-parts/team-contact'); ?>
 
 <?php
