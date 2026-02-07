@@ -14,7 +14,6 @@ get_header(); ?>
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-
             <!-- Review Widgets Container -->
                 <div class="review-widgets-container">
                     <!-- Trustpilot Widget -->
@@ -72,7 +71,7 @@ get_header(); ?>
     <!-- Partners Section -->
     <section class="partnership-section">
         <div class="container" style="margin-bottom: 50px;">
-            <h1 style="color: white; font-size: 3.5rem; transform:translateY(3rem);">Our Partners</h1>
+            <h1 style="color: white; font-size: 3.5rem; transform:translateY(3rem); margin-bottom:50px;">Our Partners</h1>
             <div class="spacer"></div>
             <div class="partnership-grid">
                 <?php
