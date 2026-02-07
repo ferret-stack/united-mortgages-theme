@@ -71,8 +71,11 @@
             <div class="newsletter-button">
               <a href="#" class="btn-secondary">Join our community</a> -->
             </div>
+            <div class="spacer"></div>
+            <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="01c157dd-bfdc-45dd-8a2f-7fa9308f10c8" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
           </div>
         </div>
+        
       </div>
 
       <!-- Contact Section -->
@@ -91,9 +94,10 @@
           <a href="<?php echo home_url('/aip-overview'); ?>" class="contact-item">
             <i class="fas fa-rocket"></i> Start your journey
           </a>
+          
         </div>
+        
       </div>
-      
       <!-- Copyright Section -->
       <div class="footer-bottom">
         <p>&copy; United Mortgages&reg; <?php echo date('Y'); ?>. All rights reserved.</p>
