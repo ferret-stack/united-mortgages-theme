@@ -274,7 +274,7 @@ const app = createApp({
             try {
                 const hubspotData = this.prepareHubSpotData();
                 
-                console.log('Submitting to Flask:', hubspotData); // Debug log
+                console.log('Submitting to Flask:', hubspotData);
                 
                 const response = await fetch('https://unitedmortgages.eu.pythonanywhere.com/api/submit-aip', {
                     method: 'POST',
@@ -285,19 +285,29 @@ const app = createApp({
                 });
                 
                 const result = await response.json();
-                console.log('Flask response:', result); // Debug log
+                console.log('Flask response:', result);
                 
                 if (response.ok && result.success) {
                     console.log('Success! Contacts:', result.contacts_created);
-                    this.clearDraft(); // Clear saved draft on success
-                    this.currentStep = 4; // Show success screen
+                    this.clearDraft();
+                    this.currentStep = 4;
                 } else {
+                    // Show user-friendly error message
+                    let errorMessage = result.error || 'We couldn\'t process your submission. Please contact our team.';
+                    
                     console.error('Submission failed:', result);
-                    alert('Submission failed: ' + (result.error || 'Unknown error'));
+                    
+                    // Log technical details for debugging
+                    if (result.details) {
+                        console.log('Error details:', result.details);
+                    }
+                    
+                    // Show alert with user-friendly message
+                    alert(errorMessage);
                 }
             } catch (error) {
                 console.error('Network error:', error);
-                alert('Failed to connect to server. Please try again or contact us directly.');
+                alert('We couldn\'t connect to our system. Please check your internet connection and try again, or contact our team directly.');
             } finally {
                 this.isSubmitting = false;
             }
