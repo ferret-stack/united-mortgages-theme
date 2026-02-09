@@ -150,7 +150,7 @@ get_header(); ?>
                     </div>
                     <h2 class="success-title">What <strong>Happens Next?</strong></h2>
                     <p class="success-message">
-                        Congratulations, you're one step closer to your next home! A member of the United Mortgages™ will be in touch within 24 hours
+                        Congratulations, you're one step closer to your next home! A member of the United Mortgages&reg; will be in touch within 24 hours
                     </p>
                     <p class="success-submessage">
                         Should you have any questions in the meantime, please don't hesitate to reach out
