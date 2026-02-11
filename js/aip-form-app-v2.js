@@ -81,6 +81,8 @@ const app = createApp({
         return {
             currentStep: 1,
             isSubmitting: false,
+            validationErrors: [], // NEW: Array to store current validation errors
+            fieldErrors: {}, // NEW: Object to store field-specific errors for inline display
             formData: {
                 applicant_type: '',
                 applicant_situation: '',
@@ -89,6 +91,12 @@ const app = createApp({
                 applicant2: createEmptyApplicant()
             }
         };
+    },
+    computed: {
+        // NEW: Check if submit should be enabled
+        isSubmitEnabled() {
+            return this.formData.privacy_accepted;
+        }
     },
     mounted() {
         console.log('✓ AIP Form Vue app mounted');
@@ -127,19 +135,32 @@ const app = createApp({
             return true;
         },
         
+        // NEW: Comprehensive validation that returns structured errors
         validateFinalForm() {
             const errors = [];
             
             // Step 1 validation
             if (!this.formData.applicant_type) {
-                errors.push('Please select whether you are buying alone or with someone else');
+                errors.push({
+                    field: 'applicant_type',
+                    message: 'Please select whether you are buying alone or with someone else',
+                    step: 1
+                });
             }
             if (!this.formData.applicant_situation) {
-                errors.push('Please select your situation');
+                errors.push({
+                    field: 'applicant_situation',
+                    message: 'Please select your situation',
+                    step: 1
+                });
             }
             
             if (!this.formData.privacy_accepted) {
-                errors.push('You must accept the Privacy Policy to continue');
+                errors.push({
+                    field: 'privacy_accepted',
+                    message: 'You must accept the Privacy Policy to continue',
+                    step: 3
+                });
             }
             
             // Step 2 validation (Applicant 1)
@@ -153,129 +174,192 @@ const app = createApp({
             return errors;
         },
         
+        // NEW: Enhanced validation that returns structured error objects
         validateApplicant(applicant, number) {
             const errors = [];
             const label = `Applicant ${number}`;
+            const step = number === '1' ? 2 : 2; // Both applicants on step 2
+            
+            // Helper function to add error
+            const addError = (field, message) => {
+                errors.push({
+                    field: `applicant${number}_${field}`,
+                    message: `${label}: ${message}`,
+                    step: step
+                });
+            };
             
             // Basic details
-            if (!applicant.first_name) errors.push(`${label}: First name is required`);
-            if (!applicant.last_name) errors.push(`${label}: Last name is required`);
-            if (!applicant.email) errors.push(`${label}: Email is required`);
-            if (!applicant.phone) errors.push(`${label}: Phone is required`);
-            if (!applicant.date_of_birth) errors.push(`${label}: Date of birth is required`);
-            if (!applicant.marital_status) errors.push(`${label}: Marital status is required`);
-            if (!applicant.nationality) errors.push(`${label}: Nationality is required`);
-            if (!applicant.national__insurance__number) errors.push(`${label}: National Insurance number is required`);
+            if (!applicant.first_name) addError('first_name', 'First name is required');
+            if (!applicant.last_name) addError('last_name', 'Last name is required');
+            if (!applicant.email) addError('email', 'Email is required');
+            if (!applicant.phone) addError('phone', 'Phone is required');
+            if (!applicant.date_of_birth) addError('date_of_birth', 'Date of birth is required');
+            if (!applicant.marital_status) addError('marital_status', 'Marital status is required');
+            if (!applicant.nationality) addError('nationality', 'Nationality is required');
+            if (!applicant.national__insurance__number) addError('national__insurance__number', 'National Insurance number is required');
             
             // Address
-            if (!applicant.current_address_street) errors.push(`${label}: Current address street is required`);
-            if (!applicant.current_address_town) errors.push(`${label}: Current address town is required`);
-            if (!applicant.address_postcode) errors.push(`${label}: Current address postcode is required`);
-            if (!applicant.months_at_address) errors.push(`${label}: Months at current address is required`);
+            if (!applicant.current_address_street) addError('current_address_street', 'Current address street is required');
+            if (!applicant.current_address_town) addError('current_address_town', 'Current address town is required');
+            if (!applicant.address_postcode) addError('address_postcode', 'Current address postcode is required');
+            if (!applicant.months_at_address) addError('months_at_address', 'Months at current address is required');
             
             // Previous address if < 36 months
             if (parseInt(applicant.months_at_address) < 36) {
-                if (!applicant.previous_address_street) errors.push(`${label}: Previous address street is required`);
-                if (!applicant.previous_address_town) errors.push(`${label}: Previous address town is required`);
-                if (!applicant.previous_address_postcode) errors.push(`${label}: Previous address postcode is required`);
-                if (!applicant.months_at_previous_address) errors.push(`${label}: Months at previous address is required`);
+                if (!applicant.previous_address_street) addError('previous_address_street', 'Previous address street is required');
+                if (!applicant.previous_address_town) addError('previous_address_town', 'Previous address town is required');
+                if (!applicant.previous_address_postcode) addError('previous_address_postcode', 'Previous address postcode is required');
+                if (!applicant.months_at_previous_address) addError('months_at_previous_address', 'Months at previous address is required');
             }
             
             // Employment
-            if (!applicant.employment_type) errors.push(`${label}: Employment type is required`);
+            if (!applicant.employment_type) addError('employment_type', 'Employment type is required');
             
             const employmentType = applicant.employment_type;
             
             // Employed validation
             if (['employed-ft', 'employed-pt', 'employed-ftc'].includes(employmentType)) {
-                if (!applicant.occupation_job_title) errors.push(`${label}: Job title is required`);
-                if (!applicant.employer_name) errors.push(`${label}: Employer name is required`);
-                if (!applicant.employer_address_street) errors.push(`${label}: Employer address is required`);
-                if (!applicant.employer_address_city) errors.push(`${label}: Employer town is required`);
-                if (!applicant.employer_postcode) errors.push(`${label}: Employer postcode is required`);
-                if (!applicant.total_annual_salary) errors.push(`${label}: Annual salary is required`);
+                if (!applicant.occupation_job_title) addError('occupation_job_title', 'Job title is required');
+                if (!applicant.employer_name) addError('employer_name', 'Employer name is required');
+                if (!applicant.employer_address_street) addError('employer_address_street', 'Employer address is required');
+                if (!applicant.employer_address_city) addError('employer_address_city', 'Employer town is required');
+                if (!applicant.employer_postcode) addError('employer_postcode', 'Employer postcode is required');
+                if (!applicant.total_annual_salary) addError('total_annual_salary', 'Annual salary is required');
             }
             
             // Contract validation
             if (employmentType === 'contract') {
-                if (!applicant.occupation_job_title) errors.push(`${label}: Job title is required`);
-                if (!applicant.contract_day_rate) errors.push(`${label}: Day rate is required`);
-                if (!applicant.contract_days_per_month) errors.push(`${label}: Days per month is required`);
+                if (!applicant.occupation_job_title) addError('occupation_job_title', 'Job title is required');
+                if (!applicant.contract_day_rate) addError('contract_day_rate', 'Day rate is required');
+                if (!applicant.contract_days_per_month) addError('contract_days_per_month', 'Days per month is required');
             }
             
             // Self-employed validation
             if (['sole-trader', 'partnership', 'limited-director'].includes(employmentType)) {
-                if (!applicant.business_name) errors.push(`${label}: Business name is required`);
-                if (!applicant.occupation_job_title) errors.push(`${label}: Nature of business is required`);
-                if (!applicant.latest_fy_net_profit) errors.push(`${label}: Latest year net profit is required`);
-                if (!applicant.latest_fy_end) errors.push(`${label}: Latest year end date is required`);
-                if (!applicant.previous_fy_net_profit) errors.push(`${label}: Previous year net profit is required`);
-                if (!applicant.previous_fy_end) errors.push(`${label}: Previous year end date is required`);
+                if (!applicant.business_name) addError('business_name', 'Business name is required');
+                if (!applicant.occupation_job_title) addError('occupation_job_title', 'Nature of business is required');
+                if (!applicant.latest_fy_net_profit) addError('latest_fy_net_profit', 'Latest year net profit is required');
+                if (!applicant.latest_fy_end) addError('latest_fy_end', 'Latest year end date is required');
+                if (!applicant.previous_fy_net_profit) addError('previous_fy_net_profit', 'Previous year net profit is required');
+                if (!applicant.previous_fy_end) addError('previous_fy_end', 'Previous year end date is required');
             }
             
             // Retired validation
             if (employmentType === 'retired') {
-                if (!applicant.state_pension_annual) errors.push(`${label}: State pension income is required`);
+                if (!applicant.state_pension_annual) addError('state_pension_annual', 'State pension income is required');
             }
             
             // High net worth validation
             if (employmentType === 'high-net-worth') {
-                if (!applicant.total_assets_liabilities) errors.push(`${label}: Total net worth is required`);
-                if (!applicant.hnw_annual_income) errors.push(`${label}: Annual income is required`);
-                if (!applicant.hnw_income_source) errors.push(`${label}: Income source is required`);
+                if (!applicant.total_assets_liabilities) addError('total_assets_liabilities', 'Total net worth is required');
+                if (!applicant.hnw_annual_income) addError('hnw_annual_income', 'Annual income is required');
+                if (!applicant.hnw_income_source) addError('hnw_income_source', 'Income source is required');
             }
             
             // Financial validation
-            if (!applicant.has_outstanding_loans) errors.push(`${label}: Please indicate if you have outstanding loans`);
-            if (!applicant.has_credit_cards) errors.push(`${label}: Please indicate if you have credit cards`);
-            if (applicant.deposit_amount === '') errors.push(`${label}: Please enter deposit amount (0 if none)`);
-            if (!applicant.credit_history_issues) errors.push(`${label}: Please indicate if you have credit history issues`);
+            if (!applicant.has_outstanding_loans) addError('has_outstanding_loans', 'Please indicate if you have outstanding loans');
+            if (!applicant.has_credit_cards) addError('has_credit_cards', 'Please indicate if you have credit cards');
+            if (applicant.deposit_amount === '') addError('deposit_amount', 'Please enter deposit amount (0 if none)');
+            if (!applicant.credit_history_issues) addError('credit_history_issues', 'Please indicate if you have credit history issues');
             
-            // Loans validation
+            // Loans validation - CONDITIONAL
             if (applicant.has_outstanding_loans === 'yes') {
                 if (applicant.loans.length === 0) {
-                    errors.push(`${label}: Please add at least one loan or select 'No' for outstanding loans`);
+                    addError('loans', 'Please add at least one loan or select "No" for outstanding loans');
                 } else {
                     applicant.loans.forEach((loan, index) => {
-                        if (!loan.type) errors.push(`${label} Loan ${index + 1}: Type is required`);
-                        if (!loan.provider) errors.push(`${label} Loan ${index + 1}: Provider is required`);
-                        if (!loan.outstanding_balance) errors.push(`${label} Loan ${index + 1}: Outstanding balance is required`);
-                        if (!loan.monthly_payment) errors.push(`${label} Loan ${index + 1}: Monthly payment is required`);
+                        if (!loan.type) addError(`loan_${index}_type`, `Loan ${index + 1}: Type is required`);
+                        if (!loan.provider) addError(`loan_${index}_provider`, `Loan ${index + 1}: Provider is required`);
+                        if (!loan.outstanding_balance) addError(`loan_${index}_balance`, `Loan ${index + 1}: Outstanding balance is required`);
+                        if (!loan.monthly_payment) addError(`loan_${index}_payment`, `Loan ${index + 1}: Monthly payment is required`);
                     });
                 }
             }
             
-            // Credit cards validation
+            // Credit cards validation - CONDITIONAL
             if (applicant.has_credit_cards === 'yes') {
                 if (applicant.credit_cards.length === 0) {
-                    errors.push(`${label}: Please add at least one credit card or select 'No' for credit cards`);
+                    addError('credit_cards', 'Please add at least one credit card or select "No" for credit cards');
                 } else {
                     applicant.credit_cards.forEach((card, index) => {
-                        if (!card.provider) errors.push(`${label} Card ${index + 1}: Provider is required`);
-                        if (!card.credit_limit) errors.push(`${label} Card ${index + 1}: Credit limit is required`);
-                        if (!card.current_balance) errors.push(`${label} Card ${index + 1}: Current balance is required`);
-                        if (!card.monthly_payment) errors.push(`${label} Card ${index + 1}: Monthly payment is required`);
+                        if (!card.provider) addError(`card_${index}_provider`, `Card ${index + 1}: Provider is required`);
+                        if (!card.credit_limit) addError(`card_${index}_limit`, `Card ${index + 1}: Credit limit is required`);
+                        if (!card.current_balance) addError(`card_${index}_balance`, `Card ${index + 1}: Current balance is required`);
+                        if (!card.monthly_payment) addError(`card_${index}_payment`, `Card ${index + 1}: Monthly payment is required`);
                     });
                 }
             }
             
-            // Deposit source validation
+            // Deposit source validation - CONDITIONAL
             if (applicant.deposit_amount > 0 && !applicant.deposit_source) {
-                errors.push(`${label}: Please select deposit source`);
+                addError('deposit_source', 'Please select deposit source');
             }
             
             return errors;
         },
         
+        // NEW: Scroll to first error and highlight it
+        scrollToFirstError() {
+            if (this.validationErrors.length === 0) return;
+            
+            // Get the first error's step
+            const firstError = this.validationErrors[0];
+            
+            // If not on the right step, navigate there
+            if (this.currentStep !== firstError.step) {
+                this.currentStep = firstError.step;
+            }
+            
+            // Wait for DOM update, then scroll to first error field
+            this.$nextTick(() => {
+                // Try to find the field by various selectors
+                const fieldSelectors = [
+                    `[name="${firstError.field}"]`,
+                    `#${firstError.field}`,
+                    `.form-field:has([name*="${firstError.field.split('_').pop()}"])`
+                ];
+                
+                let errorElement = null;
+                for (const selector of fieldSelectors) {
+                    errorElement = document.querySelector(selector);
+                    if (errorElement) break;
+                }
+                
+                if (errorElement) {
+                    // Scroll with offset for header
+                    const yOffset = -100;
+                    const y = errorElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                    
+                    // Focus the field
+                    errorElement.focus();
+                } else {
+                    // Fallback: just scroll to top of form
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        },
+        
         // Submit
         async submitForm() {
+            // NEW: Validate before submitting
+            this.validationErrors = this.validateFinalForm();
+            
+            if (this.validationErrors.length > 0) {
+                console.log('Validation errors:', this.validationErrors);
+                this.scrollToFirstError();
+                return;
+            }
+            
             this.isSubmitting = true;
             
             try {
                 const hubspotData = this.prepareHubSpotData();
                 
                 console.log('Submitting to Flask:', hubspotData);
-                
+                // http://localhost:5000/api/submit-aip
+                // https://unitedmortgages.eu.pythonanywhere.com/api/submit-aip
                 const response = await fetch('https://unitedmortgages.eu.pythonanywhere.com/api/submit-aip', {
                     method: 'POST',
                     headers: {
@@ -290,24 +374,26 @@ const app = createApp({
                 if (response.ok && result.success) {
                     console.log('Success! Contacts:', result.contacts_created);
                     this.clearDraft();
+                    this.validationErrors = []; // Clear errors on success
                     this.currentStep = 4;
                 } else {
                     // Show user-friendly error message
-                    let errorMessage = result.error || 'We couldn\'t process your submission. Please contact our team.';
+                    let errorMessage = result.error || 'We couldn\'t process your submission. Please contact our team directly.';
                     
-                    console.error('Submission failed:', result);
-                    
-                    // Log technical details for debugging
-                    if (result.details) {
-                        console.log('Error details:', result.details);
+                    // Handle specific error types
+                    if (errorMessage.includes('email')) {
+                        errorMessage = 'There was an issue with the email address provided. Please check and try again.';
+                    } else if (errorMessage.includes('duplicate')) {
+                        errorMessage = 'It looks like you\'ve already submitted an application. Our team will be in touch soon.';
+                    } else if (errorMessage.includes('timeout') || errorMessage.includes('network')) {
+                        errorMessage = 'Connection timeout. Please check your internet and try again.';
                     }
                     
-                    // Show alert with user-friendly message
-                    alert(errorMessage);
+                    alert(errorMessage + '\n\nIf the problem persists, please contact us at:\n📞 0208 446 4488\n✉️ hello@united-mortgages.com');
                 }
             } catch (error) {
-                console.error('Network error:', error);
-                alert('We couldn\'t connect to our system. Please check your internet connection and try again, or contact our team directly.');
+                console.error('Submission error:', error);
+                alert('Unable to submit your application. Please check your internet connection and try again, or contact our team directly.');
             } finally {
                 this.isSubmitting = false;
             }
