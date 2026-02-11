@@ -18,7 +18,7 @@
               <li><a href="/calculators#repayment">Repayment Calculator</a></li>
               <li><a href="/calculators#overpayment">Overpayment Calculator</a></li>
               <li><a href="/calculators#stamp-duty">Calculate Your Stamp Duty</a></li>
-              <li><a href="https://www.propertylikeapro.co.uk/">Buy-to-let Investment</a></li>
+              <li><a href="https://www.propertylikeapro.co.uk/investors">Buy-to-let Investment</a></li>
             </ul>
           </div>
           
