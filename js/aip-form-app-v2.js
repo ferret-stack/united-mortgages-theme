@@ -204,6 +204,7 @@ const app = createApp({
             if (!applicant.current_address_town) addError('current_address_town', 'Current address town is required');
             if (!applicant.address_postcode) addError('address_postcode', 'Current address postcode is required');
             if (!applicant.months_at_address) addError('months_at_address', 'Months at current address is required');
+            if (!applicant.electoral_register) addError('electoral_register', 'Please indicate if you are on the electoral register');
             
             // Previous address if < 36 months
             if (parseInt(applicant.months_at_address) < 36) {
@@ -360,7 +361,7 @@ const app = createApp({
                 console.log('Submitting to Flask:', hubspotData);
                 // http://localhost:5000/api/submit-aip
                 // https://unitedmortgages.eu.pythonanywhere.com/api/submit-aip
-                const response = await fetch('https://unitedmortgages.eu.pythonanywhere.com/api/submit-aip', {
+                const response = await fetch('http://localhost:5000/api/submit-aip', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
