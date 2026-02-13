@@ -190,7 +190,7 @@ const app = createApp({
                 if (isRetired) {
                     if (!docs.sa302_previous_year) return false;
                 } else {
-                    if (!docs.sa302_current_year || !docs.doucment_sa302_previous_year) return false;
+                    if (!docs.sa302_current_year || !docs.sa302_previous_year) return false;
                 }
             }
             
