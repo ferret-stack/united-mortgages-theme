@@ -779,6 +779,21 @@ const DocumentUploads = {
         }
     },
     emits: ['update'],
+    mounted() {
+    // Restore any previously uploaded files from parent state
+    if (this.applicant.documents) {
+        Object.keys(this.applicant.documents).forEach(key => {
+            if (this.applicant.documents[key]) {
+                this.uploadedFiles[key] = this.applicant.documents[key];
+            }
+        });
+    }
+    
+    // Restore the additional income answer
+    if (this.applicant.hasAdditionalSelfEmployedIncome) {
+        this.hasAdditionalSelfEmployedIncome = this.applicant.hasAdditionalSelfEmployedIncome;
+    }
+},
     data() {
         return {
             // Track which files have been uploaded
