@@ -864,7 +864,7 @@ const DocumentUploads = {
             
             // Payslips (if required)
             if (this.requiresPayslips) {
-                if (!this.uploadedFiles.payslip1 || !this.uploadedFiles.payslip2 || !this.uploadedFiles.payslip3) {
+                if (!this.uploadedFiles.payslip_1 || !this.uploadedFiles.payslip_2 || !this.uploadedFiles.payslip_3) {
                     return false;
                 }
             }
@@ -1166,20 +1166,20 @@ const DocumentUploads = {
                             <span class="month-label">Payslip 1 (Most Recent)</span>
                             <input 
                                 type="file" 
-                                :ref="'payslip1'"
-                                @change="handleFileUpload($event, 'payslip1')"
+                                :ref="'payslip_1'"
+                                @change="handleFileUpload($event, 'payslip_1')"
                                 accept=".pdf,.jpg,.jpeg,.png"
-                                :id="'payslip1_' + applicantNumber"
+                                :id="'payslip_1_' + applicantNumber"
                             />
-                            <label :for="'payslip1_' + applicantNumber" class="file-upload-label">
-                                <span v-if="!uploadedFiles.payslip1">Choose file</span>
+                            <label :for="'payslip_1_' + applicantNumber" class="file-upload-label">
+                                <span v-if="!uploadedFiles.payslip_1">Choose file</span>
                                 <span v-else class="file-uploaded">
-                                    ✓ {{ getFileName(uploadedFiles.payslip1) }}
+                                    ✓ {{ getFileName(uploadedFiles.payslip_1) }}
                                 </span>
                             </label>
                             <button 
-                                v-if="uploadedFiles.payslip1" 
-                                @click.prevent="removeFile('payslip1')"
+                                v-if="uploadedFiles.payslip_1" 
+                                @click.prevent="removeFile('payslip_1')"
                                 class="remove-file-btn"
                                 type="button"
                             >
@@ -1192,20 +1192,20 @@ const DocumentUploads = {
                             <span class="month-label">Payslip 2</span>
                             <input 
                                 type="file" 
-                                :ref="'payslip2'"
-                                @change="handleFileUpload($event, 'payslip2')"
+                                :ref="'payslip_2'"
+                                @change="handleFileUpload($event, 'payslip_2')"
                                 accept=".pdf,.jpg,.jpeg,.png"
-                                :id="'payslip2_' + applicantNumber"
+                                :id="'payslip_2_' + applicantNumber"
                             />
-                            <label :for="'payslip2_' + applicantNumber" class="file-upload-label">
-                                <span v-if="!uploadedFiles.payslip2">Choose file</span>
+                            <label :for="'payslip_2_' + applicantNumber" class="file-upload-label">
+                                <span v-if="!uploadedFiles.payslip_2">Choose file</span>
                                 <span v-else class="file-uploaded">
-                                    ✓ {{ getFileName(uploadedFiles.payslip2) }}
+                                    ✓ {{ getFileName(uploadedFiles.payslip_2) }}
                                 </span>
                             </label>
                             <button 
-                                v-if="uploadedFiles.payslip2" 
-                                @click.prevent="removeFile('payslip2')"
+                                v-if="uploadedFiles.payslip_2" 
+                                @click.prevent="removeFile('payslip_2')"
                                 class="remove-file-btn"
                                 type="button"
                             >
@@ -1218,20 +1218,20 @@ const DocumentUploads = {
                             <span class="month-label">Payslip 3 (Oldest)</span>
                             <input 
                                 type="file" 
-                                :ref="'payslip3'"
-                                @change="handleFileUpload($event, 'payslip3')"
+                                :ref="'payslip_3'"
+                                @change="handleFileUpload($event, 'payslip_3')"
                                 accept=".pdf,.jpg,.jpeg,.png"
-                                :id="'payslip3_' + applicantNumber"
+                                :id="'payslip_3_' + applicantNumber"
                             />
-                            <label :for="'payslip3_' + applicantNumber" class="file-upload-label">
-                                <span v-if="!uploadedFiles.payslip3">Choose file</span>
+                            <label :for="'payslip_3_' + applicantNumber" class="file-upload-label">
+                                <span v-if="!uploadedFiles.payslip_3">Choose file</span>
                                 <span v-else class="file-uploaded">
-                                    ✓ {{ getFileName(uploadedFiles.payslip3) }}
+                                    ✓ {{ getFileName(uploadedFiles.payslip_3) }}
                                 </span>
                             </label>
                             <button 
-                                v-if="uploadedFiles.payslip3" 
-                                @click.prevent="removeFile('payslip3')"
+                                v-if="uploadedFiles.payslip_3" 
+                                @click.prevent="removeFile('payslip_3')"
                                 class="remove-file-btn"
                                 type="button"
                             >
