@@ -27,6 +27,7 @@
             <h3 class="footer-heading">FOR AGENTS</h3>
             <ul class="footer-links">
               <li><a href="https://2eys75.share-eu1.hsforms.com/2cunAqDiHS_GA3IqP1eFT3A">Refer a client</a></li>
+              <li><a href="mailto:partnerships@united-mortgages.com">Partner with us</a></li>
             </ul>
           </div> 
           
