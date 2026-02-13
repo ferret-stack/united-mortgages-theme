@@ -870,7 +870,7 @@ const DocumentUploads = {
             }
             
             // SA302s (if required)
-            if (this.requiresSA302()) {
+            if (this.requiresSA302) {
                 if (this.isRetired) {
                     // Retired only needs previous year
                     if (!this.uploadedFiles.sa302_previous_year) return false;
@@ -979,7 +979,7 @@ const DocumentUploads = {
                     <!-- Proof of Identity -->
                     <div class="document-upload-field">
                         <label>Proof of Identity *</label>
-                        <p class="helper-text">Passport or UK driving licence (both sides)</p>
+                        <p class="helper-text">e.g. UK Passport, Non-UK Passport (must include valid visa/immigration status if applicable), UK Driving License (full or provisional), National Identity Card (EU/EEA nationals), Biometric Residence Permit (BRP), UK Armed Forces ID Card</p>
                         <div class="file-upload-wrapper">
                             <input 
                                 type="file" 
@@ -1009,7 +1009,7 @@ const DocumentUploads = {
                     <!-- Proof of Address -->
                     <div class="document-upload-field">
                         <label>Proof of Address *</label>
-                        <p class="helper-text">Recent utility bill, council tax, or bank statement (dated within 3 months)</p>
+                        <p class="helper-text">e.g. UK Driving License (if ont already provided), Utility Bill (gas, electirc, water - not mobile phone), Bank Statement, valid Council Tax Bill, Credit Card Statement, Mortgage Statement, Tenancy Agreement, HMRC Correspondence</p>
                         <div class="file-upload-wrapper">
                             <input 
                                 type="file" 
