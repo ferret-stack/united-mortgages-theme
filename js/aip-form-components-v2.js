@@ -761,3 +761,585 @@ const FinancialDetails = {
         }
     }
 };
+
+// ============================================================================
+// DOCUMENT UPLOAD COMPONENT
+// Handles conditional document requirements based on employment type
+// ============================================================================
+
+const DocumentUploads = {
+    props: {
+        applicant: {
+            type: Object,
+            required: true
+        },
+        applicantNumber: {
+            type: Number,
+            required: true
+        }
+    },
+    emits: ['update'],
+    data() {
+        return {
+            // Track which files have been uploaded
+            uploadedFiles: {
+                // Universal documents (ALL applicants)
+                proof_of_identity: null,
+                proof_of_address: null,
+                bank_statement_1: null,
+                bank_statement_2: null,
+                bank_statement_3: null,
+                proof_of_deposit: null,
+                
+                // Conditional documents
+                payslip_1: null,
+                payslip_2: null,
+                payslip_3: null,
+                sa302_current_year: null,
+                sa302_previous_year: null
+            },
+            
+            // Track upload progress
+            uploadProgress: {},
+            
+            // Track if user answered the follow-up question
+            hasAdditionalSelfEmployedIncome: null
+        };
+    },
+    
+    computed: {
+        // Check if employment type requires payslips
+        requiresPayslips() {
+            const type = this.applicant.employment_type;
+            return ['employed-ft', 'employed-pt', 'employed-ftc', 'limited-director', 'contract'].includes(type);
+        },
+        
+        // Check if employment type ALWAYS requires SA302s
+        requiresSA302Mandatory() {
+            const type = this.applicant.employment_type;
+            return ['sole-trader', 'partnership', 'limited-director', 'retired', 'high-net-worth'].includes(type);
+        },
+        
+        // Check if we should show the "additional self-employed income" question
+        showAdditionalIncomeQuestion() {
+            const type = this.applicant.employment_type;
+            return ['employed-ft', 'employed-pt', 'employed-ftc', 'contract'].includes(type);
+        },
+        
+        // Check if SA302s are required based on employment + user answer
+        requiresSA302() {
+            // Always required for these types
+            if (this.requiresSA302Mandatory) {
+                return true;
+            }
+            
+            // Conditionally required if user said "yes" to additional income
+            if (this.showAdditionalIncomeQuestion && this.hasAdditionalSelfEmployedIncome === 'yes') {
+                return true;
+            }
+            
+            return false;
+        },
+        
+        // For retired, only previous year SA302 is needed
+        isRetired() {
+            return this.applicant.employment_type === 'retired';
+        },
+        
+        // Validation: check all required documents are uploaded
+        allRequiredDocumentsUploaded() {
+            // Universal documents
+            const universalDocs = [
+                'proof_of_identity',
+                'proof_of_address',
+                'bank_statement_1',
+                'bank_statement_2',
+                'bank_statement_3',
+                'proof_of_deposit'
+            ];
+            
+            for (let doc of universalDocs) {
+                if (!this.uploadedFiles[doc]) return false;
+            }
+            
+            // Payslips (if required)
+            if (this.requiresPayslips) {
+                if (!this.uploadedFiles.payslip1 || !this.uploadedFiles.payslip2 || !this.uploadedFiles.payslip3) {
+                    return false;
+                }
+            }
+            
+            // SA302s (if required)
+            if (this.requiresSA302()) {
+                if (this.isRetired) {
+                    // Retired only needs previous year
+                    if (!this.uploadedFiles.sa302_previous_year) return false;
+                } else {
+                    // Everyone else needs both years
+                    if (!this.uploadedFiles.sa302_current_year || !this.uploadedFiles.sa302_previous_year) {
+                        return false;
+                    }
+                }
+            }
+            
+            return true;
+        }
+    },
+    
+    methods: {
+        handleFileUpload(event, documentType) {
+            const file = event.target.files[0];
+            
+            if (!file) return;
+            
+            // Validate file type (PDF, JPG, PNG)
+            const allowedTypes = ['application/pdf', 'image/jpeg', 'image/png', 'image/jpg'];
+            if (!allowedTypes.includes(file.type)) {
+                alert('Please upload PDF, JPG, or PNG files only');
+                event.target.value = ''; // Clear the input
+                return;
+            }
+            
+            // Validate file size (max 10MB)
+            const maxSize = 10 * 1024 * 1024; // 10MB in bytes
+            if (file.size > maxSize) {
+                alert('File size must be less than 10MB');
+                event.target.value = '';
+                return;
+            }
+            
+            // Store the file
+            this.uploadedFiles[documentType] = file;
+            
+            // Emit update to parent
+            this.$emit('update', {
+                documents: this.uploadedFiles,
+                hasAdditionalSelfEmployedIncome: this.hasAdditionalSelfEmployedIncome
+            });
+        },
+        
+        removeFile(documentType) {
+            this.uploadedFiles[documentType] = null;
+            
+            // Clear the file input
+            const input = this.$refs[documentType];
+            if (input) {
+                input.value = '';
+            }
+            
+            // Emit update
+            this.$emit('update', {
+                documents: this.uploadedFiles,
+                hasAdditionalSelfEmployedIncome: this.hasAdditionalSelfEmployedIncome
+            });
+        },
+        
+        updateAdditionalIncomeAnswer(value) {
+            this.hasAdditionalSelfEmployedIncome = value;
+            
+            // If user says "no", clear any SA302s they might have uploaded
+            if (value === 'no') {
+                this.uploadedFiles.sa302_current_year = null;
+                this.uploadedFiles.sa302_previous_year = null;
+            }
+            
+            // Emit update
+            this.$emit('update', {
+                documents: this.uploadedFiles,
+                hasAdditionalSelfEmployedIncome: this.hasAdditionalSelfEmployedIncome
+            });
+        },
+        
+        getFileName(file) {
+            if (!file) return '';
+            return file.name;
+        },
+        
+        formatFileSize(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
+        }
+    },
+    
+    template: `
+        <div class="form-section-card">
+            <div class="section-header">
+                <h2 class="section-title">{{ applicantNumber === 1 ? 'Your' : 'Second Applicant' }} Documents</h2>
+                <span class="applicant-label">Applicant {{ applicantNumber }}</span>
+            </div>
+            
+            <div class="document-upload-section">
+                <!-- UNIVERSAL DOCUMENTS (ALL APPLICANTS) -->
+                <div class="document-category">
+                    <h3 class="category-title">Required Documents <span class="required-badge">Required for all applicants</span></h3>
+                    
+                    <!-- Proof of Identity -->
+                    <div class="document-upload-field">
+                        <label>Proof of Identity *</label>
+                        <p class="helper-text">Passport or UK driving licence (both sides)</p>
+                        <div class="file-upload-wrapper">
+                            <input 
+                                type="file" 
+                                :ref="'proof_of_identity'"
+                                @change="handleFileUpload($event, 'proof_of_identity')"
+                                accept=".pdf,.jpg,.jpeg,.png"
+                                :id="'proof_of_identity_' + applicantNumber"
+                            />
+                            <label :for="'proof_of_identity_' + applicantNumber" class="file-upload-label">
+                                <span v-if="!uploadedFiles.proof_of_identity">Choose file</span>
+                                <span v-else class="file-uploaded">
+                                    ✓ {{ getFileName(uploadedFiles.proof_of_identity) }} 
+                                    ({{ formatFileSize(uploadedFiles.proof_of_identity.size) }})
+                                </span>
+                            </label>
+                            <button 
+                                v-if="uploadedFiles.proof_of_identity" 
+                                @click.prevent="removeFile('proof_of_identity')"
+                                class="remove-file-btn"
+                                type="button"
+                            >
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Proof of Address -->
+                    <div class="document-upload-field">
+                        <label>Proof of Address *</label>
+                        <p class="helper-text">Recent utility bill, council tax, or bank statement (dated within 3 months)</p>
+                        <div class="file-upload-wrapper">
+                            <input 
+                                type="file" 
+                                :ref="'proof_of_address'"
+                                @change="handleFileUpload($event, 'proof_of_address')"
+                                accept=".pdf,.jpg,.jpeg,.png"
+                                :id="'proof_of_address_' + applicantNumber"
+                            />
+                            <label :for="'proof_of_address_' + applicantNumber" class="file-upload-label">
+                                <span v-if="!uploadedFiles.proof_of_address">Choose file</span>
+                                <span v-else class="file-uploaded">
+                                    ✓ {{ getFileName(uploadedFiles.proof_of_address) }} 
+                                    ({{ formatFileSize(uploadedFiles.proof_of_address.size) }})
+                                </span>
+                            </label>
+                            <button 
+                                v-if="uploadedFiles.proof_of_address" 
+                                @click.prevent="removeFile('proof_of_address')"
+                                class="remove-file-btn"
+                                type="button"
+                            >
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Bank Statements (3 months) -->
+                    <div class="document-upload-field">
+                        <label>Bank Statements (Last 3 Months) *</label>
+                        <p class="helper-text">Upload 3 consecutive months of bank statements</p>
+                        
+                        <!-- Month 1 -->
+                        <div class="file-upload-wrapper" style="margin-bottom: 10px;">
+                            <span class="month-label">Month 1 (Most Recent)</span>
+                            <input 
+                                type="file" 
+                                :ref="'bank_statement_1'"
+                                @change="handleFileUpload($event, 'bank_statement_1')"
+                                accept=".pdf,.jpg,.jpeg,.png"
+                                :id="'bank_statement_1_' + applicantNumber"
+                            />
+                            <label :for="'bank_statement_1_' + applicantNumber" class="file-upload-label">
+                                <span v-if="!uploadedFiles.bank_statement_1">Choose file</span>
+                                <span v-else class="file-uploaded">
+                                    ✓ {{ getFileName(uploadedFiles.bank_statement_1) }}
+                                </span>
+                            </label>
+                            <button 
+                                v-if="uploadedFiles.bank_statement_1" 
+                                @click.prevent="removeFile('bank_statement_1')"
+                                class="remove-file-btn"
+                                type="button"
+                            >
+                                Remove
+                            </button>
+                        </div>
+                        
+                        <!-- Month 2 -->
+                        <div class="file-upload-wrapper" style="margin-bottom: 10px;">
+                            <span class="month-label">Month 2</span>
+                            <input 
+                                type="file" 
+                                :ref="'bank_statement_2'"
+                                @change="handleFileUpload($event, 'bank_statement_2')"
+                                accept=".pdf,.jpg,.jpeg,.png"
+                                :id="'bank_statement_2_' + applicantNumber"
+                            />
+                            <label :for="'bank_statement_2_' + applicantNumber" class="file-upload-label">
+                                <span v-if="!uploadedFiles.bank_statement_2">Choose file</span>
+                                <span v-else class="file-uploaded">
+                                    ✓ {{ getFileName(uploadedFiles.bank_statement_2) }}
+                                </span>
+                            </label>
+                            <button 
+                                v-if="uploadedFiles.bank_statement_2" 
+                                @click.prevent="removeFile('bank_statement_2')"
+                                class="remove-file-btn"
+                                type="button"
+                            >
+                                Remove
+                            </button>
+                        </div>
+                        
+                        <!-- Month 3 -->
+                        <div class="file-upload-wrapper">
+                            <span class="month-label">Month 3 (Oldest)</span>
+                            <input 
+                                type="file" 
+                                :ref="'bank_statement_3'"
+                                @change="handleFileUpload($event, 'bank_statement_3')"
+                                accept=".pdf,.jpg,.jpeg,.png"
+                                :id="'bank_statement_3_' + applicantNumber"
+                            />
+                            <label :for="'bank_statement_3_' + applicantNumber" class="file-upload-label">
+                                <span v-if="!uploadedFiles.bank_statement_3">Choose file</span>
+                                <span v-else class="file-uploaded">
+                                    ✓ {{ getFileName(uploadedFiles.bank_statement_3) }}
+                                </span>
+                            </label>
+                            <button 
+                                v-if="uploadedFiles.bank_statement_3" 
+                                @click.prevent="removeFile('bank_statement_3')"
+                                class="remove-file-btn"
+                                type="button"
+                            >
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Proof of Deposit -->
+                    <div class="document-upload-field">
+                        <label>Proof of Deposit *</label>
+                        <p class="helper-text">Recent bank statement or savings account statement showing your deposit funds</p>
+                        <div class="file-upload-wrapper">
+                            <input 
+                                type="file" 
+                                :ref="'proof_of_deposit'"
+                                @change="handleFileUpload($event, 'proof_of_deposit')"
+                                accept=".pdf,.jpg,.jpeg,.png"
+                                :id="'proof_of_deposit_' + applicantNumber"
+                            />
+                            <label :for="'proof_of_deposit_' + applicantNumber" class="file-upload-label">
+                                <span v-if="!uploadedFiles.proof_of_deposit">Choose file</span>
+                                <span v-else class="file-uploaded">
+                                    ✓ {{ getFileName(uploadedFiles.proof_of_deposit) }} 
+                                    ({{ formatFileSize(uploadedFiles.proof_of_deposit.size) }})
+                                </span>
+                            </label>
+                            <button 
+                                v-if="uploadedFiles.proof_of_deposit" 
+                                @click.prevent="removeFile('proof_of_deposit')"
+                                class="remove-file-btn"
+                                type="button"
+                            >
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CONDITIONAL DOCUMENTS -->
+                <div class="document-category" v-if="requiresPayslips || requiresSA302 || showAdditionalIncomeQuestion">
+                    <h3 class="category-title">Income Verification Documents</h3>
+                    <p class="helper-text">Based on your employment type, the following documents are required:</p>
+                    
+                    <!-- PAYSLIPS (if required) -->
+                    <div v-if="requiresPayslips" class="document-upload-field">
+                        <label>Payslips (Last 3 Months) *</label>
+                        <p class="helper-text">Upload your 3 most recent payslips</p>
+                        
+                        <!-- Payslip 1 -->
+                        <div class="file-upload-wrapper" style="margin-bottom: 10px;">
+                            <span class="month-label">Payslip 1 (Most Recent)</span>
+                            <input 
+                                type="file" 
+                                :ref="'payslip1'"
+                                @change="handleFileUpload($event, 'payslip1')"
+                                accept=".pdf,.jpg,.jpeg,.png"
+                                :id="'payslip1_' + applicantNumber"
+                            />
+                            <label :for="'payslip1_' + applicantNumber" class="file-upload-label">
+                                <span v-if="!uploadedFiles.payslip1">Choose file</span>
+                                <span v-else class="file-uploaded">
+                                    ✓ {{ getFileName(uploadedFiles.payslip1) }}
+                                </span>
+                            </label>
+                            <button 
+                                v-if="uploadedFiles.payslip1" 
+                                @click.prevent="removeFile('payslip1')"
+                                class="remove-file-btn"
+                                type="button"
+                            >
+                                Remove
+                            </button>
+                        </div>
+                        
+                        <!-- Payslip 2 -->
+                        <div class="file-upload-wrapper" style="margin-bottom: 10px;">
+                            <span class="month-label">Payslip 2</span>
+                            <input 
+                                type="file" 
+                                :ref="'payslip2'"
+                                @change="handleFileUpload($event, 'payslip2')"
+                                accept=".pdf,.jpg,.jpeg,.png"
+                                :id="'payslip2_' + applicantNumber"
+                            />
+                            <label :for="'payslip2_' + applicantNumber" class="file-upload-label">
+                                <span v-if="!uploadedFiles.payslip2">Choose file</span>
+                                <span v-else class="file-uploaded">
+                                    ✓ {{ getFileName(uploadedFiles.payslip2) }}
+                                </span>
+                            </label>
+                            <button 
+                                v-if="uploadedFiles.payslip2" 
+                                @click.prevent="removeFile('payslip2')"
+                                class="remove-file-btn"
+                                type="button"
+                            >
+                                Remove
+                            </button>
+                        </div>
+                        
+                        <!-- Payslip 3 -->
+                        <div class="file-upload-wrapper">
+                            <span class="month-label">Payslip 3 (Oldest)</span>
+                            <input 
+                                type="file" 
+                                :ref="'payslip3'"
+                                @change="handleFileUpload($event, 'payslip3')"
+                                accept=".pdf,.jpg,.jpeg,.png"
+                                :id="'payslip3_' + applicantNumber"
+                            />
+                            <label :for="'payslip3_' + applicantNumber" class="file-upload-label">
+                                <span v-if="!uploadedFiles.payslip3">Choose file</span>
+                                <span v-else class="file-uploaded">
+                                    ✓ {{ getFileName(uploadedFiles.payslip3) }}
+                                </span>
+                            </label>
+                            <button 
+                                v-if="uploadedFiles.payslip3" 
+                                @click.prevent="removeFile('payslip3')"
+                                class="remove-file-btn"
+                                type="button"
+                            >
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- ADDITIONAL INCOME QUESTION (for employed/contractors) -->
+                    <div v-if="showAdditionalIncomeQuestion" class="document-upload-field">
+                        <label>Do you have any additional self-employed income? *</label>
+                        <p class="helper-text">This includes rental income, freelance work, business income, or any other self-employed earnings</p>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input 
+                                    type="radio" 
+                                    name="additional_income"
+                                    value="yes"
+                                    :checked="hasAdditionalSelfEmployedIncome === 'yes'"
+                                    @change="updateAdditionalIncomeAnswer('yes')"
+                                />
+                                <span>Yes - I have additional self-employed income</span>
+                            </label>
+                            <label class="radio-option">
+                                <input 
+                                    type="radio" 
+                                    name="additional_income"
+                                    value="no"
+                                    :checked="hasAdditionalSelfEmployedIncome === 'no'"
+                                    @change="updateAdditionalIncomeAnswer('no')"
+                                />
+                                <span>No - My only income is from employment</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- SA302 DOCUMENTS (if required) -->
+                    <div v-if="requiresSA302" class="document-upload-field">
+                        <label>SA302 Tax Calculations *</label>
+                        <p class="helper-text" v-if="isRetired">Upload your most recent SA302 tax calculation</p>
+                        <p class="helper-text" v-else>Upload SA302 tax calculations for the current and previous tax year</p>
+                        
+                        <!-- Current Year SA302 (not needed for retired) -->
+                        <div v-if="!isRetired" class="file-upload-wrapper" style="margin-bottom: 10px;">
+                            <span class="month-label">Current Tax Year SA302</span>
+                            <input 
+                                type="file" 
+                                :ref="'sa302_current_year'"
+                                @change="handleFileUpload($event, 'sa302_current_year')"
+                                accept=".pdf,.jpg,.jpeg,.png"
+                                :id="'sa302_current_year_' + applicantNumber"
+                            />
+                            <label :for="'sa302_current_year_' + applicantNumber" class="file-upload-label">
+                                <span v-if="!uploadedFiles.sa302_current_year">Choose file</span>
+                                <span v-else class="file-uploaded">
+                                    ✓ {{ getFileName(uploadedFiles.sa302_current_year) }}
+                                </span>
+                            </label>
+                            <button 
+                                v-if="uploadedFiles.sa302_current_year" 
+                                @click.prevent="removeFile('sa302_current_year')"
+                                class="remove-file-btn"
+                                type="button"
+                            >
+                                Remove
+                            </button>
+                        </div>
+                        
+                        <!-- Previous Year SA302 -->
+                        <div class="file-upload-wrapper">
+                            <span class="month-label">Previous Tax Year SA302</span>
+                            <input 
+                                type="file" 
+                                :ref="'sa302_previous_year'"
+                                @change="handleFileUpload($event, 'sa302_previous_year')"
+                                accept=".pdf,.jpg,.jpeg,.png"
+                                :id="'sa302_previous_year_' + applicantNumber"
+                            />
+                            <label :for="'sa302_previous_year_' + applicantNumber" class="file-upload-label">
+                                <span v-if="!uploadedFiles.sa302_previous_year">Choose file</span>
+                                <span v-else class="file-uploaded">
+                                    ✓ {{ getFileName(uploadedFiles.sa302_previous_year) }}
+                                </span>
+                            </label>
+                            <button 
+                                v-if="uploadedFiles.sa302_previous_year" 
+                                @click.prevent="removeFile('sa302_previous_year')"
+                                class="remove-file-btn"
+                                type="button"
+                            >
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- VALIDATION WARNING -->
+                <div v-if="applicant.employment_type && !allRequiredDocumentsUploaded" class="warning-box">
+                    <p><strong>⚠️ Document Upload Incomplete</strong></p>
+                    <p>Please upload all required documents before proceeding to the next step.</p>
+                </div>
+                
+                <!-- SUCCESS MESSAGE -->
+                <div v-if="applicant.employment_type && allRequiredDocumentsUploaded" class="success-box">
+                    <p><strong>✓ All Required Documents Uploaded</strong></p>
+                    <p>You can now proceed to the next step.</p>
+                </div>
+            </div>
+        </div>
+    `
+};

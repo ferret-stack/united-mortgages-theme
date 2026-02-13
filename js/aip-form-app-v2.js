@@ -68,14 +68,29 @@ function createEmptyApplicant() {
         credit_cards: [],
         deposit_amount: '',
         deposit_source: '',
-        credit_history_issues: ''
+        credit_history_issues: '',
+        documents: {
+            proof_of_identity: null,
+            proof_of_address: null,
+            bank_statement_1: null,
+            bank_statement_2: null,
+            bank_statement_3: null,
+            proof_of_deposit: null,
+            payslip_1: null,
+            payslip_2: null,
+            payslip_3: null,
+            sa302_current_year: null,
+            sa302_previous_year: null
+        },
+        hasAdditionalSelfEmployedIncome: null
     };
 }
 
 const app = createApp({
     components: {
         'applicant-details': ApplicantDetails,
-        'financial-details': FinancialDetails
+        'financial-details': FinancialDetails,
+        'document-uploads': DocumentUploads
     },
     data() {
         return {
@@ -128,6 +143,60 @@ const app = createApp({
             }
         },
         
+        updateApplicant1Documents(data) {
+            this.formData.applicant1.documents = data.documents;
+            this.formData.applicant1.hasAdditionalSelfEmployedIncome = data.hasAdditionalSelfEmployedIncome;
+            this.saveDraft();
+        },
+
+        updateApplicant2Documents(data) {
+            this.formData.applicant2.documents = data.documents;
+            this.formData.applicant2.hasAdditionalSelfEmployedIncome = data.hasAdditionalSelfEmployedIncome;
+            this.saveDraft();
+        },
+
+        areAllRequiredDocumentsUploaded(applicant) {
+            const docs = applicant.documents;
+            
+            // Universal documents
+            if (!docs.proof_of_identity || !docs.proof_of_address || 
+                !docs.bank_statement_1 || !docs.bank_statement_2 || 
+                !docs.bank_statement_3 || !docs.proof_of_deposit) {
+                return false;
+            }
+            
+            // Check payslips requirement
+            const employmentType = applicant.employment_type;
+            const requiresPayslips = ['employed-ft', 'employed-pt', 'employed-ftc', 'limited-director', 'contract'].includes(employmentType);
+            
+            if (requiresPayslips) {
+                if (!docs.payslip_1 || !docs.payslip_2 || !docs.payslip_3) {
+                    return false;
+                }
+            }
+            
+            // Check SA302 requirement
+            const requiresSA302Mandatory = ['sole-trader', 'partnership', 'limited-director', 'retired', 'high-net-worth'].includes(employmentType);
+            const showAdditionalIncomeQuestion = ['employed-ft', 'employed-pt', 'employed-ftc', 'contract'].includes(employmentType);
+            
+            let requiresSA302 = requiresSA302Mandatory;
+            if (showAdditionalIncomeQuestion && applicant.hasAdditionalSelfEmployedIncome === 'yes') {
+                requiresSA302 = true;
+            }
+            
+            if (requiresSA302) {
+                const isRetired = employmentType === 'retired';
+                
+                if (isRetired) {
+                    if (!docs.sa302_previous_year) return false;
+                } else {
+                    if (!docs.sa302_current_year || !docs.doucment_sa302_previous_year) return false;
+                }
+            }
+            
+            return true;
+        },
+
         // Validation
         validateCurrentStep() {
             // For now, allow progression without strict validation
@@ -170,6 +239,26 @@ const app = createApp({
             if (this.formData.applicant_type === 'Joint applicant') {
                 errors.push(...this.validateApplicant(this.formData.applicant2, '2'));
             }
+
+            // Document validation for applicant 1
+                if (!this.areAllRequiredDocumentsUploaded(this.formData.applicant1)) {
+                    errors.push({
+                        field: 'applicant1_documents',
+                        message: 'Primary Applicant: Please upload all required documents',
+                        step: 2
+                    });
+                }
+
+                // Document validation for applicant 2 (if joint)
+                if (this.formData.applicant_type === 'Joint applicant') {
+                    if (!this.areAllRequiredDocumentsUploaded(this.formData.applicant2)) {
+                        errors.push({
+                            field: 'applicant2_documents',
+                            message: 'Second Applicant: Please upload all required documents',
+                            step: 2
+                        });
+                    }
+                }
             
             return errors;
         },
@@ -344,7 +433,7 @@ const app = createApp({
         
         // Submit
         async submitForm() {
-            // NEW: Validate before submitting
+            // Validate before submitting
             this.validationErrors = this.validateFinalForm();
             
             if (this.validationErrors.length > 0) {
@@ -356,17 +445,71 @@ const app = createApp({
             this.isSubmitting = true;
             
             try {
-                const hubspotData = this.prepareHubSpotData();
+                // Create FormData for file uploads
+                const formData = new FormData();
                 
-                console.log('Submitting to Flask:', hubspotData);
-                // http://localhost:5000/api/submit-aip
-                // https://unitedmortgages.eu.pythonanywhere.com/api/submit-aip
-                const response = await fetch('http://localhost:5000/api/submit-aip', {
+                // Prepare JSON data (WITHOUT documents - they'll be sent as files)
+                const jsonData = {
+                    applicant_type: this.formData.applicant_type,
+                    applicant_situation: this.formData.applicant_situation,
+                    applicant1: this.flattenApplicantData(this.formData.applicant1),
+                };
+                
+                // Remove documents from JSON (sent separately as files)
+                delete jsonData.applicant1.documents;
+                delete jsonData.applicant1.hasAdditionalSelfEmployedIncome; // Will be sent in FormData
+                
+                // Add applicant 2 if joint
+                if (this.formData.applicant_type === 'Joint applicant') {
+                    jsonData.applicant2 = this.flattenApplicantData(this.formData.applicant2);
+                    delete jsonData.applicant2.documents;
+                    delete jsonData.applicant2.hasAdditionalSelfEmployedIncome;
+                }
+                
+                // Add JSON data to FormData
+                formData.append('data', JSON.stringify(jsonData));
+                
+                // Append applicant1 documents as files
+                const app1Docs = this.formData.applicant1.documents;
+                Object.keys(app1Docs).forEach(key => {
+                    if (app1Docs[key]) {
+                        formData.append(`applicant1_${key}`, app1Docs[key]);
+                    }
+                });
+                
+                // Add applicant1's hasAdditionalSelfEmployedIncome
+                if (this.formData.applicant1.hasAdditionalSelfEmployedIncome) {
+                    formData.append('applicant1_hasAdditionalSelfEmployedIncome', this.formData.applicant1.hasAdditionalSelfEmployedIncome);
+                }
+                
+                // Append applicant2 documents (if joint)
+                if (this.formData.applicant_type === 'Joint applicant') {
+                    const app2Docs = this.formData.applicant2.documents;
+                    Object.keys(app2Docs).forEach(key => {
+                        if (app2Docs[key]) {
+                            formData.append(`applicant2_${key}`, app2Docs[key]);
+                        }
+                    });
+                    
+                    // Add applicant2's hasAdditionalSelfEmployedIncome
+                    if (this.formData.applicant2.hasAdditionalSelfEmployedIncome) {
+                        formData.append('applicant2_hasAdditionalSelfEmployedIncome', this.formData.applicant2.hasAdditionalSelfEmployedIncome);
+                    }
+                }
+                
+                console.log('Submitting to Flask with documents...');
+                
+                // Determine which URL to use (localhost for local dev, pythonanywhere for production)
+                const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname === 'united-mortgages.local';
+                const apiUrl = isLocalhost 
+                    ? 'http://localhost:5000/api/submit-aip'
+                    : 'https://unitedmortgages.eu.pythonanywhere.com/api/submit-aip';
+                
+                // Submit to Flask backend with FormData (no Content-Type header - browser sets it with boundary)
+                const response = await fetch(apiUrl, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(hubspotData)
+                    body: formData
+                    // NOTE: Don't set Content-Type header - browser will set it automatically with multipart boundary
                 });
                 
                 const result = await response.json();
@@ -376,7 +519,7 @@ const app = createApp({
                     console.log('Success! Contacts:', result.contacts_created);
                     this.clearDraft();
                     this.validationErrors = []; // Clear errors on success
-                    this.currentStep = 4;
+                    this.currentStep = 4; // Move to success step
                 } else {
                     // Show user-friendly error message
                     let errorMessage = result.error || 'We couldn\'t process your submission. Please contact our team directly.';
@@ -384,10 +527,10 @@ const app = createApp({
                     // Handle specific error types
                     if (errorMessage.includes('email')) {
                         errorMessage = 'There was an issue with the email address provided. Please check and try again.';
-                    } else if (errorMessage.includes('duplicate')) {
-                        errorMessage = 'It looks like you\'ve already submitted an application. Our team will be in touch soon.';
-                    } else if (errorMessage.includes('timeout') || errorMessage.includes('network')) {
-                        errorMessage = 'Connection timeout. Please check your internet and try again.';
+                    } else if (errorMessage.includes('HubSpot') || errorMessage.includes('API')) {
+                        errorMessage = 'We\'re experiencing technical difficulties. Please try again in a few minutes.';
+                    } else if (errorMessage.includes('network') || errorMessage.includes('connection')) {
+                        errorMessage = 'Please check your internet and try again.';
                     }
                     
                     alert(errorMessage + '\n\nIf the problem persists, please contact us at:\n📞 0208 446 4488\n✉️ hello@united-mortgages.com');

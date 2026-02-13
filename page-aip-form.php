@@ -99,22 +99,32 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
+
+
             
-<!-- STEP 2: Applicant Details + Financial Details (COMBINED) -->
+            
+<!-- STEP 2: Financial Details -->
 <div v-if="currentStep === 2" class="step-content">
-    <!-- Applicant 1 Personal Details -->
+    <!-- Existing Applicant 1 Details -->
     <applicant-details 
         :applicant="formData.applicant1"
         applicant-number="1"
         @update="updateApplicant1">
     </applicant-details>
     
-    <!-- Applicant 1 Financial Details -->
+    <!-- Existing Applicant 1 Financial Details -->
     <financial-details 
         :applicant="formData.applicant1"
         applicant-number="1"
         @update="updateApplicant1">
     </financial-details>
+    
+    <!-- NEW: Applicant 1 Document Uploads -->
+    <document-uploads
+        :applicant="formData.applicant1"
+        :applicant-number="1"
+        @update="updateApplicant1Documents">
+    </document-uploads> 
     
     <!-- Applicant 2 (if joint) -->
     <template v-if="formData.applicant_type === 'Joint applicant'">
@@ -129,6 +139,14 @@ get_header(); ?>
             applicant-number="2"
             @update="updateApplicant2">
         </financial-details>
+        
+        <!-- NEW: Applicant 2 Document Uploads -->
+        <document-uploads
+            :applicant="formData.applicant2"
+            :applicant-number="2"
+            @update="updateApplicant2Documents">
+        </document-uploads>
+
     </template>
 </div>
 
