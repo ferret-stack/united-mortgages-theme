@@ -10938,7 +10938,7 @@ input#borrow-deposit::placeholder {
 .progress-step.active .step-number {
     background: var(--um-gold);
     border-color: var(--um-gold);
-    color: white;
+    color: yellow;
 }
 
 .progress-step.completed .step-number {
@@ -12600,3 +12600,226 @@ input#borrow-deposit::placeholder {
     }
 }
 
+/* ============================================================================
+   DOCUMENT UPLOAD STYLES
+   ============================================================================ */
+
+.document-upload-section {
+    padding: 20px 0;
+}
+
+.document-category {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.document-category:last-child {
+    border-bottom: none;
+}
+
+.category-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.required-badge {
+    display: inline-block;
+    background: #109dff;
+    color: white;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.document-upload-field {
+    margin-bottom: 30px;
+}
+
+.document-upload-field label {
+    display: block;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.document-upload-field .helper-text {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+/* File Upload Wrapper */
+.file-upload-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.file-upload-wrapper input[type="file"] {
+    display: none; /* Hide the default file input */
+}
+
+.file-upload-label {
+    flex: 1;
+    padding: 12px 20px;
+    background: #f5f5f5;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    color: #666;
+    text-align: center;
+}
+
+.file-upload-label:hover {
+    background: #e8f4ff;
+    border-color: #109dff;
+    color: #109dff;
+}
+
+.file-uploaded {
+    color: #28a745;
+    font-weight: 500;
+}
+
+.month-label {
+    display: inline-block;
+    min-width: 150px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.remove-file-btn {
+    padding: 10px 20px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.remove-file-btn:hover {
+    background: #c82333;
+}
+
+/* Radio Group for Additional Income Question */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.radio-option:hover {
+    background: #e8f4ff;
+    border-color: #109dff;
+}
+
+.radio-option input[type="radio"] {
+    margin-right: 12px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.radio-option input[type="radio"]:checked + span {
+    font-weight: 600;
+    color: #109dff;
+}
+
+.radio-option span {
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+/* Warning and Success Boxes */
+.warning-box {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.warning-box p {
+    margin: 0;
+    color: #856404;
+    line-height: 1.6;
+}
+
+.warning-box strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.success-box {
+    background: #d4edda;
+    border-left: 4px solid #28a745;
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.success-box p {
+    margin: 0;
+    color: #155724;
+    line-height: 1.6;
+}
+
+.success-box strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .file-upload-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .month-label {
+        min-width: auto;
+        margin-bottom: 5px;
+    }
+    
+    .remove-file-btn {
+        width: 100%;
+    }
+    
+    .category-title {
+        font-size: 1.1rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
