@@ -581,7 +581,9 @@ const app = createApp({
             try {
                 const draft = {
                     timestamp: new Date().toISOString(),
-                    data: this.formData,
+                    data: JSON.parse(JSON.stringify(this.formData, (key, value) => {
+                        return value instanceof File ? null : value;
+                    })),
                     currentStep: this.currentStep
                 };
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
