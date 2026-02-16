@@ -35,9 +35,11 @@ get_header(); ?>
                     </div>
                 </div>
 
-                <h1 class="hero-title">Get Your Mortgage Approved in London &amp; the Home Counties</h1>
+                <h1 class="hero-title">Expert Mortgage Advice Available Nationaide <strong>365 Days a Year</strong></h1>
                 <p class="hero-subtitle">
-                    Independent mortgage experts working with 100+ lenders and <strong>available 365 days a year.</strong><br>No jargon. No paperwork theatre. No pretending it's still 1997.<br>Just a straightforward path to <strong>unlocking your next home</strong>
+                    Specialists in first-time buyers, movers, and remortgaging with access to 100+ lenders.<br>
+                    Trusted by homebuyers from London to Manchester and everywhere in between.<br>
+                    <strong>No jargon. No fax machines. No taking a day off work to sign forms... Because it's not 1997 anymore.</strong>
                 </p>
             </div>
             <div class="button-group">
