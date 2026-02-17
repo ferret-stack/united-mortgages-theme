@@ -332,4 +332,17 @@ function um_get_post_views( $post_id ) {
     return $count . ' Views';
 }
 
+function um_aip_overview_og_tags() {
+    if ( is_page_template( 'page-aip-overview.php' ) ) {
+        ?>
+        <meta property="og:title" content="Get Your Agreement in Principle | United Mortgages" />
+        <meta property="og:description" content="Know how much you can borrow before you fall in love with a property. Takes less than 10 minutes. No impact on your credit score." />
+        <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets/aip-thumb.png" />
+        <meta property="og:url" content="<?php echo get_permalink(); ?>" />
+        <meta property="og:type" content="website" />
+        <?php
+    }
+}
+add_action( 'wp_head', 'um_aip_overview_og_tags' );
+
 ?>
