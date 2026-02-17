@@ -674,7 +674,7 @@ const FinancialDetails = {
                     <select v-model="applicant.deposit_source" @change="update">
                         <option value="">Select...</option>
                         <option value="personal-savings">Personal Savings</option>
-                        <option value="gifted-family">Gifted Deposit – Family</option>
+                        <option value="gifted-deposit">Gifted Deposit – Family</option>
                         <option value="gifted-non-family">Gifted Deposit – Non-Family</option>
                         <option value="inheritance">Inheritance</option>
                         <option value="property-sale">Sale of Existing Property</option>
