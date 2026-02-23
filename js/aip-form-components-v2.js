@@ -575,12 +575,6 @@ const FinancialDetails = {
                             </div>
                             
                             <div class="form-field">
-                                <label>When does this end?</label>
-                                <input type="date" v-model="loan.end_date" @input="update" />
-                                <span class="helper-text">Leave blank if ongoing (e.g. credit card)</span>
-                            </div>
-                            
-                            <div class="form-field">
                                 <label class="checkbox-label">
                                     <input type="checkbox" v-model="loan.will_be_settled" @change="update" />
                                     This loan will be settled before mortgage application
@@ -702,9 +696,18 @@ const FinancialDetails = {
                         </label>
                     </div>
                     <span class="helper-text">CCJs, defaults, bankruptcy, missed payments, etc.</span>
+                    
+                    <!-- Conditional credit details input -->
+                    <div v-if="applicant.credit_history_issues === 'yes'" class="form-group" style="margin-top: 1rem;">
+                        <input 
+                            type="text" 
+                            v-model="applicant.credit_history_info" 
+                            @input="update"
+                            placeholder="Please provide details of your credit history issues"
+                            class="form-control"
+                        />
+                    </div>
                 </div>
-            </div>
-        </div>
     `,
     computed: {
         isEmployed() {

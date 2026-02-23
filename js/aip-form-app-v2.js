@@ -69,6 +69,7 @@ function createEmptyApplicant() {
         deposit_amount: '',
         deposit_source: '',
         credit_history_issues: '',
+        credit_history_info: '',
         documents: {
             proof_of_identity: null,
             proof_of_address: null,
@@ -352,7 +353,11 @@ const app = createApp({
             if (!applicant.has_credit_cards) addError('has_credit_cards', 'Please indicate if you have credit cards');
             if (applicant.deposit_amount === '') addError('deposit_amount', 'Please enter deposit amount (0 if none)');
             if (!applicant.credit_history_issues) addError('credit_history_issues', 'Please indicate if you have credit history issues');
-            
+            // Credit history details validation - CONDITIONAL
+            if (applicant.credit_history_issues === 'yes' && !applicant.credit_history_info) {
+                addError('credit_history_info', 'Please provide details of your credit history issues');
+            }
+
             // Loans validation - CONDITIONAL
             if (applicant.has_outstanding_loans === 'yes') {
                 if (applicant.loans.length === 0) {
