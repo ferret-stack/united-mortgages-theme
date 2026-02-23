@@ -39,6 +39,7 @@
               <li><a href="our-story#tegridy">Integrity and Ethics</a></li>
               <li><a href="/fee-structure">Our fees</a></li>
               <li><a href="/privacy-policy">Privacy Policy</a></li>
+              <li><a href="mailto:investors@united-mortgages.com">Investors</a></li>
             </ul>
           </div>
         </div>
