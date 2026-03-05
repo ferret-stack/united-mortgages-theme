@@ -39,6 +39,7 @@ function createEmptyApplicant() {
         annual_overtime: '',
         annual_commission: '',
         other_annual_income: '',
+        employment_start_date: '',
         // Contract fields
         contract_day_rate: '',
         contract_days_per_month: '',
@@ -317,6 +318,7 @@ const app = createApp({
                 if (!applicant.employer_address_city) addError('employer_address_city', 'Employer town is required');
                 if (!applicant.employer_postcode) addError('employer_postcode', 'Employer postcode is required');
                 if (!applicant.total_annual_salary) addError('total_annual_salary', 'Annual salary is required');
+                if (!applicant.employment_start_date) addError('employment_start_date', 'Employment start date is required');
             }
             
             // Contract validation
@@ -324,6 +326,7 @@ const app = createApp({
                 if (!applicant.occupation_job_title) addError('occupation_job_title', 'Job title is required');
                 if (!applicant.contract_day_rate) addError('contract_day_rate', 'Day rate is required');
                 if (!applicant.contract_days_per_month) addError('contract_days_per_month', 'Days per month is required');
+                if (!applicant.employment_start_date) addError('employment_start_date', 'employment start date is required');
             }
             
             // Self-employed validation

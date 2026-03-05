@@ -356,6 +356,12 @@ const FinancialDetails = {
                         <label>Employer Postcode *</label>
                         <input type="text" v-model="applicant.employer_postcode" placeholder="SW1A 1AA" @input="update" style="text-transform: uppercase" />
                     </div>
+
+                    <div class="form-field">
+                        <label>Employment Start Date *</label>
+                        <input type="date" v-model="applicant.employment_start_date" @input="update" :max="today" />
+                        <span class="helper-text">When did you start your current job?</span>
+                    </div>
                     
                     <div class="form-field">
                         <label>Basic Annual Salary (£) *</label>
@@ -404,6 +410,12 @@ const FinancialDetails = {
                             <label>Average Days per Month *</label>
                             <input type="number" v-model="applicant.contract_days_per_month" min="0" max="31" placeholder="20" @input="update" />
                         </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Employment Start Date *</label>
+                        <input type="date" v-model="applicant.employment_start_date" @input="update" :max="today" />
+                        <span class="helper-text">When did you start your current job?</span>
                     </div>
                     
                     <div class="form-field">
@@ -727,6 +739,9 @@ const FinancialDetails = {
         },
         isHighNetWorth() {
             return this.applicant.employment_type === 'high-net-worth';
+        },
+        today() {
+            return new Date().toISOString().split('T')[0];
         }
     },
     methods: {
