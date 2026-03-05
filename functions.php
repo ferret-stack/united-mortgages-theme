@@ -348,4 +348,18 @@ function um_aip_overview_og_tags() {
 }
 add_action( 'wp_head', 'um_aip_overview_og_tags' );
 
+
+function united_enqueue_aip_exit_popup() {
+    if ( is_page( 'aip-form' ) ) {
+        wp_enqueue_script(
+            'aip-exit-popup',
+            get_template_directory_uri() . '/js/aip-exit-popup.js',
+            array(),    // No dependencies — runs independently of Vue
+            '1.0.0',
+            true        // Load in footer
+        );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'united_enqueue_aip_exit_popup' );
+
 ?>
