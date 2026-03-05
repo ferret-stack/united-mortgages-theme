@@ -74,7 +74,10 @@
               <a href="#" class="btn-secondary">Join our community</a> -->
             </div>
             <div class="spacer"></div>
-            <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="01c157dd-bfdc-45dd-8a2f-7fa9308f10c8" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+            <a href="https://www.credly.com/badges/01c157dd-bfdc-45dd-8a2f-7fa9308f10c8/embedded">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/libf.png"
+                class="libf">
+              </a>
           </div>
         </div>
         
