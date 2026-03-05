@@ -12823,3 +12823,139 @@ input#borrow-deposit::placeholder {
         align-items: flex-start;
     }
 }
+
+/* ═══════════════════════════════════════════════════════
+   AIP Exit-Intent Popup
+   Appended to style.css
+   Extends existing .popup-overlay / .popup-content patterns
+   ═══════════════════════════════════════════════════════ */
+
+/* Slightly narrower card than the construction popup */
+.exit-popup-content {
+    max-width: 460px;
+}
+
+/* Email input */
+.exit-popup-field {
+    margin-bottom: 16px;
+}
+
+.exit-popup-field label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.exit-popup-field input[type="email"] {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #1a1a1a;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+}
+
+.exit-popup-field input[type="email"]:focus {
+    border-color: var(--dannyboy-blue);
+    box-shadow: 0 0 0 3px rgba(16, 157, 255, 0.15);
+}
+
+.exit-popup-field-error {
+    display: block;
+    font-size: 0.8rem;
+    color: #dc2626;
+    margin-top: 4px;
+    min-height: 1.2em;
+}
+
+/* Consent checkbox row */
+.exit-popup-consent {
+    margin-bottom: 14px;
+}
+
+.exit-popup-checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 1.4;
+}
+
+.exit-popup-checkbox-label input[type="checkbox"] {
+    flex-shrink: 0;
+    margin-top: 3px;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--dannyboy-blue);
+    cursor: pointer;
+}
+
+/* Privacy micro-copy */
+.exit-popup-privacy-note {
+    font-size: 0.75rem !important;
+    color: #6b7280 !important;
+    line-height: 1.5 !important;
+    margin-bottom: 0 !important;
+}
+
+.exit-popup-privacy-note a {
+    color: var(--dannyboy-blue);
+    text-decoration: underline;
+}
+
+/* Footer layout: primary CTA + dismiss link */
+.exit-popup-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.exit-popup-dismiss {
+    background: none;
+    border: none;
+    font-size: 0.8rem;
+    color: #9ca3af;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.exit-popup-dismiss:hover {
+    color: #6b7280;
+}
+
+/* Success state */
+.exit-popup-success {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #f0fdf4;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.exit-popup-success p {
+    margin: 0 !important;
+    color: #166534 !important;
+    font-weight: 600;
+}
+
+/* Mobile overrides */
+@media (max-width: 600px) {
+    .exit-popup-content {
+        width: 95%;
+    }
+}
+
+.libf{
+    height:100px;
+}
