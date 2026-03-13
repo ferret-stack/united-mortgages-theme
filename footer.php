@@ -112,7 +112,7 @@
       <div class="footer-legal">
         <p>Your home may be repossessed if you do not keep up repayments on your mortgage. Terms and conditions apply.</p>
         <p>The guidance and/or advice contained within this website is subject to the UK regulatory regime and is therefore targeted at consumers based in the UK. For more please read our guidelines below. Your home may be repossessed if you do not keep up repayments on your mortgage. You voluntarily choose to provide personal details to us via this website. Personal information will be treated as confidential by us and held in accordance with the Data Protection Act 2018. You agree that such personal information may be used to provide you with details of services and products in writing, by email or by telephone.</p>
-        <p>United Mortgages&reg; is a trademark and trading name of United Mortgages Limited, registered in England and Wales at 167-169 Great Portland Street, London, W1W 7LT. Company Number 16154790. United Mortgages&reg; are an introducer to Mainly Mortgages Ltd T/A GooCho Mortgage, Authorised And Regulated By The Financial Conduct Authority Under Number 923399 In Respect Of Mortgages, Insurances And Consumer Credit Mediation Activities Only.</p>
+        <p>United Mortgages&reg; is a trademark and trading name of United Mortgages Limited, registered in England and Wales at 167-169 Great Portland Street, London, W1W 7PF. Company Number 16154790. United Mortgages Limited is an appointed representative of Homekey Mortgage Solutions Ltd, which is authorised and regulated by the Financial Conduct Authority under FRN 967597.</p>
       </div>
     </div>
   </footer>

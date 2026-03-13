@@ -35,7 +35,7 @@ get_header(); ?>
                     </div>
                 </div>
 
-                <h1 class="hero-title">Expert Mortgage Advice Available Nationaide <strong>365 Days a Year</strong></h1>
+                <h1 class="hero-title">Expert Mortgage Advice Available Nationwide <strong>365 Days a Year</strong></h1>
                 <p class="hero-subtitle">
                     Specialists in first-time buyers, movers, and remortgaging with access to 100+ lenders.<br>
                     Trusted by homebuyers from London to Manchester and everywhere in between.<br>
