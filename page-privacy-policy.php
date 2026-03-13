@@ -44,7 +44,7 @@ get_header(); ?>
                     
                     <section id="introduction" class="policy-section">
                         <h2>Introduction</h2>
-                        <p>United Mortgages™ are an introducer of Mainly Mortgages Ltd T/A Goocho Mortgages who are authorised and regulated by the Financial Conduct Authority: FCA Register Number: 923399.</p>
+                        <p>United Mortgage Solutions LTD is an appointed representative of Homekey Mortgage Solutions Ltd, which is authorised and regulated by the Financial Conduct Authority under FRN 967597.</p>
                         <p>This privacy policy explains how we collect, use, and protect your personal information when you use our services, including our website and online application forms. We are committed to ensuring your privacy is protected and that we comply with all applicable data protection laws including the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.</p>
                         <div class="info-box">
                             <p><strong>Data Controller:</strong> Mainly Mortgages Ltd<br>
