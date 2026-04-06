@@ -397,7 +397,7 @@ const app = createApp({
             return errors;
         },
         
-        // NEW: Scroll to first error and highlight it
+        // Scroll to first error and highlight it
         scrollToFirstError() {
             if (this.validationErrors.length === 0) return;
             
@@ -460,6 +460,7 @@ const app = createApp({
                 const jsonData = {
                     applicant_type: this.formData.applicant_type,
                     applicant_situation: this.formData.applicant_situation,
+                    privacy_accepted: this.formData.privacy_accepted,
                     applicant1: this.flattenApplicantData(this.formData.applicant1),
                 };
                 
