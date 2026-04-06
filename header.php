@@ -19,9 +19,9 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/mail.svg" class="contact-icon" alt="Email">
                     hello@united-mortgages.com
                 </a>
-                <a href="tel:02034517973" class="contact-link">
+                <a href="tel:02046349315" class="contact-link">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/phone.svg" class="contact-icon" alt="Phone">
-                    0203 451 7973
+                    0204 634 9315
                 </a>
             </div>
                     <a href="https://api.whatsapp.com/send?phone=447451201210&text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20mortgage" 
