@@ -57,7 +57,7 @@ get_header(); ?>
                 <div class="data-card" style="text-align:left;">
                     <h4>Boosting Your Multiples</h4>
                     <p style="color:#666; line-height:1.7; margin-top:0.75rem;">
-                        Because your career path is secure, we work with lenders who see your potential. We can often secure 5&times; to 5.5&times; - and sometimes 6&times; - income multiples for clinical staff, helping you jump from a flat to a family home.
+                        Depending on lender criteria and your individual circumstances, we can access income multiples of 5&times; to 5.5&times; - and in some cases 6&times; - for clinical staff
                     </p>
                 </div>
 
@@ -70,7 +70,7 @@ get_header(); ?>
     <section class="features-section" style="background: #f8f9fa;">
         <div class="container">
             <h2 class="section-title" style="text-align:center; font-size:1.8rem; font-weight:300; margin-bottom:2.5rem;">
-                You spend all day making sure people get home safely.<br>Here's how United Mortgages&reg; helps get <span style="font-weight:700;">your home</span>
+                You work the hours no one else will. <span style="font-weight: 700;">So do we.</span>
             </h2>
             <div style="overflow-x:auto;">
                 <table style="width:100%; border-collapse:collapse; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
@@ -90,7 +90,7 @@ get_header(); ?>
                         <tr style="border-bottom:1px solid #eee; background:#fafafa;">
                             <td style="padding:1rem 1.5rem; font-weight:600; color:#1a1a1a;">Overtime &amp; Bank Shifts</td>
                             <td style="padding:1rem 1.5rem; color:#666;">Often ignored or 50% capped</td>
-                            <td style="padding:1rem 1.5rem; color:#1a1a1a; font-weight:500;">100% considered where regular</td>
+                            <td style="padding:1rem 1.5rem; color:#1a1a1a; font-weight:500;">100% considered (subject to evidencing regularity)</td>
                         </tr>
                         <tr style="border-bottom:1px solid #eee;">
                             <td style="padding:1rem 1.5rem; font-weight:600; color:#1a1a1a;">NHS Pension</td>
@@ -121,7 +121,7 @@ get_header(); ?>
             </p>
             <div class="button-group" style="margin-top:0; justify-content:center;">
                 <a href="/aip-form" class="btn-callback btn-primary">Start Your AIP</a>
-                <a href="/contact" class="btn-callback btn-transparent">Speak to an Adviser</a>
+                <a href="#contact-form" class="btn-callback btn-transparent">Speak to an Adviser</a>
             </div>
         </div>
     </section>
