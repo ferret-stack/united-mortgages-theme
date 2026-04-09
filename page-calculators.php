@@ -81,10 +81,15 @@ get_header(); ?>
                                     <input type="number" id="repayment-rate" name="interestRate" required min="0" max="100" step="0.01">
                                 </div>
                                 <div class="form-group">
-                                    <label for="repayment-term">Loan Term (years)
+                                    <label for="repayment-term-yrs">Loan Term (years)
                                     <span class="info-tooltip" data-tooltip="Maximum term is 40 years. Longer terms reduce monthly payments but increase total interest paid; shorter terms lead to interest savings">ⓘ</span>
                                     </label>
-                                    <input type="number" id="repayment-term" name="loanTerm" required min="1" max="40" step="1">
+                                    <input type="number" id="repayment-term-yrs" name="loanTerm-yrs" required min="1" max="40" step="1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="repayment-term-mths">Loan Term (months)
+                                    <input type="number" id="repayment-term-mths" name="loanTerm-mths" required min="0" max="11" step="1">
                                 </div>
                                 <button type="submit" class="btn-calculate">CALCULATE</button>
                                 
@@ -376,16 +381,18 @@ document.addEventListener('DOMContentLoaded', function() {
     function calculateRepayment() {
         const loanAmount = parseNumberInput(document.getElementById('repayment-loan'));
         const annualRate = parseFloat(document.getElementById('repayment-rate').value) || 0;
-        const loanTermYears = parseFloat(document.getElementById('repayment-term').value) || 0;
-        
+        const loanTermYears = parseFloat(document.getElementById('repayment-term-yrs').value) || 0;
+        const loanTermMths = parseFloat(document.getElementById('repayment-term-mths').value) || 0;
+        const loanTerm = loanTermYears + (loanTermMths / 12);
+
         // Store for use in overpayment calculator
         window.lastRepaymentLoan = loanAmount;
         window.lastRepaymentRate = annualRate;
-        window.lastRepaymentTerm = loanTermYears;
+        window.lastRepaymentTerm = loanTerm;
         
         // Convert to monthly values
         const monthlyRate = annualRate / 100 / 12;
-        const numberOfPayments = loanTermYears * 12;
+        const numberOfPayments = loanTerm * 12;
         
         // Calculate monthly payment using PMT formula
         let monthlyPayment;
