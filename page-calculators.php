@@ -119,8 +119,12 @@ get_header(); ?>
                                     <input type="number" id="overpayment-rate" name="interestRate" required min="0" max="100" step="0.01">
                                 </div>
                                 <div class="form-group">
-                                    <label for="overpayment-term">Loan Term (years)</label>
-                                    <input type="number" id="overpayment-term" name="loanTerm" required min="1" max="40" step="1">
+                                    <label for="overpayment-term-yrs">Loan Term (years)</label>
+                                    <input type="number" id="overpayment-term-yrs" name="loanTermYears" required min="1" max="40" step="1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="overpayment-term-mths">Loan Term (months)</label>
+                                    <input type="number" id="overpayment-term-mths" name="loanTermMths" required min="0" max="11" step="1">
                                 </div>
                                 <div class="form-group">
                                     <label for="overpayment-amount">Monthly Overpayment Amount (£)</label>
@@ -388,7 +392,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Store for use in overpayment calculator
         window.lastRepaymentLoan = loanAmount;
         window.lastRepaymentRate = annualRate;
-        window.lastRepaymentTerm = loanTerm;
+        window.lastRepaymentTermYrs = loanTermYears;
+        window.lastRepaymentTermMths = loanTermMths;
         
         // Convert to monthly values
         const monthlyRate = annualRate / 100 / 12;
@@ -430,12 +435,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function calculateOverpayment() {
         const loanAmount = parseNumberInput(document.getElementById('overpayment-loan'));
         const annualRate = parseFloat(document.getElementById('overpayment-rate').value) || 0;
-        const loanTermYears = parseFloat(document.getElementById('overpayment-term').value) || 0;
+        const loanTermYears = parseFloat(document.getElementById('overpayment-term-yrs').value) || 0;
+        const loanTermMths = parseFloat(document.getElementById('overpayment-term-mths').value) || 0;
+        const loanTerm = loanTermYears + (loanTermMths / 12);
         const monthlyOverpayment = parseNumberInput(document.getElementById('overpayment-amount'));
-        
+
         // Convert to monthly values
         const monthlyRate = annualRate / 100 / 12;
-        const numberOfPayments = loanTermYears * 12;
+        const numberOfPayments = loanTerm * 12;
         
         // Calculate standard monthly payment
         let standardMonthlyPayment;
@@ -477,7 +484,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Calculate savings
         const interestSaved = interestWithoutOverpayment - interestWithOverpayment;
-        const timeSaved = loanTermYears - newTermYears;
+        const timeSaved = loanTerm - newTermYears;
         
         displayResults({
             'Standard Monthly Payment': '£' + formatNumber(standardMonthlyPayment),
@@ -688,7 +695,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Set the loan amount
                 const loanInput = document.getElementById('overpayment-loan');
                 const rateInput = document.getElementById('overpayment-rate');
-                const termInput = document.getElementById('overpayment-term');
+                const termInputYrs = document.getElementById('overpayment-term-yrs');
+                const termInputMths = document.getElementById('overpayment-term-mths');
                 const overpaymentInput = document.getElementById('overpayment-amount');
                 
                 if (loanInput) {
@@ -697,8 +705,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (rateInput) {
                     rateInput.value = window.lastRepaymentRate;
                 }
-                if (termInput) {
-                    termInput.value = window.lastRepaymentTerm;
+                if (termInputYrs) {
+                    termInputYrs.value = window.lastRepaymentTermYrs;
+                }
+                if (termInputMths) {
+                    termInputMths.value = window.lastRepaymentTermMths;
                 }
                 // Focus on the overpayment amount field
                 if (overpaymentInput) {
