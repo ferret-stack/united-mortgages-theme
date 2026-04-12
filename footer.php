@@ -13,12 +13,9 @@
             <h3 class="footer-heading">FOR CLIENTS</h3>
             <ul class="footer-links">
               <li><a href="<?php echo home_url('/aip-overview'); ?>">Start your mortgage journey</a></li>
-              <li><a href="/our-mortgages">Our Mortgages</a></li>
-              <li><a href="/calculators#borrow">How Much Can I Borrow?</a></li>
-              <li><a href="/calculators#repayment">Repayment Calculator</a></li>
-              <li><a href="/calculators#overpayment">Overpayment Calculator</a></li>
-              <li><a href="/calculators#stamp-duty">Calculate Your Stamp Duty</a></li>
-              <li><a href="https://www.propertylikeapro.co.uk/investors">Buy-to-let Investment</a></li>
+              <li><a href="/calculators#borrow">How much can I borrow?</a></li>
+              <li><a href="https://www.checkmyfile.partners/GZBMKJ9/FGXLG/" target="_blank">Check your Credit Score</a></li>
+              <li><a href="https://www.propertylikeapro.co.uk/investors" target="_blank">Buy-to-let Investment</a></li>
             </ul>
           </div>
           
@@ -35,23 +32,21 @@
           <div class="footer-column">
             <h3 class="footer-heading">OUR COMPANY</h3>
             <ul class="footer-links">
-              <li><a href="/our-story">Our story</a></li>
-              <li><a href="our-story#tegridy">Integrity and Ethics</a></li>
-              <li><a href="/fee-structure">Our fees</a></li>
+              <li><a href="/our-story">Our Story</a></li>
+              <li><a href="/fee-structure">Our Fees</a></li>
               <li><a href="/privacy-policy">Privacy Policy</a></li>
-              <li><a href="mailto:investors@united-mortgages.com">Investors</a></li>
             </ul>
           </div>
         </div>
         
-        <!-- Newsletter Section -->
+        <!-- Socials Section -->
         <div class="footer-newsletter">
           <div class="newsletter-content">
             <div class="social-icons">
-              <a href="http://instagram.com/unitedmortgageshq" class="social-icon" aria-label="Instagram">
+              <a href="http://instagram.com/unitedmortgageshq" class="social-icon" aria-label="Instagram" target="_blank">
                 <i class="fab fa-instagram"></i>
               </a>
-              <a href="https://www.linkedin.com/company/unitedmortgages" class="social-icon" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/unitedmortgages" class="social-icon" aria-label="LinkedIn" target="_blank">
                 <i class="fab fa-linkedin-in"></i>
               </a>
               <a href="https://wa.me/447451201210" class="social-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
@@ -63,7 +58,7 @@
               <a href="https://www.tiktok.com/@unitedmortgages/" class="social-icon" aria-label="TikTok">
                 <i class="fa-brands fa-tiktok"></i>
               </a> -->
-              <a href="https://www.facebook.com/profile.php?id=61577124853697" class="social-icon" aria-label="Facebook">
+              <a href="https://www.facebook.com/profile.php?id=61577124853697" class="social-icon" aria-label="Facebook" target="_blank">
                 <i class="fab fa-facebook"></i>
               </a>
             </div>
@@ -74,7 +69,7 @@
               <a href="#" class="btn-secondary">Join our community</a> -->
             </div>
             <div class="spacer"></div>
-            <a href="https://www.credly.com/badges/01c157dd-bfdc-45dd-8a2f-7fa9308f10c8/embedded">
+            <a href="https://www.credly.com/badges/01c157dd-bfdc-45dd-8a2f-7fa9308f10c8/embedded" target="_blank">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/libf.png"
                 class="libf">
               </a>
@@ -93,7 +88,7 @@
           <a href="tel:02046349315" class="contact-item">
             <i class="fas fa-phone"></i> 0204 634 9315
           </a>
-          <a href="https://api.whatsapp.com/send?phone=447451201210" class="contact-item">
+          <a href="https://api.whatsapp.com/send?phone=447451201210" class="contact-item" target="_blank">
             <i class="fas fa-comments"></i> Chat now
           </a>
           <a href="<?php echo home_url('/aip-overview'); ?>" class="contact-item">
