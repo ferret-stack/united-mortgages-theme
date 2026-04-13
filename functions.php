@@ -334,7 +334,7 @@ function um_get_post_views( $post_id ) {
 
 function um_aip_overview_og_tags() {
     if ( is_page_template( 'page-aip-overview.php' ) ) {
-        $og_image = get_site_url() . '/wp-content/uploads/2026/02/aip-thumb.png';
+        $og_image = get_site_url() . '/wp-content/uploads/2026/04/um-fav.jpg';
         ?>
         <meta property="og:title" content="Get Your Agreement in Principle | United Mortgages®" />
         <meta property="og:description" content="Know how much you can borrow before you fall in love with a property. Takes less than 10 minutes. No impact on your credit score." />
@@ -347,6 +347,22 @@ function um_aip_overview_og_tags() {
     }
 }
 add_action( 'wp_head', 'um_aip_overview_og_tags' );
+
+function um_calculators_og_tags() {
+    if ( is_page_template( 'page-aip-calculators.php' ) ) {
+        $og_image = get_site_url() . '/wp-content/uploads/2026/04/um-fav.jpg';
+        ?>
+        <meta property="og:title" content="Calculators | United Mortgages®" />
+        <meta property="og:description" content="Our calculators can help you plan for how much you can borrow, overpayment rates, and stamp duty. No impact on your credit score." />
+        <meta property="og:image" content="<?php echo esc_url( $og_image ); ?>" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:url" content="<?php echo esc_url( get_permalink() ); ?>" />
+        <meta property="og:type" content="website" />
+        <?php
+    }
+}
+add_action( 'wp_head', 'um_calculator_overview_og_tags' );
 
 
 function united_enqueue_aip_exit_popup() {
