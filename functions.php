@@ -348,7 +348,7 @@ function um_aip_overview_og_tags() {
 }
 add_action( 'wp_head', 'um_aip_overview_og_tags' );
 
-function um_calculators_og_tags() {
+function um_calculator_og_tags() {
     if ( is_page_template( 'page-aip-calculators.php' ) ) {
         $og_image = get_site_url() . '/wp-content/uploads/2026/04/um-fav.jpg';
         ?>
@@ -362,7 +362,7 @@ function um_calculators_og_tags() {
         <?php
     }
 }
-add_action( 'wp_head', 'um_calculator_overview_og_tags' );
+add_action( 'wp_head', 'um_calculator_og_tags' );
 
 
 function united_enqueue_aip_exit_popup() {
