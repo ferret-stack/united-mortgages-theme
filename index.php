@@ -82,18 +82,22 @@ get_header(); ?>
                     $files = scandir($directory);
                                     
                     $partner_links = [
-                        '1charterwells.svg' => 'https://www.charterwells.co.uk/',
-                        'xfortress.svg' => 'https://2eys75.share-eu1.hsforms.com/2TSSmWsJnRJCGLQHLexp-mw',
-                        '4key-conveyencing.svg' => 'https://www.keyconveyancing.co.uk/',
-                        '2thomas-legal.svg' => 'https://thomaslegal.co.uk/',
-                        '5david-charles.svg' => 'https://david-charles.co.uk/',
-                        '3drifthome.svg' => 'https://drifthome.ai/',
-                        '6mn-eXp.svg' => 'https://marknewton.exp.uk.com/',
-                        '5fiberpay.svg' => 'https://fiberpay.com/',
-                        '7pb-exp.png' => 'https://paulberg.exp.uk.com/',
-                        '8novello.svg' => 'https://novellosurveyors.co.uk/',
-                        'xplap.png' => 'https://www.propertylikeapro.co.uk/',
-                        '9mortgage-direct.svg' => 'https://mortgagedirectsl.com/initial-enquiry/',
+                        '01charterwells.svg' => 'https://www.charterwells.co.uk/',
+                        '11fortress.svg' => 'https://2eys75.share-eu1.hsforms.com/2TSSmWsJnRJCGLQHLexp-mw',
+                        '04key-conveyencing.svg' => 'https://www.keyconveyancing.co.uk/',
+                        '02thomas-legal.svg' => 'https://thomaslegal.co.uk/',
+                        '05david-charles.svg' => 'https://david-charles.co.uk/',
+                        '03drifthome.svg' => 'https://drifthome.ai/',
+                        '07mn-eXp.svg' => 'https://marknewton.exp.uk.com/',
+                        '06fiberpay.svg' => 'https://fiberpay.com/',
+                        '08pb-exp.png' => 'https://paulberg.exp.uk.com/',
+                        '09novello.svg' => 'https://novellosurveyors.co.uk/',
+                        '12plap.png' => 'https://www.propertylikeapro.co.uk/',
+                        '10mortgage-direct.svg' => 'https://mortgagedirectsl.com/initial-enquiry/',
+                        '13cmf.png' => 'https://www.checkmyfile.partners/GZBMKJ9/FGXLG/',
+                        '14bc-exp.png' => 'https://benncolling.exp.uk.com/',
+                        '15uw.png' => 'http://connectors.uw.co.uk/CN-ZM82',
+                        '16prl.png' => 'https://www.perryroadlegacy.com/',
                     ];
                     
                     foreach($files as $file) {
