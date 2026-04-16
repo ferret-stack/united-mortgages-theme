@@ -155,7 +155,7 @@ get_header(); ?>
     <section class="founding-team-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="team-section-title">Our <span class="bold-text">Advisory Board</span></h2>
+                <h2 class="team-section-title">Our <span class="bold-text">Our Team</span></h2>
                 <p class="team-section-subtitle">Bringing together visionary strategists dedicated to shaping the future of home financing</p>
             </div>
             
