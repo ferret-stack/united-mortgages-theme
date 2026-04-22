@@ -2,7 +2,7 @@
 Theme Name: UnitedMortgagesTheme
 Author: Dannyboy
 Description: United Mortgages website
-Version: 3.3.2
+Version: 3.4
 */
 :root {
     --dannyboy-blue: #109dff;
@@ -8606,6 +8606,7 @@ blockquote {
 /* First Time Buyers */
 .hero-section.first-time-buyers-hero {
     background-image: url('assets/our-mortgages/first-buyer.png');
+	justify-content: flex-end
 }
 
 .hero-title.mortgage {
