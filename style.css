@@ -8629,21 +8629,25 @@ blockquote {
 /* Moving Home */
 .hero-section.moving-home-hero {
     background-image: url('assets/our-mortgages/moving-home.png');
+    justify-content: flex-end
 }
 
 /* Remortgaging */
 .hero-section.remortgaging-hero {
     background-image: url('assets/our-mortgages/remortgage-hero.png');
+    justify-content: flex-end
 }
 
 /* Self Employed */
 .hero-section.efse-hero {
     background-image: url('assets/our-mortgages/efse-hero.png');
+    justify-content: flex-end
 }
 
 /* Other Services */
 .hero-section.other-mortgages-hero {
     background-image: url('assets/our-mortgages/other-mortgages-hero.png');
+    justify-content: flex-end
 }
 
 .checklist {
@@ -8652,7 +8656,7 @@ blockquote {
 }
 
 .checklist li::before {
-    content: "âœ“";
+    content: "-";
     color: #4CAF50;
     font-weight: bold;
     display: inline-block;

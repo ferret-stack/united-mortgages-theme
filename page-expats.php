@@ -1,20 +1,20 @@
 <?php
 /**
- * Template Name: EFSE2
+ * Template Name: Expats
  * 
  * @package UnitedMortgages
  */
-/*V1.1*/
+/*V1*/
 get_header(); ?>
 
 <main id="primary" class="site-main">
-        <!-- Hero Section -->
+    <!-- Hero Section -->
     <section class="hero-section remortgaging-hero">
         <div class="hero-overlay"></div>
         <div class="nhs-hero-bottom">
             <div class="nhs-hero-text">
-                <h1>You do your thing. <span class="highlight">And we'll do ours.</span></h1>
-                <p class="nhs-hero-tagline">You know your business, and we know mortgages. We're here to help so you can focus on the important things.</p>
+                <h1>Relocating to the United Kingdom <span class="highlight">United Mortgages&reg; can help.</span></h1>
+                <p class="nhs-hero-tagline">UK property shouldn't feel out of reach</p>
             </div>
             <div class="nhs-scroll-cue">
                 <span>See how we're different</span>
@@ -22,7 +22,6 @@ get_header(); ?>
             </div>
         </div>
     </section>
-
 
    <!-- 4 Key Differentiators -->
     <section class="features-section" style="background: #fff;">
@@ -33,42 +32,42 @@ get_header(); ?>
             <div class="features-grid">
 
                 <div class="data-card" style="text-align:left;">
-                    <h4>More than just a self-employed mortgage</h4>
+                    <h4>Access to lenders for expats</h4>
                     <p style="color:#666; line-height:1.7; margin-top:0.75rem;">
-                        Whether you're a company director, freelancer, sole trader, or contractor, your income doesn't fit a standard template; your mortgage shouldn't either.
+                        We understand which lenders offer expat mortgages and their expat mortgage criteria
                     </p>
                 </div>
 
                 <div class="data-card" style="text-align:left;">
-                    <h4>365 Days. Until 8 PM.</h4>
+                    <h4>365 Days. Until 8 PM (GMT)</h4>
                     <p style="color:#666; line-height:1.7; margin-top:0.75rem;">
-                        Our business is making sure you can focus on yours. We're available 365 days a year. If you have a question at 7:30pm on a Sunday, we're here.
+                        Brokers closing before your day has even begun? We won't. We're available 365 days a year. If you have a question at 7:30 PM on a Sunday, we're here.
                     </p>
                 </div>
 
                 <div class="data-card" style="text-align:left;">
-                    <h4>The No-Day-Off Application</h4>
+                    <h4>The Time Zone Free Application</h4>
                     <p style="color:#666; line-height:1.7; margin-top:0.75rem;">
                         You've got enough on your plate. Our process is 100% digital. Upload your documents from your phone in the breakroom. Sign your papers from your sofa. No fax machines, no branch visits, no nonsense.
                     </p>
                 </div>
 
                 <div class="data-card" style="text-align:left;">
-                    <h4>Same day mortgage decision (case by case)</h4>
+                    <h4>Want a mortgage but new to the UK?</h4>
                     <p style="color:#666; line-height:1.7; margin-top:0.75rem;">
-                        Subject to conditions, we aim to secure your agreement in principle within 24 hours.
+                        Need clarification on stamp duty, property tax, or being an overseas landlord? We know the UK mortgage landscape and help you navigate your expat mortgage
                     </p>
                 </div>
 
             </div>
         </div>
-    </section> 
+    </section>
 
     <!-- Comparison Table -->
     <section class="features-section" style="background: #f8f9fa;">
         <div class="container">
             <h2 class="section-title" style="text-align:center; font-size:1.8rem; font-weight:300; margin-bottom:2.5rem;">
-                At United Mortgages&reg;,<span style="font-weight: 700;">we know what it's like to be self employed</span>
+                United Kingdom mortgages tailored for expats
             </h2>
             <div style="overflow-x:auto;">
                 <table style="width:100%; border-collapse:collapse; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
@@ -83,22 +82,22 @@ get_header(); ?>
                         <tr style="border-bottom:1px solid #eee;">
                             <td style="padding:1rem 1.5rem; font-weight:600; color:#1a1a1a;">Opening Hours</td>
                             <td style="padding:1rem 1.5rem; color:#666;">9&ndash;5 (Mon&ndash;Fri)</td>
-                            <td style="padding:1rem 1.5rem; color:#1a1a1a; font-weight:500;">Until 8 PM, 365 Days a Year</td>
+                            <td style="padding:1rem 1.5rem; color:#1a1a1a; font-weight:500;">Until 8 PM (GMT), 365 Days a Year</td>
                         </tr>
                         <tr style="border-bottom:1px solid #eee; background:#fafafa;">
-                            <td style="padding:1rem 1.5rem; font-weight:600; color:#1a1a1a;">Mortgage income assessment</td>
-                            <td style="padding:1rem 1.5rem; color:#666;">Standard salary and dividends only</td>
-                            <td style="padding:1rem 1.5rem; color:#1a1a1a; font-weight:500;">Advanced assessment including retained profits and flexible income modelling</td>
+                            <td style="padding:1rem 1.5rem; font-weight:600; color:#1a1a1a;">Deposit &amp; Affordability Requirements</td>
+                            <td style="padding:1rem 1.5rem; color:#666;">Higher thresholds with limited flexibility</td>
+                            <td style="padding:1rem 1.5rem; color:#1a1a1a; font-weight:500;">We work within lender criteria to identify competitive expat mortgage options suited to your profile</td>
                         </tr>
                         <tr style="border-bottom:1px solid #eee;">
-                            <td style="padding:1rem 1.5rem; font-weight:600; color:#1a1a1a;">1 Year's Accounts</td>
-                            <td style="padding:1rem 1.5rem; color:#666;">Often declined or referred to specialist lenders</td>
-                            <td style="padding:1rem 1.5rem; color:#1a1a1a; font-weight:500;">Deep knowledge of lender criteria for directors, sole traders, freelancers, and contractors</td>
+                            <td style="padding:1rem 1.5rem; font-weight:600; color:#1a1a1a;">Nationality &amp; Visa Status</td>
+                            <td style="padding:1rem 1.5rem; color:#666;">Generic overseas category</td>
+                            <td style="padding:1rem 1.5rem; color:#1a1a1a; font-weight:500;">Tailored guidance factoring in your visa type, residency status, and non-domiciled mortgage considerations</td>
                         </tr>
                         <tr style="background:#fafafa;">
                             <td style="padding:1rem 1.5rem; font-weight:600; color:#1a1a1a;">Application Process</td>
                             <td style="padding:1rem 1.5rem; color:#666;">Paper-heavy &amp; slow</td>
-                            <td style="padding:1rem 1.5rem; color:#1a1a1a; font-weight:500;">Mobile-first &amp; lightning fast</td>
+                            <td style="padding:1rem 1.5rem; color:#1a1a1a; font-weight:500;">100% digital - no branch visits, no time zone barriers</td>
                         </tr>
                     </tbody>
                 </table>
@@ -121,6 +120,23 @@ get_header(); ?>
             </div>
         </div>
     </section>
+
+    <!-- CTA Section -->
+    <section class="features-section" style="background:#1a1a1a; padding:5rem 0;">
+        <div class="container">
+            <h2 style="color:#fff; font-size:2rem; font-weight:300; text-align:center; margin-bottom:1rem;">
+                Ready to take <strong>the first step?</strong>
+            </h2>
+            <p style="color:rgba(255,255,255,0.7); text-align:center; font-size:1.1rem; margin-bottom:2.5rem; font-weight:300;">
+                Start your Agreement in Principle in under 10 minutes
+            </p>
+            <div class="button-group" style="margin-top:0; justify-content:center;">
+                <a href="/aip-form" class="btn-callback btn-primary">Start Your AIP</a>
+                <a href="#contact-form" class="btn-callback btn-transparent">Speak to an Adviser</a>
+            </div>
+        </div>
+    </section>
+
 <?php get_template_part('template-parts/team-contact'); ?>
 
 <?php

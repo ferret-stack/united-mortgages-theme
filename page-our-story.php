@@ -130,11 +130,9 @@ get_header(); ?>
                     <div class="service-icon">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-mortgages/handshake.svg" alt="Professionals & High Earners">
                     </div>
-                    <h3>PROFESSIONALS &amp; HIGH EARNERS</h3>
-                    <p>City professionals, consultants, and senior executives deserve mortgage advice 
-                    that respects their time. We work with lenders who understand complex income 
-                    structures, bonuses, and international assignments <strong>and we move fast.</strong></p>
-                    <a href="<?php echo home_url('/high-earners'); ?>" class="btn-service">I'M A HIGH EARNER</a>
+                    <h3>EXPATS</h3>
+                    <p>We understand which lenders offer expat mortgages and their expat mortgage criteria</p>
+                    <a href="<?php echo home_url('/high-earners'); ?>" class="btn-service">I'M AN EXPAT</a>
                 </div>
 
                     <div class="mortgage-service-card">
@@ -155,7 +153,7 @@ get_header(); ?>
     <section class="founding-team-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="team-section-title">Our <span class="bold-text">Our Team</span></h2>
+                <h2 class="team-section-title">Our <span class="bold-text">Team</span></h2>
                 <p class="team-section-subtitle">Bringing together visionary strategists dedicated to shaping the future of home financing</p>
             </div>
             
@@ -168,11 +166,11 @@ get_header(); ?>
                     </div>
                     <div class="founder-info">
                         <h3 class="founder-name">MUKI LIU <a href="https://www.linkedin.com/in/muki-liu-844444193" target="_blank" class="linkedin-link">in</a></h3>
-                        <p class="founder-title">Associate Vice President, Communications</p>
+                        <p class="founder-title">Technical Advisor</p>
                         <div class="founder-bio">
                             <p>A visionary and empathetic communicator, Muki built her career in communications across the green energy sector, working with Evident, Drax Group, and National Grid.</p>
                             <p>Educated at Beijing International Studies University and the University of Edinburgh, Muki embraces diverse voices and believes in the power of listening: communication comes after understanding what is truly desired.</p>
-                            <p>As Communications Advisor at United Mortgages&reg;, she creatively leads the firm's marketing and communications strategy, bringing her collaborative mindset and sector expertise to shape accessible, purpose-driven financial narratives.</p>
+                            <p>As Technical Advisor at United Mortgages&reg;, she creatively leads the firm's marketing and communications strategy.</p>
                         </div>
                     </div>
                 </div>
