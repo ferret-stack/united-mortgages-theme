@@ -378,4 +378,15 @@ function united_enqueue_aip_exit_popup() {
 }
 add_action( 'wp_enqueue_scripts', 'united_enqueue_aip_exit_popup' );
 
+function um_enqueue_faq_accordion() {
+    wp_enqueue_script(
+        'faq-accordion',
+        get_template_directory_uri() . '/js/faq-accordion.js',
+        array(),
+        '1.0.0',
+        true
+    );
+}
+add_action( 'wp_enqueue_scripts', 'um_enqueue_faq_accordion' );
+
 ?>

@@ -121,6 +121,135 @@ get_header(); ?>
             </div>
         </div>
     </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+    <div class="container">
+        <h2 class="faq-section-title">Self Employed <span>FAQs</span></h2>
+        <p class="faq-section-intro">Getting approved when your income doesn't come neatly packaged as a payslip can feel like assembling a puzzle where half the pieces look identical. That's why tailored self employed mortgage advice matters. Whether you're a freelancer, contractor, or business owner, working with a self employed mortgage advisor or contractor mortgage broker can significantly improve your chances of approval. Understanding self-employed mortgage criteria in the UK, knowing which are the best UK mortgage lenders for self employed, and preparing the right documents upfront can make the difference between approval and frustration.</p>
+        <div class="faq-list">
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            How to get a self employed mortgage?
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>To secure a self employed mortgage in the UK, you need to meet lender-specific criteria and present your income clearly.</p>
+            <p>Key requirements:</p>
+            <ul>
+                <li>Meeting self-employed mortgage criteria in the UK</li>
+                <li>Passing mortgage eligibility for self employed checks</li>
+                <li>Providing income evidence such as self assessment tax return</li>
+                <li>Demonstrating affordability using a mortgage affordability calculator</li>
+            </ul>
+            <p>Lenders will assess how much you can borrow based on income consistency and structure. Tools like a self employed mortgage affordability calculator or contractor mortgage calculator can provide early estimates. The best mortgage lenders for self-employed in the UK will vary depending on your structure, whether sole trader or company. Options also exist for mortgages for contractors and self-employed mortgages with one year's accounts.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            How do lenders assess self employed income in the UK?
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>Lenders assess income differently depending on structure. Business structure matters:</p>
+            <ul>
+                <li>Limited company mortgage</li>
+                <li>Sole trader mortgage</li>
+                <li>Contractor mortgages</li>
+            </ul>
+            <p>Income assessment includes:</p>
+            <ul>
+                <li>Salary and dividends</li>
+                <li>Net profit (for sole traders)</li>
+                <li>Retained profits (some lenders)</li>
+            </ul>
+            <p>To apply, you'll need to understand how to prove self employed income for mortgage and what documents self employed need for mortgage. This typically includes tax calculations, accounts, and bank statements. Lenders may also assess comparisons between one year versus two years of self employed accounts. Eligibility can vary from mortgage lenders that offer self employed mortgages. If refinancing, self employed remortgage options are available depending on equity and affordability.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            How do dividends and salary affect a mortgage UK?
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>For company directors, income is usually assessed through salary and dividends. A Limited company director mortgage will consider:</p>
+            <ul>
+                <li>Basic salary</li>
+                <li>Dividend income</li>
+                <li>Sometimes bonus or additional income streams</li>
+            </ul>
+            <p>Lenders also assess:</p>
+            <ul>
+                <li>Income multiples via income multiple calculation</li>
+                <li>Deposit requirements through mortgage deposit required</li>
+                <li>Overall affordability using a mortgage affordability calculator</li>
+            </ul>
+            <p>Some lenders offer flexibility, especially among the best UK mortgage lenders for contractors. Access to over 100+ lenders provides a wide range of lender options to choose from.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            Do retained profits count for mortgage in the UK?
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>In some cases, yes. A retained profits mortgage allows lenders to consider profits left in the business rather than just salary and dividends. However, not all lenders accept this.</p>
+            <p>Key considerations:</p>
+            <ul>
+                <li>Understand self-employed mortgage requirements UK</li>
+                <li>Understand SA302 mortgage requirements</li>
+                <li>Understand director income verification for mortgage</li>
+            </ul>
+            <p>When calculating income for limited company director mortgage, use a mortgage affordability calculator built for company directors to get a clear view of how much you can borrow. You may also encounter terms like salary and dividends mortgage, director's loan mortgage, or company profits mortgage. Some lenders have differing criteria around retained earnings. Options exist for mortgages using retained profits or director mortgages using retained earnings. This is especially relevant for buy-to-let retained profits mortgages and mortgage lenders for limited company directors.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            Can I get a mortgage with one year accounts self employed?
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>Yes, but options are more limited. Some lenders offer mortgages with one year accounts, but criteria are stricter.</p>
+            <p>You may need to:</p>
+            <ul>
+                <li>Work with a specialist mortgage lender in the UK</li>
+                <li>Use a mortgage broker for self employed</li>
+                <li>Provide strong self employed income evidence</li>
+            </ul>
+            <p>Things to consider:</p>
+            <ul>
+                <li>How much deposit needed for a self employed mortgage</li>
+                <li>Access to the best banks for self-employed mortgage</li>
+            </ul>
+            <p>If you're a first-time buyer, ensure you understand first time buyer criteria for self employed and how to access first time buyer mortgage schemes UK. Additional considerations include stamp duty, current best UK mortgage rates, and mortgage broker fees. Options also extend to buy to let mortgages for self employed, limited company mortgages, and contractor mortgages.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            What is the best mortgage for limited company directors and contractors?
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>The best mortgage for limited company directors depends on how your income is structured. You may need to compare director mortgage requirements, work with specialist mortgage lenders in the UK, or use a mortgage broker for self-employed or for limited company directors.</p>
+            <p>Key comparisons:</p>
+            <ul>
+                <li>Buy to let vs Residential mortgage for company directors</li>
+                <li>Self-employed mortgage and Contractor mortgage</li>
+                <li>Fixed rate vs variable rate mortgage</li>
+            </ul>
+            <p>Contractor-specific considerations:</p>
+            <ul>
+                <li>Contractor day rate mortgage calculation UK</li>
+                <li>Day rate vs salary mortgage calculation</li>
+                <li>Mortgage based on day rate contractor</li>
+                <li>How much can a UK contractor borrow</li>
+            </ul>
+            <p>You may also need to navigate IR35 contractor mortgage rules. Structures and tax considerations include limited company mortgage tax implications and mortgage for limited company director salary and dividends. Flexible options include high LTV self-employed mortgages, freelancer mortgages UK, and mortgage options for freelancers UK. Ultimately, choosing the right structure is less about chasing the lowest rate and more about aligning lending criteria with how your income actually works.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
 <?php get_template_part('template-parts/team-contact'); ?>
 
 <?php

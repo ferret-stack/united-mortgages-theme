@@ -121,6 +121,109 @@ get_header(); ?>
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq-section">
+    <div class="container">
+        <h2 class="faq-section-title">Moving Home <span>FAQs</span></h2>
+        <p class="faq-section-intro">Before you put the “For Sale” board up, it is smart to speak to a mortgage broker when moving house. Early planning reduces stress, protects your chain position, and clarifies borrowing power. United Mortgages also offers customers integrated services provided by our partners, from homebuying, accounting/financial planning, conveyancing to insurance. Professional moving home mortgage advice helps you understand affordability, porting eligibility, deposit requirements, and timing risks before you commit to a new property.</p>
+        <div class="faq-list">
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            What happens to my mortgage when I move house?
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>When moving house with a mortgage, your current loan does not automatically follow you. You usually either repay and take a new mortgage, use mortgage porting to transfer your existing rate, or blend your current deal with additional borrowing.</p>
+            <p>If you’re in a chain, timing matters. Managing a mortgage while in a chain requires coordination between lenders, solicitors and buyers. A chain break can delay completion or collapse the transaction entirely. This is why it’s wise to speak to a mortgage advisor about chain risk before listing your property.</p>
+            <p>Key timeline factors:</p>
+            <ul>
+                <li>Mortgage application time: typically 2 to 4 weeks</li>
+                <li>Property valuation time: often 1 to 2 weeks</li>
+                <li>Conveyancing timeline: commonly 8 to 12 weeks</li>
+                <li>Exchange of contracts: legally binding stage before completion</li>
+                <li>How long to complete house sale: usually 8 to 16 weeks depending on complexity</li>
+            </ul>
+            <p>Planning protects you from rate expiry, valuation delays, or affordability changes mid-transaction.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            Which moving home mortgage options should I choose?
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>There is no one-size-fits-all solution. The right structure depends on timing, equity, and affordability.</p>
+            <p>Common routes include:</p>
+            <ul>
+                <li>Porting your mortgage: If you’re wondering whether you can port your mortgage when moving house, this means transferring your existing rate to your new property. In simple terms, you keep your current product, but must still pass affordability checks and lender approval.</li>
+                <li>Taking a new mortgage deal: If your current rate is uncompetitive or porting is not viable, a new mortgage deal may be more suitable. This involves a full reassessment and potentially switching lenders.</li>
+                <li>Buying before selling mortgage options: If you need to secure your new home before your sale completes, there are options available, including bridging or let-to-buy structures.</li>
+                <li>Using savings vehicles: A lifetime ISA may have been used to build your deposit if you previously qualified as a first-time buyer. Unsure how an ISA can help with your mortgage and financial planning? Check our blog on types of ISA and which could be the right one for you.</li>
+            </ul>
+            <p>Remember that conveyancing timelines influence mortgage expiry dates and completion deadlines, so coordination matters. Choosing correctly depends on affordability, timing risk, and long-term cost.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            How much can I borrow when moving house?
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>Borrowing is reassessed based on today’s affordability rules.</p>
+            <p>Mortgage affordability when moving home considers:</p>
+            <ul>
+                <li>Current income</li>
+                <li>Debt and monthly commitments</li>
+                <li>Credit profile</li>
+                <li>Loan-to-value ratio</li>
+            </ul>
+            <p>Even if you are porting, additional borrowing must pass updated affordability calculations. Running fresh numbers before offering on a property ensures you do not stretch beyond sustainable limits. Use our moving homes mortgage calculator to understand how much you can borrow for a mortgage when moving homes.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            What is bridging finance and how is it used to buy a property?
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>Bridging finance is a short-term loan used to bridge a funding gap, typically between buying a new property and selling your current one. You may request a bridging finance quote to assess interest rates, fees, and your exit strategy before committing.</p>
+            <p>Bridging loans are often used to:</p>
+            <ul>
+                <li>Break a property chain</li>
+                <li>Purchase auction properties</li>
+                <li>Secure time-sensitive deals</li>
+                <li>Complete refurbishment before refinancing</li>
+            </ul>
+            <p>Types of bridging:</p>
+            <ul>
+                <li>FCA regulated bridging loans: Used when the property will be owner-occupied.</li>
+                <li>Unregulated loans: Often used for investment or commercial purposes.</li>
+                <li>Bridging loans for limited companies: Common for investors purchasing via a corporate structure.</li>
+                <li>Development bridging finance: Used for heavier refurbishment or development projects.</li>
+            </ul>
+            <p>Because bridging is higher cost and short term, working with a bridging loan advisor ensures there is a clear and realistic exit strategy.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            What mortgage deposit help is available in the UK?
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>Rising property prices and cost of living pressures mean many buyers need structured support.</p>
+            <p>Available mortgage deposit help options include:</p>
+            <ul>
+                <li>Savings products: Choosing the best ISA to save for a house can improve deposit growth through tax-free interest.</li>
+                <li>Government schemes: While the traditional Help to Buy equity loan scheme has ended, many buyers look into low-deposit or family-assisted mortgage products.</li>
+                <li>Single income support: If applying on your own, a single income mortgage application may require careful affordability planning, but lenders do support sole applicants.</li>
+            </ul>
+            <p>Deposit strategies may also include family gifted deposits, guarantor structures, or shared ownership. Careful planning ensures your deposit approach aligns with affordability and long-term sustainability. Need help with your deposit? Speak to United Mortgages today, or check our detailed guide on help to buy schemes.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
 <?php get_template_part('template-parts/team-contact'); ?>
 
 <?php

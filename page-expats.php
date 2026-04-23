@@ -13,8 +13,8 @@ get_header(); ?>
         <div class="hero-overlay"></div>
         <div class="nhs-hero-bottom">
             <div class="nhs-hero-text">
-                <h1>Relocating to the United Kingdom <span class="highlight">United Mortgages&reg; can help.</span></h1>
-                <p class="nhs-hero-tagline">UK property shouldn't feel out of reach</p>
+                <h1>Relocating to the United Kingdom?</span></h1>
+                <p class="nhs-hero-tagline">United Mortgages&reg; can help</p>
             </div>
             <div class="nhs-scroll-cue">
                 <span>See how we're different</span>
@@ -121,20 +121,174 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="features-section" style="background:#1a1a1a; padding:5rem 0;">
-        <div class="container">
-            <h2 style="color:#fff; font-size:2rem; font-weight:300; text-align:center; margin-bottom:1rem;">
-                Ready to take <strong>the first step?</strong>
-            </h2>
-            <p style="color:rgba(255,255,255,0.7); text-align:center; font-size:1.1rem; margin-bottom:2.5rem; font-weight:300;">
-                Start your Agreement in Principle in under 10 minutes
-            </p>
-            <div class="button-group" style="margin-top:0; justify-content:center;">
-                <a href="/aip-form" class="btn-callback btn-primary">Start Your AIP</a>
-                <a href="#contact-form" class="btn-callback btn-transparent">Speak to an Adviser</a>
+    <!-- FAQ Section -->
+    <section class="faq-section">
+    <div class="container">
+        <h2 class="faq-section-title">Expat <span>FAQs</span></h2>
+        <p class="faq-section-intro">Can foreigners buy property in the UK? Absolutely. There are no restrictions on ownership. The real gatekeeper is financing. If you're applying for an expat mortgage or UK mortgage for non residents, lenders treat you as higher risk due to distance, currency exposure, and enforceability. That's why working with an international mortgage broker in the UK is often essential to access the best expat mortgage lenders and navigate visa requirements and non-domiciled considerations. Most expat borrowers fall into one of these routes: UK mortgage for expats (UK nationals abroad), UK mortgage for other foreign nationals, or UK Expat buy-to-let mortgage. Expect slightly higher interest rates compared to residents, though competitive deals are still available with the right structure.</p>
+        <div class="faq-list">
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            Can I get a UK mortgage living abroad?
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>Yes, via a non resident mortgage application, which allows you to get a UK mortgage while living abroad.</p>
+            <p>What lenders actually look at:</p>
+            <ul>
+                <li>Income location and currency: If you earn in USD, EUR, AED etc., lenders assess volatility.</li>
+                <li>Employment type: PAYE abroad is simplest. Self-employed overseas is possible but more complex.</li>
+                <li>Deposit size: Typically 20% to 40% for overseas buyers. Lower deposits are rare.</li>
+            </ul>
+            <p>Common use cases:</p>
+            <ul>
+                <li>Get a UK mortgage while working overseas</li>
+                <li>Enter UK property investment from abroad</li>
+                <li>Buy UK property as foreigner</li>
+                <li>Buy to let mortgage for non residents</li>
+            </ul>
+            <p>Tax and cost reality:</p>
+            <ul>
+                <li>Stamp Duty Land Tax for non-UK residents includes a 2% surcharge on top of standard rates</li>
+                <li>Buy-to-let mortgage UK interest rates are usually higher than residential</li>
+                <li>Rental income is taxed under UK property investment rules for overseas buyers</li>
+            </ul>
+            <p>Most people can access types of mortgages for non-residents, but the deal quality depends heavily on structuring and lender choice.</p>
             </div>
         </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            What is the process for buying UK property from abroad?
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>The UK mortgage application process for expats is similar to UK buyers but with additional checks.</p>
+            <p>Step-by-step flow:</p>
+            <ol>
+                <li>Get a mortgage in principle</li>
+                <li>Appoint solicitor and meet the legal requirements for buying UK property as a foreigner</li>
+                <li>Submit full UK mortgage application</li>
+                <li>Property valuation and underwriting</li>
+                <li>Exchange and completion</li>
+            </ol>
+            <p>Deposits and affordability:</p>
+            <ul>
+                <li>UK mortgage deposit for expats: usually 20% to 40%</li>
+                <li>Lenders stress test income more conservatively than UK residents</li>
+                <li>Expat mortgage rates in the UK generally reflect this added risk</li>
+            </ul>
+            <p>Credit history considerations:</p>
+            <ul>
+                <li>Many lenders require UK credit history for mortgage</li>
+                <li>If not available, they may rely on international credit reports, bank statements, or employer references</li>
+                <li>If you're new to the UK, mortgage options are possible but limited and usually require a higher deposit</li>
+            </ul>
+            <p>Additional costs to consider include UK Stamp Duty for non-residents, UK property tax for non-residents, and ongoing UK tax for non residents.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            Expat mortgage vs UK resident mortgage
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>The difference between an Expat Mortgage and a UK resident mortgage comes down to risk pricing.</p>
+            <p>Key differences:</p>
+            <ul>
+                <li>Deposit: UK residents typically 5% to 15%, expats typically 20% to 40%</li>
+                <li>Rates: Lower for UK residents, higher for expats</li>
+                <li>Lenders: Wide choice for residents, limited for expats</li>
+                <li>Income checks: Simpler for residents, stricter for expats</li>
+            </ul>
+            <p>Rates and affordability:</p>
+            <ul>
+                <li>Mortgage interest rates in the UK are higher for expats</li>
+                <li>Mortgage deposit requirements in the UK increase with risk profile</li>
+            </ul>
+            <p>Product types available to expats:</p>
+            <ul>
+                <li>Buy-to-let mortgage and Residential mortgage</li>
+                <li>First-time buyer mortgage (limited for expats)</li>
+                <li>Remortgage options</li>
+            </ul>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            Which UK banks lend to expats?
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>High street lenders are selective. Most expat lending comes from:</p>
+            <ul>
+                <li>Specialist expat mortgage lenders</li>
+                <li>Some UK building societies for expats</li>
+                <li>International banks via Offshore banking</li>
+            </ul>
+            <p>Typical lender types:</p>
+            <ul>
+                <li>Global banks</li>
+                <li>Offshore lenders (Channel Islands)</li>
+                <li>Private banks for high-net-worth clients</li>
+            </ul>
+            <p>Availability depends on your residency and income. Working with an international mortgage broker in the UK unlocks lenders not available directly and improves your access to competitive deals.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            Do UK lenders accept foreign income?
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>Yes, but this is where deals are won or lost.</p>
+            <p>How UK lenders assess foreign income:</p>
+            <ul>
+                <li>Currency stability</li>
+                <li>Employer credibility</li>
+                <li>Income consistency</li>
+            </ul>
+            <p>Currency handling options:</p>
+            <ul>
+                <li>GBP mortgage (converted income)</li>
+                <li>Direct USD mortgage or euro mortgage</li>
+                <li>Some lenders offer foreign currency mortgage, but exchange rate fluctuations can increase repayments</li>
+            </ul>
+            <p>Documents typically required for mortgage on foreign income in the UK:</p>
+            <ul>
+                <li>Employment contract</li>
+                <li>Payslips or accounts</li>
+                <li>Tax returns</li>
+                <li>Bank statements</li>
+            </ul>
+            <p>Using a mortgage broker for foreign income in the UK significantly improves lender matching, especially for self-employed applicants with foreign income.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            Can I get fast approval for an expat mortgage?
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>Sometimes, but speed depends on simplicity.</p>
+            <p>Faster scenarios:</p>
+            <ul>
+                <li>PAYE income in major currency</li>
+                <li>Strong deposit (30% or more)</li>
+                <li>Clean credit profile</li>
+            </ul>
+            <p>In these cases, you may access streamlined underwriting via a specialist UK expat mortgage broker.</p>
+            <p>Slower scenarios:</p>
+            <ul>
+                <li>Self-employed overseas</li>
+                <li>Complex income structures</li>
+                <li>Foreign credit history only</li>
+            </ul>
+            <p>Product types and rates vary across UK expat mortgage lenders. Speed is not just about lender efficiency. It is about how straightforward your profile looks to underwrite.</p>
+            <p>Expat mortgages are less about eligibility and more about positioning. Two applicants with identical income can get very different outcomes depending on broker access, income presentation, currency strategy, and deposit structure. That's why working with a specialist beats going direct almost every time.</p>
+            </div>
+        </div>
+        </div>
+    </div>
     </section>
 
 <?php get_template_part('template-parts/team-contact'); ?>

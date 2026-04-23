@@ -128,11 +128,11 @@ get_header(); ?>
 
                     <div class="mortgage-service-card">
                     <div class="service-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-mortgages/handshake.svg" alt="Professionals & High Earners">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-mortgages/handshake.svg" alt="Expats">
                     </div>
                     <h3>EXPATS</h3>
-                    <p>We understand which lenders offer expat mortgages and their expat mortgage criteria</p>
-                    <a href="<?php echo home_url('/high-earners'); ?>" class="btn-service">I'M AN EXPAT</a>
+                    <p>You've put in the miles, and we'll go the distance. A mortgage in the UK shouldn't feel out of reach; we understand which lenders offer expat mortgages and their expat mortgage criteria</p>
+                    <a href="<?php echo home_url('/expats'); ?>" class="btn-service">I'M AN EXPAT</a>
                 </div>
 
                     <div class="mortgage-service-card">
