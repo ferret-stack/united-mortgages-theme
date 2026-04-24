@@ -9,7 +9,7 @@ get_header(); ?>
 
 <main id="primary" class="site-main">
 <!-- BtL Hero Section -->
-    <section class="hero-section other-mortgages-hero">
+    <section class="hero-section first-time-buyers-hero">
         <div class="hero-overlay"></div>
             <div class="nhs-hero-bottom">
                 <div class="nhs-hero-text">
@@ -121,6 +121,118 @@ get_header(); ?>
                 <a href="#contact-form" class="btn-callback btn-transparent">Speak to an Adviser</a>
             </div>
         </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+    <div class="container">
+        <h2 class="faq-section-title">Buy to Let <span>FAQs</span></h2>
+        <p class="faq-section-intro">Whether you're buying your first rental or expanding a portfolio, speaking to a buy to let advisor early can shape your entire strategy. An experienced portfolio landlord mortgage broker like United Mortgages&reg; understands lender stress testing, tax positioning, limited company structures, and portfolio exposure limits, all of which materially affect borrowing capacity. Buy to let lending is commercial in nature. The numbers must stack before keys change hands.</p>
+        <div class="faq-list">
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            How does buy to let mortgage work?
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>A buy to let mortgage is designed for properties that will be rented to tenants rather than lived in by the borrower. Unlike residential mortgages, approval is largely based on projected rental income.</p>
+            <p>Key elements:</p>
+            <ul>
+                <li>The loan is secured against the rental property</li>
+                <li>Rent must meet lender stress tests</li>
+                <li>Deposits are typically 20 to 25 percent</li>
+            </ul>
+            <p>Typical buy to let mortgage requirements include:</p>
+            <ul>
+                <li>Minimum personal income (varies by lender)</li>
+                <li>Strong credit profile</li>
+                <li>Rental income covering 125 to 145 percent of mortgage interest</li>
+                <li>Deposit of at least 20 percent</li>
+            </ul>
+            <p>Lenders follow specific buy to let mortgage rules in the UK, which differ from residential criteria. To estimate viability, many investors use a buy to let affordability calculator, which models rental stress testing rather than personal income multiples.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            What are the buy to let mortgage rules in the UK?
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>The buy to let mortgage rules in the UK are shaped by regulatory oversight and lender risk policy.</p>
+            <p>Core considerations:</p>
+            <ul>
+                <li>Rental stress testing requirements</li>
+                <li>Higher minimum deposits</li>
+                <li>Stricter underwriting for portfolio landlords</li>
+                <li>Additional documentation for limited companies</li>
+            </ul>
+            <p>Tax and cost considerations:</p>
+            <ul>
+                <li>Rental income tax in the UK applies to profits after allowable expenses</li>
+                <li>Mortgage interest relief rules differ from residential lending</li>
+                <li>Stamp Duty Land Tax for buy to let includes a surcharge for additional properties</li>
+            </ul>
+            <p>Regulatory framework:</p>
+            <ul>
+                <li>Most buy to let loans are unregulated unless classified as consumer buy to let</li>
+                <li>Landlords must consider compliance requirements such as landlord licensing, which varies by local authority</li>
+                <li>Buy to let interest rates are typically higher than residential rates due to investment risk and regulatory capital treatment</li>
+            </ul>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            I am a first time landlord, what mortgage options are available?
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>If you are new to renting property, lender choice may be narrower but options exist.</p>
+            <p>Understanding buy to let vs residential mortgage is critical. A residential mortgage cannot usually be used for long-term letting without consent.</p>
+            <p>Alternative routes depending on strategy:</p>
+            <ul>
+                <li>A standard buy to let mortgage</li>
+                <li>A bridging loan for auction purchases or refurbishment</li>
+                <li>A second residential mortgage if retaining your main residence</li>
+                <li>A bridge to let mortgage or chain break finance solution when timing between transactions is tight</li>
+            </ul>
+            <p>The right option depends on deposit size, rental yield, property condition, and exit plan.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+            How to finance property investment?
+            <span class="faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+            <p>There are multiple ways to finance property investment, and the structure depends on scale, risk appetite, and time horizon.</p>
+            <p>Traditional lending options:</p>
+            <ul>
+                <li>Buy to let mortgage for long-term rental income</li>
+                <li>Commercial mortgage for mixed-use or non-standard properties</li>
+                <li>Development finance for ground-up builds or heavy refurbishment</li>
+            </ul>
+            <p>Short term strategies:</p>
+            <ul>
+                <li>Bridging loan to secure time-sensitive deals or refurbish before refinance</li>
+            </ul>
+            <p>Portfolio growth tools:</p>
+            <ul>
+                <li>Remortgage for investment to release equity from existing properties</li>
+                <li>Joint venture property arrangements to combine capital and expertise</li>
+            </ul>
+            <p>When assessing the best mortgage for property investors, consider:</p>
+            <ul>
+                <li>Loan to value</li>
+                <li>Stress testing criteria</li>
+                <li>Exit flexibility</li>
+                <li>Tax structure</li>
+                <li>Portfolio concentration limits</li>
+            </ul>
+            <p>The right finance structure is less about the lowest rate and more about scalability and risk management.</p>
+            </div>
+        </div>
+        </div>
+    </div>
     </section>
 
 

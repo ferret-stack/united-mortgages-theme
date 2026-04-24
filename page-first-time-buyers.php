@@ -36,7 +36,7 @@ get_header(); ?>
                 <div class="data-card" style="text-align:left;">
                     <h4>The 'Help-to-Buy' Support That Goes Beyond Money</h4>
                     <p style="color:#666; line-height:1.7; margin-top:0.75rem;">
-                        Beginning the home buying process could be a life-changing experience. We are here to 'help to buy' with detailed guidance on steps to buying a first home in the UK, easy-to-use affordability calculator and 24/7 human support through your journey. From your first question to getting the keys, we aim to make your first time buyer mortgage process as simple and clear as possible.
+                        Beginning the home buying process could be a life-changing experience. We are here to 'help to buy' with detailed guidance on steps to buying a first home in the UK, easy-to-use <a href="/calculators" target="_blank">affordability calculator</a> and human support 365 days a year through your journey. From your first question to getting the keys, we aim to make your first time buyer mortgage process as simple and clear as possible.
                     </p>
                 </div>
 
@@ -129,7 +129,7 @@ get_header(); ?>
     <section class="faq-section">
         <div class="container">
             <h2 class="faq-section-title">First Time Buyer <span>FAQs</span></h2>
-            <p class="faq-section-intro">Buying your first home is exciting, but it also comes with decisions that shape your finances for years. Getting structured first time buyer mortgage advice early can prevent costly mistakes and improve your chances of approval. Many buyers choose to speak to a mortgage advisor before they even begin viewing properties. This helps clarify borrowing power, deposit requirements, and lender criteria before emotions get involved. Early advice turns uncertainty into a plan. And a plan turns a first purchase into a confident one.</p>
+            <p class="faq-section-intro">Buying your first home is exciting, but it also comes with decisions that shape your finances for years. Getting structured first time buyer mortgage advice early can prevent costly mistakes and improve your chances of approval. Many buyers choose to speak to a mortgage advisor before they begin viewing properties. This helps clarify borrowing power, deposit requirements, and lender criteria before emotions get involved. Early advice turns uncertainty into a plan. And a plan turns a first purchase into a confident one.</p>
 
             <div class="faq-list">
 
@@ -144,13 +144,14 @@ get_header(); ?>
                         <ol>
                             <li>Review your finances and check you meet first time buyer mortgage requirements</li>
                             <li>Use an affordability calculator to estimate borrowing power</li>
-                            <li>Secure an Agreement in Principle (so your budget is confirmed and you can start viewing)</li>
+                            <li>Secure an <a href="/aip-form" target="_blank">Agreement in Principle</a> (so your budget is confirmed and you can start viewing)</li>
                             <li>Start property viewings</li>
                             <li>Submit your full mortgage application</li>
                             <li>Go through the conveyancing process (the legal bit)</li>
-                            <li>Get your keys and move in</li>
+                            <li>Subject to approval - move into your new home!</li>
                         </ol>
                         <p>The steps to buying a first home in the UK are predictable and manageable when broken down properly. Understanding the first time buyer mortgage process in the UK early gives you confidence and clarity before you start viewing homes. When exploring the best mortgage options for first time buyers, your deposit size, income stability and long term plans will shape the right route for you.</p>
+                        <p>Want to learn more? Read our <a href="/2025/07/31/complete-guide-to-getting-your-first-mortgage/" target="_blank">complete guide to getting your first mortgage</a>
                     </div>
                 </div>
 
@@ -169,25 +170,26 @@ get_header(); ?>
                             <li>Shared ownership schemes</li>
                         </ul>
                         <p>When assessing the best mortgage options and rates for first time buyers, look beyond just the headline rate. Consider total cost over the fixed period, arrangement fees, flexibility, and early repayment charges.</p>
+                        <!-- Mortgage options for first time buyers blog link here -->
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        With a deposit, how much can I borrow for a mortgage?
+                        How much can I borrow for a mortgage?
                         <span class="faq-icon" aria-hidden="true"></span>
                     </button>
                     <div class="faq-answer">
                         <p>Most lenders require at least a 5% deposit for a mortgage, although saving more may unlock better rates.</p>
-                        <p>To estimate borrowing power, use our affordability calculator. Lenders assess income, committed expenditure, debt levels and credit profile.</p>
-                        <p>If you're wondering whether you can get a mortgage as a first time buyer &mdash; the answer is yes, provided you meet lending criteria and affordability standards. The credit score needed for a first time buyer mortgage varies by lender. There is no universal number, but stronger credit typically improves lender choice and pricing. There is also structured help for first time buyers, including shared ownership and family assisted deposits.</p>
+                        <p>To estimate borrowing power, use our <a href="/calculators" target="_blank">affordability calculator</a>. Lenders assess income, committed expenditure, debt levels and credit profile.</p>
+                        <p>If you're wondering whether you can get a mortgage as a first time buyer - the answer is yes, provided you meet lending criteria and affordability standards. The credit score needed for a first time buyer mortgage varies by lender. There is no universal number, but stronger credit typically improves lender choice and pricing. There is also structured help for first time buyers, including shared ownership and family assisted deposits.</p> 
                         <h5>What is an Agreement in Principle (AIP)?</h5>
-                        <p>An Agreement in Principle confirms how much a lender may be willing to lend you based on initial checks. It strengthens your position when making an offer and shows estate agents you are a serious buyer.</p>
+                        <p>An <a href="/aip-form">Agreement in Principle</a> confirms how much a lender may be willing to lend you based on initial checks. It strengthens your position when making an offer and shows estate agents you are a serious buyer.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" target="_blank" aria-expanded="false">
                         Can I buy a house on one income in the UK?
                         <span class="faq-icon" aria-hidden="true"></span>
                     </button>
@@ -201,6 +203,7 @@ get_header(); ?>
                             <li>Credit profile</li>
                         </ul>
                         <p>The first time buyer single income rules are not different rules, but the same affordability framework applied to one income rather than two. If affordability is stretched, options may include a longer mortgage term, lower purchase price, family gifted deposit, or shared ownership. Working with a mortgage advisor can help identify lenders that are more flexible with single income cases.</p>
+                        <p>For many, the average mortgage deposit now exceeds a year's salary. Read <a href="/united-mortgages.com/2026/03/09/in-much-of-britain-the-average-mortgage-deposit-now-exceeds-a-years-salary/" target="_blank">here</a> to learn more
                     </div>
                 </div>
 
@@ -210,7 +213,7 @@ get_header(); ?>
                         <span class="faq-icon" aria-hidden="true"></span>
                     </button>
                     <div class="faq-answer">
-                        <p>Stamp Duty Land Tax (SDLT) is a tax paid when purchasing property in England, Scotland, Wales and Northern Ireland.</p>
+                        <p>Stamp Duty Land Tax (SDLT) is a tax paid when purchasing property. In wales this is called Land Transaction Tax, and in Scotland it's known as Land and Property Transaction Tax</p>
                         <p>The amount you pay depends on:</p>
                         <ul>
                             <li>Property value</li>
@@ -219,22 +222,24 @@ get_header(); ?>
                         </ul>
                         <p>Stamp duty is charged in bands, meaning different portions of the purchase price are taxed at different rates once thresholds are exceeded.</p>
                         <p>If you are purchasing using short term funding such as bridging, you may request a bridging finance quote early to ensure total costs, including stamp duty, are factored into your exit calculations. Where bridging is used for larger projects such as refurbishment or conversion, it may fall under development bridging finance, which requires careful planning around tax, timelines, and refinance.</p>
+                        <p>Calculate your stamp duty using <a href="/calculators#stamp-duty" target="_blank">our calculator</a>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        I am a first time buyer &mdash; can I get a buy to let mortgage?
+                        I am a first time buyer - can I get a buy-to-let mortgage?
                         <span class="faq-icon" aria-hidden="true"></span>
                     </button>
                     <div class="faq-answer">
-                        <p>In most cases, lenders are cautious about granting buy-to-let mortgages to first time buyers. Buy-to-let mortgages are considered higher risk. Most lenders require:</p>
+                        <p>In most cases, lenders are cautious about granting <a href="/buy-to-let" target="_blank">buy-to-let mortgages</a> to first time buyers. Buy-to-let mortgages are considered higher risk. Most lenders require:</p>
                         <ul>
                             <li>You to already own a residential property</li>
                             <li>A larger deposit, often around 25%</li>
                             <li>Rental income to meet specific stress test requirements</li>
                         </ul>
                         <p>While it may be possible with specialist lenders, approval criteria are stricter. Many lenders prefer applicants to have prior homeownership experience before entering the investment market. If your long-term goal is property investment, you may first need to purchase your own residential home before applying for a buy-to-let product.</p>
+                        <!--Buy to let for first time buyers post here -->
                     </div>
                 </div>
 

@@ -162,7 +162,7 @@ Your first home deserves more than a <span style="font-weight: 700;">tick-box mo
 <section class="faq-section">
 <div class="container">
 <h2 class="faq-section-title">Remortgage <span>FAQs</span></h2>
-<p class="faq-section-intro">Before your current deal expires, it's sensible to seek remortgage advice from a professional. A good remortgage broker advice session reviews rates, fees, equity position and long-term goals. Many borrowers choose to speak to a mortgage advisor about remortgaging around 4 to 6 months before their deal ends. If your situation is complex, a specialist remortgage advisor may be more appropriate. Send us an inquiry and we are able to assist based on your circumstances.</p>
+<p class="faq-section-intro">Before your current deal expires, it's sensible to seek remortgage advice from a professional. A good remortgage broker advice session reviews rates, fees, equity position and long-term goals. Many borrowers choose to speak to a mortgage advisor about remortgaging around 4 to 6 months before their deal ends. If your situation is complex, a specialist remortgage advisor may be more appropriate. <a href="#contact-form">Send us an inquiry</a> and we'll be happy to assist based on your circumstances.</p>
 <div class="faq-list">
 <div class="faq-item">
 <button class="faq-question" aria-expanded="false">
@@ -178,13 +178,14 @@ When should I start looking to remortgage?
 <li>Remortgage for home improvements</li>
 <li>Remortgage to consolidate debt</li>
 </ul>
+<!-- remortgaging blog post -->
 <p>Lifestyle changes may also influence your decision:</p>
 <ul>
 <li>Mortgage when upsizing house may require additional borrowing</li>
 <li>Mortgage when downsizing property may involve reducing loan balance</li>
 <li>Remortgage advice for equity release if accessing built-up value</li>
 </ul>
-<p>For investment strategies, you may explore remortgaging a buy to let property or releasing equity from existing rentals.</p>
+<p>For investment strategies, you may explore remortgaging a buy to let property or releasing equity from existing rentals.</p> <!--how to remortgage b2l property; release equity blog posts (x2) -->
 <p>If a full remortgage is unsuitable, alternatives may include a second charge mortgage. Working with a mortgage broker secured loan specialist can help you understand your options. The right timing reduces stress and avoids falling onto a higher rate.</p>
 </div>
 </div>
@@ -202,7 +203,7 @@ What happens when my mortgage deal ends?
 <li>Use a mortgage broker to secure a new remortgage</li>
 </ul>
 <p>Many borrowers ask, should I remortgage when my fixed rate ends? In most cases, yes, because remaining on standard variable rates increases cost.</p>
-<p>If stability matters, you may choose to remortgage to fix mortgage payments again. Understanding the types of mortgages and what to consider when applying can help you make an informed decision.</p>
+<p>If stability matters, you may choose to remortgage to fix mortgage payments again. Understanding the types of mortgages and what to consider when applying can help you make an informed decision.</p> <!-- types of mortgages and what to consider when applying -->
 </div>
 </div>
 <div class="faq-item">
@@ -232,7 +233,7 @@ Remortgage declined &mdash; what next?
 <li>Use a remortgage calculator to assess affordability</li>
 <li>Wait until any early repayment charge period ends</li>
 </ul>
-<p>Exploring different remortgage deals with expert guidance improves approval chances.</p>
+<p>Exploring different remortgage deals with expert guidance improves approval chances.</p> <!-- mortgage declined blog post -->
 </div>
 </div>
 <div class="faq-item">
@@ -256,6 +257,7 @@ Is remortgaging early worth paying an early repayment charge?
 </ul>
 <p>Relationship changes often require restructuring, and this can overlap with mortgage options for single buyers. Alternatively, some borrowers choose paying off their mortgage early entirely if financially viable.</p>
 <p>A cost comparison over the remaining term helps determine whether paying the charge delivers net benefit.</p>
+<p>Check out our <a href="/calculators#overpayment" target="_blank">overpayment calculator</a> to better plan your options.
 </div>
 </div>
 </div>

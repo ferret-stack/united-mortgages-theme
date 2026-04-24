@@ -68,7 +68,7 @@ get_header(); ?>
     <section class="features-section" style="background: #f8f9fa;">
         <div class="container">
             <h2 class="section-title" style="text-align:center; font-size:1.8rem; font-weight:300; margin-bottom:2.5rem;">
-                At United Mortgages&reg;,<span style="font-weight: 700;">we know what it's like to be self employed</span>
+                At United Mortgages&reg;,<span style="font-weight: 700;"> know what it's like to be self employed</span>
             </h2>
             <div style="overflow-x:auto;">
                 <table style="width:100%; border-collapse:collapse; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
@@ -163,7 +163,7 @@ get_header(); ?>
                 <li>Net profit (for sole traders)</li>
                 <li>Retained profits (some lenders)</li>
             </ul>
-            <p>To apply, you'll need to understand how to prove self employed income for mortgage and what documents self employed need for mortgage. This typically includes tax calculations, accounts, and bank statements. Lenders may also assess comparisons between one year versus two years of self employed accounts. Eligibility can vary from mortgage lenders that offer self employed mortgages. If refinancing, self employed remortgage options are available depending on equity and affordability.</p>
+            <p>To apply, you'll need to understand how to prove self employed income for mortgage and what documents self employed need for mortgage. This typically includes tax calculations, accounts, and bank statements. Lenders may also assess comparisons between one year versus two years of self employed accounts. Eligibility can vary from mortgage lenders that offer self employed mortgages. If refinancing, self employed remortgage options are available depending on equity and affordability.</p> <!-- one year account blog -->
             </div>
         </div>
         <div class="faq-item">
@@ -200,7 +200,7 @@ get_header(); ?>
                 <li>Understand SA302 mortgage requirements</li>
                 <li>Understand director income verification for mortgage</li>
             </ul>
-            <p>When calculating income for limited company director mortgage, use a mortgage affordability calculator built for company directors to get a clear view of how much you can borrow. You may also encounter terms like salary and dividends mortgage, director's loan mortgage, or company profits mortgage. Some lenders have differing criteria around retained earnings. Options exist for mortgages using retained profits or director mortgages using retained earnings. This is especially relevant for buy-to-let retained profits mortgages and mortgage lenders for limited company directors.</p>
+            <p>When calculating income for limited company director mortgage, use a mortgage affordability calculator built for company directors to get a clear view of how much you can borrow. You may also encounter terms like salary and dividends mortgage, director's loan mortgage, or company profits mortgage. Some lenders have differing criteria around retained earnings. Options exist for mortgages using retained profits or director mortgages using retained earnings. This is especially relevant for <a href="/btl" target="_blank">buy-to-let</a> retained profits mortgages and mortgage lenders for limited company directors.</p>
             </div>
         </div>
         <div class="faq-item">

@@ -13236,3 +13236,7 @@ input#borrow-deposit::placeholder {
         padding: 1.2rem 0;
     }
 }
+
+.features-grid.mortgage-prod {
+ grid-template-columns: repeat(2, 2fr)   
+}
