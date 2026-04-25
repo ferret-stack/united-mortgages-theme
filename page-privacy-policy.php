@@ -62,7 +62,7 @@ get_header(); ?>
                         <h2>Information We Collect</h2>
                         <p>Here is a list of the information we collect from you, either through our website or because you give it to us in some other way, and why it is necessary to collect it:</p>
 
-                        <div class="data-grid">
+                        <div class="data-grid pp">
                             <div class="data-card">
                                 <h4>Basic Identification & Contact</h4>
                                 <p>Used to provide you with the services you request, for verifying your identity for security purposes, and for marketing our services and products. Information which does not identify any individual may be used in a general way by us or third parties to provide class information, for example relating to demographics or usage of a particular page or service.</p>

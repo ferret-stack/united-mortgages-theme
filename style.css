@@ -31,6 +31,10 @@ Version: 3.4
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+.hero-section.membership{
+    background-image: url('assets/lifetime.png');
+}
+
 .hero-overlay {
     position: absolute;
     top: 0;
@@ -4311,6 +4315,10 @@ input#borrow-deposit::placeholder {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin: 2rem 0;
+}
+
+.data-grid.pp {
+    grid-template-columns: repeat(2,2fr);
 }
 
 .data-card {
