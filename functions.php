@@ -364,6 +364,22 @@ function um_calculator_og_tags() {
 }
 add_action( 'wp_head', 'um_calculator_og_tags' );
 
+function um_aip_overview_og_tags() {
+    if ( is_page_template( 'page-nhs-mortgage.php' ) ) {
+        $og_image = get_site_url() . '/wp-content/uploads/2026/04/nhs-hero.png';
+        ?>
+        <meta property="og:title" content="Mortgages for the 24/7 Hero | United Mortgages®" />
+        <meta property="og:description" content="You work the hours no one else will. So do we." />
+        <meta property="og:image" content="<?php echo esc_url( $og_image ); ?>" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:url" content="<?php echo esc_url( get_permalink() ); ?>" />
+        <meta property="og:type" content="website" />
+        <?php
+    }
+}
+add_action( 'wp_head', 'um_aip_overview_og_tags' );
+
 
 function united_enqueue_aip_exit_popup() {
     if ( is_page( 'aip-form' ) ) {
