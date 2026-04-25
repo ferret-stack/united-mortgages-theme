@@ -13,7 +13,7 @@ get_header(); ?>
         <div class="hero-overlay"></div>
         <div class="nhs-hero-bottom">
             <div class="nhs-hero-text">
-                <h1>You do your thing. <span class="highlight">And we'll do ours.</span></h1>
+                <h1>You do your thing. <span class="highlight">We'll do ours.</span></h1>
                 <p class="nhs-hero-tagline">You know your business, and we know mortgages. We're here to help so you can focus on the important things.</p>
             </div>
             <div class="nhs-scroll-cue">
@@ -68,7 +68,7 @@ get_header(); ?>
     <section class="features-section" style="background: #f8f9fa;">
         <div class="container">
             <h2 class="section-title" style="text-align:center; font-size:1.8rem; font-weight:300; margin-bottom:2.5rem;">
-                At United Mortgages&reg;,<span style="font-weight: 700;"> know what it's like to be self employed</span>
+                Self employed?<span style="font-weight: 700;"> Us too</span>
             </h2>
             <div style="overflow-x:auto;">
                 <table style="width:100%; border-collapse:collapse; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
@@ -98,7 +98,7 @@ get_header(); ?>
                         <tr style="background:#fafafa;">
                             <td style="padding:1rem 1.5rem; font-weight:600; color:#1a1a1a;">Application Process</td>
                             <td style="padding:1rem 1.5rem; color:#666;">Paper-heavy &amp; slow</td>
-                            <td style="padding:1rem 1.5rem; color:#1a1a1a; font-weight:500;">Mobile-first &amp; lightning fast</td>
+                            <td style="padding:1rem 1.5rem; color:#1a1a1a; font-weight:500;">Digital-first &amp; lightning fast</td>
                         </tr>
                     </tbody>
                 </table>
@@ -126,7 +126,7 @@ get_header(); ?>
     <section class="faq-section">
     <div class="container">
         <h2 class="faq-section-title">Self Employed <span>FAQs</span></h2>
-        <p class="faq-section-intro">Getting approved when your income doesn't come neatly packaged as a payslip can feel like assembling a puzzle where half the pieces look identical. That's why tailored self employed mortgage advice matters. Whether you're a freelancer, contractor, or business owner, working with a self employed mortgage advisor or contractor mortgage broker can significantly improve your chances of approval. Understanding self-employed mortgage criteria in the UK, knowing which are the best UK mortgage lenders for self employed, and preparing the right documents upfront can make the difference between approval and frustration.</p>
+        <p class="faq-section-intro">Getting approved when your income doesn't come neatly packaged as a payslip can feel like assembling a puzzle where half the pieces look like they've come from another box. That's why tailored self employed mortgage advice matters.</p>
         <div class="faq-list">
         <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
@@ -135,7 +135,7 @@ get_header(); ?>
             </button>
             <div class="faq-answer">
             <p>To secure a self employed mortgage in the UK, you need to meet lender-specific criteria and present your income clearly.</p>
-            <p>Key requirements:</p>
+            <p><b>Key requirements:</b></p>
             <ul>
                 <li>Meeting self-employed mortgage criteria in the UK</li>
                 <li>Passing mortgage eligibility for self employed checks</li>
@@ -151,13 +151,13 @@ get_header(); ?>
             <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-            <p>Lenders assess income differently depending on structure. Business structure matters:</p>
+            <p><b>Lenders assess income differently depending on structure:</b></p>
             <ul>
                 <li>Limited company mortgage</li>
                 <li>Sole trader mortgage</li>
                 <li>Contractor mortgages</li>
             </ul>
-            <p>Income assessment includes:</p>
+            <p><b>Income assessment includes:</b></p>
             <ul>
                 <li>Salary and dividends</li>
                 <li>Net profit (for sole traders)</li>
@@ -172,19 +172,19 @@ get_header(); ?>
             <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer">
-            <p>For company directors, income is usually assessed through salary and dividends. A Limited company director mortgage will consider:</p>
+            <p>For company directors, income is usually assessed through salary and dividends. <b>A Limited company director mortgage will consider:</b></p>
             <ul>
                 <li>Basic salary</li>
                 <li>Dividend income</li>
                 <li>Sometimes bonus or additional income streams</li>
             </ul>
-            <p>Lenders also assess:</p>
+            <p><b>Lenders also assess:</b></p>
             <ul>
                 <li>Income multiples via income multiple calculation</li>
                 <li>Deposit requirements through mortgage deposit required</li>
                 <li>Overall affordability using a mortgage affordability calculator</li>
             </ul>
-            <p>Some lenders offer flexibility, especially among the best UK mortgage lenders for contractors. Access to over 100+ lenders provides a wide range of lender options to choose from.</p>
+            <p>Some lenders offer flexibility, especially among the best UK mortgage lenders for contractors. At United Mortgages&reg;, we have access to over 100+ lenders and provide a wide range of lender options to choose from that are matched to your specfic needs.</p>
             </div>
         </div>
         <div class="faq-item">
@@ -194,13 +194,12 @@ get_header(); ?>
             </button>
             <div class="faq-answer">
             <p>In some cases, yes. A retained profits mortgage allows lenders to consider profits left in the business rather than just salary and dividends. However, not all lenders accept this.</p>
-            <p>Key considerations:</p>
+            <p><b>Key considerations:</b></p>
             <ul>
                 <li>Understand self-employed mortgage requirements UK</li>
                 <li>Understand SA302 mortgage requirements</li>
                 <li>Understand director income verification for mortgage</li>
             </ul>
-            <p>When calculating income for limited company director mortgage, use a mortgage affordability calculator built for company directors to get a clear view of how much you can borrow. You may also encounter terms like salary and dividends mortgage, director's loan mortgage, or company profits mortgage. Some lenders have differing criteria around retained earnings. Options exist for mortgages using retained profits or director mortgages using retained earnings. This is especially relevant for <a href="/btl" target="_blank">buy-to-let</a> retained profits mortgages and mortgage lenders for limited company directors.</p>
             </div>
         </div>
         <div class="faq-item">
@@ -210,13 +209,13 @@ get_header(); ?>
             </button>
             <div class="faq-answer">
             <p>Yes, but options are more limited. Some lenders offer mortgages with one year accounts, but criteria are stricter.</p>
-            <p>You may need to:</p>
+            <p><b>You may need to:</b></p>
             <ul>
                 <li>Work with a specialist mortgage lender in the UK</li>
                 <li>Use a mortgage broker for self employed</li>
                 <li>Provide strong self employed income evidence</li>
             </ul>
-            <p>Things to consider:</p>
+            <p><b>Things to consider:</b></p>
             <ul>
                 <li>How much deposit needed for a self employed mortgage</li>
                 <li>Access to the best banks for self-employed mortgage</li>
@@ -231,13 +230,13 @@ get_header(); ?>
             </button>
             <div class="faq-answer">
             <p>The best mortgage for limited company directors depends on how your income is structured. You may need to compare director mortgage requirements, work with specialist mortgage lenders in the UK, or use a mortgage broker for self-employed or for limited company directors.</p>
-            <p>Key comparisons:</p>
+            <p><b>Key comparisons:</b></p>
             <ul>
-                <li>Buy to let vs Residential mortgage for company directors</li>
-                <li>Self-employed mortgage and Contractor mortgage</li>
-                <li>Fixed rate vs variable rate mortgage</li>
+                <li>Buy to let vs Residential for company directors</li>
+                <li>Self-employed mortgage and Contractor</li>
+                <li>Fixed rate vs variable rate</li>
             </ul>
-            <p>Contractor-specific considerations:</p>
+            <p><b>Contractor-specific considerations:</b></p>
             <ul>
                 <li>Contractor day rate mortgage calculation UK</li>
                 <li>Day rate vs salary mortgage calculation</li>

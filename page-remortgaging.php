@@ -15,7 +15,7 @@ get_header(); ?>
     <div class="hero-overlay"></div>
     <div class="nhs-hero-bottom">
         <div class="nhs-hero-text">
-            <h1>Your First Home. <span class="highlight">Done Right.</span></h1>
+            <h1>Want a better deal? Looking to release equity?</h1>
                 <p class="nhs-hero-tagline">Same house. New mortgage. Your terms.</p>
         </div>
         <div class="nhs-scroll-cue">
@@ -47,8 +47,7 @@ The <span style="font-weight: 700;">United Mortgages&reg;</span> Difference
 
 <p style="color:#666; line-height:1.7; margin-top:0.75rem;">
 
-Whether you want to remortgage because fixed rate mortgages end, for equity release, or for debt consolidation (Consolidating debt may increase the total amount you repay and extend the repayment term) – we help you compare a range of remortgage deals  because we are shaping your mortgage around the life you are planning.
-
+Whether you want to remortgage because your fixed rate mortgage is coming to an end, for equity release, or for debt consolidation*  – we help you compare a range of remortgage deals because we are shaping your mortgage around the life you are planning.
 </p>
 
 </div>
@@ -74,6 +73,7 @@ Not every remortgage in the UK means switching lenders. As part of our mortgage 
 </div>
 </div>
 </div>
+<div style="margin-top:50px; margin-left: 280px; color:grey;">*Consolidating debt may increase the total amount you repay and extend the repayment term</div>    
 </section>
 
 <!-- Comparison Table -->
@@ -84,7 +84,7 @@ Not every remortgage in the UK means switching lenders. As part of our mortgage 
 
 <h2 class="section-title" style="text-align:center; font-size:1.8rem; font-weight:300; margin-bottom:2.5rem;">
 
-Your first home deserves more than a <span style="font-weight: 700;">tick-box mortgage.</span>
+Remortgaging options <span style="font-weight: 700;">that suit your goals</span>
 
 </h2>
 
@@ -144,7 +144,7 @@ Your first home deserves more than a <span style="font-weight: 700;">tick-box mo
 
 <td style="padding:1rem 1.5rem; color:#666;">Paper-heavy &amp; slow</td>
 
-<td style="padding:1rem 1.5rem; color:#1a1a1a; font-weight:500;">Mobile-first &amp; lightning fast</td>
+<td style="padding:1rem 1.5rem; color:#1a1a1a; font-weight:500;">Digital-first &amp; lightning fast</td>
 
 </tr>
 
@@ -162,7 +162,7 @@ Your first home deserves more than a <span style="font-weight: 700;">tick-box mo
 <section class="faq-section">
 <div class="container">
 <h2 class="faq-section-title">Remortgage <span>FAQs</span></h2>
-<p class="faq-section-intro">Before your current deal expires, it's sensible to seek remortgage advice from a professional. A good remortgage broker advice session reviews rates, fees, equity position and long-term goals. Many borrowers choose to speak to a mortgage advisor about remortgaging around 4 to 6 months before their deal ends. If your situation is complex, a specialist remortgage advisor may be more appropriate. <a href="#contact-form">Send us an inquiry</a> and we'll be happy to assist based on your circumstances.</p>
+<p class="faq-section-intro">Before your current deal expires, it's sensible to seek remortgage advice from a professional. A good remortgage broker advice reviews rates, fees, equity position and long-term goals. Many borrowers choose to speak to a mortgage advisor about remortgaging around 4 to 6 months before their deal ends. If your situation is complex, a specialist remortgage advisor may be more appropriate. <a href="#contact-form">Send us an inquiry</a> and we'll be happy to assist based on your circumstances.</p>
 <div class="faq-list">
 <div class="faq-item">
 <button class="faq-question" aria-expanded="false">
@@ -171,15 +171,15 @@ When should I start looking to remortgage?
 </button>
 <div class="faq-answer">
 <p>You can typically secure a new deal 3 to 6 months before your current rate expires.</p>
-<p>Remortgaging can support many goals:</p>
+<p><b>Remortgaging can support many goals:</b></p>
 <ul>
-<li>Remortgage to lower interest rate</li>
-<li>Remortgage to fix mortgage payments</li>
-<li>Remortgage for home improvements</li>
-<li>Remortgage to consolidate debt</li>
+<li>To lower interest rate</li>
+<li>To fix mortgage payments</li>
+<li>For home improvements</li>
+<li>To consolidate debt</li>
 </ul>
 <!-- remortgaging blog post -->
-<p>Lifestyle changes may also influence your decision:</p>
+<p><b>Lifestyle changes may also influence your decision:</b></p>
 <ul>
 <li>Mortgage when upsizing house may require additional borrowing</li>
 <li>Mortgage when downsizing property may involve reducing loan balance</li>
@@ -197,7 +197,7 @@ What happens when my mortgage deal ends?
 <div class="faq-answer">
 <p>When your mortgage deal ends, your lender typically moves you onto their standard variable rate, which is usually higher.</p>
 <p>Your previous deal may have been a fixed rate mortgage or a tracker mortgage.</p>
-<p>At this point you can:</p>
+<p><b>At this point you can:</b></p>
 <ul>
 <li>Arrange a product transfer with your existing lender</li>
 <li>Use a mortgage broker to secure a new remortgage</li>
@@ -208,19 +208,19 @@ What happens when my mortgage deal ends?
 </div>
 <div class="faq-item">
 <button class="faq-question" aria-expanded="false">
-Remortgage declined &mdash; what next?
+What are my options if my remortgage is declined?
 <span class="faq-icon" aria-hidden="true"></span>
 </button>
 <div class="faq-answer">
 <p>A declined application is frustrating but rarely the end.</p>
-<p>Common reasons for remortgage decline include:</p>
+<p><b>Common reasons for remortgage decline include:</b></p>
 <ul>
 <li>Failing mortgage affordability checks</li>
 <li>Credit score issues</li>
 <li>Income verification problems</li>
 <li>Property valuation concerns</li>
 </ul>
-<p>Next steps may include:</p>
+<p><b>Next steps may include:</b></p>
 <ul>
 <li>Review your remortgage credit score</li>
 <li>Understand remortgage credit score requirements</li>
@@ -243,13 +243,13 @@ Is remortgaging early worth paying an early repayment charge?
 </button>
 <div class="faq-answer">
 <p>Sometimes paying an early repayment charge can make sense if long-term savings outweigh the penalty.</p>
-<p>When it might be worth it:</p>
+<p><b>When it might be worth it:</b></p>
 <ul>
 <li>Large rate differences</li>
 <li>Significant balance</li>
 <li>Long remaining fixed period</li>
 </ul>
-<p>You might be remortgaging to:</p>
+<p><b>You might be remortgaging to:</b></p>
 <ul>
 <li>Pay off part of the balance</li>
 <li>Pay off a lump sum</li>
@@ -257,7 +257,6 @@ Is remortgaging early worth paying an early repayment charge?
 </ul>
 <p>Relationship changes often require restructuring, and this can overlap with mortgage options for single buyers. Alternatively, some borrowers choose paying off their mortgage early entirely if financially viable.</p>
 <p>A cost comparison over the remaining term helps determine whether paying the charge delivers net benefit.</p>
-<p>Check out our <a href="/calculators#overpayment" target="_blank">overpayment calculator</a> to better plan your options.
 </div>
 </div>
 </div>

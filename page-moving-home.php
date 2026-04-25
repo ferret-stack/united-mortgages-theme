@@ -97,7 +97,7 @@ get_header(); ?>
                         <tr style="background:#fafafa;">
                             <td style="padding:1rem 1.5rem; font-weight:600; color:#1a1a1a;">Application Process</td>
                             <td style="padding:1rem 1.5rem; color:#666;">Paper-heavy &amp; slow</td>
-                            <td style="padding:1rem 1.5rem; color:#1a1a1a; font-weight:500;">Mobile-first &amp; lightning fast</td>
+                            <td style="padding:1rem 1.5rem; color:#1a1a1a; font-weight:500;">Digital-first &amp; lightning fast</td>
                         </tr>
                     </tbody>
                 </table>
@@ -125,7 +125,7 @@ get_header(); ?>
     <section class="faq-section">
     <div class="container">
         <h2 class="faq-section-title">Moving Home <span>FAQs</span></h2>
-        <p class="faq-section-intro">Before you put the "For Sale" board up, it is smart to speak to a mortgage broker when moving house. Early planning reduces stress, protects your chain position, and clarifies borrowing power. United Mortgages also offers customers integrated services provided by our partners, from homebuying, accounting/financial planning, conveyancing to insurance. Professional moving home mortgage advice helps you understand affordability, porting eligibility, deposit requirements, and timing risks before you commit to a new property.</p>
+        <p class="faq-section-intro">Before you put the "For Sale" board up, it is smart to speak to a mortgage broker when moving house. Early planning reduces stress, protects your chain position, and clarifies borrowing power.<br>United Mortgages&reg; also offers customers integrated services provided by our partners, from homebuying, accounting/financial planning, conveyancing, and insurance. Professional moving home mortgage advice helps you understand affordability, porting eligibility, deposit requirements, and timing risks before you commit to a new property.</p>
         <div class="faq-list">
         <div class="faq-item">
             <button class="faq-question" aria-expanded="false">
@@ -134,14 +134,14 @@ get_header(); ?>
             </button>
             <div class="faq-answer">
             <p>When moving house with a mortgage, your current loan does not automatically follow you. You usually either repay and take a new mortgage, use mortgage porting to transfer your existing rate, or blend your current deal with additional borrowing.</p>
-            <p>If you're in a chain, timing matters. Managing a mortgage while in a chain requires coordination between lenders, solicitors and buyers. A chain break can delay completion or collapse the transaction entirely. This is why it's wise to speak to a mortgage advisor about chain risk before listing your property.</p>
-            <p>Key timeline factors:</p>
+            <p>If you're in a chain, timing matters. Managing a mortgage while in a chain requires coordination between lenders, solicitors, and buyers. A chain break can delay completion or collapse the transaction entirely. This is why it's wise to speak to a mortgage advisor about chain risk before listing your property.</p>
+            <p><b>Key timeline factors:</b></p>
             <ul>
-                <li>Mortgage application time: typically 2 to 4 weeks</li>
-                <li>Property valuation time: often 1 to 2 weeks</li>
-                <li>Conveyancing timeline: commonly 8 to 12 weeks</li>
-                <li>Exchange of contracts: legally binding stage before completion</li>
-                <li>How long to complete house sale: usually 8 to 16 weeks depending on complexity</li>
+                <li><b>Mortgage application time:</b> typically 2 to 4 weeks</li>
+                <li><b>Property valuation time:</b> often 1 to 2 weeks</li>
+                <li><b>Conveyancing timeline:</b> commonly 8 to 12 weeks</li>
+                <li><b>Exchange of contracts:</b> legally binding stage before completion</li>
+                <li><b>How long to complete house sale:</b> usually 8 to 16 weeks depending on complexity</li>
             </ul>
             <p>Planning protects you from rate expiry, valuation delays, or affordability changes mid-transaction.</p>
             </div>
@@ -153,12 +153,12 @@ get_header(); ?>
             </button>
             <div class="faq-answer">
             <p>There is no one-size-fits-all solution. The right structure depends on timing, equity, and affordability.</p>
-            <p>Common routes include:</p>
+            <p><b>Common routes include:</b></p>
             <ul>
-                <li>Porting your mortgage: If you're wondering whether you can port your mortgage when moving house, this means transferring your existing rate to your new property. In simple terms, you keep your current product, but must still pass affordability checks and lender approval.</li> <!-- porting blog post -->
-                <li>Taking a new mortgage deal: If your current rate is uncompetitive or porting is not viable, a new mortgage deal may be more suitable. This involves a full reassessment and potentially switching lenders.</li>
-                <li>Buying before selling mortgage options: If you need to secure your new home before your sale completes, there are options available, including bridging or let-to-buy structures.</li>
-                <li>Using savings vehicles: A lifetime ISA may have been used to build your deposit if you previously qualified as a first-time buyer.</li> <!-- ISA blog post -->
+                <li><b>Porting your mortgage:</b> If you're wondering whether you can port your mortgage when moving house, this means transferring your existing rate to your new property. In simple terms, you keep your current product, but must still pass affordability checks and lender approval.</li> <!-- porting blog post -->
+                <li><b>Taking a new mortgage deal:</b> If your current rate is uncompetitive or porting is not viable, a new mortgage deal may be more suitable. This involves a full reassessment and potentially switching lenders.</li>
+                <li><b>Buying before selling mortgage options:</b> If you need to secure your new home before your sale completes, there are options available, including bridging or let-to-buy structures.</li>
+                <li><b>Using savings vehicles:</b> A lifetime ISA may have been used to build your deposit if you previously qualified as a first-time buyer.</li> <!-- ISA blog post -->
             </ul>
             <p>Remember that conveyancing timelines influence mortgage expiry dates and completion deadlines, so coordination matters. Choosing correctly depends on affordability, timing risk, and long-term cost.</p>
             </div>
@@ -170,14 +170,14 @@ get_header(); ?>
             </button>
             <div class="faq-answer">
             <p>Borrowing is reassessed based on today's affordability rules.</p>
-            <p>Mortgage affordability when moving home considers:</p>
+            <p><b>Mortgage affordability when moving home considers:</b></p>
             <ul>
                 <li>Current income</li>
                 <li>Debt and monthly commitments</li>
                 <li>Credit profile</li>
                 <li>Loan-to-value ratio</li>
             </ul>
-            <p>Even if you are porting, additional borrowing must pass updated affordability calculations. Running fresh numbers before offering on a property ensures you do not stretch beyond sustainable limits. Use our moving homes mortgage calculator to understand how much you can borrow for a mortgage when moving homes.</p>
+            <p>Even if you are porting, additional borrowing must pass updated affordability calculations. Running fresh numbers before offering on a property ensures you do not stretch beyond sustainable limits.</p>
             </div>
         </div>
         <div class="faq-item">
@@ -187,19 +187,19 @@ get_header(); ?>
             </button>
             <div class="faq-answer">
             <p>Bridging finance is a short-term loan used to bridge a funding gap, typically between buying a new property and selling your current one. You may request a bridging finance quote to assess interest rates, fees, and your exit strategy before committing.</p>
-            <p>Bridging loans are often used to:</p>
+            <p><b>Bridging loans are often used to:</b></p>
             <ul>
                 <li>Break a property chain</li>
                 <li>Purchase auction properties</li>
                 <li>Secure time-sensitive deals</li>
                 <li>Complete refurbishment before refinancing</li>
             </ul>
-            <p>Types of bridging:</p>
+            <p><b>Types of bridging:</b></p>
             <ul>
-                <li>FCA regulated bridging loans: Used when the property will be owner-occupied.</li>
-                <li>Unregulated loans: Often used for investment or commercial purposes.</li>
-                <li>Bridging loans for limited companies: Common for investors purchasing via a corporate structure.</li>
-                <li>Development bridging finance: Used for heavier refurbishment or development projects.</li>
+                <li><b>FCA regulated bridging loans:</b> Used when the property will be owner-occupied.</li>
+                <li><b>Unregulated loans:</b> Often used for investment or commercial purposes.</li>
+                <li><b>Bridging loans for limited companies:</b> Common for investors purchasing via a corporate structure.</li>
+                <li><b>Development bridging finance:</b> Used for heavier refurbishment or development projects.</li>
             </ul>
             <p>Because bridging is higher cost and short term, working with a bridging loan advisor ensures there is a clear and realistic exit strategy.</p>
             <!-- briding blog post here -->
@@ -212,13 +212,13 @@ get_header(); ?>
             </button>
             <div class="faq-answer">
             <p>Rising property prices and cost of living pressures mean many buyers need structured support.</p>
-            <p>Available mortgage deposit help options include:</p>
+            <p><b>Available mortgage deposit help options include:</b></p>
             <ul>
-                <li>Savings products: Choosing the best ISA to save for a house can improve deposit growth through tax-free interest.</li>
-                <li>Government schemes: While the traditional Help to Buy equity loan scheme has ended, many buyers look into low-deposit or family-assisted mortgage products.</li>
-                <li>Single income support: If applying on your own, a single income mortgage application may require careful affordability planning, but lenders do support sole applicants.</li>
+                <li><b>Savings products:</b> Choosing the best ISA to save for a house can improve deposit growth through tax-free interest.</li>
+                <li><b>Government schemes:</b> While the traditional Help to Buy equity loan scheme has ended, many buyers look into low-deposit or family-assisted mortgage products.</li>
+                <li><b>Single income support:</b> If applying on your own, a single income mortgage application may require careful affordability planning, but lenders do support sole applicants.</li>
             </ul>
-            <p>Deposit strategies may also include family gifted deposits, guarantor structures, or shared ownership. Careful planning ensures your deposit approach aligns with affordability and long-term sustainability. Need help with your deposit? <a href="/#contact-form">speak to us</a> today.</p> <!--help to buy scheme article-->
+            <p>Deposit strategies may also include family gifted deposits, guarantor structures, or shared ownership. Careful planning ensures your deposit approach aligns with affordability and long-term sustainability.<br>Need help with your deposit? <a href="/#contact-form">speak to us</a> today.</p> <!--help to buy scheme article-->
             </div>
         </div>
         </div>

@@ -14,7 +14,8 @@ get_header(); ?>
         <div class="nhs-hero-bottom">
             <div class="nhs-hero-text">
                 <h1>Relocating to the United Kingdom?</span></h1>
-                <p class="nhs-hero-tagline">United Mortgages&reg; can help</p>
+                <p class="nhs-hero-tagline">United Mortgages&reg; can help
+                </p>
             </div>
             <div class="nhs-scroll-cue">
                 <span>See how we're different</span>
@@ -55,7 +56,7 @@ get_header(); ?>
                 <div class="data-card" style="text-align:left;">
                     <h4>Want a mortgage but new to the UK?</h4>
                     <p style="color:#666; line-height:1.7; margin-top:0.75rem;">
-                        Need clarification on stamp duty, property tax, or being an overseas landlord? We know the UK mortgage landscape and help you navigate your expat mortgage
+                        Need clarification on stamp duty, property tax, or being an overseas landlord? We know the UK mortgage landscape and are ready to help you navigate your expat mortgage
                     </p>
                 </div>
 
@@ -134,20 +135,20 @@ get_header(); ?>
             </button>
             <div class="faq-answer">
             <p>Yes, via a non resident mortgage application, which allows you to get a UK mortgage while living abroad.</p>
-            <p>What lenders actually look at:</p>
+            <p><b>What lenders actually look at:</b></p>
             <ul>
-                <li>Income location and currency: If you earn in USD, EUR, AED etc., lenders assess volatility.</li>
-                <li>Employment type: PAYE abroad is simplest. Self-employed overseas is possible but more complex.</li>
-                <li>Deposit size: Typically 20% to 40% for overseas buyers. Lower deposits are rare.</li>
+                <li><b>Income location and currency:</b> If you earn in USD, EUR, AED etc., lenders assess volatility</li>
+                <li><b>Employment type:</b> PAYE abroad is simplest. Self-employed overseas is possible but more complex</li>
+                <li><b>Deposit size:</b> Typically 20% to 40% for overseas buyers. Lower deposits are rare</li>
             </ul>
-            <p>Common use cases:</p>
+            <p><b>Common use cases:</b></p>
             <ul>
                 <li>Get a UK mortgage while working overseas</li>
                 <li>Enter UK property investment from abroad</li>
                 <li>Buy UK property as foreigner</li>
                 <li>Buy to let mortgage for non residents</li>
             </ul>
-            <p>Tax and cost reality:</p>
+            <p><b>Tax and cost reality:</b></p>
             <ul>
                 <li>Stamp Duty Land Tax for non-UK residents includes a 2% surcharge on top of standard rates</li>
                 <li>Buy-to-let mortgage UK interest rates are usually higher than residential</li>
@@ -163,7 +164,7 @@ get_header(); ?>
             </button>
             <div class="faq-answer">
             <p>The UK mortgage application process for expats is similar to UK buyers but with additional checks.</p>
-            <p>Step-by-step flow:</p>
+            <p><b>Step-by-step flow:</b></p>
             <ol>
                 <li>Get a mortgage in principle</li>
                 <li>Appoint solicitor and meet the legal requirements for buying UK property as a foreigner</li>
@@ -171,13 +172,13 @@ get_header(); ?>
                 <li>Property valuation and underwriting</li>
                 <li>Exchange and completion</li>
             </ol>
-            <p>Deposits and affordability:</p>
+            <p><b>Deposits and affordability:</b></p>
             <ul>
                 <li>UK mortgage deposit for expats: usually 20% to 40%</li>
                 <li>Lenders stress test income more conservatively than UK residents</li>
                 <li>Expat mortgage rates in the UK generally reflect this added risk</li>
             </ul>
-            <p>Credit history considerations:</p>
+            <p><b>Credit history considerations:</b></p>
             <ul>
                 <li>Many lenders require UK credit history for mortgage</li>
                 <li>If not available, they may rely on international credit reports, bank statements, or employer references</li>
@@ -193,19 +194,19 @@ get_header(); ?>
             </button>
             <div class="faq-answer">
             <p>The difference between an Expat Mortgage and a UK resident mortgage comes down to risk pricing.</p>
-            <p>Key differences:</p>
+            <p><b>Key differences:</b></p>
             <ul>
-                <li>Deposit: UK residents typically 5% to 15%, expats typically 20% to 40%</li>
-                <li>Rates: Lower for UK residents, higher for expats</li>
-                <li>Lenders: Wide choice for residents, limited for expats</li>
-                <li>Income checks: Simpler for residents, stricter for expats</li>
+                <li><b>Deposit:</b> UK residents typically 5% to 15%, expats typically 20% to 40%</li>
+                <li><b>Rates:</b> Lower for UK residents, higher for expats</li>
+                <li><b>Lenders:</b> Wide choice for residents, limited for expats</li>
+                <li><b>Income checks:</b> Simpler for residents, stricter for expats</li>
             </ul>
-            <p>Rates and affordability:</p>
+            <p><b>Rates and affordability:</b></p>
             <ul>
                 <li>Mortgage interest rates in the UK are higher for expats</li>
                 <li>Mortgage deposit requirements in the UK increase with risk profile</li>
             </ul>
-            <p>Product types available to expats:</p>
+            <p><b>Product types available to expats:</b></p>
             <ul>
                 <li>Buy-to-let mortgage and Residential mortgage</li>
                 <li>First-time buyer mortgage (limited for expats)</li>
@@ -225,7 +226,7 @@ get_header(); ?>
                 <li>Some UK building societies for expats</li>
                 <li>International banks via Offshore banking</li>
             </ul>
-            <p>Typical lender types:</p>
+            <p><b>Typical lender types:</b></p>
             <ul>
                 <li>Global banks</li>
                 <li>Offshore lenders (Channel Islands)</li>
@@ -241,19 +242,19 @@ get_header(); ?>
             </button>
             <div class="faq-answer">
             <p>Yes, but this is where deals are won or lost.</p>
-            <p>How UK lenders assess foreign income:</p>
+            <p><b>How UK lenders assess foreign income:</b></p>
             <ul>
                 <li>Currency stability</li>
                 <li>Employer credibility</li>
                 <li>Income consistency</li>
             </ul>
-            <p>Currency handling options:</p>
+            <p><b>Currency handling options:</b></p>
             <ul>
                 <li>GBP mortgage (converted income)</li>
-                <li>Direct USD mortgage or euro mortgage</li>
+                <li>Direct USD mortgage or EUR mortgage</li>
                 <li>Some lenders offer foreign currency mortgage, but exchange rate fluctuations can increase repayments</li>
             </ul>
-            <p>Documents typically required for mortgage on foreign income in the UK:</p>
+            <p><b>Documents typically required for mortgage on foreign income in the UK:</b></p>
             <ul>
                 <li>Employment contract</li>
                 <li>Payslips or accounts</li>
@@ -270,14 +271,14 @@ get_header(); ?>
             </button>
             <div class="faq-answer">
             <p>Sometimes, but speed depends on simplicity.</p>
-            <p>Faster scenarios:</p>
+            <p><b>Faster scenarios:</b></p>
             <ul>
                 <li>PAYE income in major currency</li>
                 <li>Strong deposit (30% or more)</li>
                 <li>Clean credit profile</li>
             </ul>
             <p>In these cases, you may access streamlined underwriting via a specialist UK expat mortgage broker.</p>
-            <p>Slower scenarios:</p>
+            <p><b>Slower scenarios:</b></p>
             <ul>
                 <li>Self-employed overseas</li>
                 <li>Complex income structures</li>
