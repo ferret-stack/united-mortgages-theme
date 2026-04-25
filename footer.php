@@ -33,6 +33,7 @@
             <h3 class="footer-heading">OUR COMPANY</h3>
             <ul class="footer-links">
               <li><a href="/our-story">Our Story</a></li>
+              <li><a href="/membership">Lifetime Membership</a></li>
               <li><a href="/fee-structure">Our Fees</a></li>
               <li><a href="/privacy-policy">Privacy Policy</a></li>
             </ul>
