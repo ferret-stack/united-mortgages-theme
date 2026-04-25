@@ -68,7 +68,7 @@ get_header(); ?>
     <section class="features-section" style="background: #f8f9fa;">
         <div class="container">
             <h2 class="section-title" style="text-align:center; font-size:1.8rem; font-weight:300; margin-bottom:2.5rem;">
-                United Kingdom mortgages tailored for expats
+                United Kingdom mortgages <span style="font-weight: 700;">tailored for expats</span>
             </h2>
             <div style="overflow-x:auto;">
                 <table style="width:100%; border-collapse:collapse; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
