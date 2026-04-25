@@ -364,7 +364,7 @@ function um_calculator_og_tags() {
 }
 add_action( 'wp_head', 'um_calculator_og_tags' );
 
-function um_aip_overview_og_tags() {
+function um_nhs_og_tags() {
     if ( is_page_template( 'page-nhs-mortgage.php' ) ) {
         $og_image = get_site_url() . '/wp-content/uploads/2026/04/nhs-hero.png';
         ?>
@@ -378,7 +378,7 @@ function um_aip_overview_og_tags() {
         <?php
     }
 }
-add_action( 'wp_head', 'um_aip_overview_og_tags' );
+add_action( 'wp_head', 'um_nhs_og_tags' );
 
 
 function united_enqueue_aip_exit_popup() {
