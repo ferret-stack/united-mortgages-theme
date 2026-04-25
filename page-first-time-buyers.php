@@ -70,7 +70,7 @@ get_header(); ?>
     <section class="features-section" style="background: #f8f9fa;">
         <div class="container">
             <h2 class="section-title" style="text-align:center; font-size:1.8rem; font-weight:300; margin-bottom:2.5rem;">
-                Your first home deserves more than a <span style="font-weight: 700;">tick-box mortgage</span>
+                Your first home deserves more than a tick-box mortgage</span>
             </h2>
             <div style="overflow-x:auto;">
                 <table style="width:100%; border-collapse:collapse; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
@@ -116,7 +116,7 @@ get_header(); ?>
                 Ready to take <strong>the first step?</strong>
             </h2>
             <p style="color:rgba(255,255,255,0.7); text-align:center; font-size:1.1rem; margin-bottom:2.5rem; font-weight:300;">
-                Start your Agreement in Principle in under 10 minutes
+                Apply for your your Agreement in Principle in under 10 minutes
             </p>
             <div class="button-group" style="margin-top:0; justify-content:center;">
                 <a href="/aip-form" class="btn-callback btn-primary">Start Your AIP</a>

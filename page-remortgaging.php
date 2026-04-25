@@ -158,6 +158,22 @@ Remortgaging options <span style="font-weight: 700;">that suit your goals</span>
 
 </section>
 
+    <!-- CTA Section -->
+    <section class="features-section" style="background:#1a1a1a; padding:5rem 0;">
+        <div class="container">
+            <h2 style="color:#fff; font-size:2rem; font-weight:300; text-align:center; margin-bottom:1rem;">
+                Ready to take <strong>the first step?</strong>
+            </h2>
+            <p style="color:rgba(255,255,255,0.7); text-align:center; font-size:1.1rem; margin-bottom:2.5rem; font-weight:300;">
+                Apply for your your Agreement in Principle in under 10 minutes
+            </p>
+            <div class="button-group" style="margin-top:0; justify-content:center;">
+                <a href="/aip-form" class="btn-callback btn-primary">Start Your AIP</a>
+                <a href="#contact-form" class="btn-callback btn-transparent">Speak to an Adviser</a>
+            </div>
+        </div>
+    </section>
+
 <!-- FAQ Section -->
 <section class="faq-section">
 <div class="container">

@@ -114,7 +114,7 @@ get_header(); ?>
                 Ready to take <strong>the first step?</strong>
             </h2>
             <p style="color:rgba(255,255,255,0.7); text-align:center; font-size:1.1rem; margin-bottom:2.5rem; font-weight:300;">
-                Start your Agreement in Principle in under 10 minutes
+                Apply for your your Agreement in Principle in under 10 minutes
             </p>
             <div class="button-group" style="margin-top:0; justify-content:center;">
                 <a href="/aip-form" class="btn-callback btn-primary">Start Your AIP</a>
