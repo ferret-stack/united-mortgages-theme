@@ -33,6 +33,7 @@ Version: 3.4
 
 .hero-section.membership{
     background-image: url('assets/lifetime.png');
+    justify-content: flex-end
 }
 
 .hero-overlay {
@@ -12550,6 +12551,7 @@ input#borrow-deposit::placeholder {
     .hero-section.first-time-buyers-hero,
     .hero-section.moving-home-hero,
     .hero-section.remortgaging-hero,
+    .hero-section.membership,
     .hero-section.efse-hero,
     .hero-section.other-mortgages-hero {
         background-position: -center;
@@ -12559,6 +12561,7 @@ input#borrow-deposit::placeholder {
     .hero-section.our-mortgages-hero .hero-overlay,
     .hero-section.first-time-buyers-hero .hero-overlay,
     .hero-section.moving-home-hero .hero-overlay,
+    .hero-section.membership .hero-overlay,
     .hero-section.remortgaging-hero .hero-overlay,
     .hero-section.efse-hero .hero-overlay,
     .hero-section.other-mortgages-hero .hero-overlay {
@@ -12571,6 +12574,7 @@ input#borrow-deposit::placeholder {
     .hero-section.moving-home-hero::before,
     .hero-section.remortgaging-hero::before,
     .hero-section.efse-hero::before,
+    .hero-section.membership::before,
     .hero-section.other-mortgages-hero::before {
         content: '';
         position: absolute;

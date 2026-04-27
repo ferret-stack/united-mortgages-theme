@@ -8,15 +8,20 @@ get_header(); ?>
 
 <main id="primary" class="site-main">
     <!-- Hero Section -->
+
     <section class="hero-section membership">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content membership">
-                <h1 class="policy-title" style="margin-top:27rem;">Lifetime Mortgage Membership</h1>
-                <p class="policy-subtitle">A lifelong partnership for your homeowning journey</p>
-            </div>
+    <div class="hero-overlay"></div>
+    <div class="nhs-hero-bottom">
+        <div class="nhs-hero-text">
+            <h1>Lifetime Mortgage Membership</h1>
+                <p class="nhs-hero-tagline">A lifelong partnership for your homeowning journey.</p>
         </div>
-    </section>
+        <div class="nhs-scroll-cue">
+            <span>See how we're different</span>
+        <div class="nhs-chevron"></div>
+        </div>
+    </div>
+</section>
 
     <!-- Main Content -->
     <section class="policy-content">
