@@ -373,12 +373,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (resultsDisplay && borrowingCapacity > 0) {
             const buttonsHtml = '<div class="results-actions">' +
                 '<button class="use-borrow-button" onclick="useBorrowAmount()">Use this amount in Repayment Calculator</button>' +
-                '</div>' +
-                '<div class="results-cta">' +
-                '<a href="<?php echo home_url('/aip-overview'); ?>" class="btn-primary">Get your agreement in principle today!</a>' +
                 '</div>';
             resultsDisplay.innerHTML += buttonsHtml;
         }
+
+        // Add AIP CTA
+        addAipCta();
     }
     
     // Repayment Calculator
@@ -627,7 +627,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const resultsDisplay = document.getElementById('results-display');
         if (resultsDisplay && !resultsDisplay.querySelector('.results-cta')) {
             const ctaHtml = '<div class="results-cta">' +
-                '<a href="<?php echo home_url('/aip-overview'); ?>" class="btn-primary">Get your agreement in principle today!</a>' +
+                '<a href="<?php echo home_url('/aip-overview'); ?>" class="btn-primary">Get your agreement in principle today!</a>' + '<div class="spacer"></div>' +
+                '<p style="color:#676767;">This calculator is an interactive tool which should be used for your guidance only and must not form part of your financial decision making process.</p>' +
                 '</div>';
             resultsDisplay.innerHTML += ctaHtml;
         }
