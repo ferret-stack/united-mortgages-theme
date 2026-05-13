@@ -95,8 +95,7 @@ get_header(); ?>
                         <p>We do not charge you a fee for assistance in choosing the most suitable mortgage for your circumstances.</p>
 
                         <h4>Application Fee Structure</h4>
-                        <p>We charge a non-refundable application fee based on the time spent on preparing your mortgage application for submission to the recommended lender, supervision of the application process up to the mortgage offer stage, providing you with regular updates and liaising on your behalf with your Solicitor or Estate Agent.</p>
-
+                        <p>We charge a non-refundable application fee, payable upfront before we begin the application process, based on the time spent on preparing your mortgage application for submission to the recommended lender, supervision of the application process up to the mortgage offer stage, providing you with regular updates and liaising on your behalf with your Solicitor or Estate Agent.</p>
                         <div class="data-grid">
                             <div class="data-card">
                                 <h4>Standard Applications</h4>

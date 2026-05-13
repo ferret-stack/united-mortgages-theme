@@ -104,7 +104,7 @@ get_header(); ?>
 
                         <div class="use-item">
                             <h4>Compliance Monitoring</h4>
-                            <p>To allow Homekey Mortgage Solutions Ltd, Stonebridge Mortgage Solutions Ltd, or their representatives to conduct compliance monitoring, to prevent financial crime, and to contact you for the purpose of ensuring you have received adequate advice. Data will be processed in the legitimate interest of the business.</p>
+                            <p>To allow Homekey Mortgage Solutions Ltd, or their representatives to conduct compliance monitoring, to prevent financial crime, and to contact you for the purpose of ensuring you have received adequate advice. Data will be processed in the legitimate interest of the business.</p>
                         </div>
 
                         <div class="info-box">
