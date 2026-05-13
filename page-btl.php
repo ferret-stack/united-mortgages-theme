@@ -173,7 +173,7 @@ get_header(); ?>
             </ul>
             <p><b>Regulatory framework:</b></p>
             <ul>
-                <li>Most buy to let loans are unregulated unless classified as consumer buy to let</li>
+                <li>Most Buy to Let Mortgages are not regulated by Financial Conduct Authority</li>
                 <li>Landlords must consider compliance requirements such as landlord licensing, which varies by local authority</li>
                 <li>Buy to let interest rates are typically higher than residential rates due to investment risk and regulatory capital treatment</li>
             </ul>
