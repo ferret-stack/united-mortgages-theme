@@ -172,7 +172,7 @@ get_header(); ?>
                                 ✉️ 5 Drakes Mews, Crownhill Milton Keynes, MK8 0ER</p>
                             </div>
                         </div>
-
+                        <p>For more, please see our <a href="/complaints-policy" target="_blank">complaints policy.</a></p>
                         <div class="info-box" style="margin-top: 2rem;">
                             <p><strong>Financial Ombudsman Service:</strong><br>
                             If you cannot settle your complaint with us, you may be entitled to refer it to the Financial Ombudsman Service at <a href="https://www.financial-ombudsman.org.uk" target="_blank">www.financial-ombudsman.org.uk</a> or by contacting them on 0800 023 4567.</p>

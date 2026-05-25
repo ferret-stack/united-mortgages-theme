@@ -198,7 +198,7 @@ get_header(); ?>
                         <h2>Your Rights</h2>
                         <p>Under UK GDPR, you have the following rights regarding your personal data:</p>
 
-                        <div class="data-grid">
+                        <div class="data-grid" style="grid-template-columns: repeat(2, 1fr);">
                             <div class="data-card">
                                 <h4>✅ Right to Access</h4>
                                 <p>You may review or update the personally identifiable information that we hold about you by contacting us at the address below. To better safeguard your information, we will also take reasonable steps to verify your identity before granting access or making corrections to your information.</p>
@@ -273,11 +273,11 @@ get_header(); ?>
 
                     <section id="contact" class="policy-section">
                         <h2>Contact Us</h2>
-                        <p>If you have any questions about this privacy policy, how we handle your data, or wish to exercise your data protection rights, please contact us:</p>
 
                         <div class="contact-cards">
                             <div class="contact-card">
                                 <h4>Data Protection Queries</h4>
+                                <p>If you have any questions about this privacy policy, how we handle your data, or wish to exercise your data protection rights, please contact us:</p>
                                 <p>📧 <a href="mailto:legal@united-mortgages.com">legal@united-mortgages.com</a><br>
                                 📞 <a href="tel:02034889773">0204 634 9315</a><br>
                                 ✉️ United Mortgages Limited, 167-169 Great Portland Street, London, W1W 7PF</p>
