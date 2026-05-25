@@ -36,6 +36,7 @@
               <li><a href="/membership">Lifetime Membership</a></li>
               <li><a href="/fee-structure">Our Fees</a></li>
               <li><a href="/privacy-policy">Privacy Policy</a></li>
+              <li><a href="/complaints-policy">Complaints Policy</a></li>
             </ul>
           </div>
         </div>
