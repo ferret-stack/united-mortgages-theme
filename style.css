@@ -1729,6 +1729,11 @@ blockquote {
     margin: 0 auto;
 }
 
+.founders-grid.advisory{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
 .founder-card {
     display: flex;
     flex-direction: column;

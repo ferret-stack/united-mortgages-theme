@@ -157,7 +157,25 @@ get_header(); ?>
                 <p class="team-section-subtitle">Bringing together visionary strategists dedicated to shaping the future of home financing</p>
             </div>
             
-            <div class="founders-grid">
+            <div class="founders-grid advisory">
+
+                <!-- Mike -->
+                <div class="founder-card">
+                    <div class="founder-image-wrapper">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/mike-bw.png" alt="Mike Buttigieg" class="founder-image bw-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/mike-col.png" alt="Mike Buttigieg" class="founder-image color-image">
+                    </div>
+                    <div class="founder-info">
+                        <h3 class="founder-name">MIKE BUTTIGIEG<a href="https://www.linkedin.com/in/michaelbuttigieg/" target="_blank" class="linkedin-link">in</a></h3>
+                        <p class="founder-title">Mortgage Advisor</p>
+                        <div class="founder-bio">
+                        <p>With a background spanning mortgage advisory, property development and entrepreneurship, Mike brings a practical, commercially minded approach to helping clients navigate the property journey.</p>
+                        <p>Having qualified as a Mortgage Consultant after years of hands-on experience developing property projects, he understands both the financial and real-world considerations involved in buying, investing and building wealth through property.</p>
+                        <p>Before moving into financial services, Mike built and led businesses, opened international markets and generated multi-million-pound revenue growth through strategic partnerships and commercial leadership.</p>
+                        <p>He combines industry knowledge with a relationship-led style, helping clients secure tailored mortgage solutions while delivering clear advice and long-term value.</p>
+                        </div>
+                    </div>
+                </div>
                 <!-- Muki -->
                 <div class="founder-card">
                     <div class="founder-image-wrapper">
@@ -182,9 +200,9 @@ get_header(); ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/sarina-col.png" alt="Sarina Kiayani" class="founder-image color-image sarina">
                     </div>
                     <div class="founder-info">
-                        <h3 class="founder-name">Sarina Kiayani <a href="https:linkedin.com/in/sarinakiayani" target="_blank" class="linkedin-link">in</a></h3>
+                        <h3 class="founder-name">SARINA KIAYANI<a href="https:linkedin.com/in/sarinakiayani" target="_blank" class="linkedin-link">in</a></h3>
                         <p class="founder-title">Non-Executive Director &amp; Policy Advisor</p>
-                        <div class="founder-bio">
+                        <div class="founder-bio" style="margin-top:-30px;">
                             <p>Sarina, an alumna of the London School of Economics, brings a thoughtful, people-centred approach to policy development in her role as Policy and External Affairs Manager at ARCO (Associated Retirement Community Operators), the UK's leading trade body for Housing-with-Care.</p>
                             <p>A natural communicator, she regularly contributes to public debates on housing through media appearances and written commentary, translating complex policy into accessible, human-focused narratives.</p>
                             <p>Policy Advisor at United Mortgages&reg;, she helps shape the organisation's vision around ethical and accessible housing finance, bringing both her collaborative mindset and advocacy for inclusive, sustainable housing solutions.</p>
