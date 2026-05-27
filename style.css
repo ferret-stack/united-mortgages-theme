@@ -8100,6 +8100,18 @@ blockquote {
     background-color: #005885;
 }
 
+.advisor-mail {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 8.25px;
+}
+
 .founder-title {
     font-size: 1.3rem;
     color: #b8956f;
