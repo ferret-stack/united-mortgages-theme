@@ -37,7 +37,7 @@ get_header(); ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/david-col.png" alt="David Woodford" class="founder-image color-image">
                     </div>
                     <div class="founder-info">
-                        <h3 class="founder-name">DAVID WOODFORD <a href="https://www.linkedin.com/in/davidwoodforduk" target="_blank" class="linkedin-link">in</a><a href="mailto:david@united-mortgages.com"><img src="<?php echo get_template_directory_uri(); ?>/assets/advisor-mail.svg" class="advisor-mail" style="margin-bottom:3px;"alt="Email"></a></h3>
+                        <h3 class="founder-name">DAVID WOODFORD <a href="https://www.linkedin.com/in/davidwoodforduk" target="_blank" class="linkedin-link">in</a><a href="mailto:david@united-mortgages.com"><img src="<?php echo get_template_directory_uri(); ?>/assets/advisor-mail.svg" class="advisor-mail" alt="Email"></a></h3>
                         <p class="founder-title">Chief Executive Officer<span style="font-size:0.7rem;"> CeMAP</span></p>
                         <div class="founder-bio" style="margin-top:1px;">
                             <p>Co-Founder and Chief Executive Officer of United Mortgages&reg;  with responsibility for overall leadership, GTM, and strategy, in addition to adeptly leading the firm's commercial advisory operations.</p>

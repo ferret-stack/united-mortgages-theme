@@ -2,7 +2,7 @@
 Theme Name: UnitedMortgagesTheme
 Author: Dannyboy
 Description: United Mortgages website
-Version: 3.5
+Version: 3.5.1
 */
 :root {
     --dannyboy-blue: #109dff;
@@ -1787,17 +1787,6 @@ blockquote {
     max-width: 500px;
 }
 
-.founder-name {
-    font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
 /* LinkedIn icon styling */
 .linkedin-link {
     display: inline-flex;
@@ -1816,6 +1805,33 @@ blockquote {
 
 .linkedin-link:hover {
     background-color: #005885;
+}
+
+.founder-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  line-height: 1; /* Prevents inherited line-height from adding extra vertical space */
+}
+
+/* Ensure both LinkedIn & Email links behave identically */
+.founder-name a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 1;
+  text-decoration: none;
+}
+
+/* Reset default inline image behavior & force alignment */
+.advisor-mail {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0 !important; /* Overrides any leftover inline margin */
+  padding: 0;
 }
 
 .founder-title {
@@ -8100,18 +8116,6 @@ blockquote {
     background-color: #005885;
 }
 
-.advisor-mail {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    margin-top: 8.25px;
-}
-
 .founder-title {
     font-size: 1.3rem;
     color: #b8956f;
@@ -8914,6 +8918,17 @@ blockquote {
     .process-cards-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 2.5rem;
+    }
+
+    .who-we-help-section{
+        background-color: grey;
+    }
+
+    .team-section-subtitle{
+        color: white;
+    }
+    .team-section-title{
+        color: white;
     }
 }
 
@@ -13269,3 +13284,7 @@ input#borrow-deposit::placeholder {
 .features-grid.mortgage-prod {
  grid-template-columns: repeat(2, 2fr)   
 }
+
+/* ===================================
+FIX: Cross-Device Founder Icon Alignment
+=================================== */
