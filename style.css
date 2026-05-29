@@ -2,7 +2,7 @@
 Theme Name: UnitedMortgagesTheme
 Author: Dannyboy
 Description: United Mortgages website
-Version: 3.5.1
+Version: 3.5.2
 */
 :root {
     --dannyboy-blue: #109dff;
@@ -1732,6 +1732,14 @@ blockquote {
 .founders-grid.advisory{
     grid-template-columns: repeat(3, 1fr);
     gap: 50px;
+}
+
+
+@media (max-width: 1024px) {
+    .founders-grid.advisory{
+        grid-template-columns: repeat(1,1fr);
+    }
+    
 }
 
 .founder-card {
@@ -13284,7 +13292,3 @@ input#borrow-deposit::placeholder {
 .features-grid.mortgage-prod {
  grid-template-columns: repeat(2, 2fr)   
 }
-
-/* ===================================
-FIX: Cross-Device Founder Icon Alignment
-=================================== */
