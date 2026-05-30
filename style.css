@@ -2,7 +2,7 @@
 Theme Name: UnitedMortgagesTheme
 Author: Dannyboy
 Description: United Mortgages website
-Version: 3.5.2
+Version: 3.5.3
 */
 :root {
     --dannyboy-blue: #109dff;
@@ -1729,15 +1729,25 @@ blockquote {
     margin: 0 auto;
 }
 
-.founders-grid.advisory{
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+.founders-grid.advisory {
+  max-width: 100%;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 3rem; /* Adds breathing room between cards */
+  width: calc(100% + 100px); /* Breaks out of container padding */
+  margin-left: -40px;
+  padding-left: 40px;
+  box-sizing: border-box;
 }
 
 
 @media (max-width: 1024px) {
     .founders-grid.advisory{
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
     }
     
 }
@@ -1793,6 +1803,16 @@ blockquote {
 /* Founder Info */
 .founder-info {
     max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.founder-header {
+    min-height: 75px; /* Adjust as required */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* To push content to bottom of reserved space */
+    margin-bottom: 2rem;
 }
 
 /* LinkedIn icon styling */
@@ -1821,6 +1841,7 @@ blockquote {
   justify-content: center;
   gap: 10px;
   line-height: 1; /* Prevents inherited line-height from adding extra vertical space */
+  margin-bottom: 0.5rem;
 }
 
 /* Ensure both LinkedIn & Email links behave identically */
@@ -1847,10 +1868,12 @@ blockquote {
     color: #b8956f;
     margin-bottom: 2rem;
     font-weight: 300;
+    margin-bottom: 0; /* Allows founder-header wrapper to handle spacing */
 }
 
 .founder-bio {
     text-align: justify;
+    margin-top: 0 !important; /* Overrides leftover inline styles */
 }
 
 .founder-bio p {
@@ -8088,11 +8111,6 @@ blockquote {
     opacity: 0;
 }
 
-/* Founder Info */
-.founder-info {
-    max-width: 500px;
-}
-
 .founder-name {
     font-size: 1.3rem;
     font-weight: 700;
@@ -8122,25 +8140,6 @@ blockquote {
 
 .linkedin-link:hover {
     background-color: #005885;
-}
-
-.founder-title {
-    font-size: 1.3rem;
-    color: #b8956f;
-    margin-bottom: 2rem;
-    font-weight: 300;
-}
-
-.founder-bio {
-    text-align: justify;
-}
-
-.founder-bio p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 1rem;
-    color: rgba(255, 255, 255, 0.85);
-    font-weight: 300;
 }
 
 /* Responsive Design */

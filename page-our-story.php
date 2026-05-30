@@ -37,9 +37,11 @@ get_header(); ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/david-col.png" alt="David Woodford" class="founder-image color-image">
                     </div>
                     <div class="founder-info">
-                        <h3 class="founder-name">DAVID WOODFORD <a href="https://www.linkedin.com/in/davidwoodforduk" target="_blank" class="linkedin-link">in</a><a href="mailto:david@united-mortgages.com"><img src="<?php echo get_template_directory_uri(); ?>/assets/advisor-mail.svg" class="advisor-mail" alt="Email"></a></h3>
-                        <p class="founder-title">Chief Executive Officer<span style="font-size:0.7rem;"> CeMAP</span></p>
-                        <div class="founder-bio" style="margin-top:1px;">
+                        <div class="founder-header">
+                            <h3 class="founder-name">DAVID WOODFORD <a href="https://www.linkedin.com/in/davidwoodforduk" target="_blank" class="linkedin-link">in</a><a href="mailto:david@united-mortgages.com"><img src="<?php echo get_template_directory_uri(); ?>/assets/advisor-mail.svg" class="advisor-mail" alt="Email"></a></h3>
+                            <p class="founder-title">Chief Executive Officer<span style="font-size:0.7rem;"> CeMAP</span></p>
+                        </div>  
+                        <div class="founder-bio">
                             <p>Co-Founder and Chief Executive Officer of United Mortgages&reg;  with responsibility for overall leadership, GTM, and strategy, in addition to adeptly leading the firm's commercial advisory operations.</p>
                             <p>A tech and customer experience evangelist, David has spent nearly a decade working at the intersection of innovation, sustainability, and growth. Before co-founding United, he held management roles at two Fortune 500 firms (Renault Group and Geely), and later helped scale Deloitte Fast 50 and Fast 500 recipients, Hypervolt, where he built enterprise and partnership channels with a relentless focus on the customer journey. </p>
                             <p>An alumnus of Edinburgh Business School, David's penchant for thinking in the long-term, energetic leadership, and relentless focus on the customer experience enables him to build and scale high-performance teams, and mutually profitable partnerships.</p>
@@ -54,8 +56,10 @@ get_header(); ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/daniel-col.png" alt="Daniel Holloway" class="founder-image color-image">
                     </div>
                     <div class="founder-info">
-                        <h3 class="founder-name">DANIEL HOLLOWAY <a href="https://www.linkedin.com/in/boolean-daniel" target="_blank" class="linkedin-link">in</a></h3>
-                        <p class="founder-title" style="margin-top:20px;">Chief Technical Officer</p>
+                        <div class="founder-header">
+                            <h3 class="founder-name">DANIEL HOLLOWAY <a href="https://www.linkedin.com/in/boolean-daniel" target="_blank" class="linkedin-link">in</a></h3>
+                            <p class="founder-title">Chief Technical Officer</p>
+                        </div>  
                         <div class="founder-bio">
                             <p>Co-founder and Chief Technical Officer, Daniel leads the engineering, build, and implementation of our suite of proprietary software.</p>
 							<p>As passionate about streamlining the mortgage process as he is the Oxford comma, he approaches each development challenge with the systematic rigor of a quantitative analyst and the curiosity of a philosopher asking "why?"</p>
@@ -166,9 +170,11 @@ get_header(); ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/mike-col.png" alt="Mike Buttigieg" class="founder-image color-image">
                     </div>
                     <div class="founder-info">
-                        <h3 class="founder-name">MIKE BUTTIGIEG<a href="https://www.linkedin.com/in/michaelbuttigieg/" target="_blank" class="linkedin-link">in</a><a href="mailto:mike@united-mortgages.com"><img src="<?php echo get_template_directory_uri(); ?>/assets/advisor-mail.svg" class="advisor-mail" alt="Email"></a></h3>
-                        <p class="founder-title">Senior Mortgage Advisor<span style="font-size:0.7rem;"> CeMAP</span></p>
-                        <div class="founder-bio" style="margin-top:-15px;">
+                        <div class="founder-header">
+                            <h3 class="founder-name">MIKE BUTTIGIEG<a href="https://www.linkedin.com/in/michaelbuttigieg/" target="_blank" class="linkedin-link">in</a><a href="mailto:mike@united-mortgages.com"><img src="<?php echo get_template_directory_uri(); ?>/assets/advisor-mail.svg" class="advisor-mail" alt="Email"></a></h3>
+                            <p class="founder-title">Senior Mortgage Advisor<span style="font-size:0.7rem;"> CeMAP</span></p>
+                        </div>  
+                        <div class="founder-bio">
                         <p>With a background spanning mortgage advisory, property development and entrepreneurship, Mike brings a practical, commercially minded approach to helping clients navigate the property journey.</p>
                         <p>Having qualified as a Mortgage Consultant after years of hands-on experience developing property projects, he understands both the financial and real-world considerations involved in buying, investing and building wealth through property.</p>
                         <p>Before moving into financial services, Mike built and led businesses, opened international markets and generated multi-million-pound revenue growth through strategic partnerships and commercial leadership.</p>
@@ -183,8 +189,10 @@ get_header(); ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/muki-col.png" alt="Muki Liu" class="founder-image color-image">
                     </div>
                     <div class="founder-info">
-                        <h3 class="founder-name">MUKI LIU <a href="https://www.linkedin.com/in/muki-liu-844444193" target="_blank" class="linkedin-link">in</a></h3>
-                        <p class="founder-title">Technical Advisor</p>
+                        <div class="founder-header">
+                            <h3 class="founder-name">MUKI LIU <a href="https://www.linkedin.com/in/muki-liu-844444193" target="_blank" class="linkedin-link">in</a></h3>
+                            <p class="founder-title">Technical Advisor</p>
+                        </div>  
                         <div class="founder-bio">
                             <p>A visionary and empathetic communicator, Muki built her career in communications across the green energy sector, working with Evident, Drax Group, and National Grid.</p>
                             <p>Educated at Beijing International Studies University and the University of Edinburgh, Muki embraces diverse voices and believes in the power of listening: communication comes after understanding what is truly desired.</p>
@@ -200,9 +208,11 @@ get_header(); ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/sarina-col.png" alt="Sarina Kiayani" class="founder-image color-image sarina">
                     </div>
                     <div class="founder-info">
-                        <h3 class="founder-name">SARINA KIAYANI<a href="https:linkedin.com/in/sarinakiayani" target="_blank" class="linkedin-link">in</a></h3>
-                        <p class="founder-title">Non-Executive Director &amp; Policy Advisor</p>
-                        <div class="founder-bio" style="margin-top:-30px;">
+                        <div class="founder-header">
+                            <h3 class="founder-name">SARINA KIAYANI<a href="https:linkedin.com/in/sarinakiayani" target="_blank" class="linkedin-link">in</a></h3>
+                            <p class="founder-title">Non-Executive Director &amp; Policy Advisor</p>
+                        </div>  
+                        <div class="founder-bio">
                             <p>Sarina, an alumna of the London School of Economics, brings a thoughtful, people-centred approach to policy development in her role as Policy and External Affairs Manager at ARCO (Associated Retirement Community Operators), the UK's leading trade body for Housing-with-Care.</p>
                             <p>A natural communicator, she regularly contributes to public debates on housing through media appearances and written commentary, translating complex policy into accessible, human-focused narratives.</p>
                             <p>Policy Advisor at United Mortgages&reg;, she helps shape the organisation's vision around ethical and accessible housing finance, bringing both her collaborative mindset and advocacy for inclusive, sustainable housing solutions.</p>
