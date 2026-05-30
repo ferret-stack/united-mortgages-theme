@@ -14,7 +14,7 @@ get_header(); ?>
                 <h1 class="story-hero-title">The Mortgage Process Is Broken.<br><span style="font-weight:600;">We're here to fix it.</span></h1>
                 
                 <div class="story-hero-text">
-                    <p>Founded by David Woodford and Daniel Holloway, United Mortgages&reg; was built with a clear mission: to revolutionise the mortgage process and put their clients first. No theatre. No fluff. Just a faster, cleaner way to help you secure your dream home.</p>
+                    <p>Founded by David Woodford and Daniel Holloway, United Mortgages&reg; was built with a clear mission: to revolutionise the mortgage process and put their clients first.<br>No theatre. No fluff. Just a faster, cleaner way to help you secure your dream home.</p>
                     <p style="font-weight:600;">Welcome to the future of mortgages</p>
                 </div>
             </div>
@@ -43,8 +43,8 @@ get_header(); ?>
                         </div>  
                         <div class="founder-bio">
                             <p>Co-Founder and Chief Executive Officer of United Mortgages&reg;  with responsibility for overall leadership, GTM, and strategy, in addition to adeptly leading the firm's commercial advisory operations.</p>
-                            <p>A tech and customer experience evangelist, David has spent nearly a decade working at the intersection of innovation, sustainability, and growth. Before co-founding United, he held management roles at two Fortune 500 firms (Renault Group and Geely), and later helped scale Deloitte Fast 50 and Fast 500 recipients, Hypervolt, where he built enterprise and partnership channels with a relentless focus on the customer journey. </p>
-                            <p>An alumnus of Edinburgh Business School, David's penchant for thinking in the long-term, energetic leadership, and relentless focus on the customer experience enables him to build and scale high-performance teams, and mutually profitable partnerships.</p>
+                            <p>Before co-founding United, he held management roles at two Fortune 500 firms (Renault Group and Geely), and later helped scale Deloitte Fast 50 and Fast 500 recipients, Hypervolt, where he built enterprise and partnership channels with a relentless focus on the customer journey. </p>
+                            <p>An alumnus of Edinburgh Business School, David's energetic leadership, and relentless focus on the customer experience enables him to build and scale high-performance teams, and mutually profitable partnerships.</p>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,6 @@ get_header(); ?>
                         </div>  
                         <div class="founder-bio">
                             <p>Co-founder and Chief Technical Officer, Daniel leads the engineering, build, and implementation of our suite of proprietary software.</p>
-							<p>As passionate about streamlining the mortgage process as he is the Oxford comma, he approaches each development challenge with the systematic rigor of a quantitative analyst and the curiosity of a philosopher asking "why?"</p>
 							<p>With a Master's in Economics and Finance from King's College London and a Bachelor's in Philosophy, Politics &amp; Economics, Daniel views software development as much an art as a science and combines deep financial industry knowledge with technical expertise.</p>
                             <p>His experience spans algorithmic systems development, full-stack web engineering, and five years in finance, bringing a unique perspective to mortgage technology that treats every line of code as both a technical solution and a bet on better outcomes for our clients.</p>
                         </div>
@@ -174,7 +173,6 @@ get_header(); ?>
                             <p class="founder-title">Senior Mortgage Advisor<span class="founder-title postnom"> CeMAP</span></p>
                         </div>  
                         <div class="founder-bio">
-                        <p>With a background spanning mortgage advisory, property development, and entrepreneurship, Mike brings a practical, commercially minded approach to helping clients navigate the property journey.</p>
                         <p>Having qualified as a Mortgage Consultant after years of hands-on experience developing property projects, he understands both the financial and real-world considerations involved in buying, investing and building wealth through property.</p>
                         <p>Before moving into financial services, Mike built and led businesses, opened international markets and generated multi-million-pound revenue growth through strategic partnerships and commercial leadership.</p>
                         </div>
@@ -192,7 +190,7 @@ get_header(); ?>
                             <p class="founder-title">Technical Advisor</p>
                         </div>  
                         <div class="founder-bio">
-                            <p>A visionary and empathetic communicator, Muki built her career in communications across the green energy sector, working with Evident, Drax Group, and National Grid.</p>
+                            <p>Muki built her career in communications across the green energy sector, working with Evident, Drax Group, and National Grid.</p>
                             <p>Educated at Beijing International Studies University and the University of Edinburgh, Muki embraces diverse voices and believes in the power of listening: communication comes after understanding what is truly desired.</p>
                             <p>As Technical Advisor at United Mortgages&reg;, she creatively leads the firm's marketing and communications strategy.</p>
                         </div>
@@ -212,8 +210,7 @@ get_header(); ?>
                         </div>  
                         <div class="founder-bio">
                             <p>Sarina, an alumna of the London School of Economics, brings a thoughtful, people-centred approach to policy development in her role as Policy &amp; External Affairs Manager at ARCO (Associated Retirement Community Operators), the UK's leading Housing-with-Care trade body.</p>
-                            <p>A natural communicator, she regularly contributes to public debates on housing through media appearances and written commentary, translating complex policy into accessible, human-focused narratives.</p>
-                            <p>Policy Advisor at United Mortgages&reg;, she helps shape the organisation's vision around ethical and accessible housing finance, bringing both her collaborative mindset and advocacy for inclusive, sustainable housing solutions.</p>
+                            <p>She regularly contributes to public debates on housing through media appearances and written commentary, translating complex policy into accessible narratives. As policy advisor, she helps to shape United Mortgages&reg; approach to housing finance.</p>
                         </div>
                     </div>
                 </div>
@@ -230,8 +227,8 @@ get_header(); ?>
                             <p class="founder-title">Board Advisor <span class="founder-title postnom"> CeMAP CeRER</span></p>
                         </div>  
                         <div class="founder-bio">
-                            <p>DeAndre brings over a decade of industry expertise. As the founder of GooCho Mortgages hes has successfully guided over 500 clients through the complexities of the UK property market.</p>
-<p>As an advisor to the board, DeAndre leverages his deep understanding of the buyer's journey to champion United Mortgages&reg; A+ service and ethical lending. His advisory focus centres on creating inclusive and tailor-made strategies that streamline the mortgage process.</p>
+                            <p>As the founder of GooCho Mortgages, DeAndre brings over a decade of industry expertise and has successfully guided over 500 clients through the complexities of the UK property market.</p>
+                            <p>As an advisor to the board, DeAndre leverages his deep understanding of the buyer's journey to champion United Mortgages&reg; A+ service and ethical lending. His advisory focus centres on creating inclusive and tailor-made strategies that streamline the mortgage process.</p>
                         </div>
                     </div>
                 </div>
