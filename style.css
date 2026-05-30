@@ -80,6 +80,11 @@ Version: 3.5.3
     text-align: center;
 }
 
+.container.advisory {
+    max-width: 1750px;
+}
+
+
 /* Button Container */
 .button-group {
     position: relative;
@@ -1700,6 +1705,11 @@ blockquote {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+.founding-team-section.advisory{
+    margin-left: -100px;
+    margin-right: -100px;
+}
+
 .section-header {
     text-align: center;
     margin-bottom: 80px;
@@ -1731,11 +1741,12 @@ blockquote {
 
 .founders-grid.advisory {
   max-width: 100%;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 3rem; /* Adds breathing room between cards */
-  width: calc(100% + 100px); /* Breaks out of container padding */
-  margin-left: -40px;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 3rem;
+  width: calc(100% + 200px); /* Breaks out of container padding */
+  margin-left: -25px;
   padding-left: 40px;
+  margin-right: -100px;
   box-sizing: border-box;
 }
 
@@ -1776,7 +1787,7 @@ blockquote {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Changed from cover to contain */
+    object-fit: cover;
     object-position: center;
     transition: opacity 0.5s ease;
     background-color:rgb(10,10,10); 
@@ -1869,6 +1880,10 @@ blockquote {
     margin-bottom: 2rem;
     font-weight: 300;
     margin-bottom: 0; /* Allows founder-header wrapper to handle spacing */
+}
+
+.founder-title.postnom {
+    font-size: 0.7rem;
 }
 
 .founder-bio {
@@ -8079,18 +8094,6 @@ blockquote {
     overflow: hidden;
     border-radius: 8px;
     aspect-ratio: 3/4; /* Maintains consistent ratio */
-}
-
-.founder-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Changed from cover to contain */
-    object-position: center;
-    transition: opacity 0.5s ease;
-    background-color:rgb(10,10,10); 
 }
 
 .bw-image {

@@ -39,7 +39,7 @@ get_header(); ?>
                     <div class="founder-info">
                         <div class="founder-header">
                             <h3 class="founder-name">DAVID WOODFORD <a href="https://www.linkedin.com/in/davidwoodforduk" target="_blank" class="linkedin-link">in</a><a href="mailto:david@united-mortgages.com"><img src="<?php echo get_template_directory_uri(); ?>/assets/advisor-mail.svg" class="advisor-mail" alt="Email"></a></h3>
-                            <p class="founder-title">Chief Executive Officer<span style="font-size:0.7rem;"> CeMAP</span></p>
+                            <p class="founder-title">Chief Executive Officer<span class="founder-title postnom"> CeMAP</span></p>
                         </div>  
                         <div class="founder-bio">
                             <p>Co-Founder and Chief Executive Officer of United Mortgages&reg;  with responsibility for overall leadership, GTM, and strategy, in addition to adeptly leading the firm's commercial advisory operations.</p>
@@ -129,7 +129,6 @@ get_header(); ?>
                     compensation, we know how to present your income in a way that gets you approved.</p>
                     <a href="<?php echo home_url('/efse'); ?>" class="btn-service">I'M SELF EMPLOYED</a>
                 </div>
-
                     <div class="mortgage-service-card">
                     <div class="service-icon">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-mortgages/handshake.svg" alt="Expats">
@@ -154,8 +153,8 @@ get_header(); ?>
 </section>
 
         <!-- Advisory Board Section -->
-    <section class="founding-team-section">
-        <div class="container">
+    <section class="founding-team-section advisory">
+        <div class="container advisory">
             <div class="section-header">
                 <h2 class="team-section-title">Our <span class="bold-text">Team</span></h2>
                 <p class="team-section-subtitle">Bringing together visionary strategists dedicated to shaping the future of home financing</p>
@@ -172,13 +171,12 @@ get_header(); ?>
                     <div class="founder-info">
                         <div class="founder-header">
                             <h3 class="founder-name">MIKE BUTTIGIEG<a href="https://www.linkedin.com/in/michaelbuttigieg/" target="_blank" class="linkedin-link">in</a><a href="mailto:mike@united-mortgages.com"><img src="<?php echo get_template_directory_uri(); ?>/assets/advisor-mail.svg" class="advisor-mail" alt="Email"></a></h3>
-                            <p class="founder-title">Senior Mortgage Advisor<span style="font-size:0.7rem;"> CeMAP</span></p>
+                            <p class="founder-title">Senior Mortgage Advisor<span class="founder-title postnom"> CeMAP</span></p>
                         </div>  
                         <div class="founder-bio">
-                        <p>With a background spanning mortgage advisory, property development and entrepreneurship, Mike brings a practical, commercially minded approach to helping clients navigate the property journey.</p>
+                        <p>With a background spanning mortgage advisory, property development, and entrepreneurship, Mike brings a practical, commercially minded approach to helping clients navigate the property journey.</p>
                         <p>Having qualified as a Mortgage Consultant after years of hands-on experience developing property projects, he understands both the financial and real-world considerations involved in buying, investing and building wealth through property.</p>
                         <p>Before moving into financial services, Mike built and led businesses, opened international markets and generated multi-million-pound revenue growth through strategic partnerships and commercial leadership.</p>
-                        <p>He combines industry knowledge with a relationship-led style, helping clients secure tailored mortgage solutions while delivering clear advice and long-term value.</p>
                         </div>
                     </div>
                 </div>
@@ -213,9 +211,27 @@ get_header(); ?>
                             <p class="founder-title">Non-Executive Director &amp; Policy Advisor</p>
                         </div>  
                         <div class="founder-bio">
-                            <p>Sarina, an alumna of the London School of Economics, brings a thoughtful, people-centred approach to policy development in her role as Policy and External Affairs Manager at ARCO (Associated Retirement Community Operators), the UK's leading trade body for Housing-with-Care.</p>
+                            <p>Sarina, an alumna of the London School of Economics, brings a thoughtful, people-centred approach to policy development in her role as Policy &amp; External Affairs Manager at ARCO (Associated Retirement Community Operators), the UK's leading Housing-with-Care trade body.</p>
                             <p>A natural communicator, she regularly contributes to public debates on housing through media appearances and written commentary, translating complex policy into accessible, human-focused narratives.</p>
                             <p>Policy Advisor at United Mortgages&reg;, she helps shape the organisation's vision around ethical and accessible housing finance, bringing both her collaborative mindset and advocacy for inclusive, sustainable housing solutions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DeAndre -->
+                <div class="founder-card">
+                    <div class="founder-image-wrapper" style="transform: scale(0.9) translateY(27px);">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/deandre-bw.png" alt="DeAndre Bruce" class="founder-image bw-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/deandre-col.png" alt="DeAndre Bruce" class="founder-image color-image">
+                    </div>
+                    <div class="founder-info">
+                        <div class="founder-header">
+                            <h3 class="founder-name">DEANDRE BRUCE<a href="https://www.linkedin.com/in/deandregoocho/" target="_blank" class="linkedin-link">in</a></h3>
+                            <p class="founder-title">Board Advisor <span class="founder-title postnom"> CeMAP CeRER</span></p>
+                        </div>  
+                        <div class="founder-bio">
+                            <p>DeAndre brings over a decade of industry expertise. As the founder of GooCho Mortgages hes has successfully guided over 500 clients through the complexities of the UK property market.</p>
+<p>As an advisor to the board, DeAndre leverages his deep understanding of the buyer's journey to champion United Mortgages&reg; A+ service and ethical lending. His advisory focus centres on creating inclusive and tailor-made strategies that streamline the mortgage process.</p>
                         </div>
                     </div>
                 </div>
