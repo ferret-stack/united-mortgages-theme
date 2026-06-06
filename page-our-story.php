@@ -14,7 +14,7 @@ get_header(); ?>
                 <h1 class="story-hero-title">The Mortgage Process Is Broken.<br><span style="font-weight:600;">We're here to fix it.</span></h1>
                 
                 <div class="story-hero-text">
-                    <p>Founded by David Woodford and Daniel Holloway, United Mortgages&reg; was built with a clear mission: to revolutionise the mortgage process and put their clients first.<br>No theatre. No fluff. Just a faster, cleaner way to help you secure your dream home.</p>
+                    <p>Founded by David Woodford and Daniel Oakey, United Mortgages&reg; was built with a clear mission: to revolutionise the mortgage process and put their clients first.<br>No theatre. No fluff. Just a faster, cleaner way to help you secure your dream home.</p>
                     <p style="font-weight:600;">Welcome to the future of mortgages</p>
                 </div>
             </div>
@@ -52,12 +52,12 @@ get_header(); ?>
                 <!-- Daniel -->
                 <div class="founder-card">
                     <div class="founder-image-wrapper">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/daniel-bw.png?v=2" alt="Daniel Holloway" class="founder-image bw-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/daniel-col.png" alt="Daniel Holloway" class="founder-image color-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/daniel-bw.png?v=2" alt="Daniel Oakey" class="founder-image bw-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/daniel-col.png" alt="Daniel Oakey" class="founder-image color-image">
                     </div>
                     <div class="founder-info">
                         <div class="founder-header">
-                            <h3 class="founder-name">DANIEL HOLLOWAY <a href="https://www.linkedin.com/in/boolean-daniel" target="_blank" class="linkedin-link">in</a></h3>
+                            <h3 class="founder-name">DANIEL OAKEY <a href="https://www.linkedin.com/in/boolean-daniel" target="_blank" class="linkedin-link">in</a></h3>
                             <p class="founder-title">Chief Technical Officer</p>
                         </div>  
                         <div class="founder-bio">
@@ -253,8 +253,8 @@ get_header(); ?>
                 </div>
                 
                 <div class="charter-signatures">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/dw-sig.png" alt="David Woodford Signature" class="signature">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/dholly-sig.png" alt="Daniel Holloway Signature" class="signature" style="transform: scale(1.7);">
+                    <span class="signature">Dwoodford</span>
+                    <span class="signature">Doakey</span>
                 </div>
             </div>
         </div>
