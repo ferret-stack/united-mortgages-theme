@@ -1980,14 +1980,6 @@ blockquote {
     margin-top: 3rem;
 }
 
-.signature-old {
-    height: 80px;
-    width: auto;
-    filter: brightness(0) invert(1); /* Makes signatures white */
-    opacity: 0.3;
-    transition: opacity 0.3s ease;
-}
-
 .signature {
     font-family: 'Pinyon Script', cursive; /* Elegant, professional script */
     font-size: 3.5rem; /* Adjust size as needed */
