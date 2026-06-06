@@ -4,11 +4,12 @@
             <div class="team-contact-wrapper">
                 <div class="team-info">
                     <div class="team-avatars">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/daniel-team.png" alt="Team Member" class="team-avatar">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/daniel-team-2.png" alt="Team Member" class="team-avatar" style="object-position: center -2.5%">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/muki-team.png" alt="Team Member" class="team-avatar">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/david-team.png" alt="Team Member" class="team-avatar">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/sarina-team.png" alt="Team Member" class="team-avatar">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/jeff-team.png" alt="Team Member" class="team-avatar">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/michael-team.png" alt="Team Member" class="team-avatar">
                     </div>
       
                     <h2 class="team-title">Speak to <span class="bold-text">Our Team</span></h2>
