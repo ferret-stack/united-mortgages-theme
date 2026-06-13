@@ -2,7 +2,7 @@
 Theme Name: UnitedMortgagesTheme
 Author: Dannyboy
 Description: United Mortgages website
-Version: 3.7
+Version: 3.7.2
 */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&display=swap');
 :root {
@@ -2905,7 +2905,7 @@ blockquote {
 
 /* Calculator Container */
 .calculator-container {
-    background: rgba(255, 255, 255, 0.95);
+    background: #f0f0f0;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
@@ -2918,7 +2918,6 @@ blockquote {
 .calculator-tabs {
     display: flex;
     background: #f0f0f0;
-    border-bottom: 1px solid #ddd;
 }
 
 .calculator-tab {
@@ -9072,20 +9071,21 @@ blockquote {
 
 /* Calculator Container */
 .calculator-container {
-    background: rgba(255, 255, 255, 0.95);
+    background: #f0f0f0;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
     max-width: 1200px;
     margin: 0 auto;
     margin-top: -10px;
+    border-radius: 27px;
 }
 
 /* Calculator Tabs */
 .calculator-tabs {
     display: flex;
     background: #f0f0f0;
-    border-bottom: 1px solid #ddd;
+    border-radius: 27px;
 }
 
 .calculator-tab {
@@ -9109,6 +9109,7 @@ blockquote {
 .calculator-tab.active {
     background: white;
     color: #1a1a1a;
+    border-top-left-radius: 27px; border-top-right-radius: 27px;
 }
 
 .calculator-tab.active::after {
@@ -9133,6 +9134,7 @@ blockquote {
     padding: 40px;
     background: white;
     position: relative;
+    border-bottom-left-radius: 27px;
 }
 
 .calculator-form {
@@ -9212,6 +9214,7 @@ blockquote {
     background: #f8f8f8;
     border-left: 1px solid #e0e0e0;
     z-index: 1;
+    border-bottom-right-radius: 27px;
 }
 
 .calculator-results h2 {
@@ -9521,6 +9524,7 @@ input#borrow-deposit::placeholder {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0;
+        border-radius: 27px;
     }
     
     .calculator-tab {
