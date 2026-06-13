@@ -2977,7 +2977,7 @@ blockquote {
 
 /* Form Styling */
 .mortgage-calculator-form {
-    max-width: 400px;
+    max-width: 450px;
 }
 
 .form-group {
@@ -9145,10 +9145,7 @@ blockquote {
     display: block;
 }
 
-/* Form Styling */
-.mortgage-calculator-form {
-    max-width: 400px;
-}
+
 
 .form-group {
     margin-bottom: 25px;
@@ -9418,7 +9415,7 @@ input#borrow-deposit::placeholder {
     background: #f0f4f8;
     border-left: 4px solid var(--dannyboy-blue);
     padding: 20px;
-    border-radius: 0 8px 8px 0;
+    border-radius: 10px;
 }
 
 .calc-info-box h4 {
@@ -9436,7 +9433,7 @@ input#borrow-deposit::placeholder {
 }
 
 .calc-info-box.gold-accent {
-    border-left-color: var(--um-gold);
+    border-left-color: hotpink;
 }
 
 /* ===================================
