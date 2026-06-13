@@ -349,7 +349,7 @@ function um_aip_overview_og_tags() {
 add_action( 'wp_head', 'um_aip_overview_og_tags' );
 
 function um_calculator_og_tags() {
-    if ( is_page_template( 'page-aip-calculators.php' ) ) {
+    if ( is_page( 'calculators' ) ) {
         $og_image = get_site_url() . '/wp-content/uploads/2026/04/um-fav.jpg';
         ?>
         <meta property="og:title" content="Calculators | United Mortgages®" />
