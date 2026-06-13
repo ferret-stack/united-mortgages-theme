@@ -253,8 +253,8 @@ get_header(); ?>
                 </div>
                 
                 <div class="charter-signatures">
-                    <span class="signature">Dwoodford</span>
-                    <span class="signature">Doakey</span>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/david-sig.png" alt="David Woodford Signature" class="signature">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/daniel-sig.png" alt="Daniel Oakey Signature" class="signature">
                 </div>
             </div>
         </div>

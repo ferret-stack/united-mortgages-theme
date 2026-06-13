@@ -1973,26 +1973,22 @@ blockquote {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Signatures */
+/* Signatures */ 
 .charter-signatures {
     display: flex;
-    gap: 3rem;
     margin-top: 3rem;
 }
 
 .signature {
-    font-family: 'Pinyon Script', cursive; /* Elegant, professional script */
-    font-size: 3.5rem; /* Adjust size as needed */
-    color: var(--um-gold); /* Uses your existing gold brand color */
-    text-decoration: none;
-    transition: opacity 3s ease;
-    line-height: 1.2;
-    display: inline-block;
-    transform: rotate(-2deg); /* Slight tilt for natural handwritten feel */
+    height: 100px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
 }
 
 .signature:hover {
-    color: #ae955d;
+    opacity: 1;
 }
 
 
@@ -8224,12 +8220,7 @@ blockquote {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Signatures */
-.charter-signatures {
-    display: flex;
-    gap: 3rem;
-    margin-top: 3rem;
-}
+
 
 /* Responsive Design */
 @media (max-width: 1024px) {
