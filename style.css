@@ -2,7 +2,7 @@
 Theme Name: UnitedMortgagesTheme
 Author: Dannyboy
 Description: United Mortgages website
-Version: 3.7.2
+Version: 3.8
 */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&display=swap');
 :root {
@@ -13272,4 +13272,56 @@ input#borrow-deposit::placeholder {
 
 .features-grid.mortgage-prod {
  grid-template-columns: repeat(2, 2fr)   
+}
+
+
+.repayment-toggle {
+    display: flex;
+    background: #f5f5f5;
+    border-radius: 25px;
+    padding: 4px;
+    gap: 4px;
+}
+
+.repayment-toggle .toggle-option {
+    flex: 1;
+    padding: 10px 16px;
+    border-radius: 21px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    color: #666;
+    text-align: center;
+    letter-spacing: 0.3px;
+    /* hide the radio button visually */
+}
+
+.repayment-toggle .toggle-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.repayment-toggle .toggle-option:has(input:checked) {
+    background: var(--um-gold);
+    color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Interest-only capital warning */
+.interest-only-warning {
+    background: #fff8e1;
+    border: 1px solid #f9a825;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-top: 16px;
+    font-size: 0.9rem;
+    color: #5d4037;
+    line-height: 1.5;
+}
+
+.interest-only-warning strong {
+    color: #e65100;
 }

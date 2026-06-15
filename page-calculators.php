@@ -67,9 +67,23 @@ get_header(); ?>
                             </form>
                         </div>
                         
-                        <!-- Repayment Calculator -->
                         <div id="repayment-calculator" class="calculator-form">
                             <form id="repayment-form" class="mortgage-calculator-form">
+
+                        <!-- Repayment type toggle -->
+                        <div class="form-group">
+                            <label>Mortgage Type</label>
+                            <div class="repayment-toggle">
+                                <label class="toggle-option active" id="toggle-label-repayment">
+                                    <input type="radio" name="repaymentType" value="repayment" checked>
+                                    Repayment
+                                </label>
+                                <label class="toggle-option" id="toggle-label-interest-only">
+                                    <input type="radio" name="repaymentType" value="interest-only">
+                                    Interest Only
+                                </label>
+                            </div>
+                        </div>
                                 <div class="form-group">
                                     <label for="repayment-loan">Loan Amount (£)</label>
                                     <input type="text" id="repayment-loan" name="loanAmount" required class="number-input">
@@ -381,53 +395,85 @@ document.addEventListener('DOMContentLoaded', function() {
         addAipCta();
     }
     
-    // Repayment Calculator
+    // Repayment Calculator — V1.4 (adds interest-only branch)
     function calculateRepayment() {
-        const loanAmount = parseNumberInput(document.getElementById('repayment-loan'));
-        const annualRate = parseFloat(document.getElementById('repayment-rate').value) || 0;
+        const loanAmount    = parseNumberInput(document.getElementById('repayment-loan'));
+        const annualRate    = parseFloat(document.getElementById('repayment-rate').value) || 0;
         const loanTermYears = parseFloat(document.getElementById('repayment-term-yrs').value) || 0;
-        const loanTermMths = parseFloat(document.getElementById('repayment-term-mths').value) || 0;
-        const loanTerm = loanTermYears + (loanTermMths / 12);
+        const loanTermMths  = parseFloat(document.getElementById('repayment-term-mths').value) || 0;
+        const loanTerm      = loanTermYears + (loanTermMths / 12);
 
-        // Store for use in overpayment calculator
-        window.lastRepaymentLoan = loanAmount;
-        window.lastRepaymentRate = annualRate;
-        window.lastRepaymentTermYrs = loanTermYears;
+const isInterestOnly = document.querySelector('input[name="repaymentType"]:checked')?.value === 'interest-only';
+
+        // Store for carry-over (always store, regardless of branch)
+        window.lastRepaymentLoan     = loanAmount;
+        window.lastRepaymentRate     = annualRate;
+        window.lastRepaymentTermYrs  = loanTermYears;
         window.lastRepaymentTermMths = loanTermMths;
-        
-        // Convert to monthly values
-        const monthlyRate = annualRate / 100 / 12;
-        const numberOfPayments = loanTerm * 12;
-        
-        // Calculate monthly payment using PMT formula
-        let monthlyPayment;
-        if (monthlyRate === 0) {
-            monthlyPayment = loanAmount / numberOfPayments;
+
+        if (isInterestOnly) {
+            // ── Interest-only branch ──────────────────────────────────────────
+            // monthlyPayment = balance × (annualRate / 100) / 12
+            // Capital is NOT repaid; it remains due at term end.
+            const monthlyPayment = loanAmount * (annualRate / 100) / 12;
+            const months         = loanTerm * 12;
+            const totalInterest  = monthlyPayment * months;
+            const totalRepaid    = totalInterest + loanAmount; // interest + capital balloon
+
+            displayResults({
+                'Monthly Payment':   '<span class="highlight-gold">£' + formatNumber(monthlyPayment) + '</span>',
+                'Total Interest Paid': '£' + formatNumber(totalInterest),
+                'Capital Still Owed': '<span class="highlight-blue">£' + formatNumber(loanAmount) + '</span>',
+                'Total Cost (interest + capital)': '£' + formatNumber(totalRepaid)
+            }, 'repayment');
+
+            // Prominent capital-still-owed warning
+            const resultsDisplay = document.getElementById('results-display');
+            if (resultsDisplay) {
+                resultsDisplay.innerHTML +=
+                    '<div class="interest-only-warning">' +
+                    '⚠️ At the end of the term you will still owe the full ' +
+                    '<strong>£' + formatNumber(loanAmount) + '</strong> capital. ' +
+                    'Interest-only payments do not reduce what you owe - you need a separate plan to repay the capital.' +
+                    '</div>';
+            }
+
+            // Carry-over button is intentionally suppressed for interest-only:
+            // the overpayment calculator assumes an amortising loan and would
+            // produce nonsense figures on an interest-only balance.
+
         } else {
-            monthlyPayment = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) / 
-                           (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
+            // ── Repayment (amortising) branch — unchanged from V1.3 ──────────
+            const monthlyRate      = annualRate / 100 / 12;
+            const numberOfPayments = loanTerm * 12;
+
+            let monthlyPayment;
+            if (monthlyRate === 0) {
+                monthlyPayment = loanAmount / numberOfPayments;
+            } else {
+                monthlyPayment = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) /
+                                (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
+            }
+
+            const totalPayment  = monthlyPayment * numberOfPayments;
+            const totalInterest = totalPayment - loanAmount;
+
+            displayResults({
+                'Monthly Payment': '<span class="highlight-gold">£' + formatNumber(monthlyPayment) + '</span>',
+                'Total Payment':   '£' + formatNumber(totalPayment),
+                'Total Interest':  '<span class="highlight-blue">£' + formatNumber(totalInterest) + '</span>'
+            }, 'repayment');
+
+            // Carry-over button (repayment only — not interest-only)
+            const resultsDisplay = document.getElementById('results-display');
+            if (resultsDisplay && loanAmount > 0) {
+                resultsDisplay.innerHTML +=
+                    '<div class="results-actions">' +
+                    '<button class="use-borrow-button" onclick="useRepaymentAmount()">Use these values in Overpayment Calculator</button>' +
+                    '</div>';
+            }
         }
-        
-        // Calculate total payment and interest
-        const totalPayment = monthlyPayment * numberOfPayments;
-        const totalInterest = totalPayment - loanAmount;
-        
-        displayResults({
-            'Monthly Payment': '<span class="highlight-gold">£' + formatNumber(monthlyPayment) + '</span>',
-            'Total Payment': '£' + formatNumber(totalPayment),
-            'Total Interest': '<span class="highlight-blue">£' + formatNumber(totalInterest) + '</span>'
-        }, 'repayment');
-        
-        // Add buttons: use in overpayment calculator + AIP CTA
-        const resultsDisplay = document.getElementById('results-display');
-        if (resultsDisplay && loanAmount > 0) {
-            const buttonsHtml = '<div class="results-actions">' +
-                '<button class="use-borrow-button" onclick="useRepaymentAmount()">Use these values in Overpayment Calculator</button>' +
-                '</div>';
-            resultsDisplay.innerHTML += buttonsHtml;
-        }
-        
-        // Add AIP CTA
+
         addAipCta();
     }
     
