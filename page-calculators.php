@@ -23,6 +23,7 @@ get_header(); ?>
                 <!-- Calculator Tabs -->
                 <div class="calculator-tabs">
                     <button class="calculator-tab active" data-calculator="borrow">HOW MUCH CAN I BORROW?</button>
+                    <button class="calculator-tab" data-calculator="incometax">INCOME TAX CALCULATOR</button>
                     <button class="calculator-tab" data-calculator="repayment">REPAYMENT CALCULATOR</button>
                     <button class="calculator-tab" data-calculator="overpayment">OVERPAYMENT CALCULATOR</button>
                     <button class="calculator-tab" data-calculator="stampduty">STAMP DUTY CALCULATOR</button>
@@ -208,6 +209,41 @@ get_header(); ?>
                             </div>
                         </form>
                     </div>
+
+                    <!-- Income Tax Calculator -->
+                    <div id="incometax-calculator" class="calculator-form">
+                        <form id="incometax-form" class="mortgage-calculator-form">
+                            <div class="form-group">
+                                <label for="incometax-salary">
+                                    Annual Gross Salary (£)
+                                    <span class="info-tooltip" data-tooltip="Your total gross salary before any tax, NI or other deductions.">ⓘ</span>
+                                </label>
+                                <input type="text" id="incometax-salary" name="salary" required class="number-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="incometax-student-loan">Student Loan Plan</label>
+                                <select id="incometax-student-loan" name="studentLoan">
+                                    <option value="none">None</option>
+                                    <option value="plan1">Plan 1 — repay 9% above £26,900</option>
+                                    <option value="plan2">Plan 2 — repay 9% above £29,385</option>
+                                    <option value="plan4">Plan 4 (Scotland) — repay 9% above £33,795</option>
+                                    <option value="plan5">Plan 5 — repay 9% above £25,000</option>
+                                    <option value="postgrad">Postgraduate — repay 6% above £21,000</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-calculate">CALCULATE</button>
+
+                            <!-- Info Box -->
+                            <div class="info-box-container" style="margin-top: 30px;">
+                                <div class="calc-info-box" style="grid-column: 1 / -1;">
+                                    <h4>2026/27 Income Tax Rates (England, Wales & NI)</h4>
+                                    <p><strong>Personal Allowance:</strong> £12,570 (tapered above £100,000, lost at £125,140)</p>
+                                    <p><strong>Basic rate (20%):</strong> £12,571–£50,270 &nbsp;|&nbsp; <strong>Higher rate (40%):</strong> £50,271–£125,140 &nbsp;|&nbsp; <strong>Additional rate (45%):</strong> above £125,140</p>
+                                    <p><strong>Employee NI:</strong> 8% on £12,570–£50,270 &nbsp;|&nbsp; 2% above £50,270. NI calculated on annualised basis. Scotland differs for income tax.</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                     </div>
                     
                     <!-- Right Side - Results -->
@@ -245,6 +281,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const DIV_ORDINARY         = 0.1075;  // basic band
     const DIV_UPPER            = 0.3575;  // higher band
     const DIV_ADDITIONAL       = 0.3935;  // additional rate band
+
+    // Income Tax Constants — 2026/27 (England, Wales & NI)
+    const BASIC_BAND_WIDTH    = 37700;   // width of basic rate band on taxable income
+    const HIGHER_BAND_WIDTH   = 74870;   // width of higher rate band on taxable income
+    const RATE_BASIC          = 0.20;
+    const RATE_HIGHER         = 0.40;
+    const RATE_ADDITIONAL     = 0.45;
+
+    // Employee NI (Class 1) — 2026/27, annualised
+    const NI_PRIMARY_THRESHOLD = 12570;
+    const NI_UPPER_LIMIT       = 50270;
+    const NI_MAIN_RATE         = 0.08;
+    const NI_UPPER_RATE        = 0.02;
+
+    // Student Loan Repayment Thresholds — 2026/27 (verified gov.uk)
+    const SL_PLAN1_THRESHOLD    = 26900;
+    const SL_PLAN2_THRESHOLD    = 29385;
+    const SL_PLAN4_THRESHOLD    = 33795;
+    const SL_PLAN5_THRESHOLD    = 25000;
+    const SL_POSTGRAD_THRESHOLD = 21000;
+    const SL_UNDERGRAD_RATE     = 0.09;
+    const SL_POSTGRAD_RATE      = 0.06;
 
     // Variables to store calculated values for inter-calculator navigation
     window.lastBorrowAmount = 0;
@@ -321,7 +379,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 'overpayment-calculator': 'overpayment',
                 'stampduty': 'stampduty',
                 'stamp-duty': 'stampduty',
-                'stamp-duty-calculator': 'stampduty'
+                'stamp-duty-calculator': 'stampduty',
+                'incometax': 'incometax',
+                'income-tax': 'incometax',
+                'income-tax-calculator':'incometax',
+                'tax': 'incometax',
+                'ni': 'incometax',
+                'dividend': 'dividend',
+                'dividend-tax': 'dividend',
+                'dividend-calculator':'dividend',
+                'dividends': 'dividend',
             };
             
             const calculatorType = hashMap[hash.toLowerCase()];
@@ -357,12 +424,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const overpaymentForm = document.getElementById('overpayment-form');
     const stampdutyForm = document.getElementById('stampduty-form');
     const dividendForm = document.getElementById('dividend-form');
+    const incometaxForm = document.getElementById('incometax-form');
     
     if (borrowForm) {
         borrowForm.addEventListener('submit', function(e) {
             e.preventDefault();
             calculateBorrow();
         });
+    }
+
+    if (incometaxForm) {
+    incometaxForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        calculateIncomeTax();
+    });
     }
     
     if (repaymentForm) {
@@ -717,6 +792,206 @@ const isInterestOnly = document.querySelector('input[name="repaymentType"]:check
             resultsDisplay.innerHTML = html;
         }
     }
+
+    // Website V 3.8; adding new calculators
+
+    // Income Tax + NI Calculator — 2026/27 (England, Wales & NI)
+    function calculateIncomeTax() {
+        const gross = parseNumberInput(document.getElementById('incometax-salary'));
+        const studentLoanPlan = document.getElementById('incometax-student-loan').value;
+
+        if (gross < 0) {
+            displayError('Please enter a valid salary.');
+            return;
+        }
+
+        // ── Personal Allowance (tapered above £100,000) ───────────────────────
+        let pa = PERSONAL_ALLOWANCE;
+        if (gross > PA_TAPER_START) {
+            pa = Math.max(0, PERSONAL_ALLOWANCE - Math.floor((gross - PA_TAPER_START) / 2));
+        }
+        const paTapered = pa < PERSONAL_ALLOWANCE && pa > 0;
+        const paLost    = pa === 0;
+
+        // ── Income Tax ────────────────────────────────────────────────────────
+        // Fixed band widths on taxable income remain correct even when PA tapers,
+        // because 12,570 + 37,700 + 74,870 = 125,140 (the point PA hits zero).
+        const taxable    = Math.max(0, gross - pa);
+        const inBasic    = Math.min(taxable, BASIC_BAND_WIDTH);
+        const inHigher   = Math.min(Math.max(taxable - BASIC_BAND_WIDTH, 0), HIGHER_BAND_WIDTH);
+        const inAdditional = Math.max(taxable - BASIC_BAND_WIDTH - HIGHER_BAND_WIDTH, 0);
+
+        const incomeTax = (inBasic * RATE_BASIC) + (inHigher * RATE_HIGHER) + (inAdditional * RATE_ADDITIONAL);
+
+        // ── Employee NI (Class 1, annualised) ─────────────────────────────────
+        const niMain  = Math.min(Math.max(gross - NI_PRIMARY_THRESHOLD, 0), NI_UPPER_LIMIT - NI_PRIMARY_THRESHOLD) * NI_MAIN_RATE;
+        const niUpper = Math.max(gross - NI_UPPER_LIMIT, 0) * NI_UPPER_RATE;
+        const nationalInsurance = niMain + niUpper;
+
+        // ── Student Loan ──────────────────────────────────────────────────────
+        let studentLoan = 0;
+        let slThreshold = 0;
+        let slRate = SL_UNDERGRAD_RATE;
+
+        if (studentLoanPlan === 'plan1') {
+            slThreshold = SL_PLAN1_THRESHOLD;
+        } else if (studentLoanPlan === 'plan2') {
+            slThreshold = SL_PLAN2_THRESHOLD;
+        } else if (studentLoanPlan === 'plan4') {
+            slThreshold = SL_PLAN4_THRESHOLD;
+        } else if (studentLoanPlan === 'plan5') {
+            slThreshold = SL_PLAN5_THRESHOLD;
+        } else if (studentLoanPlan === 'postgrad') {
+            slThreshold = SL_POSTGRAD_THRESHOLD;
+            slRate = SL_POSTGRAD_RATE;
+        }
+
+        if (studentLoanPlan !== 'none') {
+            studentLoan = Math.max(0, gross - slThreshold) * slRate;
+        }
+
+        // ── Take-home ─────────────────────────────────────────────────────────
+        const totalDeductions = incomeTax + nationalInsurance + studentLoan;
+        const netAnnual  = gross - totalDeductions;
+        const netMonthly = netAnnual / 12;
+        const effectiveRate = gross > 0 ? (totalDeductions / gross) * 100 : 0;
+
+        // ── Build results ─────────────────────────────────────────────────────
+        const results = {};
+
+        results['Gross Annual Salary'] = '£' + formatNumber(gross);
+
+        // Personal allowance line
+        let paLabel = 'Personal Allowance';
+        if (paLost)         paLabel += ' (fully withdrawn — 60% trap applies)';
+        else if (paTapered) paLabel += ' (tapered)';
+        results[paLabel] = '£' + formatNumber(pa);
+
+        // Income tax breakdown — only show bands with taxable income
+        if (inBasic > 0) {
+            results['Basic Rate (20%) on £' + formatNumber(inBasic)] = '£' + formatNumber(inBasic * RATE_BASIC);
+        }
+        if (inHigher > 0) {
+            results['Higher Rate (40%) on £' + formatNumber(inHigher)] = '£' + formatNumber(inHigher * RATE_HIGHER);
+        }
+        if (inAdditional > 0) {
+            results['Additional Rate (45%) on £' + formatNumber(inAdditional)] = '£' + formatNumber(inAdditional * RATE_ADDITIONAL);
+        }
+
+        results['Income Tax'] = '<span class="highlight-blue">£' + formatNumber(incomeTax) + '</span>';
+        results['Employee NI (annualised)'] = '£' + formatNumber(nationalInsurance);
+
+        if (studentLoanPlan !== 'none') {
+            results['Student Loan Repayment'] = '£' + formatNumber(studentLoan);
+        }
+
+        results['Net Annual Take-Home']  = '<span class="highlight-gold">£' + formatNumber(netAnnual) + '</span>';
+        results['Net Monthly Take-Home'] = '<span class="highlight-gold">£' + formatNumber(netMonthly) + '</span>';
+        results['Effective Tax Rate']    = effectiveRate.toFixed(1) + '%';
+
+        displayResults(results, 'incometax');
+
+        // Notes
+        const resultsDisplay = document.getElementById('results-display');
+        if (resultsDisplay) {
+            resultsDisplay.innerHTML +=
+                '<p style="font-size:0.8rem;color:#888;margin-top:12px;">' +
+                'NI calculated on annualised income. Actual NI is assessed per pay period and may differ slightly. ' +
+                'England, Wales & Northern Ireland rates. Scotland differs for income tax.' +
+                '</p>';
+        }
+
+        addAipCta();
+    }
+
+    // Dividend Tax Calculator — 2026/27 (England, Wales & NI)
+    function calculateDividend() {
+        const salary    = parseNumberInput(document.getElementById('dividend-salary'));
+        const dividends = parseNumberInput(document.getElementById('dividend-amount'));
+
+        if (salary < 0 || dividends < 0) {
+            displayError('Please enter valid positive amounts.');
+            return;
+        }
+
+        const total = salary + dividends;
+
+        // ── Personal allowance (tapered above £100,000) ───────────────────────
+        let pa = PERSONAL_ALLOWANCE;
+        if (total > PA_TAPER_START) {
+            pa = Math.max(0, PERSONAL_ALLOWANCE - Math.floor((total - PA_TAPER_START) / 2));
+        }
+        const paTapered = pa < PERSONAL_ALLOWANCE;
+        const paLost    = pa === 0;
+
+        // ── Stacking: salary sits at the bottom, dividends on top ────────────
+        // Any personal allowance not used by salary can shelter dividends.
+        const remainingPA  = Math.max(0, pa - salary);
+        const divAfterPA   = Math.max(0, dividends - remainingPA);
+
+        // £500 allowance at 0% — taxable dividends are what's left after it.
+        const divTaxable   = Math.max(0, divAfterPA - DIVIDEND_ALLOWANCE);
+
+        // ── Find where the taxable dividends sit in the bands ─────────────────
+        // Floor = the amount of band already consumed by salary (or PA, whichever
+        // is higher) plus the 0% allowance slice.
+        const floor       = Math.max(salary, pa) + DIVIDEND_ALLOWANCE;
+        const basicRoom   = Math.max(0, BASIC_RATE_LIMIT   - floor);
+        const higherRoom  = Math.max(0, ADDITIONAL_RATE_FROM - Math.max(floor, BASIC_RATE_LIMIT));
+
+        const inBasic      = Math.min(divTaxable, basicRoom);
+        const inHigher     = Math.min(Math.max(divTaxable - inBasic, 0), higherRoom);
+        const inAdditional = Math.max(divTaxable - inBasic - inHigher, 0);
+
+        const dividendTax  = (inBasic * DIV_ORDINARY) + (inHigher * DIV_UPPER) + (inAdditional * DIV_ADDITIONAL);
+        const netDividends = dividends - dividendTax;
+
+        // ── Build results ─────────────────────────────────────────────────────
+        const results = {};
+
+        results['Annual Salary']   = '£' + formatNumber(salary);
+        results['Annual Dividends'] = '£' + formatNumber(dividends);
+        results['Total Income']    = '£' + formatNumber(total);
+
+        // Personal allowance line
+        let paLabel = 'Personal Allowance';
+        if (paLost)    paLabel += ' (fully withdrawn)';
+        else if (paTapered) paLabel += ' (tapered)';
+        results[paLabel] = '£' + formatNumber(pa);
+
+        // Dividend allowance
+        const allowanceUsed = Math.min(divAfterPA, DIVIDEND_ALLOWANCE);
+        results['Dividend Allowance (0%)'] = '£' + formatNumber(allowanceUsed);
+
+        // Per-band breakdown — only show bands with taxable income
+        if (inBasic > 0) {
+            results['Basic Rate Band (10.75%)'] = '£' + formatNumber(inBasic * DIV_ORDINARY);
+        }
+        if (inHigher > 0) {
+            results['Higher Rate Band (35.75%)'] = '£' + formatNumber(inHigher * DIV_UPPER);
+        }
+        if (inAdditional > 0) {
+            results['Additional Rate Band (39.35%)'] = '£' + formatNumber(inAdditional * DIV_ADDITIONAL);
+        }
+
+        results['Total Dividend Tax'] = '<span class="highlight-blue">£' + formatNumber(dividendTax) + '</span>';
+        results['Net Dividends (after tax)'] = '<span class="highlight-gold">£' + formatNumber(netDividends) + '</span>';
+
+        displayResults(results, 'dividend');
+
+        // Region note
+        const resultsDisplay = document.getElementById('results-display');
+        if (resultsDisplay) {
+            resultsDisplay.innerHTML +=
+                '<p style="font-size:0.8rem;color:#888;margin-top:12px;">' +
+                'England, Wales & Northern Ireland rates. Scotland differs.' +
+                '</p>';
+        }
+
+        addAipCta();
+    }
+
+
     
     // Add AIP CTA button to results
     function addAipCta() {
