@@ -26,6 +26,7 @@ get_header(); ?>
                     <button class="calculator-tab" data-calculator="repayment">REPAYMENT CALCULATOR</button>
                     <button class="calculator-tab" data-calculator="overpayment">OVERPAYMENT CALCULATOR</button>
                     <button class="calculator-tab" data-calculator="stampduty">STAMP DUTY CALCULATOR</button>
+                    <button class="calculator-tab" data-calculator="dividend">DIVIDEND TAX CALCULATOR</button>
                 </div>
                 
                 <!-- Calculator Content Area -->
@@ -176,6 +177,37 @@ get_header(); ?>
                             </div>
                         </form>
                     </div>
+
+                    <!-- Dividend Tax Calculator -->
+                    <div id="dividend-calculator" class="calculator-form">
+                        <form id="dividend-form" class="mortgage-calculator-form">
+                            <div class="form-group">
+                                <label for="dividend-salary">
+                                    Annual Salary (£)
+                                    <span class="info-tooltip" data-tooltip="Your gross salary before tax. Using your personal allowance of £12,570 as salary is the most tax-efficient approach for director/shareholder setups.">ⓘ</span>
+                                </label>
+                                <input type="text" id="dividend-salary" name="salary" required class="number-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="dividend-amount">
+                                    Annual Dividends (£)
+                                    <span class="info-tooltip" data-tooltip="Total dividends drawn in the tax year. Dividends are taxed as the top slice of your income.">ⓘ</span>
+                                </label>
+                                <input type="text" id="dividend-amount" name="dividends" required class="number-input">
+                            </div>
+                            <button type="submit" class="btn-calculate">CALCULATE</button>
+
+                            <!-- Info Box -->
+                            <div class="info-box-container" style="margin-top: 30px;">
+                                <div class="calc-info-box" style="grid-column: 1 / -1;">
+                                    <h4>2026/27 Dividend Tax Rates (England, Wales & NI)</h4>
+                                    <p><strong>Dividend Allowance:</strong> £500 at 0%</p>
+                                    <p><strong>Basic rate band:</strong> 10.75% &nbsp;|&nbsp; <strong>Higher rate band:</strong> 35.75% &nbsp;|&nbsp; <strong>Additional rate:</strong> 39.35%</p>
+                                    <p>Dividends are the top slice of income. Scotland differs.</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                     </div>
                     
                     <!-- Right Side - Results -->
@@ -203,6 +235,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const INCOME_MULTIPLE = 4.5;
     const SALARY_WEIGHT = 1.0; // 100%
     const BONUS_WEIGHT = 0.6; // 60%
+
+    // Dividend Tax Constants — 2026/27 (England, Wales & NI)
+    const PERSONAL_ALLOWANCE   = 12570;
+    const PA_TAPER_START       = 100000;
+    const BASIC_RATE_LIMIT     = 50270;   // top of basic band
+    const ADDITIONAL_RATE_FROM = 125140;  // top of higher band / start of additional
+    const DIVIDEND_ALLOWANCE   = 500;
+    const DIV_ORDINARY         = 0.1075;  // basic band
+    const DIV_UPPER            = 0.3575;  // higher band
+    const DIV_ADDITIONAL       = 0.3935;  // additional rate band
 
     // Variables to store calculated values for inter-calculator navigation
     window.lastBorrowAmount = 0;
@@ -314,6 +356,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const repaymentForm = document.getElementById('repayment-form');
     const overpaymentForm = document.getElementById('overpayment-form');
     const stampdutyForm = document.getElementById('stampduty-form');
+    const dividendForm = document.getElementById('dividend-form');
     
     if (borrowForm) {
         borrowForm.addEventListener('submit', function(e) {
@@ -340,6 +383,13 @@ document.addEventListener('DOMContentLoaded', function() {
         stampdutyForm.addEventListener('submit', function(e) {
             e.preventDefault();
             calculateStampDuty();
+        });
+    }
+
+    if (dividendForm) {
+        dividendForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateDividend();
         });
     }
     
@@ -434,7 +484,7 @@ const isInterestOnly = document.querySelector('input[name="repaymentType"]:check
                     '<div class="interest-only-warning">' +
                     '⚠️ At the end of the term you will still owe the full ' +
                     '<strong>£' + formatNumber(loanAmount) + '</strong> capital. ' +
-                    'Interest-only payments do not reduce what you owe - you need a separate plan to repay the capital.' +
+'Interest-only payments do not reduce what you owe - you need a separate plan to repay the capital.' +
                     '</div>';
             }
 
