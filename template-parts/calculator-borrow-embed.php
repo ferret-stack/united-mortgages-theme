@@ -12,7 +12,7 @@
 <!-- Run the Numbers Section -->
 <section class="run-the-numbers-section" id="calculator">
     <div class="container">
-        <h2 class="section-heading">Run the <span class="bold-text">Numbers</span></h2>
+        <h2 class="section-heading">Run your <span class="bold-text">Numbers</span></h2>
         <p class="section-subheading">See how much you could borrow to secure <b>your dream home</b></p>
         
         <!-- Desktop: Embedded Calculator -->

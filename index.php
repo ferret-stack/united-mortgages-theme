@@ -19,7 +19,7 @@ get_header(); ?>
                     <!-- Trustpilot Widget -->
                     <div class="trustpilot-widget">
                         <a href="https://uk.trustpilot.com/review/united-mortgages.com" target="_blank" rel="noopener noreferrer">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/trustpilot.png" 
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/trustpilot.svg" 
                                 alt="Trustpilot Rating" 
                                 class="trustpilot-image">
                         </a>
@@ -27,9 +27,9 @@ get_header(); ?>
 
                     <!-- Bark Widget -->
                     <div class="bark-widget">
-                        <a href="https://www.bark.com/en/gb/company/united-mortgages/wJpeGP/" target="_blank" rel="noopener noreferrer">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/barklogo.png" 
-                                alt="Bark Reviews" 
+                        <a href="https://share.google/lrCoqIgJxYIiv6Biu" target="_blank" rel="noopener noreferrer">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/greviews.svg"
+                                alt="Google Reviews" 
                                 class="bark-image">
                         </a>
                     </div>
