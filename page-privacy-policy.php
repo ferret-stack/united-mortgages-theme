@@ -279,7 +279,7 @@ get_header(); ?>
                                 <h4>Data Protection Queries</h4>
                                 <p>If you have any questions about this privacy policy, how we handle your data, or wish to exercise your data protection rights, please contact us:</p>
                                 <p>📧 <a href="mailto:legal@united-mortgages.com">legal@united-mortgages.com</a><br>
-                                📞 <a href="tel:02034889773">0204 634 9315</a><br>
+                                📞 <a href="tel:0333 091 4776">0333 091 4776</a><br>
                                 ✉️ United Mortgages Limited, 167-169 Great Portland Street, London, W1W 7PF</p>
                             </div>
 
