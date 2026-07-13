@@ -884,11 +884,7 @@ const DocumentUploads = {
             // Universal documents
             const universalDocs = [
                 'proof_of_identity',
-                'proof_of_address',
-                'bank_statement_1',
-                'bank_statement_2',
-                'bank_statement_3',
-                'proof_of_deposit'
+                'proof_of_address'
             ];
             
             for (let doc of universalDocs) {
@@ -1069,119 +1065,6 @@ const DocumentUploads = {
                         </div>
                     </div>
                     
-                    <!-- Bank Statements (3 months) -->
-                    <div class="document-upload-field">
-                        <label>Bank Statements (Last 3 Months) *</label>
-                        <p class="helper-text">Upload 3 consecutive months of bank statements</p>
-                        
-                        <!-- Month 1 -->
-                        <div class="file-upload-wrapper" style="margin-bottom: 10px;">
-                            <span class="month-label">Month 1 (Most Recent)</span>
-                            <input 
-                                type="file" 
-                                :ref="'bank_statement_1'"
-                                @change="handleFileUpload($event, 'bank_statement_1')"
-                                accept=".pdf,.jpg,.jpeg,.png"
-                                :id="'bank_statement_1_' + applicantNumber"
-                            />
-                            <label :for="'bank_statement_1_' + applicantNumber" class="file-upload-label">
-                                <span v-if="!uploadedFiles.bank_statement_1">Choose file</span>
-                                <span v-else class="file-uploaded">
-                                    ✓ {{ getFileName(uploadedFiles.bank_statement_1) }}
-                                </span>
-                            </label>
-                            <button 
-                                v-if="uploadedFiles.bank_statement_1" 
-                                @click.prevent="removeFile('bank_statement_1')"
-                                class="remove-file-btn"
-                                type="button"
-                            >
-                                Remove
-                            </button>
-                        </div>
-                        
-                        <!-- Month 2 -->
-                        <div class="file-upload-wrapper" style="margin-bottom: 10px;">
-                            <span class="month-label">Month 2</span>
-                            <input 
-                                type="file" 
-                                :ref="'bank_statement_2'"
-                                @change="handleFileUpload($event, 'bank_statement_2')"
-                                accept=".pdf,.jpg,.jpeg,.png"
-                                :id="'bank_statement_2_' + applicantNumber"
-                            />
-                            <label :for="'bank_statement_2_' + applicantNumber" class="file-upload-label">
-                                <span v-if="!uploadedFiles.bank_statement_2">Choose file</span>
-                                <span v-else class="file-uploaded">
-                                    ✓ {{ getFileName(uploadedFiles.bank_statement_2) }}
-                                </span>
-                            </label>
-                            <button 
-                                v-if="uploadedFiles.bank_statement_2" 
-                                @click.prevent="removeFile('bank_statement_2')"
-                                class="remove-file-btn"
-                                type="button"
-                            >
-                                Remove
-                            </button>
-                        </div>
-                        
-                        <!-- Month 3 -->
-                        <div class="file-upload-wrapper">
-                            <span class="month-label">Month 3 (Oldest)</span>
-                            <input 
-                                type="file" 
-                                :ref="'bank_statement_3'"
-                                @change="handleFileUpload($event, 'bank_statement_3')"
-                                accept=".pdf,.jpg,.jpeg,.png"
-                                :id="'bank_statement_3_' + applicantNumber"
-                            />
-                            <label :for="'bank_statement_3_' + applicantNumber" class="file-upload-label">
-                                <span v-if="!uploadedFiles.bank_statement_3">Choose file</span>
-                                <span v-else class="file-uploaded">
-                                    ✓ {{ getFileName(uploadedFiles.bank_statement_3) }}
-                                </span>
-                            </label>
-                            <button 
-                                v-if="uploadedFiles.bank_statement_3" 
-                                @click.prevent="removeFile('bank_statement_3')"
-                                class="remove-file-btn"
-                                type="button"
-                            >
-                                Remove
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Proof of Deposit -->
-                    <div class="document-upload-field">
-                        <label>Proof of Deposit *</label>
-                        <p class="helper-text">Recent bank statement or savings account statement showing your deposit funds</p>
-                        <div class="file-upload-wrapper">
-                            <input 
-                                type="file" 
-                                :ref="'proof_of_deposit'"
-                                @change="handleFileUpload($event, 'proof_of_deposit')"
-                                accept=".pdf,.jpg,.jpeg,.png"
-                                :id="'proof_of_deposit_' + applicantNumber"
-                            />
-                            <label :for="'proof_of_deposit_' + applicantNumber" class="file-upload-label">
-                                <span v-if="!uploadedFiles.proof_of_deposit">Choose file</span>
-                                <span v-else class="file-uploaded">
-                                    ✓ {{ getFileName(uploadedFiles.proof_of_deposit) }} 
-                                    ({{ formatFileSize(uploadedFiles.proof_of_deposit.size) }})
-                                </span>
-                            </label>
-                            <button 
-                                v-if="uploadedFiles.proof_of_deposit" 
-                                @click.prevent="removeFile('proof_of_deposit')"
-                                class="remove-file-btn"
-                                type="button"
-                            >
-                                Remove
-                            </button>
-                        </div>
-                    </div>
                 </div>
                 
                 <!-- CONDITIONAL DOCUMENTS -->

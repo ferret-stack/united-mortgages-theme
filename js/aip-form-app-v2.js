@@ -161,9 +161,7 @@ const app = createApp({
             const docs = applicant.documents;
             
             // Universal documents
-            if (!docs.proof_of_identity || !docs.proof_of_address || 
-                !docs.bank_statement_1 || !docs.bank_statement_2 || 
-                !docs.bank_statement_3 || !docs.proof_of_deposit) {
+            if (!docs.proof_of_identity || !docs.proof_of_address) {
                 return false;
             }
             
