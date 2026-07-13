@@ -74,10 +74,6 @@ function createEmptyApplicant() {
         documents: {
             proof_of_identity: null,
             proof_of_address: null,
-            bank_statement_1: null,
-            bank_statement_2: null,
-            bank_statement_3: null,
-            proof_of_deposit: null,
             payslip_1: null,
             payslip_2: null,
             payslip_3: null,
