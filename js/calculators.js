@@ -56,25 +56,55 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Calculator Functions
-    
-    // Calculator 1: Add values and calculate percentage
+
+    // Borrowing multiple range shown as "Typical" (low) / "Enhanced" (high).
+    // Kept in sync with page-calculators.php — see that file for sourcing/review-date notes.
+    // Review by: 2027-01-16
+    const MULTIPLE_LOW = 4.5;
+    const MULTIPLE_HIGH = 6.0;
+    const SALARY_WEIGHT = 1.0;
+    const BONUS_WEIGHT = 0.6;
+
+    // How Much Can I Borrow
     function calculateBorrow() {
-        const value1 = parseFloat(document.getElementById('borrow-value1').value) || 0;
-        const value2 = parseFloat(document.getElementById('borrow-value2').value) || 0;
-        const percentage = parseFloat(document.getElementById('borrow-percentage').value) || 0;
-        
-        const sum = value1 + value2;
-        const percentageAmount = (sum * percentage) / 100;
-        const total = sum + percentageAmount;
-        
-        displayResults({
-            'Value 1': formatNumber(value1),
-            'Value 2': formatNumber(value2),
-            'Sum (Value 1 + Value 2)': formatNumber(sum),
-            'Percentage': percentage + '%',
-            'Percentage Amount': '£' + formatNumber(percentageAmount),
-            'Total': '£' + formatNumber(total)
-        });
+        const incomeEl = document.getElementById('borrow-income');
+        const additionalIncomeEl = document.getElementById('borrow-additional-income');
+        const expenditureEl = document.getElementById('borrow-expenditure');
+        const depositEl = document.getElementById('borrow-deposit');
+        if (!incomeEl || !additionalIncomeEl || !expenditureEl) return;
+
+        const income = parseFloat(incomeEl.value.replace(/,/g, '')) || 0;
+        const additionalIncome = parseFloat(additionalIncomeEl.value.replace(/,/g, '')) || 0;
+        const monthlyExpenditure = parseFloat(expenditureEl.value.replace(/,/g, '')) || 0;
+        const deposit = depositEl ? (parseFloat(depositEl.value.replace(/,/g, '')) || 0) : 0;
+
+        // Weighted income, low/high multiples, annualised expenditure
+        const weightedIncome = (income * SALARY_WEIGHT) + (additionalIncome * BONUS_WEIGHT);
+        const annualExpenditure = monthlyExpenditure * 12;
+
+        const borrowingCapacityTypical = Math.max(0, (weightedIncome * MULTIPLE_LOW) - annualExpenditure);
+        const borrowingCapacityEnhanced = Math.max(0, (weightedIncome * MULTIPLE_HIGH) - annualExpenditure);
+
+        const results = {
+            'Typical': '£' + formatNumber(borrowingCapacityTypical),
+            'Enhanced <button type="button" class="range-info-trigger" onclick="openBorrowRangePopup()" aria-label="What does Enhanced mean?">ⓘ</button>': '£' + formatNumber(borrowingCapacityEnhanced)
+        };
+
+        if (deposit > 0) {
+            results['Typical Upper Budget'] = '£' + formatNumber(borrowingCapacityTypical + deposit);
+            results['Enhanced Upper Budget'] = '£' + formatNumber(borrowingCapacityEnhanced + deposit);
+        }
+
+        displayResults(results);
+
+        // Static caveat/rate-sensitivity/pension notes — ship with the range, not after
+        const resultsDisplay = document.getElementById('results-display');
+        if (resultsDisplay) {
+            resultsDisplay.innerHTML +=
+                '<p class="borrow-note borrow-disclaimer">These figures are estimates only. They are not guaranteed and actual lending depends on individual lender criteria, your credit history and full financial circumstances.</p>' +
+                '<p class="borrow-note borrow-rate-note">Mortgage rates can rise as well as fall. These figures are based on current lending conditions — if you\'re considering a fix shorter than 5 years, it\'s worth discussing how a future rate change could affect what you can borrow.</p>' +
+                '<p class="borrow-note borrow-pension-note">This calculator does not take pension contributions into account. Speak to one of our advisers for a more tailored picture of your borrowing potential.</p>';
+        }
     }
     
     // Calculator 2: Subtract values and calculate percentage
