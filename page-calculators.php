@@ -524,10 +524,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const upperBudgetTypical = borrowingCapacityTypical + deposit;
         const upperBudgetEnhanced = borrowingCapacityEnhanced + deposit;
 
-        // Build results object
+        // Build results object — each figure carries its own "use in repayment"
+        // link so the action reads as one choice per number, not two abstract
+        // buttons bolted on afterwards.
+        const typicalUseLink = borrowingCapacityTypical > 0
+            ? '<button type="button" class="use-in-repayment-link" onclick="useBorrowAmountTypical()">Use in Repayment Calculator</button>'
+            : '';
+        const enhancedUseLink = borrowingCapacityEnhanced > 0
+            ? '<button type="button" class="use-in-repayment-link" onclick="useBorrowAmountEnhanced()">Use in Repayment Calculator</button>'
+            : '';
+
         const results = {
-            'Typical': '<span class="highlight-gold">£' + formatNumber(borrowingCapacityTypical) + '</span>',
-            'Enhanced <button type="button" class="range-info-trigger" onclick="openBorrowRangePopup()" aria-label="What does Enhanced mean?">ⓘ</button>': '<span class="highlight-blue">£' + formatNumber(borrowingCapacityEnhanced) + '</span>'
+            'Typical': '<span class="highlight-gold">£' + formatNumber(borrowingCapacityTypical) + '</span>' + typicalUseLink,
+            'Enhanced <button type="button" class="range-info-trigger" onclick="openBorrowRangePopup()" aria-label="What does Enhanced mean?">ⓘ</button>': '<span class="highlight-blue">£' + formatNumber(borrowingCapacityEnhanced) + '</span>' + enhancedUseLink
         };
 
         // Only show deposit and upper budget if deposit was provided
@@ -538,17 +547,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         displayResults(results, 'borrow');
 
-        // Add buttons: use in repayment calculator + AIP CTA
-        const resultsDisplay = document.getElementById('results-display');
-        if (resultsDisplay && (borrowingCapacityTypical > 0 || borrowingCapacityEnhanced > 0)) {
-            const buttonsHtml = '<div class="results-actions">' +
-                '<button class="use-borrow-button" onclick="useBorrowAmountTypical()">Use Typical amount</button>' +
-                '<button class="use-borrow-button" onclick="useBorrowAmountEnhanced()">Use Enhanced amount</button>' +
-                '</div>';
-            resultsDisplay.innerHTML += buttonsHtml;
-        }
-
         // Static caveat/rate-sensitivity/pension notes — ship with the range, not after
+        const resultsDisplay = document.getElementById('results-display');
         if (resultsDisplay) {
             resultsDisplay.innerHTML +=
                 '<p class="borrow-note borrow-disclaimer">These figures are estimates only. They are not guaranteed and actual lending depends on individual lender criteria, your credit history and full financial circumstances.</p>' +
