@@ -243,6 +243,10 @@ document.addEventListener('DOMContentLoaded', function() {
     'use strict';
 
     // Constants for calculations
+    // NOTE (2026-07): this page's calculator was NOT updated as part of the
+    // Typical/Enhanced range rollout (see page-calculators.php). This is a
+    // legacy geo landing page — flagged as a known inconsistency, revisit if
+    // the page is revived rather than deprecated.
     const INCOME_MULTIPLE = 4.5;
     const SALARY_WEIGHT = 1.0; // 100%
     const BONUS_WEIGHT = 0.6; // 60%

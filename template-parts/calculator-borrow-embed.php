@@ -54,9 +54,26 @@
                                 </div>
                                 <button type="submit" class="btn-calculate">CALCULATE</button>
                             </form>
+
+                            <!-- Mandatory popup: Typical vs Enhanced (compliance-approved copy) -->
+                            <div id="embed-borrow-range-popup" class="popup-overlay">
+                                <div class="popup-content">
+                                    <div class="popup-header">
+                                        <h2>Typical vs Enhanced</h2>
+                                        <button type="button" class="popup-close" onclick="closeEmbedBorrowRangePopup()" aria-label="Close">&times;</button>
+                                    </div>
+                                    <div class="popup-body">
+                                        <p>These figures are estimates only. They are not guaranteed and actual lending depends on individual lender criteria, your credit history and full financial circumstances.</p>
+                                        <p>The <strong>Enhanced</strong> figure reflects income multiples of up to 6x now offered by a number of UK lenders. This tier is generally only available to higher earners &mdash; commonly &pound;75,000+ income &mdash; and is subject to lender-specific eligibility criteria. Most borrowers will not qualify for the Enhanced figure even though it is a real, current market rate. Your <strong>Typical</strong> figure is a more representative starting point for most applicants.</p>
+                                    </div>
+                                    <div class="popup-footer">
+                                        <button type="button" class="popup-button" onclick="closeEmbedBorrowRangePopup()">Got it</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
+
                     <!-- Right Side - Results -->
                     <div class="calculator-results">
                         <h2>Your Results</h2>
@@ -119,10 +136,43 @@
     
     // Calculator initialisation
     function initCalculator() {
-        // Constants for calculations
-        const INCOME_MULTIPLE = 4.5;
+        // Borrowing multiple range shown as "Typical" (low) / "Enhanced" (high).
+        // Kept in sync with page-calculators.php — see that file for sourcing/review-date notes.
+        // Review by: 2027-01-16
+        const MULTIPLE_LOW = 4.5;
+        const MULTIPLE_HIGH = 6.0;
         const SALARY_WEIGHT = 1.0;
         const BONUS_WEIGHT = 0.6;
+
+        // Mandatory popup explaining the Typical/Enhanced range (compliance-approved copy)
+        window.openEmbedBorrowRangePopup = function() {
+            const popup = document.getElementById('embed-borrow-range-popup');
+            if (popup) {
+                popup.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            }
+        };
+
+        window.closeEmbedBorrowRangePopup = function() {
+            const popup = document.getElementById('embed-borrow-range-popup');
+            if (popup) {
+                popup.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        };
+
+        document.addEventListener('click', function(event) {
+            const popup = document.getElementById('embed-borrow-range-popup');
+            if (popup && event.target === popup) {
+                window.closeEmbedBorrowRangePopup();
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                window.closeEmbedBorrowRangePopup();
+            }
+        });
         
         // Format number input with commas
         function formatNumberInput(input) {
@@ -168,52 +218,70 @@
             const additionalIncome = parseNumberInput(document.getElementById('embed-borrow-additional-income'));
             const monthlyExpenditure = parseNumberInput(document.getElementById('embed-borrow-expenditure'));
             const deposit = parseNumberInput(document.getElementById('embed-borrow-deposit'));
-            
+
             // Calculate weighted income
             const weightedIncome = (income * SALARY_WEIGHT) + (additionalIncome * BONUS_WEIGHT);
-            
-            // Apply income multiple
-            const grossBorrowingCapacity = weightedIncome * INCOME_MULTIPLE;
-            
+
+            // Apply the low/high income multiples
+            const grossBorrowingCapacityTypical = weightedIncome * MULTIPLE_LOW;
+            const grossBorrowingCapacityEnhanced = weightedIncome * MULTIPLE_HIGH;
+
             // Annualise committed expenditure
             const annualExpenditure = monthlyExpenditure * 12;
-            
-            // Calculate actual borrowing capacity
-            const borrowingCapacity = Math.max(0, grossBorrowingCapacity - annualExpenditure);
-            
-            // Calculate upper budget
-            const upperBudget = borrowingCapacity + deposit;
-            
+
+            // Calculate actual borrowing capacity range
+            const borrowingCapacityTypical = Math.max(0, grossBorrowingCapacityTypical - annualExpenditure);
+            const borrowingCapacityEnhanced = Math.max(0, grossBorrowingCapacityEnhanced - annualExpenditure);
+
+            // Calculate upper budget at each end of the range
+            const upperBudgetTypical = borrowingCapacityTypical + deposit;
+            const upperBudgetEnhanced = borrowingCapacityEnhanced + deposit;
+
             // Display results
-            displayResults(borrowingCapacity, upperBudget, deposit);
+            displayResults(borrowingCapacityTypical, borrowingCapacityEnhanced, upperBudgetTypical, upperBudgetEnhanced, deposit);
         }
-        
+
         // Display results
-        function displayResults(borrowingCapacity, upperBudget, deposit) {
+        function displayResults(borrowingCapacityTypical, borrowingCapacityEnhanced, upperBudgetTypical, upperBudgetEnhanced, deposit) {
             const resultsDisplay = document.getElementById('embed-results-display');
             if (!resultsDisplay) return;
-            
+
             let html = '';
-            
-            // Maximum Borrowing
-            html += '<div class="result-item total">';
-            html += '<div class="result-label">Maximum Borrowing</div>';
-            html += '<div class="result-value"><span class="highlight-gold">£' + formatNumber(borrowingCapacity) + '</span></div>';
+
+            // Typical
+            html += '<div class="result-item">';
+            html += '<div class="result-label">Typical</div>';
+            html += '<div class="result-value"><span class="highlight-gold">£' + formatNumber(borrowingCapacityTypical) + '</span></div>';
             html += '</div>';
-            
+
+            // Enhanced (with mandatory popup trigger)
+            html += '<div class="result-item">';
+            html += '<div class="result-label">Enhanced <button type="button" class="range-info-trigger" onclick="openEmbedBorrowRangePopup()" aria-label="What does Enhanced mean?">ⓘ</button></div>';
+            html += '<div class="result-value"><span class="highlight-blue">£' + formatNumber(borrowingCapacityEnhanced) + '</span></div>';
+            html += '</div>';
+
             // Upper Budget (only if deposit provided)
             if (deposit > 0) {
                 html += '<div class="result-item">';
-                html += '<div class="result-label">Likely Upper Budget</div>';
-                html += '<div class="result-value"><span class="highlight-blue">£' + formatNumber(upperBudget) + '</span></div>';
+                html += '<div class="result-label">Typical Upper Budget</div>';
+                html += '<div class="result-value">£' + formatNumber(upperBudgetTypical) + '</div>';
+                html += '</div>';
+                html += '<div class="result-item">';
+                html += '<div class="result-label">Enhanced Upper Budget</div>';
+                html += '<div class="result-value">£' + formatNumber(upperBudgetEnhanced) + '</div>';
                 html += '</div>';
             }
-            
+
+            // Static caveat/rate-sensitivity/pension notes — ship with the range, not after
+            html += '<p class="borrow-note borrow-disclaimer">These figures are estimates only. They are not guaranteed and actual lending depends on individual lender criteria, your credit history and full financial circumstances.</p>';
+            html += '<p class="borrow-note borrow-rate-note">Mortgage rates can rise as well as fall. These figures are based on current lending conditions — if you\'re considering a fix shorter than 5 years, it\'s worth discussing how a future rate change could affect what you can borrow.</p>';
+            html += '<p class="borrow-note borrow-pension-note">This calculator does not take pension contributions into account. Speak to one of our advisers for a more tailored picture of your borrowing potential.</p>';
+
             // CTA
             html += '<div class="results-cta">';
             html += '<a href="<?php echo home_url('/aip-overview'); ?>" class="btn-primary">Get your Agreement in Principle today!</a>';
             html += '</div>';
-            
+
             resultsDisplay.innerHTML = html;
         }
     }

@@ -67,8 +67,25 @@ get_header(); ?>
                                 </div>
                                 <button type="submit" class="btn-calculate">CALCULATE</button>
                             </form>
+
+                            <!-- Mandatory popup: Typical vs Enhanced (compliance-approved copy) -->
+                            <div id="borrow-range-popup" class="popup-overlay">
+                                <div class="popup-content">
+                                    <div class="popup-header">
+                                        <h2>Typical vs Enhanced</h2>
+                                        <button type="button" class="popup-close" onclick="closeBorrowRangePopup()" aria-label="Close">&times;</button>
+                                    </div>
+                                    <div class="popup-body">
+                                        <p>These figures are estimates only. They are not guaranteed and actual lending depends on individual lender criteria, your credit history and full financial circumstances.</p>
+                                        <p>The <strong>Enhanced</strong> figure reflects income multiples of up to 6x now offered by a number of UK lenders. This tier is generally only available to higher earners &mdash; commonly &pound;75,000+ income &mdash; and is subject to lender-specific eligibility criteria. Most borrowers will not qualify for the Enhanced figure even though it is a real, current market rate. Your <strong>Typical</strong> figure is a more representative starting point for most applicants.</p>
+                                    </div>
+                                    <div class="popup-footer">
+                                        <button type="button" class="popup-button" onclick="closeBorrowRangePopup()">Got it</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        
+
                         <div id="repayment-calculator" class="calculator-form">
                             <form id="repayment-form" class="mortgage-calculator-form">
 
@@ -267,8 +284,15 @@ get_header(); ?>
 document.addEventListener('DOMContentLoaded', function() {
     'use strict';
 
-    // Constants for calculations
-    const INCOME_MULTIPLE = 4.5;
+    // Borrowing multiple range shown as "Typical" (low) / "Enhanced" (high).
+    // Names are deliberately decoupled from the display labels — a future
+    // label change (compliance review, A/B test) should only touch copy.
+    // Source: market check July 2026 — 20+ lenders now offer 6x+ LTI
+    // (incl. Barclays, NatWest, HSBC, Nationwide, Leeds BS); the top end is
+    // eligibility-restricted (commonly £75k+ income), hence the popup below.
+    // Review by: 2027-01-16
+    const MULTIPLE_LOW = 4.5;
+    const MULTIPLE_HIGH = 6.0;
     const SALARY_WEIGHT = 1.0; // 100%
     const BONUS_WEIGHT = 0.6; // 60%
 
@@ -305,7 +329,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const SL_POSTGRAD_RATE      = 0.06;
 
     // Variables to store calculated values for inter-calculator navigation
-    window.lastBorrowAmount = 0;
+    window.lastBorrowAmountTypical = 0;
+    window.lastBorrowAmountEnhanced = 0;
     window.lastRepaymentLoan = 0;
     window.lastRepaymentRate = 0;
     window.lastRepaymentTerm = 0;
@@ -476,44 +501,59 @@ document.addEventListener('DOMContentLoaded', function() {
         const additionalIncome = parseNumberInput(document.getElementById('borrow-additional-income'));
         const monthlyExpenditure = parseNumberInput(document.getElementById('borrow-expenditure'));
         const deposit = parseNumberInput(document.getElementById('borrow-deposit'));
-        
+
         // Step 1: Calculate weighted income
         const weightedIncome = (income * SALARY_WEIGHT) + (additionalIncome * BONUS_WEIGHT);
-        
-        // Step 2: Apply income multiple
-        const grossBorrowingCapacity = weightedIncome * INCOME_MULTIPLE;
-        
+
+        // Step 2: Apply the low/high income multiples
+        const grossBorrowingCapacityTypical = weightedIncome * MULTIPLE_LOW;
+        const grossBorrowingCapacityEnhanced = weightedIncome * MULTIPLE_HIGH;
+
         // Step 3: Annualise committed expenditure
         const annualExpenditure = monthlyExpenditure * 12;
-        
-        // Step 4: Calculate actual borrowing capacity
-        const borrowingCapacity = Math.max(0, grossBorrowingCapacity - annualExpenditure);
 
-        // Store for use in other calculator
-        window.lastBorrowAmount = borrowingCapacity;
-        
-        // Step 5: Calculate upper budget (what you can buy)
-        const upperBudget = borrowingCapacity + deposit;
-        
+        // Step 4: Calculate actual borrowing capacity range
+        const borrowingCapacityTypical = Math.max(0, grossBorrowingCapacityTypical - annualExpenditure);
+        const borrowingCapacityEnhanced = Math.max(0, grossBorrowingCapacityEnhanced - annualExpenditure);
+
+        // Store for use in other calculator — user picks which figure to carry forward
+        window.lastBorrowAmountTypical = borrowingCapacityTypical;
+        window.lastBorrowAmountEnhanced = borrowingCapacityEnhanced;
+
+        // Step 5: Calculate upper budget (what you can buy) at each end of the range
+        const upperBudgetTypical = borrowingCapacityTypical + deposit;
+        const upperBudgetEnhanced = borrowingCapacityEnhanced + deposit;
+
         // Build results object
         const results = {
-            'Maximum Borrowing': '<span class="highlight-gold">£' + formatNumber(borrowingCapacity) + '</span>'
+            'Typical': '<span class="highlight-gold">£' + formatNumber(borrowingCapacityTypical) + '</span>',
+            'Enhanced <button type="button" class="range-info-trigger" onclick="openBorrowRangePopup()" aria-label="What does Enhanced mean?">ⓘ</button>': '<span class="highlight-blue">£' + formatNumber(borrowingCapacityEnhanced) + '</span>'
         };
-        
+
         // Only show deposit and upper budget if deposit was provided
         if (deposit > 0) {
-            results['Likely Upper Budget'] = '<span class="highlight-blue">£' + formatNumber(upperBudget) + '</span>';
+            results['Typical Upper Budget'] = '£' + formatNumber(upperBudgetTypical);
+            results['Enhanced Upper Budget'] = '£' + formatNumber(upperBudgetEnhanced);
         }
-        
+
         displayResults(results, 'borrow');
-        
+
         // Add buttons: use in repayment calculator + AIP CTA
         const resultsDisplay = document.getElementById('results-display');
-        if (resultsDisplay && borrowingCapacity > 0) {
+        if (resultsDisplay && (borrowingCapacityTypical > 0 || borrowingCapacityEnhanced > 0)) {
             const buttonsHtml = '<div class="results-actions">' +
-                '<button class="use-borrow-button" onclick="useBorrowAmount()">Use this amount in Repayment Calculator</button>' +
+                '<button class="use-borrow-button" onclick="useBorrowAmountTypical()">Use Typical amount</button>' +
+                '<button class="use-borrow-button" onclick="useBorrowAmountEnhanced()">Use Enhanced amount</button>' +
                 '</div>';
             resultsDisplay.innerHTML += buttonsHtml;
+        }
+
+        // Static caveat/rate-sensitivity/pension notes — ship with the range, not after
+        if (resultsDisplay) {
+            resultsDisplay.innerHTML +=
+                '<p class="borrow-note borrow-disclaimer">These figures are estimates only. They are not guaranteed and actual lending depends on individual lender criteria, your credit history and full financial circumstances.</p>' +
+                '<p class="borrow-note borrow-rate-note">Mortgage rates can rise as well as fall. These figures are based on current lending conditions — if you\'re considering a fix shorter than 5 years, it\'s worth discussing how a future rate change could affect what you can borrow.</p>' +
+                '<p class="borrow-note borrow-pension-note">This calculator does not take pension contributions into account. Speak to one of our advisers for a more tailored picture of your borrowing potential.</p>';
         }
 
         // Add AIP CTA
@@ -1026,23 +1066,24 @@ const isInterestOnly = document.querySelector('input[name="repaymentType"]:check
         return num.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
 
-    // Function to use borrow amount in repayment calculator
-    window.useBorrowAmount = function() {
+    // Carry a borrow amount into the repayment calculator's loan field.
+    // amountKey is the window.* variable name holding the figure to use.
+    function useBorrowAmount(amountKey) {
         // Find the repayment tab button
         const repaymentTab = document.querySelector('[data-calculator="repayment"]');
-        
+
         if (repaymentTab) {
             // Trigger click on the tab
             repaymentTab.click();
-            
+
             // Small delay to ensure tab has switched
             setTimeout(function() {
                 // Set the loan amount
                 const loanInput = document.getElementById('repayment-loan');
-                
+
                 if (loanInput) {
-                    loanInput.value = Math.round(window.lastBorrowAmount).toLocaleString('en-GB');
-                    
+                    loanInput.value = Math.round(window[amountKey]).toLocaleString('en-GB');
+
                     // Focus on the interest rate field
                     const rateInput = document.getElementById('repayment-rate');
                     if (rateInput) {
@@ -1051,7 +1092,47 @@ const isInterestOnly = document.querySelector('input[name="repaymentType"]:check
                 }
             }, 100);
         }
+    }
+
+    // Function to use the Typical borrow amount in repayment calculator
+    window.useBorrowAmountTypical = function() {
+        useBorrowAmount('lastBorrowAmountTypical');
     };
+
+    // Function to use the Enhanced borrow amount in repayment calculator
+    window.useBorrowAmountEnhanced = function() {
+        useBorrowAmount('lastBorrowAmountEnhanced');
+    };
+
+    // Mandatory popup explaining the Typical/Enhanced range (compliance-approved copy)
+    window.openBorrowRangePopup = function() {
+        const popup = document.getElementById('borrow-range-popup');
+        if (popup) {
+            popup.classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    window.closeBorrowRangePopup = function() {
+        const popup = document.getElementById('borrow-range-popup');
+        if (popup) {
+            popup.classList.remove('show');
+            document.body.style.overflow = '';
+        }
+    };
+
+    document.addEventListener('click', function(event) {
+        const popup = document.getElementById('borrow-range-popup');
+        if (popup && event.target === popup) {
+            window.closeBorrowRangePopup();
+        }
+    });
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            window.closeBorrowRangePopup();
+        }
+    });
 
     // Function to use repayment values in overpayment calculator
     window.useRepaymentAmount = function() {
