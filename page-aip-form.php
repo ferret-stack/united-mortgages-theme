@@ -281,7 +281,7 @@ get_header(); ?>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/aip-form-components-v2.js?v=3.3"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/aip-form-app-v2.js?v=3.3"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/aip-form-components-v2.js?v=3.3.1"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/aip-form-app-v2.js?v=3.3.1"></script>
 
 <?php get_footer(); ?>
