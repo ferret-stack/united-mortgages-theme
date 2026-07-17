@@ -77,7 +77,7 @@ get_header(); ?>
                                     </div>
                                     <div class="popup-body">
                                         <p>These figures are estimates only. They are not guaranteed and actual lending depends on individual lender criteria, your credit history and full financial circumstances.</p>
-                                        <p>The <strong>Enhanced</strong> figure reflects income multiples of up to 6x now offered by a number of UK lenders. This tier is generally only available to higher earners &mdash; commonly &pound;75,000+ income &mdash; and is subject to lender-specific eligibility criteria. Most borrowers will not qualify for the Enhanced figure even though it is a real, current market rate. Your <strong>Typical</strong> figure is a more representative starting point for most applicants.</p>
+                                        <p>The <strong>Enhanced</strong> figure reflects income multiples of up to 6x now offered by a number of UK lenders. This tier is generally only available to higher earners - commonly &pound;75,000+ income - and is subject to lender-specific eligibility criteria. Most borrowers will not qualify for the Enhanced figure even though it is a real, current market rate. Your <strong>Typical</strong> figure is a more representative starting point for most applicants.</p>
                                     </div>
                                     <div class="popup-footer">
                                         <button type="button" class="popup-button" onclick="closeBorrowRangePopup()">Got it</button>
@@ -551,8 +551,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const resultsDisplay = document.getElementById('results-display');
         if (resultsDisplay) {
             resultsDisplay.innerHTML +=
-                '<p class="borrow-note borrow-disclaimer">These figures are estimates only. They are not guaranteed and actual lending depends on individual lender criteria, your credit history and full financial circumstances.</p>' +
-                '<p class="borrow-note borrow-rate-note">Mortgage rates can rise as well as fall. These figures are based on current lending conditions — if you\'re considering a fix shorter than 5 years, it\'s worth discussing how a future rate change could affect what you can borrow.</p>' +
                 '<p class="borrow-note borrow-pension-note">This calculator does not take pension contributions into account. Speak to one of our advisers for a more tailored picture of your borrowing potential.</p>';
         }
 

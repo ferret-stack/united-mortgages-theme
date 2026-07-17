@@ -2,12 +2,14 @@
 Theme Name: UnitedMortgagesTheme
 Author: Dannyboy
 Description: United Mortgages website
-Version: 3.10.1
+Version: 3.11
 */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&display=swap');
 :root {
     --dannyboy-blue: #109dff;
 	--um-gold: #bba177;
+    --dannyboy-sixx: #109db6;
+    --pinky-boi: #ff109d;
 }
 
 /* Global Resets */
@@ -2943,15 +2945,6 @@ blockquote {
     color: #1a1a1a;
 }
 
-.calculator-tab.active::after {
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--um-gold);
-}
 
 /* Calculator Content Wrapper */
 .calculator-content-wrapper {
@@ -3013,29 +3006,6 @@ blockquote {
 /* Placeholder text styling */
 .form-group input::placeholder {
     color: #999; /* Light grey for placeholder text */
-}
-
-/* Calculate Button */
-.btn-calculate {
-    background-color: var(--um-gold);
-    color: white;
-    padding: 15px 40px;
-    border: none;
-    border-radius: 25px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-    margin-top: 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.btn-calculate:hover {
-    background-color: var(--dannyboy-blue);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Results Section */
@@ -3245,8 +3215,7 @@ input#borrow-deposit::placeholder {
 
 .calc-info-box {
     background: #f0f4f8;
-    border-left: 4px solid var(--dannyboy-blue);
-    padding: 20px;
+    border-left: 4px solid var(--pinky-boi);
     border-radius: 10px;
 }
 
@@ -5477,9 +5446,6 @@ input#borrow-deposit::placeholder {
     transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
-    color: var(--um-gold);
-}
 
 /* Newsletter Section */
 .footer-newsletter {
@@ -6700,7 +6666,7 @@ Version: 2.1
 }
 
 .btn-primary:hover {
-    background-color:var(--um-gold);
+    background-color:var(--dannyboy-sixx);
 }
 
 /* Main Navigation */
@@ -8377,7 +8343,7 @@ blockquote {
 
 /* Service Buttons - Similar to btn-secondary but adapted */
 .btn-service {
-    background-color: var(--um-gold);
+    background-color: var(--dannyboy-blue);
     color: white;
     padding: 12px 24px;
     border-radius: 25px;
@@ -8391,7 +8357,7 @@ blockquote {
 }
 
 .btn-service:hover {
-    background-color: var(--dannyboy-blue);
+    background-color: var(--dannyboy-sixx);
     transform: translateY(-2px);
 }
 
@@ -9119,7 +9085,7 @@ blockquote {
     left: 0;
     right: 0;
     height: 3px;
-    background: var(--um-gold);
+    background: var(--pinky-boi);
 }
 
 /* Calculator Content Wrapper */
@@ -9184,7 +9150,7 @@ blockquote {
 
 /* Calculate Button */
 .btn-calculate {
-    background-color: var(--um-gold);
+    background-color: var(--dannyboy-blue);
     color: white;
     padding: 15px 40px;
     border: none;
@@ -9200,7 +9166,7 @@ blockquote {
 }
 
 .btn-calculate:hover {
-    background-color: var(--dannyboy-blue);
+    background-color: var(--dannyboy-sixx);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
@@ -9284,7 +9250,7 @@ blockquote {
 .result-value {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--dannyboy-blue);
+    color: var(--dannyboy-sixx);
 }
 
 /* Tooltip Styles */
@@ -9413,7 +9379,6 @@ input#borrow-deposit::placeholder {
 
 .calc-info-box {
     background: #f0f4f8;
-    border-left: 4px solid var(--dannyboy-blue);
     padding: 20px;
     border-radius: 10px;
 }
@@ -11654,7 +11619,7 @@ input#borrow-deposit::placeholder {
 }
 
 .footer-links a:hover {
-    color: var(--um-gold);
+    color: var(--dannyboy-sixx);
 }
 
 /* Newsletter Section */
@@ -11767,7 +11732,7 @@ input#borrow-deposit::placeholder {
 }
 
 .contact-item:hover {
-    color: var(--um-gold);
+    color: var(--dannyboy-sixx);
 }
 
 /* Footer Bottom */
@@ -12037,7 +12002,7 @@ input#borrow-deposit::placeholder {
 .run-the-numbers-section .section-heading {
     font-size: 3rem;
     font-weight: 300;
-    color: var(--um-gold);
+    color: black;
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -12048,7 +12013,7 @@ input#borrow-deposit::placeholder {
 
 .run-the-numbers-section .section-subheading {
     font-size: 1.2rem;
-    color: var(--um-gold);
+    color: #272727;
     text-align: center;
     margin-bottom: 50px;
     font-weight: 300;
@@ -12077,7 +12042,7 @@ input#borrow-deposit::placeholder {
 }
 
 .calculator-more-link a:hover {
-    color: var(--dannyboy-blue);
+    color: var(--pinky-boi);
     text-decoration: underline;
 }
 
@@ -13153,7 +13118,7 @@ input#borrow-deposit::placeholder {
 }
 
 .faq-question:hover {
-    color: var(--um-gold, #bba177);
+    color: var(--dannyboy-sixx);
 }
 
 /* ---- Chevron icon ---- */
@@ -13195,7 +13160,7 @@ input#borrow-deposit::placeholder {
 }
 
 .faq-question[aria-expanded="true"] {
-    color: var(--um-gold, #bba177);
+    color: var(--dannyboy-sixx);
 }
 
 /* ---- Answer panel ---- */
@@ -13305,7 +13270,7 @@ input#borrow-deposit::placeholder {
 }
 
 .repayment-toggle .toggle-option:has(input:checked) {
-    background: var(--um-gold);
+    background: var(--dannyboy-blue);
     color: white;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
@@ -13340,10 +13305,11 @@ input#borrow-deposit::placeholder {
     font-size: 0.9rem;
     cursor: pointer;
     vertical-align: middle;
+    margin-top: -5px;
 }
 
 .range-info-trigger:hover {
-    color: var(--um-gold);
+    color: var(--dannyboy-sixx);
 }
 
 .borrow-note {
@@ -13357,15 +13323,15 @@ input#borrow-deposit::placeholder {
     display: block;
     background: none;
     border: none;
-    padding: 0;
-    margin-top: 6px;
+    margin:12px auto;
     color: var(--dannyboy-blue);
     font-size: 0.85rem;
     font-weight: 600;
     text-decoration: underline;
     cursor: pointer;
+    text-align: center;
 }
 
-.use-in-repayment-link:hover {
+/*.use-in-repayment-link:hover {
     color: var(--um-gold);
-}
+*/
