@@ -35,11 +35,11 @@ get_header(); ?>
                     </div>
                 </div>
 
-                <h1 class="hero-title">Expert Mortgage Advice Available Nationwide <strong>365 Days a Year</strong></h1>
+                <h1 class="hero-title">Most mortgage advice happens 9&#8209;to&#8209;5<br><span class="hero-title highlight">Ours doesn't</span></h1>
                 <p class="hero-subtitle">
-                    Specialists in first-time buyers, movers, and remortgaging with access to 100+ lenders.<br>
-                    Trusted by homebuyers from London to Manchester and everywhere in between.<br>
-                    <strong>No jargon. No fax machines. No taking a day off work to sign forms... Because it's not 1997 anymore.</strong>
+                We're a tech-focused UK mortgage broker built for buyers, not paperwork<br>
+                Advisors respond the same day, any day. Yes &dash; even at 10pm on Sunday<br>
+                <strong>We're here to make it easy</strong>
                 </p>
             </div>
             <div class="button-group">
