@@ -35,9 +35,9 @@ get_header(); ?>
                     </div>
                 </div>
 
-                <h1 class="hero-title">Most mortgage advice happens 9&#8209;to&#8209;5<br><span class="hero-title highlight">Ours doesn't</span></h1>
+                <h1 class="hero-title">Most mortgage advice happens 9&#8209;to&#8209;5.<br><span class="hero-title highlight">Ours doesn't</span></h1>
                 <p class="hero-subtitle">
-                We're a tech-focused UK mortgage broker built for buyers, not paperwork<br>
+                We're a tech-focused UK mortgage broker built for first-time buyers, not paperwork<br>
                 Advisors respond the same day, any day. Yes &dash; even at 10pm on Sunday<br>
                 <strong>We're here to make it easy</strong>
                 </p>
