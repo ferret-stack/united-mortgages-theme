@@ -187,7 +187,7 @@ get_header(); ?>
                     <div class="founder-info">
                         <div class="founder-header">
                             <h3 class="founder-name">MUKI LIU <a href="https://www.linkedin.com/in/muki-liu-844444193" target="_blank" class="linkedin-link">in</a></h3>
-                            <p class="founder-title">Technical Advisor</p>
+                            <p class="founder-title">Technical Advisor<span class="founder-title postnom"> CeMAP</span></p>
                         </div>  
                         <div class="founder-bio">
                             <p>Muki built her career in communications across the green energy sector, working with Evident, Drax Group, and National Grid.</p>
@@ -197,7 +197,7 @@ get_header(); ?>
                     </div>
                 </div>
                 
-                <!-- Sarina -->
+                <!-- Sarina 
                 <div class="founder-card">
                     <div class="founder-image-wrapper">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/sarina-bw-1.png" alt="Sarina Kiayani" class="founder-image bw-image">
@@ -214,7 +214,7 @@ get_header(); ?>
                         </div>
                     </div>
                 </div>
-
+                -->
                 <!-- DeAndre -->
                 <div class="founder-card">
                     <div class="founder-image-wrapper" style="transform: scale(0.9) translateY(27px);">
