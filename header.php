@@ -7,7 +7,7 @@
   <meta name="google-site-verification" content="qvL_aHS-0u8HrMAqG_jGjvmnKhphU4tMajW0ZbW6Zkc"/>
   <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class( is_front_page() ? 'is-front-redesign' : '' ); ?>>
 
 <?php wp_body_open(); ?>
 
