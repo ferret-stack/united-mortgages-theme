@@ -7,7 +7,6 @@
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/daniel-team-2.png" alt="Team Member" class="team-avatar" style="object-position: center -2.5%">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/muki-team.png" alt="Team Member" class="team-avatar">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/david-team.png" alt="Team Member" class="team-avatar">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/sarina-team.png" alt="Team Member" class="team-avatar">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/jeff-team.png" alt="Team Member" class="team-avatar">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/michael-team.png" alt="Team Member" class="team-avatar">
                     </div>
