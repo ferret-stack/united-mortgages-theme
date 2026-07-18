@@ -4,15 +4,15 @@
  *
  * @package UnitedMortgages
  */
-/*V3.4 — Homepage redesign: Option 2b (restrained & editorial, blue)*/
+/*V3.4 — Homepage redesign: Option 2a (warm & balanced, blue)*/
 get_header(); ?>
 
 <main id="primary" class="site-main">
 
     <!-- Hero -->
     <section class="hp-hero">
-        <div class="hp-container">
-            <div class="hp-hero__inner">
+        <div class="hp-container hp-hero__grid">
+            <div>
                 <div class="review-widgets-container hp-hero__reviews">
                     <div class="trustpilot-widget">
                         <a href="https://uk.trustpilot.com/review/united-mortgages.com" target="_blank" rel="noopener noreferrer">
@@ -30,40 +30,56 @@ get_header(); ?>
                     </div>
                 </div>
 
-                <div class="hp-eyebrow">Whole&#8209;of&#8209;market &middot; 100+ lenders &middot; FCA regulated</div>
+                <div class="hp-pill">Whole of market &middot; 100+ lenders</div>
 
-                <h1>A mortgage relationship that runs from saving to owning.</h1>
+                <h1>Save. Borrow. <span>Own.</span></h1>
 
-                <p class="hp-hero__lead">Most brokers treat this as one transaction. We treat it as three: the deposit, the mortgage itself, and the years of remortgaging after. One advisor, one number you can trust, at each stage.</p>
+                <p class="hp-hero__lead">One relationship from your first deposit saving to the day you move in — and every remortgage after. No jargon, no jumping between five different "get started" buttons.</p>
 
                 <div class="hp-hero__cta-row">
                     <a href="#calculator" class="hp-btn">Check what you could borrow</a>
-                    <span class="hp-hero__note">3 minutes &middot; soft search only</span>
+                    <span class="hp-hero__note">Takes 3 minutes &middot; soft search, no credit impact</span>
                 </div>
                 <p class="hp-hero__secondary">Prefer to talk it through first? <a href="#contact-form">Request a call back</a>.</p>
+            </div>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/hero-v2.png" alt="Advisor and first-time buyers reviewing paperwork together" style="width:100%;aspect-ratio:4/3.2;object-fit:cover;border-radius:20px;">
+        </div>
+    </section>
+
+    <!-- Most mortgage advice happens 9-to-5. Ours doesn't. -->
+    <section class="hp-way">
+        <div class="hp-container">
+            <div class="hp-way__inner">
+                <h2>Most mortgage advice happens 9-to-5.<br><span>Ours doesn't.</span></h2>
+                <ul>
+                    <li>We're a tech-focused UK mortgage broker built for first-time buyers, not paperwork.</li>
+                    <li>Advisors respond the same day, any day — yes, even at 10pm on Sunday.</li>
+                    <li>We're here to make it easy.</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <!-- USP block -->
     <section class="hp-usp">
-        <div class="hp-usp__grid">
+        <div class="hp-container hp-usp__grid">
             <div class="hp-usp__item">
-                <div class="hp-usp__num">I. Save</div>
-                <p>Deposit planning that counts only what lenders will actually accept.</p>
+                <div class="hp-usp__num">01 &middot; Save</div>
+                <p>Deposit tools that show you honestly how close you are — and what lenders will actually count.</p>
             </div>
             <div class="hp-usp__item">
-                <div class="hp-usp__num">II. Borrow</div>
-                <p>The realistic borrowing figure, shown first — not an inflated one we later withdraw.</p>
+                <div class="hp-usp__num">02 &middot; Borrow</div>
+                <p>Search 100+ lenders at once. We show the realistic number first, not an "enhanced" one we'll walk back later.</p>
             </div>
             <div class="hp-usp__item">
-                <div class="hp-usp__num">III. Own</div>
-                <p>Your remortgage date, tracked and flagged well ahead of the lender's standard rate.</p>
+                <div class="hp-usp__num">03 &middot; Own</div>
+                <p>We flag your remortgage date before your lender's standard rate does, automatically.</p>
             </div>
         </div>
     </section>
 
-    <!-- Our Mortgages -->
+    <!-- Our Mortgages (not in the 2a mockup — carried over from the current site's
+         existing "Our Mortgages" section/copy, reskinned to match) -->
     <section class="hp-mortgages-wrap">
         <div class="hp-container">
             <div class="hp-head">
@@ -74,50 +90,81 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- Run the Numbers - Calculator Section -->
-    <!-- Desktop: Embedded borrow calculator | Mobile: CTA card linking to /calculators#borrow -->
-    <div class="hp-calc-wrap">
-        <?php get_template_part('template-parts/calculator-borrow-embed'); ?>
-    </div>
-
-    <!-- On the record — testimonials. NOTE: placeholder names/quotes/ratings from the
-         approved design mockup; swap for real, verifiable reviews before this goes live. -->
-    <section class="hp-testimonials">
+    <!-- What you could borrow — honestly -->
+    <section class="hp-borrow">
         <div class="hp-container">
-            <h2>On the record</h2>
-            <div class="hp-testimonials__grid">
-                <div class="hp-testimonials__card">
-                    <p>&ldquo;Every fee was on the table before we signed. Priya didn't wait for us to ask.&rdquo;</p>
-                    <div class="hp-testimonials__who">
-                        <span class="hp-testimonials__avatar">P</span>
-                        <span>Sarah &amp; Tom &middot; Priya Shah, advisor</span>
-                    </div>
+            <h2>What you could borrow — honestly</h2>
+            <p class="hp-borrow__lead">The number below is what most lenders will actually offer. We won't show you a bigger one just to soften the click.</p>
+            <div class="hp-borrow__card">
+                <div>
+                    <div class="hp-label">Combined income</div>
+                    <div class="hp-value">&pound;58,000</div>
                 </div>
-                <div class="hp-testimonials__card">
-                    <p>&ldquo;Andy flagged our remortgage two months out. We'd have missed it otherwise.&rdquo;</p>
-                    <div class="hp-testimonials__who">
-                        <span class="hp-testimonials__avatar">A</span>
-                        <span>Marcus J. &middot; Andy Okafor, advisor</span>
-                    </div>
+                <div>
+                    <div class="hp-label">Deposit</div>
+                    <div class="hp-value">&pound;32,000</div>
                 </div>
-                <div class="hp-testimonials__card">
-                    <p>&ldquo;Elly explained AIP and LTV without a hint of condescension.&rdquo;</p>
-                    <div class="hp-testimonials__who">
-                        <span class="hp-testimonials__avatar">E</span>
-                        <span>Deepa R. &middot; Elly Fraser, advisor</span>
-                    </div>
+                <div style="text-align:right">
+                    <div class="hp-label">Typical borrowing</div>
+                    <div class="hp-value hp-value--lg">&pound;243,600</div>
                 </div>
             </div>
-            <div class="hp-testimonials__rating"><strong>4.9 / 5</strong> — 2,140 verified reviews, Trustpilot &amp; Google</div>
+            <p class="hp-borrow__example-note">Based on 4.2&times; joint income, standard affordability rules. Your actual offer depends on credit history, existing debt and each lender's own criteria — an advisor will confirm your real range before you apply.</p>
+
+            <!-- Real interactive calculator, in addition to the worked example above,
+                 so visitors can run their own numbers rather than just seeing ours. -->
+            <div class="hp-borrow__own-figure">
+                <h3>Or run your own numbers</h3>
+                <div class="hp-calc-wrap">
+                    <?php get_template_part('template-parts/calculator-borrow-embed'); ?>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Speak to Our Team Section -->
+    <!-- People, not a processing queue. NOTE: placeholder names/quotes/ratings from
+         the approved design mockup; swap for real, verifiable reviews before this
+         goes live. -->
+    <section class="hp-testimonials">
+        <div class="hp-container">
+            <h2>People, not a processing queue</h2>
+            <div class="hp-testimonials__grid">
+                <div class="hp-testimonials__card">
+                    <span class="hp-testimonials__avatar">P</span>
+                    <div class="hp-name">Priya Shah</div>
+                    <div class="hp-role">Senior mortgage advisor</div>
+                    <div class="hp-quote">&ldquo;Priya walked us through every fee before we signed anything — nothing appeared later that we hadn't already seen.&rdquo;</div>
+                    <div class="hp-attribution">— Sarah &amp; Tom, first-time buyers &middot; &#9733;&#9733;&#9733;&#9733;&#9733; Verified review</div>
+                </div>
+                <div class="hp-testimonials__card">
+                    <span class="hp-testimonials__avatar">A</span>
+                    <div class="hp-name">Andy Okafor</div>
+                    <div class="hp-role">Remortgage specialist</div>
+                    <div class="hp-quote">&ldquo;Andy messaged us two months before our fixed rate ended. We'd have missed it otherwise.&rdquo;</div>
+                    <div class="hp-attribution">— Marcus J. &middot; &#9733;&#9733;&#9733;&#9733;&#9733; Verified review</div>
+                </div>
+                <div class="hp-testimonials__card">
+                    <span class="hp-testimonials__avatar">E</span>
+                    <div class="hp-name">Elly Fraser</div>
+                    <div class="hp-role">First-time buyer advisor</div>
+                    <div class="hp-quote">&ldquo;I've never used the phrase 'AIP' before and Elly explained it without making me feel stupid.&rdquo;</div>
+                    <div class="hp-attribution">— Deepa R. &middot; &#9733;&#9733;&#9733;&#9733;&#9733; Verified review</div>
+                </div>
+            </div>
+            <div class="hp-testimonials__rating">
+                <strong>4.9 / 5</strong>
+                <span>from 2,140 verified reviews on Trustpilot &amp; Google</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speak to Our Team Section (not in the 2a mockup — real HubSpot lead form,
+         reskinned to match) -->
     <div class="hp-team-wrap">
         <?php get_template_part('template-parts/team-contact'); ?>
     </div>
 
-    <!-- Partners Section -->
+    <!-- Partners Section (not in the 2a mockup — real partner loop, reskinned to match) -->
     <section class="hp-partners">
         <div class="hp-container">
             <div class="hp-eyebrow hp-partners__eyebrow">Our Partners</div>
@@ -162,7 +209,7 @@ get_header(); ?>
 
     <!-- Final CTA banner -->
     <section class="hp-cta-banner">
-        <h2>See your honest borrowing figure</h2>
+        <h2>Ready to see your honest number?</h2>
         <a href="#calculator" class="hp-btn hp-btn--inverse">Check what you could borrow</a>
     </section>
 

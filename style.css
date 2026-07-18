@@ -12,17 +12,19 @@ Version: 3.12
     --dannyboy-sixx: #109db6;
     --pinky-boi: #ff109d;
 
-    /* Homepage redesign (Option 2b — restrained & editorial, blue) */
-    --hp-cream: #f4f1ea;
-    --hp-cream-soft: #faf8f3;
-    --hp-ink: #1c2620;
-    --hp-body: #4a534d;
+    /* Homepage redesign (Option 2a — warm & balanced, blue) */
+    --hp-cream: #faf7f2;
+    --hp-cream-blue: #eef7ff;
+    --hp-cream-2: #f3efe6;
+    --hp-pill-bg: #e7f3ff;
+    --hp-ink: #16241f;
+    --hp-body: #3c4a44;
     --hp-body-2: #2c352f;
-    --hp-muted: #6b6250;
-    --hp-muted-2: #8a806c;
-    --hp-border: #d8d2c4;
-    --hp-border-soft: #e5e0d3;
-    --hp-accent: #0a7fd6;
+    --hp-muted: #6b7871;
+    --hp-muted-2: #8b968f;
+    --hp-border: #e3ded3;
+    --hp-accent: #109dff;
+    --hp-accent-text: #0a7fd6;
     --hp-font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     --hp-font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
@@ -13352,7 +13354,7 @@ input#borrow-deposit::placeholder {
 */
 
 /* ============================================================
-   HOMEPAGE REDESIGN — Option 2b (restrained & editorial, blue)
+   HOMEPAGE REDESIGN — Option 2a (warm & balanced, blue)
    Scope: header/footer overrides via body.is-front-redesign;
    all other sections use unique .hp- prefixed wrapper classes
    that only appear on the homepage, so shared template parts
@@ -13365,6 +13367,7 @@ input#borrow-deposit::placeholder {
     background: var(--hp-cream);
     backdrop-filter: none;
     box-shadow: none;
+    border-bottom: 1px solid var(--hp-border);
 }
 
 .is-front-redesign .header-top {
@@ -13390,12 +13393,12 @@ input#borrow-deposit::placeholder {
 
 .is-front-redesign .header-top .btn-primary {
     background: var(--hp-accent);
-    border-radius: 3px;
+    border-radius: 100px;
     font-family: var(--hp-font-display);
 }
 
 .is-front-redesign .header-top .btn-primary:hover {
-    background: #086bb5;
+    background: #0d84d9;
 }
 
 .is-front-redesign #primary-menu a {
@@ -13432,7 +13435,7 @@ body.is-front-redesign {
 
 @media (max-width: 1024px) {
     body.is-front-redesign {
-        padding-top: 131px;
+        padding-top: 135px;
     }
 }
 
@@ -13443,93 +13446,106 @@ body.is-front-redesign {
     padding: 0 48px;
 }
 
-.hp-eyebrow {
+.hp-pill {
+    display: inline-block;
+    background: var(--hp-pill-bg);
+    color: var(--hp-accent-text);
     font-family: var(--hp-font-body);
-    font-size: 12px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--hp-muted);
+    font-size: 12.5px;
     font-weight: 600;
-    margin-bottom: 18px;
+    padding: 6px 12px;
+    border-radius: 100px;
+    margin-bottom: 20px;
 }
 
 .hp-btn {
     display: inline-block;
     background: var(--hp-accent);
     color: #fff;
-    padding: 15px 30px;
-    border-radius: 3px;
+    padding: 16px 28px;
+    border-radius: 100px;
     font-family: var(--hp-font-display);
-    font-size: 14.5px;
+    font-size: 15.5px;
     font-weight: 600;
     text-decoration: none;
     border: none;
     cursor: pointer;
-    transition: background-color .2s ease, transform .2s ease;
+    box-shadow: 0 8px 20px -8px rgba(16, 157, 255, .5);
+    transition: background-color .2s ease, transform .2s ease, box-shadow .2s ease;
 }
 
 .hp-btn:hover {
-    background: #086bb5;
+    background: #0d84d9;
     color: #fff;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -8px rgba(16, 157, 255, .6);
 }
 
 .hp-btn--inverse {
-    background: var(--hp-cream);
+    background: #fff;
     color: var(--hp-accent);
+    box-shadow: none;
 }
 
 .hp-btn--inverse:hover {
-    background: #fff;
-    color: #086bb5;
+    background: #f2f8ff;
+    color: #0d84d9;
+    box-shadow: 0 8px 20px -8px rgba(0, 0, 0, .25);
 }
 
 /* -------------------- Hero -------------------- */
 .hp-hero {
     background: var(--hp-cream);
-    padding: 64px 0 60px;
-    border-bottom: 1px solid var(--hp-border);
 }
 
-.hp-hero__inner {
-    max-width: 680px;
+.hp-hero__grid {
+    padding: 72px 0 64px;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 56px;
+    align-items: center;
 }
 
 .hp-hero__reviews.review-widgets-container {
-    margin: 0 0 22px;
+    margin: 0 0 20px;
     justify-content: flex-start;
     gap: 22px;
 }
 
 .hp-hero h1 {
     font-family: var(--hp-font-display);
-    font-size: 46px;
-    line-height: 1.12;
-    letter-spacing: -.01em;
+    font-size: 52px;
+    line-height: 1.05;
+    letter-spacing: -.02em;
     margin: 0 0 22px;
     font-weight: 600;
     color: var(--hp-ink);
 }
 
+.hp-hero h1 span {
+    color: var(--hp-accent);
+}
+
 .hp-hero__lead {
     font-family: var(--hp-font-body);
-    font-size: 16px;
-    line-height: 1.65;
+    font-size: 17px;
+    line-height: 1.6;
     color: var(--hp-body);
-    margin: 0 0 32px;
+    max-width: 460px;
+    margin: 0 0 30px;
 }
 
 .hp-hero__cta-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 14px;
     align-items: center;
     margin-bottom: 14px;
 }
 
 .hp-hero__note {
     font-family: var(--hp-font-body);
-    font-size: 13px;
+    font-size: 13.5px;
     color: var(--hp-muted);
 }
 
@@ -13540,81 +13556,122 @@ body.is-front-redesign {
 }
 
 .hp-hero__secondary a {
-    color: var(--hp-accent);
+    color: var(--hp-accent-text);
     text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .hp-hero__grid {
+        grid-template-columns: 1fr;
+        padding: 48px 0;
+    }
 }
 
 @media (max-width: 640px) {
     .hp-hero h1 {
-        font-size: 34px;
+        font-size: 36px;
     }
+}
+
+/* -------------------- "Most mortgage advice..." -------------------- */
+.hp-way {
+    background: var(--hp-cream-blue);
+    padding: 60px 0;
+}
+
+.hp-way__inner {
+    max-width: 640px;
+}
+
+.hp-way h2 {
+    font-family: var(--hp-font-display);
+    font-size: 30px;
+    line-height: 1.15;
+    margin: 0 0 22px;
+    font-weight: 600;
+    color: var(--hp-ink);
+}
+
+.hp-way h2 span {
+    color: var(--hp-accent);
+}
+
+.hp-way ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.hp-way li {
+    font-family: var(--hp-font-body);
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--hp-body-2);
+    padding-left: 26px;
+    position: relative;
+}
+
+.hp-way li::before {
+    content: "\2192";
+    position: absolute;
+    left: 0;
+    color: var(--hp-accent);
+    font-weight: 700;
 }
 
 /* -------------------- USP block -------------------- */
 .hp-usp {
-    border-bottom: 1px solid var(--hp-border);
+    background: var(--hp-accent);
+    padding: 52px 0;
+    color: #eaf6ff;
 }
 
 .hp-usp__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-}
-
-.hp-usp__item {
-    padding: 40px 48px;
-    border-right: 1px solid var(--hp-border);
-}
-
-.hp-usp__item:last-child {
-    border-right: none;
+    gap: 36px;
 }
 
 .hp-usp__num {
     font-family: var(--hp-font-display);
-    font-size: 13px;
-    color: var(--hp-muted);
-    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #d3edff;
+    margin-bottom: 8px;
 }
 
 .hp-usp__item p {
     font-family: var(--hp-font-body);
-    font-size: 14.5px;
+    font-size: 15px;
     line-height: 1.6;
-    color: var(--hp-body-2);
     margin: 0;
 }
 
 @media (max-width: 900px) {
     .hp-usp__grid {
         grid-template-columns: 1fr;
-    }
-
-    .hp-usp__item {
-        border-right: none;
-        border-bottom: 1px solid var(--hp-border);
-    }
-
-    .hp-usp__item:last-child {
-        border-bottom: none;
+        gap: 24px;
     }
 }
 
 /* -------------------- Our Mortgages (reskin, homepage-only) -------------------- */
 .hp-mortgages-wrap {
     background: var(--hp-cream);
-    padding: 60px 0;
-    border-bottom: 1px solid var(--hp-border);
+    padding: 64px 0;
 }
 
 .hp-mortgages-wrap .hp-head {
     max-width: 640px;
-    margin: 0 auto 40px;
+    margin: 0 auto 32px;
 }
 
 .hp-mortgages-wrap .hp-head h2 {
     font-family: var(--hp-font-display);
-    font-size: 26px;
-    margin: 0 0 10px;
+    font-size: 28px;
+    margin: 0 0 8px;
     font-weight: 600;
     color: var(--hp-ink);
 }
@@ -13622,48 +13679,47 @@ body.is-front-redesign {
 .hp-mortgages-wrap .hp-head p {
     font-family: var(--hp-font-body);
     font-size: 14.5px;
-    color: var(--hp-body);
+    color: var(--hp-muted);
     margin: 0;
+    max-width: 520px;
 }
 
 .hp-mortgages-wrap .mortgage-services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--hp-border);
+    gap: 28px;
     margin-top: 0;
     padding-bottom: 0;
-    border: 1px solid var(--hp-border);
 }
 
 .hp-mortgages-wrap .mortgage-service-card {
-    background: var(--hp-cream);
+    background: #fff;
     color: var(--hp-body-2);
-    border-radius: 0;
-    padding: 32px 28px;
+    border: 1px solid var(--hp-border);
+    border-radius: 16px;
+    padding: 26px;
     text-align: left;
     backdrop-filter: none;
     min-height: 0;
-    transition: background-color .2s ease;
+    transition: transform .2s ease, border-color .2s ease;
 }
 
 .hp-mortgages-wrap .mortgage-service-card:hover {
     background: #fff;
-    transform: none;
+    border-color: var(--hp-accent);
+    transform: translateY(-4px);
 }
 
 .hp-mortgages-wrap .service-icon {
-    width: 44px;
-    height: 44px;
-    margin: 0 0 18px;
-    background: #eaf4fc;
-    border-radius: 10px;
+    width: 48px;
+    height: 48px;
+    margin: 0 0 14px;
+    background: var(--hp-pill-bg);
+    border-radius: 12px;
 }
 
 .hp-mortgages-wrap .service-icon img {
-    filter: none;
-    width: 22px;
-    -webkit-filter: invert(37%) sepia(93%) saturate(1352%) hue-rotate(180deg) brightness(93%) contrast(101%);
+    width: 24px;
     filter: invert(37%) sepia(93%) saturate(1352%) hue-rotate(180deg) brightness(93%) contrast(101%);
 }
 
@@ -13681,12 +13737,12 @@ body.is-front-redesign {
     line-height: 1.6;
     font-weight: 400;
     color: var(--hp-body);
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
 .hp-mortgages-wrap .btn-service {
     background: transparent;
-    color: var(--hp-accent);
+    color: var(--hp-accent-text);
     padding: 0;
     border-radius: 0;
     font-family: var(--hp-font-body);
@@ -13710,31 +13766,96 @@ body.is-front-redesign {
     }
 }
 
-/* -------------------- Borrow calculator (reskin, homepage-only) -------------------- */
-.hp-calc-wrap {
-    background: var(--hp-cream-soft);
+/* -------------------- Borrow figure -------------------- */
+.hp-borrow {
+    background: #fff;
+    padding: 64px 0;
 }
 
-.hp-calc-wrap .run-the-numbers-section {
-    background: transparent;
-}
-
-.hp-calc-wrap .run-the-numbers-section .section-heading {
+.hp-borrow h2 {
     font-family: var(--hp-font-display);
+    font-size: 28px;
+    margin: 0 0 8px;
     font-weight: 600;
     color: var(--hp-ink);
-    font-size: 2rem;
 }
 
-.hp-calc-wrap .run-the-numbers-section .section-heading .bold-text {
-    color: var(--hp-accent);
-    font-weight: 700;
-}
-
-.hp-calc-wrap .run-the-numbers-section .section-subheading {
+.hp-borrow__lead {
     font-family: var(--hp-font-body);
-    color: var(--hp-body);
-    font-weight: 400;
+    font-size: 14.5px;
+    color: var(--hp-muted);
+    margin: 0 0 28px;
+    max-width: 520px;
+}
+
+.hp-borrow__card {
+    border: 1px solid var(--hp-border);
+    border-radius: 16px;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 28px;
+    align-items: center;
+    background: var(--hp-cream);
+}
+
+.hp-borrow__card .hp-label {
+    font-family: var(--hp-font-body);
+    font-size: 12.5px;
+    color: var(--hp-muted);
+    margin-bottom: 6px;
+}
+
+.hp-borrow__card .hp-value {
+    font-family: var(--hp-font-display);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--hp-ink);
+}
+
+.hp-borrow__card .hp-value--lg {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--hp-accent);
+}
+
+.hp-borrow__example-note {
+    font-family: var(--hp-font-body);
+    font-size: 12.5px;
+    color: var(--hp-muted-2);
+    margin: 14px 0 0;
+}
+
+.hp-borrow__own-figure {
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px solid var(--hp-border);
+}
+
+.hp-borrow__own-figure h3 {
+    font-family: var(--hp-font-display);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--hp-ink);
+    margin: 0 0 20px;
+}
+
+@media (max-width: 700px) {
+    .hp-borrow__card {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+}
+
+/* -------------------- Calculator embed (reskin, homepage-only) -------------------- */
+.hp-calc-wrap .run-the-numbers-section {
+    background: transparent;
+    padding: 0;
+}
+
+.hp-calc-wrap .run-the-numbers-section .section-heading,
+.hp-calc-wrap .run-the-numbers-section .section-subheading {
+    display: none;
 }
 
 .hp-calc-wrap .calculator-container,
@@ -13746,7 +13867,7 @@ body.is-front-redesign {
 }
 
 .hp-calc-wrap .calculator-forms {
-    background: var(--hp-cream-soft);
+    background: var(--hp-cream);
 }
 
 .hp-calc-wrap .calculator-results {
@@ -13764,7 +13885,7 @@ body.is-front-redesign {
 }
 
 .hp-calc-wrap .btn-calculate {
-    border-radius: 3px;
+    border-radius: 100px;
 }
 
 .hp-calc-wrap .calculator-more-link a:hover {
@@ -13776,20 +13897,19 @@ body.is-front-redesign {
 }
 
 .hp-calc-wrap .calculator-cta-card .btn-secondary:hover {
-    background-color: #086bb5;
+    background-color: #0d84d9;
 }
 
 /* -------------------- Testimonials -------------------- */
 .hp-testimonials {
-    background: var(--hp-cream);
-    padding: 60px 0;
-    border-bottom: 1px solid var(--hp-border);
+    background: var(--hp-cream-2);
+    padding: 64px 0;
 }
 
 .hp-testimonials h2 {
     font-family: var(--hp-font-display);
-    font-size: 23px;
-    margin: 0 0 30px;
+    font-size: 28px;
+    margin: 0 0 32px;
     font-weight: 600;
     color: var(--hp-ink);
 }
@@ -13797,61 +13917,78 @@ body.is-front-redesign {
 .hp-testimonials__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--hp-border);
-    border: 1px solid var(--hp-border);
+    gap: 28px;
 }
 
 .hp-testimonials__card {
-    background: var(--hp-cream);
+    background: #fff;
+    border-radius: 16px;
     padding: 26px;
-}
-
-.hp-testimonials__card p {
-    font-family: var(--hp-font-body);
-    font-size: 14px;
-    line-height: 1.65;
-    color: var(--hp-body-2);
-    margin: 0 0 16px;
-}
-
-.hp-testimonials__who {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    border: 1px solid var(--hp-border);
 }
 
 .hp-testimonials__avatar {
-    width: 34px;
-    height: 34px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     background: var(--hp-accent);
     color: #fff;
     font-family: var(--hp-font-display);
-    font-size: 12.5px;
+    font-size: 18px;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    margin-bottom: 14px;
 }
 
-.hp-testimonials__who span {
+.hp-testimonials__card .hp-name {
+    font-family: var(--hp-font-body);
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 2px;
+    color: var(--hp-ink);
+}
+
+.hp-testimonials__card .hp-role {
     font-family: var(--hp-font-body);
     font-size: 12.5px;
     color: var(--hp-muted);
+    margin-bottom: 14px;
+}
+
+.hp-testimonials__card .hp-quote {
+    font-family: var(--hp-font-body);
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--hp-body);
+}
+
+.hp-testimonials__card .hp-attribution {
+    font-family: var(--hp-font-body);
+    font-size: 12.5px;
+    color: var(--hp-muted-2);
+    margin-top: 12px;
 }
 
 .hp-testimonials__rating {
-    margin-top: 22px;
-    font-family: var(--hp-font-body);
-    font-size: 13px;
-    color: var(--hp-muted);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 26px;
 }
 
 .hp-testimonials__rating strong {
-    color: var(--hp-ink);
     font-family: var(--hp-font-display);
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--hp-ink);
+}
+
+.hp-testimonials__rating span {
+    font-family: var(--hp-font-body);
+    font-size: 13.5px;
+    color: var(--hp-muted);
 }
 
 @media (max-width: 900px) {
@@ -13862,7 +13999,7 @@ body.is-front-redesign {
 
 /* -------------------- Team contact (reskin, homepage-only) -------------------- */
 .hp-team-wrap .team-contact-section {
-    background: var(--hp-cream-soft);
+    background: var(--hp-cream);
 }
 
 .hp-team-wrap .team-title {
@@ -13886,7 +14023,7 @@ body.is-front-redesign {
     background: #fff;
     border: 1px solid var(--hp-border);
     box-shadow: none;
-    border-radius: 12px;
+    border-radius: 16px;
 }
 
 /* -------------------- Partners (reskin, homepage-only, unique markup) -------------------- */
@@ -13897,6 +14034,7 @@ body.is-front-redesign {
 
 .hp-partners__eyebrow {
     text-align: center;
+    color: var(--hp-muted);
 }
 
 .hp-partners__grid {
@@ -13919,7 +14057,7 @@ body.is-front-redesign {
        every third-party logo file. */
     background: var(--hp-ink);
     border: 1px solid var(--hp-ink);
-    border-radius: 8px;
+    border-radius: 12px;
     transition: border-color .2s ease, transform .2s ease;
     padding: 16px;
 }
@@ -13947,14 +14085,14 @@ body.is-front-redesign {
 /* -------------------- Final CTA banner -------------------- */
 .hp-cta-banner {
     background: var(--hp-accent);
-    padding: 52px 48px;
+    padding: 56px 48px;
     text-align: center;
 }
 
 .hp-cta-banner h2 {
     font-family: var(--hp-font-display);
-    color: var(--hp-cream);
-    font-size: 24px;
+    color: #fff;
+    font-size: 26px;
     font-weight: 600;
-    margin: 0 0 18px;
+    margin: 0 0 20px;
 }
