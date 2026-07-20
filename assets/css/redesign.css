@@ -11,6 +11,7 @@
    2. Shared layout/component primitives (.hp-container/.hp-pill/.hp-btn —
       also used by index.php, kept here since they're generic)
    3. Our Story page (um- prefixed; page-our-story.php only)
+   4. Calculators page (page-calculators.php)
    ============================================================ */
 
 /* -------------------- 1. Sitewide header/nav -------------------- */
@@ -606,4 +607,297 @@ body.is-front-redesign {
     .um-charter__signature {
         height: 56px;
     }
+}
+
+/* ============================================================
+   4. CALCULATORS PAGE (page-calculators.php)
+
+   This is a real functional/compliance component (affordability
+   calculation logic, Typical/Enhanced disclaimer popup — see
+   REDESIGN_HANDOVER.md §5), and its markup/classes are shared with
+   the homepage's embedded borrow calculator
+   (template-parts/calculator-borrow-embed.php, reskinned separately
+   via .hp-calc-wrap further up this cascade). So this reskins the
+   same way that embed does: a scoped wrapper (.um-calc-page) with
+   cosmetic overrides layered on the base calculator CSS in
+   style.css, which still owns the structural/behavioural rules
+   (tab display toggling, popup show/hide, tooltip positioning).
+   Nothing here touches calculation constants, disclaimer copy, or
+   JS — reskin only.
+   ============================================================ */
+
+.um-calc-page {
+    background: var(--hp-cream);
+    padding: 64px 0 88px;
+}
+
+.um-calc-hero {
+    max-width: 700px;
+    margin: 0 auto 44px;
+    text-align: center;
+}
+
+.um-calc-hero__title {
+    font-family: var(--hp-font-display);
+    font-size: 40px;
+    line-height: 1.15;
+    letter-spacing: -.01em;
+    font-weight: 600;
+    color: var(--hp-ink);
+    margin: 0 0 16px;
+}
+
+.um-calc-hero__accent {
+    color: var(--hp-accent);
+}
+
+.um-calc-hero__subtitle {
+    font-family: var(--hp-font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--hp-body);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .um-calc-page {
+        padding: 48px 0 64px;
+    }
+
+    .um-calc-hero__title {
+        font-size: 30px;
+    }
+
+    .um-calc-hero__subtitle {
+        font-size: 15px;
+    }
+}
+
+/* -------------------- Container / tabs -------------------- */
+.um-calc-page .calculator-container {
+    background: #fff;
+    border: 1px solid var(--hp-border);
+    border-radius: 20px;
+    box-shadow: 0 24px 60px -28px rgba(22, 36, 31, .18);
+    max-width: 1160px;
+    margin-top: 0;
+}
+
+.um-calc-page .calculator-tabs {
+    background: var(--hp-cream);
+    border-bottom: 1px solid var(--hp-border);
+}
+
+.um-calc-page .calculator-tab {
+    font-family: var(--hp-font-display);
+    color: var(--hp-muted);
+    font-size: .8rem;
+    letter-spacing: .03em;
+}
+
+.um-calc-page .calculator-tab:hover {
+    background: var(--hp-pill-bg);
+    color: var(--hp-accent-text);
+}
+
+.um-calc-page .calculator-tab.active {
+    color: var(--hp-ink);
+}
+
+.um-calc-page .calculator-tab.active::after {
+    background: var(--hp-accent);
+}
+
+/* -------------------- Forms -------------------- */
+.um-calc-page .calculator-forms {
+    background: #fff;
+}
+
+.um-calc-page .form-group label {
+    font-family: var(--hp-font-body);
+    color: var(--hp-body-2);
+}
+
+.um-calc-page .form-group input,
+.um-calc-page .form-group select {
+    background: var(--hp-cream);
+    color: var(--hp-ink);
+    font-family: var(--hp-font-body);
+}
+
+.um-calc-page .form-group input:focus,
+.um-calc-page .form-group select:focus {
+    background: #fff;
+    border-color: var(--hp-accent);
+}
+
+.um-calc-page .info-tooltip {
+    color: var(--hp-accent-text);
+}
+
+.um-calc-page .info-tooltip::after {
+    background-color: var(--hp-ink);
+}
+
+.um-calc-page .info-tooltip::before {
+    border-top-color: var(--hp-ink);
+}
+
+.um-calc-page .btn-calculate {
+    background: var(--hp-accent);
+    font-family: var(--hp-font-display);
+    box-shadow: 0 8px 20px -8px rgba(16, 157, 255, .5);
+}
+
+.um-calc-page .btn-calculate:hover {
+    background: #0d84d9;
+    transform: translateY(-2px);
+}
+
+.um-calc-page .calc-info-box {
+    background: var(--hp-cream-blue);
+    border-left-color: var(--hp-accent);
+}
+
+.um-calc-page .calc-info-box.gold-accent {
+    border-left-color: var(--hp-ink);
+}
+
+.um-calc-page .calc-info-box h4 {
+    font-family: var(--hp-font-display);
+    color: var(--hp-ink);
+}
+
+.um-calc-page .calc-info-box p {
+    color: var(--hp-body);
+}
+
+/* Repayment type toggle (Repayment / Interest Only) */
+.um-calc-page .repayment-toggle {
+    background: var(--hp-cream);
+}
+
+.um-calc-page .repayment-toggle .toggle-option {
+    font-family: var(--hp-font-body);
+    color: var(--hp-body);
+}
+
+.um-calc-page .repayment-toggle .toggle-option:has(input:checked) {
+    background: var(--hp-accent);
+    color: #fff;
+}
+
+.um-calc-page .interest-only-warning {
+    background: var(--hp-cream-2);
+    border-color: var(--hp-accent);
+    color: var(--hp-body-2);
+}
+
+/* -------------------- Results -------------------- */
+.um-calc-page .calculator-results {
+    background: var(--hp-cream);
+    border-left: 1px solid var(--hp-border);
+}
+
+.um-calc-page .calculator-results h2 {
+    font-family: var(--hp-font-display);
+    font-weight: 600;
+    color: var(--hp-ink);
+}
+
+.um-calc-page .results-content {
+    border: 1px solid var(--hp-border);
+    box-shadow: none;
+    border-radius: 16px;
+}
+
+.um-calc-page .result-item {
+    border-bottom-color: var(--hp-border);
+}
+
+.um-calc-page .result-label {
+    font-family: var(--hp-font-body);
+    color: var(--hp-muted);
+}
+
+.um-calc-page .result-value {
+    font-family: var(--hp-font-display);
+    color: var(--hp-ink);
+}
+
+.um-calc-page .result-item.total {
+    border-top-color: var(--hp-border);
+}
+
+.um-calc-page .result-item.savings {
+    background: var(--hp-cream-blue);
+}
+
+/* Typical (the "honest", representative figure — highlight-gold in the
+   JS results object) leads in accent blue, matching the homepage's
+   worked-example card. Enhanced (highlight-blue; eligibility-restricted,
+   needs the disclaimer popup) stays a quieter ink tone.
+   Descendant selector, not compound: the JS renders these classes on a
+   <span> nested inside .result-value, not combined on one element — the
+   original .result-value.highlight-gold-style compound rules in
+   style.css never actually matched anything. */
+.um-calc-page .result-value .highlight-gold {
+    color: var(--hp-accent);
+}
+
+.um-calc-page .result-value .highlight-blue {
+    color: var(--hp-ink);
+}
+
+.um-calc-page .use-borrow-button,
+.um-calc-page .results-cta .btn-primary {
+    background: var(--hp-accent);
+    font-family: var(--hp-font-display);
+}
+
+.um-calc-page .use-borrow-button:hover,
+.um-calc-page .results-cta .btn-primary:hover {
+    background: #0d84d9;
+}
+
+.um-calc-page .use-in-repayment-link,
+.um-calc-page .range-info-trigger {
+    color: var(--hp-accent-text);
+}
+
+.um-calc-page .borrow-note {
+    color: var(--hp-muted-2);
+}
+
+.um-calc-page .placeholder-icon {
+    filter: invert(37%) sepia(93%) saturate(1352%) hue-rotate(180deg) brightness(93%) contrast(101%);
+}
+
+/* -------------------- Typical vs Enhanced popup -------------------- */
+.um-calc-page .popup-content {
+    border-radius: 20px;
+}
+
+.um-calc-page .popup-header {
+    background: var(--hp-cream);
+    border-bottom: 1px solid var(--hp-border);
+}
+
+.um-calc-page .popup-header h2 {
+    font-family: var(--hp-font-display);
+    color: var(--hp-ink);
+}
+
+.um-calc-page .popup-body p {
+    font-family: var(--hp-font-body);
+    color: var(--hp-body);
+}
+
+.um-calc-page .popup-button {
+    background: var(--hp-accent);
+    font-family: var(--hp-font-display);
+}
+
+.um-calc-page .popup-button:hover {
+    background: #0d84d9;
 }
