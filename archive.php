@@ -16,165 +16,148 @@ if (is_page('blog')) {
 ?>
 
 <main id="primary" class="site-main">
-    
+
     <!-- Blog Hero Section -->
-    <section class="blog-hero">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="blog-title"><span style="font-weight:500;">United Mortgages&reg;</span> Blog</h1>
-                <p class="blog-subtitle">Expert insights, mortgage tips, and property market updates</p>
+    <section class="um-product-hero">
+        <div class="hp-container">
+            <div class="um-product-hero__content">
+                <span class="hp-pill">Insights &amp; Advice</span>
+                <h1 class="um-product-hero__title"><span class="bold-text">United Mortgages&reg;</span> Blog</h1>
+                <p class="um-product-hero__subtitle">Expert insights, mortgage tips, and property market updates.</p>
             </div>
         </div>
     </section>
 
     <!-- Blog Content Section -->
-    <section class="blog-content">
-        <div class="container">
-            <div class="blog-wrapper">
-                
+    <section class="um-blog-content">
+        <div class="hp-container">
+            <div class="um-blog-layout">
+
                 <!-- Main Blog Content -->
-                <div class="blog-main">
-                    
+                <div class="um-blog-main">
+
                     <?php if ( have_posts() ) : ?>
-                        
+
                         <!-- Blog Categories Filter -->
-                        <div class="blog-filter">
+                        <div class="um-blog-filter">
                             <h3>Browse by Category</h3>
-                            <div class="category-pills">
-                                <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="category-pill active">All Posts</a>
+                            <div class="um-pill-nav">
+                                <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="um-pill-nav__item is-active">All Posts</a>
                                 <?php
                                 $categories = get_categories();
                                 foreach($categories as $category) {
-                                    echo '<a href="' . get_category_link($category->term_id) . '" class="category-pill">' . $category->name . '</a>';
+                                    echo '<a href="' . get_category_link($category->term_id) . '" class="um-pill-nav__item">' . esc_html( $category->name ) . '</a>';
                                 }
                                 ?>
                             </div>
                         </div>
-                        
+
                         <!-- Blog Posts Grid -->
-                        <div class="blog-posts-grid">
+                        <div class="um-blog-grid">
                             <?php while ( have_posts() ) : the_post(); ?>
-                                
-                                <article id="post-<?php the_ID(); ?>" <?php post_class('blog-post-card'); ?>>
+
+                                <article id="post-<?php the_ID(); ?>" <?php post_class('um-blog-card'); ?>>
                                     <?php if ( has_post_thumbnail() ) : ?>
-                                        <div class="post-thumbnail">
-                                            <a href="<?php the_permalink(); ?>">
-                                                <?php the_post_thumbnail('medium_large'); ?>
-                                            </a>
-                                        </div>
+                                        <a href="<?php the_permalink(); ?>" class="um-blog-card__thumb">
+                                            <?php the_post_thumbnail('medium_large'); ?>
+                                        </a>
                                     <?php else : ?>
-                                        <div class="post-thumbnail placeholder">
-                                            <a href="<?php the_permalink(); ?>">
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/blog-placeholder.png" alt="<?php the_title(); ?>">
-                                            </a>
-                                        </div>
+                                        <a href="<?php the_permalink(); ?>" class="um-blog-card__thumb um-blog-card__thumb--placeholder">
+                                            <span>United Mortgages&reg;</span>
+                                        </a>
                                     <?php endif; ?>
-                                    
-                                    <div class="post-content">
-                                        <div class="post-meta">
-                                            <span class="post-category">
-                                                <?php
-                                                $categories = get_the_category();
-                                                if ( ! empty( $categories ) ) {
-                                                    echo esc_html( $categories[0]->name );
-                                                }
-                                                ?>
-                                            </span>
-                                            <span class="post-date"><?php echo get_the_date(); ?></span>
+
+                                    <div class="um-blog-card__body">
+                                        <div class="um-blog-card__meta">
+                                            <?php
+                                            $categories = get_the_category();
+                                            if ( ! empty( $categories ) ) : ?>
+                                                <span class="um-blog-card__category"><?php echo esc_html( $categories[0]->name ); ?></span>
+                                            <?php endif; ?>
+                                            <span class="um-blog-card__date"><?php echo get_the_date(); ?></span>
                                         </div>
-                                        
-                                        <h2 class="post-title">
+
+                                        <h2 class="um-blog-card__title">
                                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                                         </h2>
-                                        
-                                        <div class="post-excerpt">
+
+                                        <div class="um-blog-card__excerpt">
                                             <?php the_excerpt(); ?>
                                         </div>
-                                        
-                                        <div class="post-footer">
-                                            <div class="post-author">
-                                                <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
+
+                                        <div class="um-blog-card__footer">
+                                            <div class="um-blog-card__author">
+                                                <?php echo get_avatar( get_the_author_meta( 'ID' ), 26 ); ?>
                                                 <span><?php the_author(); ?></span>
                                             </div>
-                                            <a href="<?php the_permalink(); ?>" class="read-more">Read More →</a>
+                                            <a href="<?php the_permalink(); ?>" class="um-blog-card__readmore">Read More &rarr;</a>
                                         </div>
                                     </div>
                                 </article>
-                                
+
                             <?php endwhile; ?>
                         </div>
-                        
+
                         <!-- Pagination -->
-                        <div class="blog-pagination">
+                        <div class="um-blog-pagination">
                             <?php
                             the_posts_pagination( array(
                                 'mid_size' => 2,
-                                'prev_text' => __( '← Previous', 'textdomain' ),
-                                'next_text' => __( 'Next →', 'textdomain' ),
+                                'prev_text' => __( '&larr; Previous', 'textdomain' ),
+                                'next_text' => __( 'Next &rarr;', 'textdomain' ),
                             ) );
                             ?>
                         </div>
-                        
+
                     <?php else : ?>
-                        
+
                         <!-- No Posts Found -->
-                        <div class="no-posts-found">
+                        <div class="um-blog-empty">
                             <h2>Coming Soon!</h2>
                             <p>We're working on bringing you valuable content about mortgages, property insights, and financial tips. Check back soon!</p>
-                            <a href="/" class="btn-primary">Return Home</a>
+                            <a href="/" class="hp-btn">Return Home</a>
                         </div>
-                        
+
                     <?php endif; ?>
-                    
-                    <?php 
+
+                    <?php
                     // Reset query if we forced it
                     if (is_page('blog')) {
                         wp_reset_query();
                     }
                     ?>
-                    
+
                 </div>
-                
+
                 <!-- Sidebar -->
-                <aside class="blog-sidebar">
-                    
-                    <!-- Newsletter Signup 
-                    <div class="sidebar-widget newsletter-widget">
-                        <h3>Stay Updated</h3>
-                        <p>Get the latest mortgage news and tips delivered to your inbox</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Your email address" required>
-                            <button type="submit" class="btn-primary">Subscribe</button>
-                        </form>
-                    </div> -->
-                    
+                <aside class="um-blog-sidebar">
+
                     <!-- Recent Posts -->
-                    <div class="sidebar-widget recent-posts-widget">
-                        <h3>Recent Posts</h3>
+                    <div class="um-sidebar-widget">
+                        <h3 class="um-sidebar-widget__title">Recent Posts</h3>
                         <?php
                         $recent_posts = wp_get_recent_posts(array(
                             'numberposts' => 5,
                             'post_status' => 'publish'
                         ));
                         if($recent_posts) : ?>
-                            <ul class="recent-posts-list">
+                            <ul class="um-sidebar-list">
                                 <?php foreach($recent_posts as $post) : ?>
                                     <li>
                                         <a href="<?php echo get_permalink($post['ID']); ?>">
                                             <?php echo $post['post_title']; ?>
+                                            <span class="um-sidebar-list__date"><?php echo date('F j, Y', strtotime($post['post_date'])); ?></span>
                                         </a>
-                                        <span class="post-date"><?php echo date('F j, Y', strtotime($post['post_date'])); ?></span>
                                     </li>
                                 <?php endforeach; ?>
                             </ul>
                         <?php endif; ?>
                     </div>
-                    
+
                     <!-- Popular Categories -->
-                    <div class="sidebar-widget categories-widget">
-                        <h3>Categories</h3>
-                        <ul class="categories-list">
+                    <div class="um-sidebar-widget">
+                        <h3 class="um-sidebar-widget__title">Categories</h3>
+                        <ul class="um-sidebar-list um-sidebar-list--categories">
                             <?php
                             wp_list_categories(array(
                                 'orderby' => 'name',
@@ -184,16 +167,16 @@ if (is_page('blog')) {
                             ?>
                         </ul>
                     </div>
-                    
+
                     <!-- CTA Widget -->
-                    <div class="sidebar-widget cta-widget">
+                    <div class="um-sidebar-cta">
                         <h3>Need Mortgage Advice?</h3>
-                        <p>Our expert advisors are here to help you find the perfect mortgage solution</p>
-                        <a href="/contact" class="btn-primary">Get In Touch</a>
+                        <p>Our expert advisors are here to help you find the perfect mortgage solution.</p>
+                        <a href="/contact" class="hp-btn">Get In Touch</a>
                     </div>
-                    
+
                 </aside>
-                
+
             </div>
         </div>
     </section>
