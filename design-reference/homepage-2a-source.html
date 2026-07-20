@@ -1,0 +1,109 @@
+<!--
+  Design source: Option 2a ("Warm & balanced, blue") from the client-supplied
+  "United Mortgages Homepage Options.dc.html" design-variations canvas.
+
+  This is the exact approved mockup fragment the live homepage (index.php)
+  was built from. Preserved here because the original upload only existed in
+  an ephemeral session scratch directory and would not otherwise survive into
+  a new Claude Code session. If you're extending the redesign to another
+  page, treat the LIVE IMPLEMENTATION (index.php + the "Option 2a" block in
+  style.css, or its successor stylesheet) as the source of truth — this file
+  is a copy/paste reference for exact colors, spacing and copy only.
+
+  Original markup used a "sc-for"/"{{ }}"/<image-slot> templating convention
+  specific to the design tool it was authored in — inert here, kept as-is.
+-->
+<div style="background:#faf7f2;color:#16241f;font-family:Inter,system-ui,sans-serif">
+
+<nav style="display:flex;align-items:center;justify-content:space-between;padding:22px 48px;border-bottom:1px solid #e3ded3">
+<div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:21px;letter-spacing:-.01em">United Mortgages</div>
+<div style="display:flex;align-items:center;gap:32px">
+<span style="font-size:14px;color:#3c4a44">Your journey</span>
+<span style="font-size:14px;color:#3c4a44">Reviews</span>
+<span style="font-size:14px;color:#3c4a44">FAQs</span>
+<div style="background:#109dff;color:#fff;padding:12px 22px;border-radius:100px;font-size:14px;font-weight:600">Start your journey</div>
+</div>
+</nav>
+
+<section style="padding:72px 48px 64px;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center">
+<div>
+<div style="display:inline-block;background:#e7f3ff;color:#0a7fd6;font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:100px;margin-bottom:20px">Whole of market · 100+ lenders</div>
+<h1 style="font-family:'Space Grotesk',sans-serif;font-size:52px;line-height:1.05;letter-spacing:-.02em;margin:0 0 22px;font-weight:600">Save. Borrow. <span style="color:#109dff">Own.</span></h1>
+<p style="font-size:17px;line-height:1.6;color:#3c4a44;max-width:460px;margin:0 0 30px">One relationship from your first deposit saving to the day you move in — and every remortgage after. No jargon, no jumping between five different "get started" buttons.</p>
+<div style="display:flex;gap:14px;align-items:center">
+<div style="background:#109dff;color:#fff;padding:16px 28px;border-radius:100px;font-size:15.5px;font-weight:600;box-shadow:0 8px 20px -8px rgba(16,157,255,.5)">Check what you could borrow</div>
+<span style="font-size:13.5px;color:#6b7871">Takes 3 minutes · soft search, no credit impact</span>
+</div>
+</div>
+<image-slot id="2a-hero" shape="rounded" radius="20" style="aspect-ratio:4/3.2" placeholder="Photo: advisor and first-time buyers reviewing paperwork together"></image-slot>
+</section>
+
+<section style="padding:60px 48px;background:#eef7ff">
+<div style="max-width:640px">
+<h2 style="font-family:'Space Grotesk',sans-serif;font-size:30px;line-height:1.15;margin:0 0 22px;font-weight:600">Most mortgage advice happens 9-to-5.<br><span style="color:#109dff">Ours doesn't.</span></h2>
+<ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px">
+<li style="font-size:15.5px;line-height:1.6;color:#2c352f;padding-left:26px;position:relative"><span style="position:absolute;left:0;color:#109dff;font-weight:700">→</span>We're a tech-focused UK mortgage broker built for first-time buyers, not paperwork.</li>
+<li style="font-size:15.5px;line-height:1.6;color:#2c352f;padding-left:26px;position:relative"><span style="position:absolute;left:0;color:#109dff;font-weight:700">→</span>Advisors respond the same day, any day — yes, even at 10pm on Sunday.</li>
+<li style="font-size:15.5px;line-height:1.6;color:#2c352f;padding-left:26px;position:relative"><span style="position:absolute;left:0;color:#109dff;font-weight:700">→</span>We're here to make it easy.</li>
+</ul>
+</div>
+</section>
+
+<section style="background:#109dff;padding:52px 48px;display:grid;grid-template-columns:repeat(3,1fr);gap:36px;color:#eaf6ff">
+<div><div style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:#d3edff;margin-bottom:8px">01 · Save</div><div style="font-size:15px;line-height:1.6">Deposit tools that show you honestly how close you are — and what lenders will actually count.</div></div>
+<div><div style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:#d3edff;margin-bottom:8px">02 · Borrow</div><div style="font-size:15px;line-height:1.6">Search 100+ lenders at once. We show the realistic number first, not an "enhanced" one we'll walk back later.</div></div>
+<div><div style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:#d3edff;margin-bottom:8px">03 · Own</div><div style="font-size:15px;line-height:1.6">We flag your remortgage date before your lender's standard rate does, automatically.</div></div>
+</section>
+
+<section style="padding:64px 48px;background:#fff">
+<h2 style="font-family:'Space Grotesk',sans-serif;font-size:28px;margin:0 0 8px;font-weight:600">What you could borrow — honestly</h2>
+<p style="font-size:14.5px;color:#6b7871;margin:0 0 28px;max-width:520px">The number below is what most lenders will actually offer. We won't show you a bigger one just to soften the click.</p>
+<div style="border:1px solid #e3ded3;border-radius:16px;padding:32px;display:grid;grid-template-columns:1fr 1fr auto;gap:28px;align-items:center;background:#faf7f2">
+<div><div style="font-size:12.5px;color:#6b7871;margin-bottom:6px">Combined income</div><div style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600">£58,000</div></div>
+<div><div style="font-size:12.5px;color:#6b7871;margin-bottom:6px">Deposit</div><div style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600">£32,000</div></div>
+<div style="text-align:right"><div style="font-size:12.5px;color:#6b7871;margin-bottom:6px">Typical borrowing</div><div style="font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:700;color:#109dff">£243,600</div></div>
+</div>
+<p style="font-size:12.5px;color:#8b968f;margin:14px 0 0">Based on 4.2× joint income, standard affordability rules. Your actual offer depends on credit history, existing debt and each lender's own criteria — an advisor will confirm your real range before you apply.</p>
+</section>
+
+<section style="padding:64px 48px;background:#f3efe6">
+<h2 style="font-family:'Space Grotesk',sans-serif;font-size:28px;margin:0 0 32px;font-weight:600">People, not a processing queue</h2>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px">
+<div style="background:#fff;border-radius:16px;padding:26px;border:1px solid #e3ded3">
+<image-slot id="2a-adv1" shape="circle" style="width:56px;height:56px;margin-bottom:14px" placeholder="Priya"></image-slot>
+<div style="font-weight:600;font-size:15px;margin-bottom:2px">Priya Shah</div>
+<div style="font-size:12.5px;color:#6b7871;margin-bottom:14px">Senior mortgage advisor</div>
+<div style="font-size:14.5px;line-height:1.6;color:#3c4a44">"Priya walked us through every fee before we signed anything — nothing appeared later that we hadn't already seen."</div>
+<div style="font-size:12.5px;color:#8b968f;margin-top:12px">— Sarah &amp; Tom, first-time buyers · ★★★★★ Verified review</div>
+</div>
+<div style="background:#fff;border-radius:16px;padding:26px;border:1px solid #e3ded3">
+<image-slot id="2a-adv2" shape="circle" style="width:56px;height:56px;margin-bottom:14px" placeholder="Andy"></image-slot>
+<div style="font-weight:600;font-size:15px;margin-bottom:2px">Andy Okafor</div>
+<div style="font-size:12.5px;color:#6b7871;margin-bottom:14px">Remortgage specialist</div>
+<div style="font-size:14.5px;line-height:1.6;color:#3c4a44">"Andy messaged us two months before our fixed rate ended. We'd have missed it otherwise."</div>
+<div style="font-size:12.5px;color:#8b968f;margin-top:12px">— Marcus J. · ★★★★★ Verified review</div>
+</div>
+<div style="background:#fff;border-radius:16px;padding:26px;border:1px solid #e3ded3">
+<image-slot id="2a-adv3" shape="circle" style="width:56px;height:56px;margin-bottom:14px" placeholder="Elly"></image-slot>
+<div style="font-weight:600;font-size:15px;margin-bottom:2px">Elly Fraser</div>
+<div style="font-size:12.5px;color:#6b7871;margin-bottom:14px">First-time buyer advisor</div>
+<div style="font-size:14.5px;line-height:1.6;color:#3c4a44">"I've never used the phrase 'AIP' before and Elly explained it without making me feel stupid."</div>
+<div style="font-size:12.5px;color:#8b968f;margin-top:12px">— Deepa R. · ★★★★★ Verified review</div>
+</div>
+</div>
+<div style="display:flex;align-items:center;gap:10px;margin-top:26px">
+<span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16px">4.9 / 5</span>
+<span style="font-size:13.5px;color:#6b7871">from 2,140 verified reviews on Trustpilot &amp; Google</span>
+</div>
+</section>
+
+<section style="padding:56px 48px;text-align:center;background:#109dff">
+<h2 style="font-family:'Space Grotesk',sans-serif;color:#fff;font-size:26px;font-weight:600;margin:0 0 20px">Ready to see your honest number?</h2>
+<div style="display:inline-block;background:#fff;color:#109dff;padding:16px 32px;border-radius:100px;font-size:15.5px;font-weight:600">Check what you could borrow</div>
+</section>
+
+<footer style="padding:32px 48px;background:#16241f;color:#a6b3ad;font-size:11.5px;line-height:1.7">
+United Mortgages is an appointed representative of a network authorised and regulated by the Financial Conduct Authority. Your home may be repossessed if you do not keep up repayments on your mortgage. Data handled per the Data Protection Act 2018.
+</footer>
+
+</div>
