@@ -10,11 +10,10 @@ get_header(); ?>
 <main id="primary" class="site-main">
 
     <!-- Hero -->
-    <section class="um-product-hero um-product-hero--ftb">
-        <div class="um-product-hero__overlay"></div>
+    <section class="um-product-hero">
         <div class="hp-container">
             <div class="um-product-hero__content">
-                <span class="hp-pill hp-pill--on-dark">First Time Buyers</span>
+                <span class="hp-pill">First Time Buyers</span>
                 <h1 class="um-product-hero__title">Your First Home. <span class="bold-text">Done Right.</span></h1>
                 <p class="um-product-hero__subtitle">Your questions start here. Your keys end here.</p>
             </div>

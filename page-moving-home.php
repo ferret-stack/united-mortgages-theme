@@ -10,11 +10,10 @@ get_header(); ?>
 <main id="primary" class="site-main">
 
     <!-- Hero -->
-    <section class="um-product-hero um-product-hero--moving-home">
-        <div class="um-product-hero__overlay"></div>
+    <section class="um-product-hero">
         <div class="hp-container">
             <div class="um-product-hero__content">
-                <span class="hp-pill hp-pill--on-dark">Moving Home</span>
+                <span class="hp-pill">Moving Home</span>
                 <h1 class="um-product-hero__title">Moving home is stressful. <span class="bold-text">It doesn't have to be.</span></h1>
                 <p class="um-product-hero__subtitle">Whatever your next chapter looks like, we're here to help.</p>
             </div>

@@ -1082,13 +1082,14 @@ body.is-front-redesign {
    (page-first-time-buyers.php, page-remortgaging.php,
    page-moving-home.php)
 
-   All three pages share one structure: photo hero, a 4-card "the
-   United Mortgages Difference" grid, a High Street-vs-us comparison
-   table, a dark CTA band, an FAQ accordion (real component — see
-   below), then the shared team-contact form. Built once here as
-   .um-product-* components and reused verbatim across all three
-   templates; only copy, links and the hero's background-image
-   modifier differ per page.
+   All three pages share one structure: a flat/no-photo hero (same
+   treatment as the Calculators page's .um-calc-hero — cream bg,
+   centered, pill eyebrow, no image), a 4-card "the United Mortgages
+   Difference" grid, a High Street-vs-us comparison table, a dark CTA
+   band, an FAQ accordion (real component — see below), then the
+   shared team-contact form. Built once here as .um-product-*
+   components and reused verbatim across all three templates; only
+   copy and links differ per page.
 
    FAQ note: .faq-list/.faq-item/.faq-question/.faq-answer/.faq-icon
    are the real functional/animated component (js/faq-accordion.js —
@@ -1098,78 +1099,54 @@ body.is-front-redesign {
    properties owned by style.css.
    ============================================================ */
 
-/* -------------------- Hero -------------------- */
+/* -------------------- Hero (flat/no-photo — same treatment as the
+   Calculators page's .um-calc-hero: cream bg, centered, pill eyebrow,
+   accent word in the title, no image) -------------------- */
 .um-product-hero {
-    position: relative;
-    min-height: 62vh;
-    display: flex;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    padding: 110px 0 70px;
-}
-
-.um-product-hero--ftb {
-    background-image: url('../our-mortgages/first-buyer.png');
-}
-
-.um-product-hero--remortgaging {
-    background-image: url('../our-mortgages/remortgage-hero.png');
-}
-
-.um-product-hero--moving-home {
-    background-image: url('../our-mortgages/moving-home.png');
-}
-
-.um-product-hero__overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(15, 20, 18, .82) 0%, rgba(15, 20, 18, .5) 100%);
+    background: var(--hp-cream);
+    padding: 72px 0 56px;
+    text-align: center;
 }
 
 .um-product-hero__content {
-    position: relative;
-    z-index: 2;
-    max-width: 640px;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .um-product-hero__title {
     font-family: var(--hp-font-display);
-    font-size: 44px;
+    font-size: 42px;
     line-height: 1.15;
     letter-spacing: -.01em;
-    font-weight: 500;
-    color: #fff;
-    margin: 0 0 18px;
+    font-weight: 600;
+    color: var(--hp-ink);
+    margin: 0 0 16px;
 }
 
 .um-product-hero__title .bold-text {
     color: var(--hp-accent);
-    font-weight: 700;
 }
 
 .um-product-hero__subtitle {
     font-family: var(--hp-font-body);
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.6;
-    color: rgba(255, 255, 255, .88);
-    margin: 0;
-}
-
-@media (max-width: 1024px) {
-    .um-product-hero {
-        min-height: auto;
-        padding: 88px 0 56px;
-    }
+    color: var(--hp-body);
+    max-width: 620px;
+    margin: 0 auto;
 }
 
 @media (max-width: 768px) {
+    .um-product-hero {
+        padding: 56px 0 40px;
+    }
+
     .um-product-hero__title {
         font-size: 30px;
     }
 
     .um-product-hero__subtitle {
-        font-size: 15.5px;
+        font-size: 15px;
     }
 }
 
