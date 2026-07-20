@@ -1,0 +1,609 @@
+/* ============================================================
+   UNITED MORTGAGES — SITEWIDE REDESIGN (Option 2a, warm & balanced, blue)
+   Loaded after style.css (see functions.php) so it can override the
+   legacy rules without !important. Design tokens (--hp-*) live in
+   style.css :root — this file consumes them, it doesn't redefine them.
+
+   Contents:
+   1. Sitewide header/nav reskin + body offset (moved here from the
+      homepage-only block in style.css now that the header applies to
+      every page, not just index.php)
+   2. Shared layout/component primitives (.hp-container/.hp-pill/.hp-btn —
+      also used by index.php, kept here since they're generic)
+   3. Our Story page (um- prefixed; page-our-story.php only)
+   ============================================================ */
+
+/* -------------------- 1. Sitewide header/nav -------------------- */
+.is-front-redesign .site-header,
+.is-front-redesign .site-header.scrolled {
+    background: var(--hp-cream);
+    backdrop-filter: none;
+    box-shadow: none;
+    border-bottom: 1px solid var(--hp-border);
+}
+
+.is-front-redesign .header-top {
+    border-bottom: 1px solid var(--hp-border);
+}
+
+.is-front-redesign .contact-link {
+    color: var(--hp-body);
+}
+
+.is-front-redesign .contact-link:hover {
+    color: var(--hp-ink);
+}
+
+.is-front-redesign .header-top .contact-icon {
+    filter: brightness(0);
+    opacity: .55;
+}
+
+.is-front-redesign .whatsapp-text {
+    color: #128c43;
+}
+
+.is-front-redesign .header-top .btn-primary {
+    background: var(--hp-accent);
+    border-radius: 100px;
+    font-family: var(--hp-font-display);
+}
+
+.is-front-redesign .header-top .btn-primary:hover {
+    background: #0d84d9;
+}
+
+.is-front-redesign #primary-menu a {
+    color: var(--hp-body);
+    font-family: var(--hp-font-body);
+}
+
+.is-front-redesign #primary-menu a:hover {
+    color: var(--hp-ink);
+    opacity: 1;
+}
+
+.is-front-redesign .site-title a {
+    color: var(--hp-ink);
+}
+
+@media (max-width: 768px) {
+    .is-front-redesign #primary-menu {
+        background-color: var(--hp-cream);
+    }
+
+    .is-front-redesign #primary-menu li {
+        border-bottom: 1px solid var(--hp-border);
+    }
+
+    .is-front-redesign .menu-toggle-icon {
+        background-color: var(--hp-ink);
+    }
+}
+
+body.is-front-redesign {
+    padding-top: 168px;
+}
+
+@media (max-width: 1024px) {
+    body.is-front-redesign {
+        padding-top: 135px;
+    }
+}
+
+/* -------------------- 2. Shared layout/component primitives -------------------- */
+.hp-container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 48px;
+}
+
+.hp-pill {
+    display: inline-block;
+    background: var(--hp-pill-bg);
+    color: var(--hp-accent-text);
+    font-family: var(--hp-font-body);
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+}
+
+.hp-pill--on-dark {
+    background: rgba(255, 255, 255, .12);
+    color: #fff;
+}
+
+.hp-btn {
+    display: inline-block;
+    background: var(--hp-accent);
+    color: #fff;
+    padding: 16px 28px;
+    border-radius: 100px;
+    font-family: var(--hp-font-display);
+    font-size: 15.5px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 20px -8px rgba(16, 157, 255, .5);
+    transition: background-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.hp-btn:hover {
+    background: #0d84d9;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -8px rgba(16, 157, 255, .6);
+}
+
+.hp-btn--inverse {
+    background: #fff;
+    color: var(--hp-accent);
+    box-shadow: none;
+}
+
+.hp-btn--inverse:hover {
+    background: #f2f8ff;
+    color: #0d84d9;
+    box-shadow: 0 8px 20px -8px rgba(0, 0, 0, .25);
+}
+
+/* ============================================================
+   3. OUR STORY PAGE (page-our-story.php)
+   ============================================================ */
+
+/* -------------------- Hero -------------------- */
+.um-story-hero {
+    position: relative;
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+    background-image: url('../our-story/story-hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    padding: 120px 0 80px;
+}
+
+.um-story-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15, 20, 18, .82) 0%, rgba(15, 20, 18, .58) 100%);
+}
+
+.um-story-hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+}
+
+.um-story-hero__title {
+    font-family: var(--hp-font-display);
+    font-size: 44px;
+    line-height: 1.15;
+    letter-spacing: -.01em;
+    font-weight: 500;
+    color: #fff;
+    margin: 0 0 28px;
+}
+
+.um-story-hero__title strong {
+    font-weight: 700;
+}
+
+.um-story-hero__text p {
+    font-family: var(--hp-font-body);
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, .88);
+    margin: 0 0 18px;
+}
+
+.um-story-hero__text p:last-child {
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .um-story-hero {
+        min-height: auto;
+        padding: 64px 0;
+    }
+
+    .um-story-hero__title {
+        font-size: 30px;
+    }
+
+    .um-story-hero__text p {
+        font-size: 15.5px;
+    }
+}
+
+/* -------------------- Section header (shared by all Our Story sections) -------------------- */
+.um-section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 48px;
+}
+
+.um-section-title {
+    font-family: var(--hp-font-display);
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--hp-ink);
+    margin: 0 0 12px;
+}
+
+.um-section-title .bold-text {
+    color: var(--hp-accent);
+}
+
+.um-section-subtitle {
+    font-family: var(--hp-font-body);
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--hp-muted);
+    margin: 0;
+}
+
+.um-section-subtitle .strong {
+    color: var(--hp-body-2);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .um-section-title {
+        font-size: 26px;
+    }
+}
+
+/* -------------------- Founders / Advisory board -------------------- */
+.um-founders {
+    background: #fff;
+    padding: 72px 0;
+}
+
+.um-founders--advisory {
+    background: var(--hp-cream);
+}
+
+.um-founders-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.um-founders-grid--advisory {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.um-founder-card {
+    background: #fff;
+    border: 1px solid var(--hp-border);
+    border-radius: 16px;
+    padding: 26px;
+    transition: transform .2s ease, border-color .2s ease;
+}
+
+.um-founder-card:hover {
+    border-color: var(--hp-accent);
+    transform: translateY(-4px);
+}
+
+.um-founder-image-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 22px;
+    background: var(--hp-ink);
+}
+
+.um-founder-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: opacity .5s ease;
+}
+
+.um-founder-image--bw {
+    z-index: 2;
+}
+
+.um-founder-image--color {
+    z-index: 1;
+}
+
+.um-founder-image-wrap:hover .um-founder-image--bw {
+    opacity: 0;
+}
+
+.um-founder-header {
+    margin-bottom: 16px;
+}
+
+.um-founder-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--hp-font-display);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    color: var(--hp-ink);
+    margin: 0 0 6px;
+}
+
+.um-founder-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    background: var(--hp-pill-bg);
+    color: var(--hp-accent-text);
+    font-family: var(--hp-font-body);
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: background-color .2s ease, color .2s ease;
+}
+
+.um-founder-link:hover {
+    background: var(--hp-accent);
+    color: #fff;
+}
+
+.um-founder-link img {
+    width: 13px;
+    height: 13px;
+    filter: invert(37%) sepia(93%) saturate(1352%) hue-rotate(180deg) brightness(93%) contrast(101%);
+}
+
+.um-founder-link:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.um-founder-title {
+    font-family: var(--hp-font-body);
+    font-size: 13.5px;
+    color: var(--hp-accent-text);
+    font-weight: 600;
+    margin: 0;
+}
+
+.um-founder-title .postnom {
+    color: var(--hp-muted);
+    font-weight: 500;
+}
+
+.um-founder-bio p {
+    font-family: var(--hp-font-body);
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--hp-body);
+    margin: 0 0 12px;
+}
+
+.um-founder-bio p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+    .um-founders-grid,
+    .um-founders-grid--advisory {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .um-founders {
+        padding: 56px 0;
+    }
+}
+
+/* -------------------- Who We Help (reskins the shared mortgage-service-card) -------------------- */
+.um-who-we-help {
+    background: var(--hp-cream-blue);
+    padding: 72px 0;
+}
+
+.um-who-we-help .mortgage-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 0;
+    padding-bottom: 0;
+}
+
+.um-who-we-help .mortgage-service-card {
+    background: #fff;
+    color: var(--hp-body-2);
+    border: 1px solid var(--hp-border);
+    border-radius: 16px;
+    padding: 26px;
+    text-align: left;
+    backdrop-filter: none;
+    min-height: 0;
+    display: block;
+    transition: transform .2s ease, border-color .2s ease;
+}
+
+.um-who-we-help .mortgage-service-card:hover {
+    background: #fff;
+    border-color: var(--hp-accent);
+    transform: translateY(-4px);
+}
+
+.um-who-we-help .service-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 0 16px;
+    background: var(--hp-pill-bg);
+    border-radius: 12px;
+}
+
+.um-who-we-help .service-icon img {
+    width: 24px;
+    height: auto;
+    filter: invert(37%) sepia(93%) saturate(1352%) hue-rotate(180deg) brightness(93%) contrast(101%);
+}
+
+.um-who-we-help .mortgage-service-card h3 {
+    font-family: var(--hp-font-display);
+    font-size: 14.5px;
+    letter-spacing: .03em;
+    text-transform: none;
+    color: var(--hp-ink);
+    font-weight: 600;
+    margin: 0 0 10px;
+}
+
+.um-who-we-help .mortgage-service-card p {
+    font-family: var(--hp-font-body);
+    font-size: 14px;
+    line-height: 1.65;
+    font-weight: 400;
+    color: var(--hp-body);
+    margin: 0 0 18px;
+    flex-grow: 0;
+}
+
+.um-who-we-help .btn-service {
+    background: transparent;
+    color: var(--hp-accent-text);
+    padding: 0;
+    border-radius: 0;
+    font-family: var(--hp-font-body);
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: .03em;
+    white-space: normal;
+}
+
+.um-who-we-help .btn-service::after {
+    content: " \2192";
+}
+
+.um-who-we-help .btn-service:hover {
+    background: transparent;
+    text-decoration: underline;
+    transform: none;
+}
+
+@media (max-width: 900px) {
+    .um-who-we-help .mortgage-services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .um-who-we-help {
+        padding: 56px 0;
+    }
+}
+
+/* -------------------- Integrity Charter -------------------- */
+.um-charter {
+    position: relative;
+    background-image: url('../our-story/integrity.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 100px 0;
+}
+
+.um-charter__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(11, 16, 14, .88) 0%, rgba(11, 16, 14, .62) 100%);
+}
+
+.um-charter__content {
+    position: relative;
+    z-index: 2;
+    max-width: 620px;
+}
+
+.um-charter__title {
+    font-family: var(--hp-font-display);
+    font-size: 36px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0 0 28px;
+}
+
+.um-charter__title .bold-text {
+    color: var(--hp-accent);
+}
+
+.um-charter__intro,
+.um-charter__purpose {
+    font-family: var(--hp-font-body);
+    font-size: 16px;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, .88);
+    margin: 0 0 24px;
+}
+
+.um-charter__intro {
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+.um-charter__signatures {
+    display: flex;
+    gap: 2.5rem;
+    margin-top: 8px;
+}
+
+.um-charter__signature {
+    height: 80px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: .85;
+    transition: opacity .2s ease;
+}
+
+.um-charter__signature:hover {
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    .um-charter {
+        background-attachment: scroll;
+    }
+
+    .um-charter__title {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .um-charter {
+        padding: 64px 0;
+    }
+
+    .um-charter__title {
+        font-size: 26px;
+    }
+
+    .um-charter__intro,
+    .um-charter__purpose {
+        font-size: 15px;
+    }
+
+    .um-charter__signature {
+        height: 56px;
+    }
+}
