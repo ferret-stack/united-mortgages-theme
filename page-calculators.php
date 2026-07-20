@@ -10,14 +10,13 @@ get_header(); ?>
 <!-- Calculator Container -->
 
     <!-- Calculator Hero Section -->
-    <section class="hero-section calculator-hero">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Our <span class="highlight">Calculators</span></h1>
-                <p class="hero-subtitle">Try our mortgage calculators to estimate how much you could borrow and what your monthly payments might look like</p>
+    <section class="calculator-hero um-calc-page">
+        <div class="hp-container">
+            <div class="um-calc-hero">
+                <div class="hp-pill">Free &amp; instant &middot; no obligation</div>
+                <h1 class="um-calc-hero__title">Our <span class="um-calc-hero__accent">Calculators</span></h1>
+                <p class="um-calc-hero__subtitle">Try our mortgage calculators to estimate how much you could borrow and what your monthly payments might look like.</p>
             </div>
-
 
             <div class="calculator-container">
                 <!-- Calculator Tabs -->
