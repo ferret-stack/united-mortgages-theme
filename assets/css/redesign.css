@@ -12,6 +12,7 @@
       also used by index.php, kept here since they're generic)
    3. Our Story page (um- prefixed; page-our-story.php only)
    4. Calculators page (page-calculators.php)
+   5. Our Mortgages page (page-our-mortgages.php)
    ============================================================ */
 
 /* -------------------- 1. Sitewide header/nav -------------------- */
@@ -900,4 +901,161 @@ body.is-front-redesign {
 
 .um-calc-page .popup-button:hover {
     background: #0d84d9;
+}
+
+/* ============================================================
+   5. OUR MORTGAGES PAGE (page-our-mortgages.php)
+
+   Hub page linking to the three individual mortgage-type pages
+   (first-time-buyers, moving-home, remortgaging — migrated next).
+   Clean text hero, no photo (matches the Calculators page's utility
+   feel rather than Our Story's narrative photo hero). The card grid
+   reskins the same shared .mortgage-services-grid/.mortgage-service-card
+   markup that .um-who-we-help (Our Story) and .hp-mortgages-wrap
+   (homepage teaser) also reskin — kept scoped under .um-mortgages-grid-wrap
+   here so unmigrated pages still using the legacy dark-card styling for
+   those classes are unaffected.
+   ============================================================ */
+
+.um-mortgages-hero {
+    background: var(--hp-cream);
+    padding: 72px 0 56px;
+    text-align: center;
+}
+
+.um-mortgages-hero__title {
+    font-family: var(--hp-font-display);
+    font-size: 42px;
+    line-height: 1.15;
+    letter-spacing: -.01em;
+    font-weight: 600;
+    color: var(--hp-ink);
+    margin: 0 0 16px;
+}
+
+.um-mortgages-hero__subtitle {
+    font-family: var(--hp-font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--hp-body);
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .um-mortgages-hero {
+        padding: 56px 0 40px;
+    }
+
+    .um-mortgages-hero__title {
+        font-size: 30px;
+    }
+
+    .um-mortgages-hero__subtitle {
+        font-size: 15px;
+    }
+}
+
+.um-mortgages-grid-wrap {
+    background: #fff;
+    padding: 8px 0 80px;
+}
+
+.um-mortgages-grid-wrap .mortgage-services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 0;
+    padding-bottom: 0;
+}
+
+.um-mortgages-grid-wrap .mortgage-service-card {
+    background: #fff;
+    color: var(--hp-body-2);
+    border: 1px solid var(--hp-border);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: left;
+    backdrop-filter: none;
+    min-height: 0;
+    display: block;
+    transition: transform .2s ease, border-color .2s ease;
+}
+
+.um-mortgages-grid-wrap .mortgage-service-card:hover {
+    background: #fff;
+    border-color: var(--hp-accent);
+    transform: translateY(-4px);
+}
+
+.um-mortgages-grid-wrap .service-icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 0 18px;
+    background: var(--hp-pill-bg);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.um-mortgages-grid-wrap .service-icon img {
+    width: 26px;
+    height: auto;
+    max-width: none;
+    filter: invert(37%) sepia(93%) saturate(1352%) hue-rotate(180deg) brightness(93%) contrast(101%);
+}
+
+.um-mortgages-grid-wrap .mortgage-service-card h3 {
+    font-family: var(--hp-font-display);
+    font-size: 16px;
+    letter-spacing: .03em;
+    text-transform: none;
+    color: var(--hp-ink);
+    font-weight: 600;
+    margin: 0 0 12px;
+}
+
+.um-mortgages-grid-wrap .mortgage-service-card p {
+    font-family: var(--hp-font-body);
+    font-size: 14.5px;
+    line-height: 1.65;
+    font-weight: 400;
+    color: var(--hp-body);
+    margin: 0 0 20px;
+    flex-grow: 0;
+}
+
+.um-mortgages-grid-wrap .btn-service {
+    display: inline-block;
+    background: var(--hp-accent);
+    color: #fff;
+    padding: 13px 24px;
+    border-radius: 100px;
+    font-family: var(--hp-font-display);
+    font-size: 13.5px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    white-space: normal;
+    box-shadow: 0 8px 20px -8px rgba(16, 157, 255, .5);
+    transition: background-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.um-mortgages-grid-wrap .btn-service:hover {
+    background: #0d84d9;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -8px rgba(16, 157, 255, .6);
+}
+
+@media (max-width: 900px) {
+    .um-mortgages-grid-wrap .mortgage-services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .um-mortgages-grid-wrap {
+        padding: 8px 0 56px;
+    }
 }

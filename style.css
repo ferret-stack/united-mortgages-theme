@@ -1627,22 +1627,11 @@ blockquote {
 /* Our Story page styles moved to assets/css/redesign.css during the
    Option 2a migration — see .um-story-* / .um-founder-* / .um-charter-* */
 
-/* Hero Section with Mortgage Services */
-.our-mortgages-hero {
-    min-height: 100vh;
-    padding-bottom: 0;
-}
-
-/* Override the default hero background for Our Mortgages page */
-.hero-section.our-mortgages-hero {
-    background-image: url('assets/think-different.png');
-}
-
-.our-mortgages-hero .hero-content {
-    margin-bottom: 100px; /* Space for the cards */
-}
-
-/* Mortgage Services Grid - Reusing existing card patterns */
+/* Mortgage Services Grid - Reusing existing card patterns.
+   Still used unscoped (dark overlay-on-photo style) by the not-yet-migrated
+   page-chorleywood.php / page-northwood.php / page-rickmansworth.php.
+   page-our-mortgages.php no longer uses these — see .um-mortgages-grid-wrap
+   in assets/css/redesign.css. */
 .mortgage-services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1742,36 +1731,17 @@ blockquote {
         grid-template-columns: repeat(2, 1fr);
         padding: 0 20px 4rem;
     }
-    
-    .our-mortgages-hero .hero-content {
-        margin-bottom: 80px;
-    }
 }
 
 @media (max-width: 768px) {
-    .our-mortgages-hero {
-        min-height: auto;
-        padding-bottom: 2rem;
-        margin-top: -50px;
-    }
-    
     .mortgage-services-grid {
         grid-template-columns: 1fr;
         margin-top: -100px;
         gap: 1.5rem;
     }
-    
+
     .mortgage-service-card {
         min-height: auto;
-    }
-    
-    .our-mortgages-hero .hero-title {
-        font-size: 2.5rem;
-    }
-    
-    .our-mortgages-hero .hero-subtitle {
-        font-size: 1.1rem;
-        margin-bottom: 3rem;
     }
 }
 
@@ -7452,22 +7422,11 @@ blockquote {
     }
 }
 
-/* Hero Section with Mortgage Services */
-.our-mortgages-hero {
-    min-height: 100vh;
-    padding-bottom: 0;
-}
-
-/* Override the default hero background for Our Mortgages page */
-.hero-section.our-mortgages-hero {
-    background-image: url('assets/think-different.png');
-}
-
-.our-mortgages-hero .hero-content {
-    margin-bottom: 100px; /* Space for the cards */
-}
-
-/* Mortgage Services Grid - Reusing existing card patterns */
+/* Mortgage Services Grid - Reusing existing card patterns.
+   Still used unscoped (dark overlay-on-photo style) by the not-yet-migrated
+   page-chorleywood.php / page-northwood.php / page-rickmansworth.php.
+   page-our-mortgages.php no longer uses these — see .um-mortgages-grid-wrap
+   in assets/css/redesign.css. */
 .mortgage-services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -7567,36 +7526,17 @@ blockquote {
         grid-template-columns: repeat(2, 1fr);
         padding: 0 20px 4rem;
     }
-    
-    .our-mortgages-hero .hero-content {
-        margin-bottom: 80px;
-    }
 }
 
 @media (max-width: 768px) {
-    .our-mortgages-hero {
-        min-height: auto;
-        padding-bottom: 2rem;
-    }
-    
     .mortgage-services-grid {
         grid-template-columns: 1fr;
         margin-top: 0;
         gap: 1.5rem;
     }
-    
+
     .mortgage-service-card {
         min-height: auto;
-    }
-    
-    .our-mortgages-hero .hero-title {
-        font-size: 2.5rem;
-        margin-top: 20px;
-    }
-    
-    .our-mortgages-hero .hero-subtitle {
-        font-size: 1.1rem;
-        margin-bottom: -4rem;
     }
 }
 
@@ -11726,7 +11666,6 @@ input#borrow-deposit::placeholder {
     }
     
     /* 4. OUR MORTGAGES PAGES - Remove background images, use gradient instead */
-    .hero-section.our-mortgages-hero,
     .hero-section.first-time-buyers-hero,
     .hero-section.moving-home-hero,
     .hero-section.remortgaging-hero,
@@ -11735,9 +11674,8 @@ input#borrow-deposit::placeholder {
     .hero-section.other-mortgages-hero {
         background-position: -center;
     }
-    
+
     /* Ensure overlay still works for text readability */
-    .hero-section.our-mortgages-hero .hero-overlay,
     .hero-section.first-time-buyers-hero .hero-overlay,
     .hero-section.moving-home-hero .hero-overlay,
     .hero-section.membership .hero-overlay,
@@ -11746,9 +11684,8 @@ input#borrow-deposit::placeholder {
     .hero-section.other-mortgages-hero .hero-overlay {
         background: transparent !important;
     }
-    
+
     /* Add subtle visual interest with a gradient overlay */
-    .hero-section.our-mortgages-hero::before,
     .hero-section.first-time-buyers-hero::before,
     .hero-section.moving-home-hero::before,
     .hero-section.remortgaging-hero::before,
@@ -13045,7 +12982,9 @@ input#borrow-deposit::placeholder {
     }
 }
 
-/* -------------------- Team contact (reskin, homepage-only) -------------------- */
+/* -------------------- Team contact (reskin, shared — wrap any migrated
+   page's team-contact template part in a `.hp-team-wrap` div; used by
+   index.php and page-our-mortgages.php) -------------------- */
 .hp-team-wrap .team-contact-section {
     background: var(--hp-cream);
 }
