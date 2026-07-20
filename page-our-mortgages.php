@@ -1,23 +1,25 @@
 <?php
 /**
  * Template Name: Our Mortgages
- * 
+ *
  * @package UnitedMortgages
  */
-/*V1.1*/
+/*V2.0 — Option 2a redesign*/
 get_header(); ?>
 
 <main id="primary" class="site-main">
-    <!-- Our Mortgages Hero Section -->
-    <section class="hero-section our-mortgages-hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title">Our Mortgages</h1>
-            <p class="hero-subtitle">Find and apply for the right mortgage with our expert support. Whether you're buying your first home or planning your next move, it all starts here.</p>
-        </div>
 
-        <!-- Mortgage Types Grid - positioned at bottom of hero -->
-        <div class="container">
+    <!-- Our Mortgages Hero -->
+    <section class="um-mortgages-hero">
+        <div class="hp-container">
+            <h1 class="um-mortgages-hero__title">Our Mortgages</h1>
+            <p class="um-mortgages-hero__subtitle">Find and apply for the right mortgage with our expert support. Whether you're buying your first home or planning your next move, it all starts here.</p>
+        </div>
+    </section>
+
+    <!-- Mortgage Types Grid -->
+    <section class="um-mortgages-grid-wrap">
+        <div class="hp-container">
             <div class="mortgage-services-grid">
                 <!-- First Time Buyers -->
                 <div class="mortgage-service-card">
@@ -48,31 +50,13 @@ get_header(); ?>
                     <p>Time for a better deal? Whether your fixed rate is ending or you want to release equity, we'll find the right remortgage to save you money.</p>
                     <a href="<?php echo home_url('/remortgaging'); ?>" class="btn-service">I'M REMORTGAGING</a>
                 </div>
-
-                <!-- Yuppies
-                <div class="mortgage-service-card">
-                    <div class="service-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-mortgages/self-employed.svg" alt="Self Employed">
-                    </div>
-                    <h3>YOUNG PRO/h3>
-                    <p>Complex income? No problem. We specialise in mortgages for entrepreneurs, contractors, and freelancers with the flexibility you need.</p>
-                    <a href="<?php echo home_url('/entrepreneurs-founders-self-employed'); ?>" class="btn-service">I WORK FOR MYSELF</a>
-                </div>-->
-
-                <!-- Other Mortgages
-                <div class="mortgage-service-card">
-                    <div class="service-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/coffee-icon.svg" alt="Other Mortgages">
-                    </div>
-                    <h3>YOUNG PROFESSIONALS</h3>
-                    <p>Tailored mortgage solutions for the next generation of high achievers.</p>
-                    <a href="<?php echo home_url('/other-mortgages'); ?>" class="btn-service">I NEED OTHER SERVICES</a>
-                </div>-->
             </div>
         </div>
     </section>
 
-<?php get_template_part('template-parts/team-contact'); ?>
+    <div class="hp-team-wrap">
+        <?php get_template_part('template-parts/team-contact'); ?>
+    </div>
 
 </main>
 <?php
