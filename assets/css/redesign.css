@@ -15,6 +15,9 @@
    5. Our Mortgages page (page-our-mortgages.php)
    6. Mortgage product pages — shared components (page-first-time-buyers.php,
       page-remortgaging.php, page-moving-home.php)
+   7. Blog pages (archive.php, single.php)
+   8. AIP Overview page (page-aip-overview.php)
+   9. AIP Form page (page-aip-form.php)
    ============================================================ */
 
 /* -------------------- 1. Sitewide header/nav -------------------- */
@@ -2420,4 +2423,517 @@ body.is-front-redesign {
 .um-comments-inner .form-submit input[type="submit"]:hover {
     background: #0d84d9;
     transform: translateY(-2px);
+}
+
+/* ============================================================
+   8. AIP OVERVIEW PAGE (page-aip-overview.php)
+
+   Was a full-bleed photo hero (handshake image + dark overlay).
+   Redesigned to the flat/no-photo treatment used by Calculators and
+   the product pages (per explicit confirmation — see chat/PR), so
+   the conversion funnel (Calculators -> AIP Overview -> AIP Form)
+   reads as one system rather than switching styles mid-funnel. This
+   page's markup isn't shared with anything else (unlike the AIP
+   Form's Vue app), so it was rewritten with new classes rather than
+   reskinned in place.
+
+   The three benefit icons (scale/thumb/speed .png) are pre-tinted
+   gold artwork, not the black line art the standard icon-tint filter
+   expects — `brightness(0)` first flattens any source colour to
+   solid black, then the usual invert/sepia/hue-rotate recipe (see
+   REDESIGN_HANDOVER.md §3) tints that black to --hp-accent, so the
+   result matches every other icon chip regardless of the source
+   image's original colour.
+   ============================================================ */
+
+.um-aip-hero {
+    background: var(--hp-cream);
+    padding: 72px 0 88px;
+}
+
+.um-aip-hero__content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.um-aip-hero__title {
+    font-family: var(--hp-font-display);
+    font-size: 42px;
+    line-height: 1.15;
+    letter-spacing: -.01em;
+    font-weight: 600;
+    color: var(--hp-ink);
+    margin: 0 0 16px;
+}
+
+.um-aip-hero__accent {
+    color: var(--hp-accent);
+}
+
+.um-aip-hero__subtitle {
+    font-family: var(--hp-font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--hp-body);
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.um-aip-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 900px;
+    margin: 48px auto 0;
+}
+
+.um-aip-benefit {
+    background: #fff;
+    border: 1px solid var(--hp-border);
+    border-radius: 16px;
+    padding: 30px 24px;
+    text-align: center;
+    transition: transform .2s ease, border-color .2s ease;
+}
+
+.um-aip-benefit:hover {
+    border-color: var(--hp-accent);
+    transform: translateY(-4px);
+}
+
+.um-aip-benefit__icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 18px;
+    background: var(--hp-pill-bg);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.um-aip-benefit__icon img {
+    width: 28px;
+    height: auto;
+    filter: brightness(0) invert(37%) sepia(93%) saturate(1352%) hue-rotate(180deg) brightness(93%) contrast(101%);
+}
+
+.um-aip-benefit h3 {
+    font-family: var(--hp-font-display);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--hp-ink);
+    margin: 0 0 8px;
+}
+
+.um-aip-benefit p {
+    font-family: var(--hp-font-body);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--hp-body);
+    margin: 0;
+}
+
+.um-aip-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 700px;
+    margin: 56px auto 0;
+    text-align: center;
+}
+
+.um-aip-cta__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(76, 175, 80, .1);
+    border: 1px solid rgba(76, 175, 80, .3);
+    color: #2f8f39;
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-family: var(--hp-font-body);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.um-aip-cta__start {
+    padding: 16px 56px;
+}
+
+.um-aip-cta__terms {
+    font-family: var(--hp-font-body);
+    font-size: 13.5px;
+    color: var(--hp-muted);
+    margin: 0;
+}
+
+.um-aip-cta__terms a {
+    color: var(--hp-accent-text);
+    text-decoration: underline;
+}
+
+.um-aip-cta__terms a:hover {
+    color: var(--hp-ink);
+}
+
+@media (max-width: 900px) {
+    .um-aip-benefits {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+    }
+}
+
+@media (max-width: 768px) {
+    .um-aip-hero {
+        padding: 56px 0 64px;
+    }
+
+    .um-aip-hero__title {
+        font-size: 30px;
+    }
+
+    .um-aip-hero__subtitle {
+        font-size: 15px;
+    }
+
+    .um-aip-benefits {
+        margin-top: 36px;
+    }
+
+    .um-aip-cta {
+        margin-top: 40px;
+    }
+}
+
+/* ============================================================
+   9. AIP FORM PAGE (page-aip-form.php)
+
+   This is a real functional component — a Vue 3 app (js/aip-form-app-v2.js,
+   js/aip-form-components-v2.js) with live validation, file uploads and
+   a HubSpot-bound submission. Its classes (.form-section-card,
+   .radio-option, .form-field, .nested-card, .btn-add, .document-upload-field,
+   etc.) are rendered both by this template's static markup and by the
+   applicant-details/financial-details/document-uploads Vue components,
+   so — same rule as the calculator reskin (see REDESIGN_HANDOVER.md §5)
+   — this is cosmetic overrides only, scoped under .um-aip-form-page,
+   layered on top of the structural/behavioural rules style.css still
+   owns (step display toggling, validation state, animations). Nothing
+   here touches the form logic, field names, or copy.
+   ============================================================ */
+
+.um-aip-form-page {
+    background: var(--hp-cream);
+    padding: 48px 20px 80px;
+    font-family: var(--hp-font-body);
+}
+
+.um-aip-form-page .aip-form-header h1 {
+    font-family: var(--hp-font-display);
+    font-weight: 600;
+    color: var(--hp-ink);
+}
+
+/* -------------------- Progress indicator -------------------- */
+.um-aip-form-page .step-number {
+    background: #fff;
+    border-color: var(--hp-border);
+    color: var(--hp-muted);
+    font-family: var(--hp-font-display);
+}
+
+.um-aip-form-page .progress-step.active .step-number {
+    background: var(--hp-accent);
+    border-color: var(--hp-accent);
+    color: #fff;
+}
+
+.um-aip-form-page .progress-step.completed .step-number {
+    background: var(--hp-ink);
+    border-color: var(--hp-ink);
+    color: #fff;
+}
+
+.um-aip-form-page .step-label {
+    font-family: var(--hp-font-body);
+    color: var(--hp-muted);
+}
+
+.um-aip-form-page .progress-step.active .step-label {
+    color: var(--hp-ink);
+    font-weight: 600;
+}
+
+.um-aip-form-page .progress-line {
+    background: var(--hp-border);
+}
+
+.um-aip-form-page .progress-line.active {
+    background: var(--hp-accent);
+}
+
+/* -------------------- Section cards -------------------- */
+.um-aip-form-page .form-section-card {
+    background: #fff;
+    border: 1px solid var(--hp-border);
+    border-radius: 16px;
+    box-shadow: none;
+}
+
+.um-aip-form-page .section-title,
+.um-aip-form-page .section-subtitle {
+    font-family: var(--hp-font-display);
+    color: var(--hp-ink);
+}
+
+.um-aip-form-page .applicant-label {
+    color: var(--hp-accent-text);
+    font-family: var(--hp-font-body);
+}
+
+/* -------------------- Radio groups -------------------- */
+.um-aip-form-page .radio-option {
+    background: #fff;
+    border: 2px solid var(--hp-border);
+    border-radius: 14px;
+    padding: 15px 20px;
+}
+
+.um-aip-form-page .radio-option:hover {
+    border-color: var(--hp-accent);
+    background: #fff;
+}
+
+.um-aip-form-page .radio-option.selected {
+    border-color: var(--hp-accent);
+    background: var(--hp-cream-blue);
+}
+
+.um-aip-form-page .radio-option input[type="radio"],
+.um-aip-form-page .radio-option-inline input[type="radio"] {
+    accent-color: var(--hp-accent);
+}
+
+.um-aip-form-page .radio-option input[type="radio"]:checked + span {
+    color: var(--hp-accent-text);
+    font-weight: 600;
+}
+
+.um-aip-form-page .radio-label,
+.um-aip-form-page .radio-option span {
+    font-family: var(--hp-font-body);
+    color: var(--hp-body-2);
+}
+
+.um-aip-form-page .radio-group-inline > label {
+    font-family: var(--hp-font-body);
+    color: var(--hp-body-2);
+}
+
+.um-aip-form-page .radio-option-inline span {
+    font-family: var(--hp-font-body);
+    color: var(--hp-body-2);
+}
+
+/* -------------------- Form fields -------------------- */
+.um-aip-form-page .form-field label,
+.um-aip-form-page .form-group label {
+    font-family: var(--hp-font-body);
+    color: var(--hp-muted);
+}
+
+.um-aip-form-page .form-field input,
+.um-aip-form-page .form-field select,
+.um-aip-form-page .form-group input,
+.um-aip-form-page .form-group textarea {
+    border: 2px solid var(--hp-border);
+    border-radius: 10px;
+    background: var(--hp-cream);
+    color: var(--hp-ink);
+    font-family: var(--hp-font-body);
+}
+
+.um-aip-form-page .form-field input:focus,
+.um-aip-form-page .form-field select:focus,
+.um-aip-form-page .form-group input:focus,
+.um-aip-form-page .form-group textarea:focus {
+    border-color: var(--hp-accent);
+    background: #fff;
+}
+
+.um-aip-form-page .checkbox-label {
+    font-family: var(--hp-font-body);
+    color: var(--hp-body-2);
+}
+
+.um-aip-form-page .checkbox-label input[type="checkbox"] {
+    accent-color: var(--hp-accent);
+}
+
+.um-aip-form-page .privacy-link {
+    color: var(--hp-accent-text);
+}
+
+.um-aip-form-page .helper-text {
+    font-family: var(--hp-font-body);
+    color: var(--hp-muted-2);
+}
+
+/* -------------------- Nested cards (loans/credit cards) + add/remove -------------------- */
+.um-aip-form-page .nested-card {
+    background: var(--hp-cream);
+    border: 1px solid var(--hp-border);
+    border-radius: 12px;
+}
+
+.um-aip-form-page .nested-card-header h4 {
+    font-family: var(--hp-font-display);
+    color: var(--hp-ink);
+}
+
+.um-aip-form-page .btn-add {
+    color: var(--hp-accent-text);
+    border: 2px dashed var(--hp-accent);
+    border-radius: 10px;
+    font-family: var(--hp-font-display);
+}
+
+.um-aip-form-page .btn-add:hover {
+    background: var(--hp-cream-blue);
+}
+
+/* -------------------- Document uploads -------------------- */
+.um-aip-form-page .category-title {
+    font-family: var(--hp-font-display);
+    color: var(--hp-ink);
+}
+
+.um-aip-form-page .required-badge {
+    background: var(--hp-accent);
+    font-family: var(--hp-font-body);
+    border-radius: 100px;
+}
+
+.um-aip-form-page .document-category {
+    border-bottom-color: var(--hp-border);
+}
+
+.um-aip-form-page .document-upload-field label {
+    font-family: var(--hp-font-body);
+    color: var(--hp-body-2);
+}
+
+.um-aip-form-page .file-upload-label {
+    background: var(--hp-cream);
+    border: 2px dashed var(--hp-border);
+    border-radius: 10px;
+    color: var(--hp-muted);
+    font-family: var(--hp-font-body);
+}
+
+.um-aip-form-page .file-upload-label:hover {
+    background: var(--hp-cream-blue);
+    border-color: var(--hp-accent);
+    color: var(--hp-accent-text);
+}
+
+.um-aip-form-page .file-uploaded {
+    color: #2f8f39;
+}
+
+.um-aip-form-page .month-label {
+    font-family: var(--hp-font-body);
+    color: var(--hp-muted);
+}
+
+/* -------------------- Warning / success boxes -------------------- */
+.um-aip-form-page .warning-box,
+.um-aip-form-page .success-box {
+    border-radius: 10px;
+    font-family: var(--hp-font-body);
+}
+
+/* -------------------- Validation error box -------------------- */
+.um-aip-form-page .validation-error-box {
+    border-radius: 16px;
+    box-shadow: none;
+}
+
+.um-aip-form-page .error-header h3 {
+    font-family: var(--hp-font-display);
+}
+
+.um-aip-form-page .error-list li {
+    font-family: var(--hp-font-body);
+}
+
+/* -------------------- Navigation buttons -------------------- */
+.um-aip-form-page .btn-back {
+    background: #fff;
+    border: 2px solid var(--hp-border);
+    border-radius: 100px;
+    font-family: var(--hp-font-display);
+    color: var(--hp-body);
+}
+
+.um-aip-form-page .btn-back:hover {
+    border-color: var(--hp-muted);
+    background: var(--hp-cream);
+}
+
+.um-aip-form-page .btn-continue,
+.um-aip-form-page .btn-submit {
+    background: var(--hp-accent);
+    border-radius: 100px;
+    font-family: var(--hp-font-display);
+    box-shadow: 0 8px 20px -8px rgba(16, 157, 255, .5);
+}
+
+.um-aip-form-page .btn-continue:hover:not(:disabled),
+.um-aip-form-page .btn-submit:hover:not(:disabled) {
+    background: #0d84d9;
+    box-shadow: 0 12px 24px -8px rgba(16, 157, 255, .6);
+}
+
+.um-aip-form-page .btn-continue:disabled,
+.um-aip-form-page .btn-submit:disabled {
+    background: var(--hp-border);
+    box-shadow: none;
+}
+
+/* -------------------- Success view -------------------- */
+.um-aip-form-page .success-card {
+    border-radius: 20px;
+    box-shadow: none;
+    border: 1px solid var(--hp-border);
+}
+
+.um-aip-form-page .success-title {
+    font-family: var(--hp-font-display);
+    color: var(--hp-ink);
+}
+
+.um-aip-form-page .success-message {
+    color: var(--hp-body);
+}
+
+.um-aip-form-page .success-submessage {
+    color: var(--hp-muted);
+}
+
+.um-aip-form-page .contact-link {
+    color: var(--hp-body);
+    font-family: var(--hp-font-body);
+}
+
+.um-aip-form-page .contact-link:hover {
+    color: var(--hp-accent-text);
+}
+
+@media (max-width: 768px) {
+    .um-aip-form-page {
+        padding: 32px 15px 60px;
+    }
 }
