@@ -6,7 +6,7 @@
 
 get_header(); ?>
 
-<main class="aip-form-page">
+<main class="aip-form-page um-aip-form-page">
     <div class="aip-form-container">
         
         <div class="aip-form-header">
