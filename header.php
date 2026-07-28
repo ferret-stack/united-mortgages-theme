@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?php wp_title( '|', true, 'right' ); ?><?php bloginfo( 'name' ); ?></title>
   <meta name="google-site-verification" content="qvL_aHS-0u8HrMAqG_jGjvmnKhphU4tMajW0ZbW6Zkc"/>
+
+  <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP8VDWZCV8"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-JP8VDWZCV8');
+    </script>
+
   <?php wp_head(); ?>
 </head>
 <body <?php body_class( 'is-front-redesign' ); ?>>
