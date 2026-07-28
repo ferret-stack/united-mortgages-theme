@@ -406,4 +406,17 @@ function um_enqueue_faq_accordion() {
 }
 add_action( 'wp_enqueue_scripts', 'um_enqueue_faq_accordion' );
 
+function um_enqueue_toc_script() {
+    if ( is_singular( 'post' ) ) {
+        wp_enqueue_script(
+            'um-toc',
+            get_template_directory_uri() . '/js/toc.js',
+            array(),
+            '1.0.0',
+            true
+        );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'um_enqueue_toc_script' );
+
 ?>
