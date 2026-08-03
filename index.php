@@ -32,9 +32,10 @@ get_header(); ?>
 
                 <div class="hp-pill">Whole of market &middot; 100+ lenders</div>
 
-                <h1>Save. Borrow. <span>Own.</span></h1>
+                <h1>Most mortgage advice happens 9-to-5.<br><span>Ours doesn't.</span></h1>
 
-                <p class="hp-hero__lead">One relationship from your first deposit saving to the day you move in — and every remortgage after. No jargon, no jumping between five different "get started" buttons.</p>
+                <!-- DRAFT COPY — NOT FINAL, needs sign-off before this ships live -->
+                <p class="hp-hero__lead">One named adviser from your first conversation through to completion — reachable evenings and weekends, not just office hours.</p>
 
                 <div class="hp-hero__cta-row">
                     <a href="#calculator" class="hp-btn">Check what you could borrow</a>
@@ -46,34 +47,21 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- Most mortgage advice happens 9-to-5. Ours doesn't. -->
-    <section class="hp-way">
-        <div class="hp-container">
-            <div class="hp-way__inner">
-                <h2>Most mortgage advice happens 9-to-5.<br><span>Ours doesn't.</span></h2>
-                <ul>
-                    <li>We're a tech-focused UK mortgage broker built for first-time buyers, not paperwork.</li>
-                    <li>Advisors respond the same day, any day — yes, even at 10pm on Sunday.</li>
-                    <li>We're here to make it easy.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
     <!-- USP block -->
+    <!-- DRAFT COPY — NOT FINAL, needs sign-off before this ships live -->
     <section class="hp-usp">
         <div class="hp-container hp-usp__grid">
             <div class="hp-usp__item">
-                <div class="hp-usp__num">01 &middot; Save</div>
-                <p>Deposit tools that show you honestly how close you are — and what lenders will actually count.</p>
+                <div class="hp-usp__num">01 &middot; One adviser</div>
+                <p>The same person handles your case from first enquiry to completion — not whoever's free that day.</p>
             </div>
             <div class="hp-usp__item">
-                <div class="hp-usp__num">02 &middot; Borrow</div>
-                <p>Search 100+ lenders at once. We show the realistic number first, not an "enhanced" one we'll walk back later.</p>
+                <div class="hp-usp__num">02 &middot; Real availability</div>
+                <p>Reachable evenings and weekends, not just 9-to-5.</p>
             </div>
             <div class="hp-usp__item">
-                <div class="hp-usp__num">03 &middot; Own</div>
-                <p>We flag your remortgage date before your lender's standard rate does, automatically.</p>
+                <div class="hp-usp__num">03 &middot; Honest numbers</div>
+                <p>Search 100+ lenders at once. We show the realistic figure first, not an "enhanced" one we'll walk back later.</p>
             </div>
         </div>
     </section>
