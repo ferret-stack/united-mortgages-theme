@@ -10774,6 +10774,7 @@ input#borrow-deposit::placeholder {
 /* -------------------- Hero -------------------- */
 .hp-hero {
     background: var(--hp-cream);
+    margin-bottom: 50px;
 }
 
 .hp-hero__grid {
@@ -10782,6 +10783,7 @@ input#borrow-deposit::placeholder {
     grid-template-columns: 1.1fr .9fr;
     gap: 56px;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .hp-hero__reviews.review-widgets-container {

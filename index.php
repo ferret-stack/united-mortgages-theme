@@ -30,12 +30,9 @@ get_header(); ?>
                     </div>
                 </div>
 
-                <div class="hp-pill">Whole of market &middot; 100+ lenders</div>
+                <h1>Most mortgage advice happens 9&#8209;to&#8209;5.<br><span>Ours doesn't.</span></h1>
 
-                <h1>Most mortgage advice happens 9-to-5.<br><span>Ours doesn't.</span></h1>
-
-                <!-- DRAFT COPY — NOT FINAL, needs sign-off before this ships live -->
-                <p class="hp-hero__lead">One named adviser from your first conversation through to completion — reachable evenings and weekends, not just office hours.</p>
+                <p class="hp-hero__lead">One named adviser from your first conversation through to completion - reachable evenings and weekends, not just office hours.</p>
 
                 <div class="hp-hero__cta-row">
                     <a href="#calculator" class="hp-btn">Check what you could borrow</a>
@@ -47,27 +44,23 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- USP block -->
-    <!-- DRAFT COPY — NOT FINAL, needs sign-off before this ships live -->
     <section class="hp-usp">
         <div class="hp-container hp-usp__grid">
             <div class="hp-usp__item">
                 <div class="hp-usp__num">01 &middot; One adviser</div>
-                <p>The same person handles your case from first enquiry to completion — not whoever's free that day.</p>
+                <p>The same person handles your case from first enquiry to completion - not whoever's free that day.</p>
             </div>
             <div class="hp-usp__item">
                 <div class="hp-usp__num">02 &middot; Real availability</div>
-                <p>Reachable evenings and weekends, not just 9-to-5.</p>
+                <p>Reachable evenings and weekends, not just 9&#8209;to&#8209;5.</p>
             </div>
             <div class="hp-usp__item">
-                <div class="hp-usp__num">03 &middot; Honest numbers</div>
-                <p>Search 100+ lenders at once. We show the realistic figure first, not an "enhanced" one we'll walk back later.</p>
+                <div class="hp-usp__num">03 &middot; Beyond the mortgage</div>
+                <p>We don't disappear after completion. Our network of conveyancers, surveyors and partners is there for what comes next.</p>
             </div>
         </div>
     </section>
 
-    <!-- Our Mortgages (not in the 2a mockup — carried over from the current site's
-         existing "Our Mortgages" section/copy, reskinned to match) -->
     <section class="hp-mortgages-wrap">
         <div class="hp-container">
             <div class="hp-head">
