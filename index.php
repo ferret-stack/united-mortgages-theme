@@ -42,7 +42,7 @@ get_header(); ?>
                 </div>
                 <p class="hp-hero__secondary">Prefer to talk it through first? <a href="#contact-form">Request a call back</a>.</p>
             </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/hero-v2.png" alt="Advisor and first-time buyers reviewing paperwork together" style="width:100%;aspect-ratio:4/3.2;object-fit:cover;border-radius:20px;">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/herov4_ph.png" style="width:100%;aspect-ratio:4/3.2;object-fit:cover;border-radius:20px;">
         </div>
     </section>
 
@@ -191,6 +191,11 @@ get_header(); ?>
                         '14bc-exp.png' => 'https://benncolling.exp.uk.com/',
                         '15uw.png' => 'http://connectors.uw.co.uk/CN-ZM82',
                         '16prl.png' => 'https://www.perryroadlegacy.com/',
+                        '17ms-exp.png' => 'https://michalsikora.exp.uk.com/',
+                        '18gb-exp.png' => 'https://grantboonzaier.exp.uk.com/',
+                        '19ra-exp.png' => 'https://richardaves.exp.uk.com/',
+                        '20sok.png' => 'https://www.sokdaplanner.com/',
+                        'bine.png' => 'https://bineproperties.co.uk/'
                     ];
 
                     foreach($files as $file) {
