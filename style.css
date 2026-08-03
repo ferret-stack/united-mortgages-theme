@@ -11073,7 +11073,7 @@ input#borrow-deposit::placeholder {
     border-radius: 16px;
     padding: 32px;
     display: grid;
-    grid-template-columns: 1fr 1fr auto;
+    grid-template-columns: repeat(4, 1fr);
     gap: 28px;
     align-items: center;
     background: var(--hp-cream);
@@ -11093,9 +11093,10 @@ input#borrow-deposit::placeholder {
     color: var(--hp-ink);
 }
 
-.hp-borrow__card .hp-value--lg {
-    font-size: 30px;
-    font-weight: 700;
+/* Typical and Enhanced share identical weight/size/colour so neither
+   reads as the single "hero" figure — see v3.10 dev log, Borrowing
+   Calculator — Typical/Enhanced Range. */
+.hp-borrow__card .hp-value--range {
     color: var(--hp-accent);
 }
 

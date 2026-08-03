@@ -85,12 +85,63 @@ get_header(); ?>
                     <div class="hp-label">Deposit</div>
                     <div class="hp-value">&pound;32,000</div>
                 </div>
-                <div style="text-align:right">
-                    <div class="hp-label">Typical borrowing</div>
-                    <div class="hp-value hp-value--lg">&pound;243,600</div>
+                <div>
+                    <div class="hp-label">Typical</div>
+                    <div class="hp-value hp-value--range">&pound;261,000</div>
+                </div>
+                <div>
+                    <div class="hp-label">Enhanced <button type="button" class="range-info-trigger" onclick="openHpBorrowRangePopup()" aria-label="What does Enhanced mean?">&#9432;</button></div>
+                    <div class="hp-value hp-value--range">&pound;348,000</div>
                 </div>
             </div>
-            <p class="hp-borrow__example-note">Based on 4.2&times; joint income, standard affordability rules. Your actual offer depends on credit history, existing debt and each lender's own criteria — an advisor will confirm your real range before you apply.</p>
+            <p class="hp-borrow__example-note">Based on 4.5&times;&ndash;6.0&times; joint income, standard affordability rules. Your actual offer depends on credit history, existing debt and each lender's own criteria — an advisor will confirm your real range before you apply.</p>
+
+            <!-- Mandatory popup: Typical vs Enhanced (compliance-approved copy, reused verbatim from the embedded calculator) -->
+            <div id="hp-borrow-range-popup" class="popup-overlay">
+                <div class="popup-content">
+                    <div class="popup-header">
+                        <h2>Typical vs Enhanced</h2>
+                        <button type="button" class="popup-close" onclick="closeHpBorrowRangePopup()" aria-label="Close">&times;</button>
+                    </div>
+                    <div class="popup-body">
+                        <p>These figures are estimates only. They are not guaranteed and actual lending depends on individual lender criteria, your credit history and full financial circumstances.</p>
+                        <p>The <strong>Enhanced</strong> figure reflects income multiples of up to 6x now offered by a number of UK lenders. This tier is generally only available to higher earners &mdash; commonly &pound;75,000+ income &mdash; and is subject to lender-specific eligibility criteria. Most borrowers will not qualify for the Enhanced figure even though it is a real, current market rate. Your <strong>Typical</strong> figure is a more representative starting point for most applicants.</p>
+                    </div>
+                    <div class="popup-footer">
+                        <button type="button" class="popup-button" onclick="closeHpBorrowRangePopup()">Got it</button>
+                    </div>
+                </div>
+            </div>
+            <script>
+            (function() {
+                'use strict';
+                window.openHpBorrowRangePopup = function() {
+                    const popup = document.getElementById('hp-borrow-range-popup');
+                    if (popup) {
+                        popup.classList.add('show');
+                        document.body.style.overflow = 'hidden';
+                    }
+                };
+                window.closeHpBorrowRangePopup = function() {
+                    const popup = document.getElementById('hp-borrow-range-popup');
+                    if (popup) {
+                        popup.classList.remove('show');
+                        document.body.style.overflow = '';
+                    }
+                };
+                document.addEventListener('click', function(event) {
+                    const popup = document.getElementById('hp-borrow-range-popup');
+                    if (popup && event.target === popup) {
+                        window.closeHpBorrowRangePopup();
+                    }
+                });
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape') {
+                        window.closeHpBorrowRangePopup();
+                    }
+                });
+            })();
+            </script>
 
             <!-- Real interactive calculator, in addition to the worked example above,
                  so visitors can run their own numbers rather than just seeing ours. -->
