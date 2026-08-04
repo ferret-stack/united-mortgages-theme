@@ -226,18 +226,20 @@ get_header(); ?>
          Financial & Protection / Legal (now "Legal & Surveying") rather than
          staying as one-partner headings.
 
-         Logo sizing: each partner's 'scale' value compensates for how much
-         built-in whitespace its own logo file has around the actual mark —
-         measured by rendering every logo at the shared 60px box height and
-         pixel-sampling the non-transparent bounding box (e.g. Thomas Legal's
-         visible logotype only filled 29 of those 60px — 48% — while
-         Drifthome's filled 59px — 98% — same box, wildly different amount of
-         "ink"). scale is (40px target ÷ measured visible height at 60px),
-         so every logo's actual visible mark lands at a consistent ~40px
-         tall instead of a consistent bounding box that let some logos read
-         as much bigger than others through no design intent. If a logo file
-         is ever replaced, its scale should be re-measured — it's tied to
-         that specific file's internal padding, not the company. -->
+         Logo sizing: fixed-height container (see .hp-partners__logo),
+         flexible width, object-fit: contain — no per-partner scale/pad
+         values. This was tried in an earlier pass (a 'scale' multiplier per
+         partner, measured from each logo's actual pixel footprint) and
+         deliberately removed per direction: the fixed-height-container +
+         contain approach should handle sizing generically for any future
+         partner without a bespoke measured constant per logo file. Known
+         trade-off, flagged rather than silently fixed: source logo files
+         have very different amounts of built-in whitespace around the
+         actual mark (e.g. Thomas Legal's visible logotype fills well under
+         half its own file's canvas, Drifthome's fills nearly all of it), so
+         even at an identical box height some logos will still read as
+         visually smaller/larger than others — that's the source files, not
+         the container, and isn't corrected here. -->
     <section class="hp-partners">
         <div class="hp-container">
             <div class="hp-eyebrow hp-partners__eyebrow">Our Partners</div>
@@ -254,7 +256,6 @@ get_header(); ?>
                                 // TODO(content): sign-off needed — writeup below reflects the
                                 // announced strategic partnership; confirm final wording.
                                 'description' => 'Our strategic property sourcing partner, helping clients find and secure investment-ready properties.',
-                                'scale' => 0.89,
                             ],
                             [
                                 'file' => '03drifthome.svg',
@@ -263,7 +264,6 @@ get_header(); ?>
                                 // 403 to this environment's fetch tool, description is a guess
                                 // from the company name only. Please replace with real copy.
                                 'description' => 'Technology partner supporting your home search and move.',
-                                'scale' => 0.68,
                             ],
                             [
                                 'file' => 'bine.png',
@@ -272,7 +272,6 @@ get_header(); ?>
                                 // returned 403 to this environment's fetch tool, description is
                                 // a guess from the company name only. Please replace with real copy.
                                 'description' => 'Property sourcing and lettings partner.',
-                                'scale' => 1.14,
                             ],
                         ],
                     ],
@@ -283,7 +282,6 @@ get_header(); ?>
                                 'file' => '01charterwells.svg',
                                 'name' => 'Charterwells',
                                 'description' => 'Independent protection specialists, covering life, income and critical illness cover alongside your mortgage.',
-                                'scale' => 1.18,
                             ],
                             [
                                 'file' => '06fiberpay.svg',
@@ -292,7 +290,6 @@ get_header(); ?>
                                 // 403 to this environment's fetch tool, description is a guess
                                 // from the company name only. Please replace with real copy.
                                 'description' => 'Our payments technology partner.',
-                                'scale' => 0.70,
                             ],
                             [
                                 'file' => '20sok.png',
@@ -301,7 +298,6 @@ get_header(); ?>
                                 // returned 403 to this environment's fetch tool, description is
                                 // a guess from the company name only. Please replace with real copy.
                                 'description' => 'Our financial planning partner.',
-                                'scale' => 0.68,
                             ],
                             [
                                 'file' => '10mortgage-direct.svg',
@@ -311,7 +307,6 @@ get_header(); ?>
                                 // one-off "International Property" heading — it's the only
                                 // international-mortgage entry we have right now.
                                 'description' => 'Our specialist contact for mortgages on Spanish property.',
-                                'scale' => 0.68,
                             ],
                             [
                                 'file' => '16prl.png',
@@ -320,7 +315,6 @@ get_header(); ?>
                                 // to international estate planning/will-writing per direction;
                                 // confirm final wording.
                                 'description' => 'International estate planning and will-writing, protecting what you\'ve built for the long term.',
-                                'scale' => 1.29,
                             ],
                         ],
                     ],
@@ -331,19 +325,16 @@ get_header(); ?>
                                 'file' => '02thomas-legal.svg',
                                 'name' => 'Thomas Legal',
                                 'description' => 'Conveyancing solicitors handling the legal transfer of your property.',
-                                'scale' => 1.38,
                             ],
                             [
                                 'file' => '04key-conveyencing.svg',
                                 'name' => 'Key Conveyancing',
                                 'description' => 'Conveyancing solicitors managing contracts, searches and completion.',
-                                'scale' => 0.78,
                             ],
                             [
                                 'file' => '09novello.svg',
                                 'name' => 'Novello Chartered Surveyors',
                                 'description' => 'RICS-regulated chartered surveyors assessing the condition and value of your property.',
-                                'scale' => 0.83,
                             ],
                         ],
                     ],
@@ -354,10 +345,8 @@ get_header(); ?>
                     echo "<h3 class='hp-partners__stage-label'>" . $stage['stage'] . "</h3>";
                     echo "<div class='hp-partners__grid'>";
                     foreach ($stage['partners'] as $partner) {
-                        $scale = $partner['scale'] ?? 1;
-                        $logo_style = $scale != 1 ? " style='--logo-scale: {$scale}'" : '';
                         echo "<div class='hp-partners__tile'>";
-                        echo "<div class='hp-partners__logo'{$logo_style}><img src='" . $url . $partner['file'] . "' alt='" . $partner['name'] . " logo' /></div>";
+                        echo "<div class='hp-partners__logo'><img src='" . $url . $partner['file'] . "' alt='" . $partner['name'] . " logo' /></div>";
                         echo "<h4 class='hp-partners__name'>" . $partner['name'] . "</h4>";
                         echo "<p class='hp-partners__desc'>" . $partner['description'] . "</p>";
                         echo "</div>";

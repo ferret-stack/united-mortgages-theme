@@ -11399,11 +11399,17 @@ input#borrow-deposit::placeholder {
 }
 
 .hp-partners__logo {
-    /* Logo lockup, not an icon chip: fixed height, flexible width, no
-       bounding square or tinted background — a 48px square box (the
-       mortgage-type-grid icon treatment) squashed wide/horizontal partner
-       wordmarks down to ~26px and made them unreadable. */
-    height: 60px;
+    /* Logo lockup, not an icon chip: fixed height, flexible width up to
+       the card's own padding, no bounding square or tinted background — a
+       48px square box (the mortgage-type-grid icon treatment) squashed
+       wide/horizontal partner wordmarks down to ~26px and made them
+       unreadable. Height is identical on every card regardless of a given
+       logo's own proportions (wide wordmark like Mortgage Direct vs a
+       squarer mark like Bine/Sokda Planner), so the name/description block
+       below starts at the same y-offset on every card — that follows from
+       this container's height alone, generically, for any partner added
+       here later, without per-logo tuning. */
+    height: 76px;
     margin: 0 0 16px;
 }
 
@@ -11411,31 +11417,17 @@ input#borrow-deposit::placeholder {
     /* width/height 100% + object-fit: contain (not max-width/max-height on
        an auto-sized box) so logos whose declared intrinsic size is smaller
        than the target — e.g. 03drifthome.svg declares 238x45 — scale UP to
-       the 60px target too, not just down. max-width/max-height alone never
-       grows past intrinsic size, only shrinks, which left that one logo
-       stuck at 45px tall. object-position left/bottom keeps every logo
-       starting at the card's left edge and sitting on the same visual
-       baseline regardless of native aspect ratio, so a row of cards with
-       differently-proportioned logos still reads as aligned. */
+       fill the box too, not just down. max-width/max-height alone never
+       grows past intrinsic size, only shrinks. object-position left/bottom
+       keeps every logo starting at the card's left edge and sitting on the
+       same visual baseline regardless of native aspect ratio. Proportional
+       scaling only — no distortion, no cropping. */
     display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
     object-position: left bottom;
     filter: brightness(0) invert(37%) sepia(93%) saturate(1352%) hue-rotate(180deg) brightness(93%) contrast(101%);
-    /* Per-partner scale (see the 'scale' values in index.php) compensates
-       for how much whitespace each source file has around its own mark, so
-       the visible logo lands at a consistent size instead of the bounding
-       box alone, which let some partners read as "bigger" than others.
-       transform-origin left bottom + the box's own bottom-left
-       object-position means growth goes up and to the right, away from the
-       name/description text below — never toward it. .hp-partners__logo
-       and .hp-partners__tile intentionally have no overflow:hidden, so a
-       scaled-up logo isn't clipped; the largest scale in use (1.38, Thomas
-       Legal) grows into the card's own 26px top padding with room to
-       spare, safely short of the card border. */
-    transform: scale(var(--logo-scale, 1));
-    transform-origin: left bottom;
 }
 
 .hp-partners__name {
