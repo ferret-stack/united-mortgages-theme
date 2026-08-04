@@ -74,8 +74,8 @@ get_header(); ?>
     <!-- What you could borrow — honestly -->
     <section class="hp-borrow">
         <div class="hp-container">
-            <h2>What you could borrow — honestly</h2>
-            <p class="hp-borrow__lead">The number below is what most lenders will actually offer. We won't show you a bigger one just to soften the click.</p>
+            <h2>What you could borrow</h2>
+            <p class="hp-borrow__lead">A realistic range today, one adviser with you the whole way afterwards.</p>
             <div class="hp-borrow__card">
                 <div>
                     <div class="hp-label">Combined income</div>
@@ -94,7 +94,7 @@ get_header(); ?>
                     <div class="hp-value hp-value--range">&pound;348,000</div>
                 </div>
             </div>
-            <p class="hp-borrow__example-note">Based on 4.5&times;&ndash;6.0&times; joint income, standard affordability rules. Your actual offer depends on credit history, existing debt and each lender's own criteria — an advisor will confirm your real range before you apply.</p>
+            <p class="hp-borrow__example-note">Based on 4.5&times;-6.0&times; joint income, standard affordability rules. Your actual offer depends on credit history, existing debt and each lender's own criteria - an advisor will confirm your real range before you apply.</p>
 
             <!-- Mandatory popup: Typical vs Enhanced (compliance-approved copy, reused verbatim from the embedded calculator) -->
             <div id="hp-borrow-range-popup" class="popup-overlay">
@@ -105,7 +105,7 @@ get_header(); ?>
                     </div>
                     <div class="popup-body">
                         <p>These figures are estimates only. They are not guaranteed and actual lending depends on individual lender criteria, your credit history and full financial circumstances.</p>
-                        <p>The <strong>Enhanced</strong> figure reflects income multiples of up to 6x now offered by a number of UK lenders. This tier is generally only available to higher earners &mdash; commonly &pound;75,000+ income &mdash; and is subject to lender-specific eligibility criteria. Most borrowers will not qualify for the Enhanced figure even though it is a real, current market rate. Your <strong>Typical</strong> figure is a more representative starting point for most applicants.</p>
+                        <p>The <strong>Enhanced</strong> figure reflects income multiples of up to 6x now offered by a number of UK lenders. This tier is generally only available to higher earners - commonly &pound;75,000+ income - and is subject to lender-specific eligibility criteria. Most borrowers will not qualify for the Enhanced figure even though it is a real, current market rate. Your <strong>Typical</strong> figure is a more representative starting point for most applicants.</p>
                     </div>
                     <div class="popup-footer">
                         <button type="button" class="popup-button" onclick="closeHpBorrowRangePopup()">Got it</button>

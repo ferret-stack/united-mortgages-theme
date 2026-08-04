@@ -10774,7 +10774,7 @@ input#borrow-deposit::placeholder {
 /* -------------------- Hero -------------------- */
 .hp-hero {
     background: var(--hp-cream);
-    padding-bottom: 20px;
+    padding-bottom: 50px; /* Changed from marign-bottom as was giving whitespace otherwise */
 }
 
 .hp-hero__grid {
@@ -11118,7 +11118,7 @@ input#borrow-deposit::placeholder {
     font-size: 18px;
     font-weight: 600;
     color: var(--hp-ink);
-    margin: 0 35px 20px;
+    margin: 0 40px 20px;
 }
 
 @media (max-width: 700px) {
