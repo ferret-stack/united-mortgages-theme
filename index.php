@@ -204,11 +204,15 @@ get_header(); ?>
          See /introducer-partners. (Covers all eXp agents, CheckMyFile and
          Utility Warehouse — real business relationships, just not shown here.)
 
-         The following partner assets are intentionally NOT placed here and NOT
-         on /introducer-partners — pending a business decision on how/whether
-         to feature them at all: Drifthome (03drifthome.svg), Fiberpay
-         (06fiberpay.svg), Bine Properties (bine.png), Sokda Planner / SOK
-         (20sok.png). Files are left untouched in /assets/partners/.
+         Drifthome, Fiberpay, Bine Properties and Sokda Planner (SOK) are now
+         placed below too, per direction that nothing should be missing from
+         the site. Their descriptions and stage placement are UNVERIFIED —
+         drifthome.ai, fiberpay.com, bineproperties.co.uk and
+         sokdaplanner.com all blocked/refused this environment's fetch tool
+         (403), so the copy below is a placeholder inferred from the company
+         name only, not from anything the companies themselves published.
+         Each is marked TODO(content) — please replace with a real one-liner
+         and confirm the stage before this goes live.
 
          11fortress.svg — no longer a partner (confirmed), left untouched in
          /assets/partners/ but not referenced anywhere.
@@ -233,6 +237,22 @@ get_header(); ?>
                                 // announced strategic partnership; confirm final wording.
                                 'description' => 'Our strategic property sourcing partner, helping clients find and secure investment-ready properties.',
                             ],
+                            [
+                                'file' => '03drifthome.svg',
+                                'name' => 'Drifthome',
+                                // TODO(content): UNVERIFIED placeholder — drifthome.ai returned
+                                // 403 to this environment's fetch tool, description is a guess
+                                // from the company name only. Please replace with real copy.
+                                'description' => 'Technology partner supporting your home search and move.',
+                            ],
+                            [
+                                'file' => 'bine.png',
+                                'name' => 'Bine Properties',
+                                // TODO(content): UNVERIFIED placeholder — bineproperties.co.uk
+                                // returned 403 to this environment's fetch tool, description is
+                                // a guess from the company name only. Please replace with real copy.
+                                'description' => 'Property sourcing and lettings partner.',
+                            ],
                         ],
                     ],
                     [
@@ -254,6 +274,22 @@ get_header(); ?>
                                 'file' => '01charterwells.svg',
                                 'name' => 'Charterwells',
                                 'description' => 'Independent protection specialists, covering life, income and critical illness cover alongside your mortgage.',
+                            ],
+                            [
+                                'file' => '06fiberpay.svg',
+                                'name' => 'Fiberpay',
+                                // TODO(content): UNVERIFIED placeholder — fiberpay.com returned
+                                // 403 to this environment's fetch tool, description is a guess
+                                // from the company name only. Please replace with real copy.
+                                'description' => 'Our payments technology partner.',
+                            ],
+                            [
+                                'file' => '20sok.png',
+                                'name' => 'Sokda Planner',
+                                // TODO(content): UNVERIFIED placeholder — sokdaplanner.com
+                                // returned 403 to this environment's fetch tool, description is
+                                // a guess from the company name only. Please replace with real copy.
+                                'description' => 'Our financial planning partner.',
                             ],
                         ],
                     ],
