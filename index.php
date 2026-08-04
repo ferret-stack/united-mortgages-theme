@@ -334,7 +334,7 @@ get_header(); ?>
                     echo "<div class='hp-partners__grid'>";
                     foreach ($stage['partners'] as $partner) {
                         echo "<div class='hp-partners__tile'>";
-                        echo "<div class='hp-partners__icon'><img src='" . $url . $partner['file'] . "' alt='" . $partner['name'] . " logo' /></div>";
+                        echo "<div class='hp-partners__logo'><img src='" . $url . $partner['file'] . "' alt='" . $partner['name'] . " logo' /></div>";
                         echo "<h4 class='hp-partners__name'>" . $partner['name'] . "</h4>";
                         echo "<p class='hp-partners__desc'>" . $partner['description'] . "</p>";
                         echo "</div>";

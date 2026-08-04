@@ -11310,17 +11310,24 @@ input#borrow-deposit::placeholder {
 }
 
 /* -------------------- Partners (reskin, homepage-only, unique markup)
-   Card treatment mirrors .hp-mortgages-wrap .mortgage-service-card exactly
-   (same file, the "Our Mortgages" section directly above this one) — that
-   is itself the live implementation of the §5 "Our Mortgages" card recipe
-   from REDESIGN_HANDOVER.md: white surface, hairline border, accent-on-
-   hover, 48px pill-bg icon chip. Icon + name + description sit together in
-   one bordered card (.hp-partners__tile), not a separate logo box beside a
-   separate text box. Grid is a fixed 3-column layout with the same 900px
-   collapse-to-1-column breakpoint as the Our Mortgages grid on this same
-   page, so cards align in rows instead of wrapping at inconsistent widths.
-   These are informational tiles grouped by journey stage, not outbound
-   links or a logo wall — no grayscale-at-rest badge treatment.
+   Card treatment mirrors .hp-mortgages-wrap .mortgage-service-card (same
+   file, the "Our Mortgages" section directly above this one — the live
+   implementation of the §5 "Our Mortgages" card recipe from
+   REDESIGN_HANDOVER.md): white surface, hairline border, accent-on-hover.
+   Icon + name + description sit together in one bordered card
+   (.hp-partners__tile), not a separate logo box beside a separate text
+   box. Grid is a fixed 3-column layout with the same 900px collapse-to-1-
+   column breakpoint as the Our Mortgages grid on this same page, so cards
+   align in rows instead of wrapping at inconsistent widths. These are
+   informational tiles grouped by journey stage, not outbound links or a
+   logo wall — no grayscale-at-rest badge treatment.
+
+   .hp-partners__logo deliberately does NOT reuse the Our Mortgages
+   .service-icon treatment (48px tinted square chip) — that's built for a
+   single small pictogram, and squashing wide/horizontal partner wordmarks
+   into a bounding square made them unreadable. Fixed height (~60px),
+   flexible width, object-fit: contain, no background — see the class
+   itself for the full rationale.
 
    Icon tint: every logo file checked in /assets/partners/ is pale/white
    artwork built for a dark background (confirmed by pixel-sampling each
@@ -11391,24 +11398,30 @@ input#borrow-deposit::placeholder {
     transform: translateY(-4px);
 }
 
-.hp-partners__icon {
-    width: 48px;
-    height: 48px;
-    margin: 0 0 14px;
-    background: var(--hp-pill-bg);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+.hp-partners__logo {
+    /* Logo lockup, not an icon chip: fixed height, flexible width, no
+       bounding square or tinted background — a 48px square box (the
+       mortgage-type-grid icon treatment) squashed wide/horizontal partner
+       wordmarks down to ~26px and made them unreadable. */
+    height: 60px;
+    margin: 0 0 16px;
 }
 
-.hp-partners__icon img {
-    max-width: 55%;
-    max-height: 55%;
-    width: auto;
-    height: auto;
+.hp-partners__logo img {
+    /* width/height 100% + object-fit: contain (not max-width/max-height on
+       an auto-sized box) so logos whose declared intrinsic size is smaller
+       than the target — e.g. 03drifthome.svg declares 238x45 — scale UP to
+       the 60px target too, not just down. max-width/max-height alone never
+       grows past intrinsic size, only shrinks, which left that one logo
+       stuck at 45px tall. object-position left/bottom keeps every logo
+       starting at the card's left edge and sitting on the same visual
+       baseline regardless of native aspect ratio, so a row of cards with
+       differently-proportioned logos still reads as aligned. */
+    display: block;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+    object-position: left bottom;
     filter: brightness(0) invert(37%) sepia(93%) saturate(1352%) hue-rotate(180deg) brightness(93%) contrast(101%);
 }
 
