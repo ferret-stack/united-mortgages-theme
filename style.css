@@ -11423,6 +11423,19 @@ input#borrow-deposit::placeholder {
     object-fit: contain;
     object-position: left bottom;
     filter: brightness(0) invert(37%) sepia(93%) saturate(1352%) hue-rotate(180deg) brightness(93%) contrast(101%);
+    /* Per-partner scale (see the 'scale' values in index.php) compensates
+       for how much whitespace each source file has around its own mark, so
+       the visible logo lands at a consistent size instead of the bounding
+       box alone, which let some partners read as "bigger" than others.
+       transform-origin left bottom + the box's own bottom-left
+       object-position means growth goes up and to the right, away from the
+       name/description text below — never toward it. .hp-partners__logo
+       and .hp-partners__tile intentionally have no overflow:hidden, so a
+       scaled-up logo isn't clipped; the largest scale in use (1.38, Thomas
+       Legal) grows into the card's own 26px top padding with room to
+       spare, safely short of the card border. */
+    transform: scale(var(--logo-scale, 1));
+    transform-origin: left bottom;
 }
 
 .hp-partners__name {
