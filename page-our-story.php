@@ -33,8 +33,8 @@ get_header(); ?>
                 <!-- David -->
                 <div class="um-founder-card">
                     <div class="um-founder-image-wrap">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/david-bw.png?v=3" alt="David Woodford" class="um-founder-image um-founder-image--bw">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/david-col.png" alt="David Woodford" class="um-founder-image um-founder-image--color">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/dw-bw.png" alt="David Woodford" class="um-founder-image um-founder-image--bw">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/dw-col.png" alt="David Woodford" class="um-founder-image um-founder-image--color">
                     </div>
                     <div class="um-founder-header">
                         <h3 class="um-founder-name">DAVID WOODFORD <a href="https://www.linkedin.com/in/davidwoodforduk" target="_blank" class="um-founder-link">in</a><a href="mailto:david@united-mortgages.com" class="um-founder-link"><img src="<?php echo get_template_directory_uri(); ?>/assets/advisor-mail.svg" alt="Email"></a></h3>
@@ -50,8 +50,8 @@ get_header(); ?>
                 <!-- Daniel -->
                 <div class="um-founder-card">
                     <div class="um-founder-image-wrap">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/daniel-bw.png?v=2" alt="Daniel Oakey" class="um-founder-image um-founder-image--bw">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/daniel-col.png" alt="Daniel Oakey" class="um-founder-image um-founder-image--color">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/do-bw.png" alt="Daniel Oakey" class="um-founder-image um-founder-image--bw">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/do-col.png" alt="Daniel Oakey" class="um-founder-image um-founder-image--color">
                     </div>
                     <div class="um-founder-header">
                         <h3 class="um-founder-name">DANIEL OAKEY <a href="https://www.linkedin.com/in/boolean-daniel" target="_blank" class="um-founder-link">in</a></h3>
