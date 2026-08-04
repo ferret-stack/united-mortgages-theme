@@ -196,51 +196,165 @@ get_header(); ?>
         <?php get_template_part('template-parts/team-contact'); ?>
     </div>
 
-    <!-- Partners Section -->
+    <!-- Partners Section (not in the 2a mockup — client-facing partner grid,
+         grouped by journey stage. These are informational tiles, not outbound
+         links, per direction already agreed with the client.
+
+         Referral/introducer relationships — not client-facing services.
+         See /introducer-partners. (Covers all eXp agents, CheckMyFile and
+         Utility Warehouse — real business relationships, just not shown here.)
+
+         Drifthome, Fiberpay, Bine Properties and Sokda Planner (SOK) are now
+         placed below too, per direction that nothing should be missing from
+         the site. Their descriptions and stage placement are UNVERIFIED —
+         drifthome.ai, fiberpay.com, bineproperties.co.uk and
+         sokdaplanner.com all blocked/refused this environment's fetch tool
+         (403), so the copy below is a placeholder inferred from the company
+         name only, not from anything the companies themselves published.
+         Each is marked TODO(content) — please replace with a real one-liner
+         and confirm the stage before this goes live.
+
+         11fortress.svg — no longer a partner (confirmed), left untouched in
+         /assets/partners/ but not referenced anywhere.
+
+         David Charles (05david-charles.svg) is still held out for now,
+         pending a description/stage from the client — not yet placed in
+         either loop.
+
+         Stages only get their own heading once they've got enough entries to
+         justify one — Survey and Everything After were folded into
+         Financial & Protection / Legal (now "Legal & Surveying") rather than
+         staying as one-partner headings.
+
+         Logo sizing: fixed-height container (see .hp-partners__logo),
+         flexible width, object-fit: contain — no per-partner scale/pad
+         values. This was tried in an earlier pass (a 'scale' multiplier per
+         partner, measured from each logo's actual pixel footprint) and
+         deliberately removed per direction: the fixed-height-container +
+         contain approach should handle sizing generically for any future
+         partner without a bespoke measured constant per logo file. Known
+         trade-off, flagged rather than silently fixed: source logo files
+         have very different amounts of built-in whitespace around the
+         actual mark (e.g. Thomas Legal's visible logotype fills well under
+         half its own file's canvas, Drifthome's fills nearly all of it), so
+         even at an identical box height some logos will still read as
+         visually smaller/larger than others — that's the source files, not
+         the container, and isn't corrected here. -->
     <section class="hp-partners">
         <div class="hp-container">
             <div class="hp-eyebrow hp-partners__eyebrow">Our Partners</div>
-            <div class="hp-partners__grid">
-                <?php
-                    $directory = get_template_directory() . '/assets/partners/';
-                    $url = get_template_directory_uri() . '/assets/partners/';
-                    $files = scandir($directory);
+            <?php
+                $url = get_template_directory_uri() . '/assets/partners/';
 
-                    $partner_links = [
-                        '01charterwells.svg' => 'https://www.charterwells.co.uk/',
-                        '11fortress.svg' => 'https://2eys75.share-eu1.hsforms.com/2TSSmWsJnRJCGLQHLexp-mw',
-                        '04key-conveyencing.svg' => 'https://www.keyconveyancing.co.uk/',
-                        '02thomas-legal.svg' => 'https://thomaslegal.co.uk/',
-                        '05david-charles.svg' => 'https://david-charles.co.uk/',
-                        '03drifthome.svg' => 'https://drifthome.ai/',
-                        '07mn-eXp.svg' => 'https://marknewton.exp.uk.com/',
-                        '06fiberpay.svg' => 'https://fiberpay.com/',
-                        '08pb-exp.png' => 'https://paulberg.exp.uk.com/',
-                        '09novello.svg' => 'https://novellosurveyors.co.uk/',
-                        '12plap.png' => 'https://www.propertylikeapro.co.uk/',
-                        '10mortgage-direct.svg' => 'https://mortgagedirectsl.com/initial-enquiry/',
-                        '13cmf.png' => 'https://www.checkmyfile.partners/GZBMKJ9/FGXLG/',
-                        '14bc-exp.png' => 'https://benncolling.exp.uk.com/',
-                        '15uw.png' => 'http://connectors.uw.co.uk/CN-ZM82',
-                        '16prl.png' => 'https://www.perryroadlegacy.com/',
-                        '17ms-exp.png' => 'https://michalsikora.exp.uk.com/',
-                        '18gb-exp.png' => 'https://grantboonzaier.exp.uk.com/',
-                        '19ra-exp.png' => 'https://richardaves.exp.uk.com/',
-                        '20sok.png' => 'https://www.sokdaplanner.com/',
-                        'bine.png' => 'https://bineproperties.co.uk/'
-                    ];
+                $partner_journey_stages = [
+                    [
+                        'stage' => 'Property Sourcing',
+                        'partners' => [
+                            [
+                                'file' => '12plap.png',
+                                'name' => 'Property Like a Pro (PLAP)',
+                                // TODO(content): sign-off needed — writeup below reflects the
+                                // announced strategic partnership; confirm final wording.
+                                'description' => 'Our strategic property sourcing partner, helping clients find and secure investment-ready properties.',
+                            ],
+                            [
+                                'file' => '03drifthome.svg',
+                                'name' => 'Drifthome',
+                                // TODO(content): UNVERIFIED placeholder — drifthome.ai returned
+                                // 403 to this environment's fetch tool, description is a guess
+                                // from the company name only. Please replace with real copy.
+                                'description' => 'Technology partner supporting your home search and move.',
+                            ],
+                            [
+                                'file' => 'bine.png',
+                                'name' => 'Bine Properties',
+                                // TODO(content): UNVERIFIED placeholder — bineproperties.co.uk
+                                // returned 403 to this environment's fetch tool, description is
+                                // a guess from the company name only. Please replace with real copy.
+                                'description' => 'Property sourcing and lettings partner.',
+                            ],
+                        ],
+                    ],
+                    [
+                        'stage' => 'Financial &amp; Protection',
+                        'partners' => [
+                            [
+                                'file' => '01charterwells.svg',
+                                'name' => 'Charterwells',
+                                'description' => 'Independent protection specialists, covering life, income and critical illness cover alongside your mortgage.',
+                            ],
+                            [
+                                'file' => '06fiberpay.svg',
+                                'name' => 'Fiberpay',
+                                // TODO(content): UNVERIFIED placeholder — fiberpay.com returned
+                                // 403 to this environment's fetch tool, description is a guess
+                                // from the company name only. Please replace with real copy.
+                                'description' => 'Our payments technology partner.',
+                            ],
+                            [
+                                'file' => '20sok.png',
+                                'name' => 'Sokda Planner',
+                                // TODO(content): UNVERIFIED placeholder — sokdaplanner.com
+                                // returned 403 to this environment's fetch tool, description is
+                                // a guess from the company name only. Please replace with real copy.
+                                'description' => 'Our financial planning partner.',
+                            ],
+                            [
+                                'file' => '10mortgage-direct.svg',
+                                'name' => 'Mortgage Direct',
+                                // TODO(content): draft wording, please review — our contact for
+                                // mortgages on Spanish property. Folded in here rather than a
+                                // one-off "International Property" heading — it's the only
+                                // international-mortgage entry we have right now.
+                                'description' => 'Our specialist contact for mortgages on Spanish property.',
+                            ],
+                            [
+                                'file' => '16prl.png',
+                                'name' => 'Perry Road Legacy',
+                                // TODO(content): sign-off needed — relabelled from "conveyancing"
+                                // to international estate planning/will-writing per direction;
+                                // confirm final wording.
+                                'description' => 'International estate planning and will-writing, protecting what you\'ve built for the long term.',
+                            ],
+                        ],
+                    ],
+                    [
+                        'stage' => 'Legal &amp; Surveying',
+                        'partners' => [
+                            [
+                                'file' => '02thomas-legal.svg',
+                                'name' => 'Thomas Legal',
+                                'description' => 'Conveyancing solicitors handling the legal transfer of your property.',
+                            ],
+                            [
+                                'file' => '04key-conveyencing.svg',
+                                'name' => 'Key Conveyancing',
+                                'description' => 'Conveyancing solicitors managing contracts, searches and completion.',
+                            ],
+                            [
+                                'file' => '09novello.svg',
+                                'name' => 'Novello Chartered Surveyors',
+                                'description' => 'RICS-regulated chartered surveyors assessing the condition and value of your property.',
+                            ],
+                        ],
+                    ],
+                ];
 
-                    foreach($files as $file) {
-                        // Check for hidden files and only image files
-                        if($file !== "." && $file !== ".." && !str_starts_with($file, '.')) {
-                            $link = isset($partner_links[$file]) ? $partner_links[$file] : '#';
-                            echo "<a class='hp-partners__tile' href='" . $link . "' target='_blank' rel='noopener noreferrer'>";
-                            echo "<img src='" . $url . $file . "' alt='Partner logo' />";
-                            echo "</a>";
-                        }
+                foreach ($partner_journey_stages as $stage) {
+                    echo "<div class='hp-partners__stage'>";
+                    echo "<h3 class='hp-partners__stage-label'>" . $stage['stage'] . "</h3>";
+                    echo "<div class='hp-partners__grid'>";
+                    foreach ($stage['partners'] as $partner) {
+                        echo "<div class='hp-partners__tile'>";
+                        echo "<div class='hp-partners__logo'><img src='" . $url . $partner['file'] . "' alt='" . $partner['name'] . " logo' /></div>";
+                        echo "<h4 class='hp-partners__name'>" . $partner['name'] . "</h4>";
+                        echo "<p class='hp-partners__desc'>" . $partner['description'] . "</p>";
+                        echo "</div>";
                     }
-                ?>
-            </div>
+                    echo "</div>";
+                    echo "</div>";
+                }
+            ?>
         </div>
     </section>
 
