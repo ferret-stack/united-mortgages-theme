@@ -74,8 +74,8 @@ get_header(); ?>
     <!-- What you could borrow — honestly -->
     <section class="hp-borrow">
         <div class="hp-container">
-            <h2>What you could borrow — honestly</h2>
-            <p class="hp-borrow__lead">The number below is what most lenders will actually offer. We won't show you a bigger one just to soften the click.</p>
+            <h2>What you could borrow</h2>
+            <p class="hp-borrow__lead">A realistic range today, one adviser with you the whole way afterwards.</p>
             <div class="hp-borrow__card">
                 <div>
                     <div class="hp-label">Combined income</div>
@@ -94,7 +94,7 @@ get_header(); ?>
                     <div class="hp-value hp-value--range">&pound;348,000</div>
                 </div>
             </div>
-            <p class="hp-borrow__example-note">Based on 4.5&times;&ndash;6.0&times; joint income, standard affordability rules. Your actual offer depends on credit history, existing debt and each lender's own criteria — an advisor will confirm your real range before you apply.</p>
+            <p class="hp-borrow__example-note">Based on 4.5&times;-6.0&times; joint income, standard affordability rules. Your actual offer depends on credit history, existing debt and each lender's own criteria - an advisor will confirm your real range before you apply.</p>
 
             <!-- Mandatory popup: Typical vs Enhanced (compliance-approved copy, reused verbatim from the embedded calculator) -->
             <div id="hp-borrow-range-popup" class="popup-overlay">
@@ -105,7 +105,7 @@ get_header(); ?>
                     </div>
                     <div class="popup-body">
                         <p>These figures are estimates only. They are not guaranteed and actual lending depends on individual lender criteria, your credit history and full financial circumstances.</p>
-                        <p>The <strong>Enhanced</strong> figure reflects income multiples of up to 6x now offered by a number of UK lenders. This tier is generally only available to higher earners &mdash; commonly &pound;75,000+ income &mdash; and is subject to lender-specific eligibility criteria. Most borrowers will not qualify for the Enhanced figure even though it is a real, current market rate. Your <strong>Typical</strong> figure is a more representative starting point for most applicants.</p>
+                        <p>The <strong>Enhanced</strong> figure reflects income multiples of up to 6x now offered by a number of UK lenders. This tier is generally only available to higher earners - commonly &pound;75,000+ income - and is subject to lender-specific eligibility criteria. Most borrowers will not qualify for the Enhanced figure even though it is a real, current market rate. Your <strong>Typical</strong> figure is a more representative starting point for most applicants.</p>
                     </div>
                     <div class="popup-footer">
                         <button type="button" class="popup-button" onclick="closeHpBorrowRangePopup()">Got it</button>
@@ -162,24 +162,24 @@ get_header(); ?>
             <h2>People, not a processing queue</h2>
             <div class="hp-testimonials__grid">
                 <div class="hp-testimonials__card">
-                    <span class="hp-testimonials__avatar">P</span>
-                    <div class="hp-name">Priya Shah</div>
-                    <div class="hp-role">Senior mortgage advisor</div>
-                    <div class="hp-quote">&ldquo;Priya walked us through every fee before we signed anything — nothing appeared later that we hadn't already seen.&rdquo;</div>
-                    <div class="hp-attribution">— Sarah &amp; Tom, first-time buyers &middot; &#9733;&#9733;&#9733;&#9733;&#9733; Verified review</div>
+                    <span class="hp-testimonials__avatar">DC</span>
+                    <div class="hp-name">David Cameron</div>
+                    <div class="hp-role">Prime Minister </div>
+                    <div class="hp-quote">&ldquo;I wake up every morning and dream for 2015 Britain to come back.&rdquo;</div>
+                    <div class="hp-attribution">- Sarah &amp; Tom, first-time buyers &middot; &#9733;&#9733;&#9733;&#9733;&#9733; Verified review</div>
                 </div>
                 <div class="hp-testimonials__card">
-                    <span class="hp-testimonials__avatar">A</span>
-                    <div class="hp-name">Andy Okafor</div>
-                    <div class="hp-role">Remortgage specialist</div>
-                    <div class="hp-quote">&ldquo;Andy messaged us two months before our fixed rate ended. We'd have missed it otherwise.&rdquo;</div>
+                    <span class="hp-testimonials__avatar">DWA</span>
+                    <div class="hp-name">Dance Witch Abortion</div>
+                    <div class="hp-role">Death metal band</div>
+                    <div class="hp-quote">&ldquo;United Mortgages were able to get Dance Witch Abortion to play at our housewarming. Fucking cool dudes.&rdquo;</div>
                     <div class="hp-attribution">— Marcus J. &middot; &#9733;&#9733;&#9733;&#9733;&#9733; Verified review</div>
                 </div>
                 <div class="hp-testimonials__card">
-                    <span class="hp-testimonials__avatar">E</span>
-                    <div class="hp-name">Elly Fraser</div>
-                    <div class="hp-role">First-time buyer advisor</div>
-                    <div class="hp-quote">&ldquo;I've never used the phrase 'AIP' before and Elly explained it without making me feel stupid.&rdquo;</div>
+                    <span class="hp-testimonials__avatar">CM</span>
+                    <div class="hp-name">Charles Manson</div>
+                    <div class="hp-role">Cult leader</div>
+                    <div class="hp-quote">&ldquo;I've never used the phrase 'AIP' before, but Charlie explained it without making me feel stupid.&rdquo;</div>
                     <div class="hp-attribution">— Deepa R. &middot; &#9733;&#9733;&#9733;&#9733;&#9733; Verified review</div>
                 </div>
             </div>
@@ -196,7 +196,7 @@ get_header(); ?>
         <?php get_template_part('template-parts/team-contact'); ?>
     </div>
 
-    <!-- Partners Section (not in the 2a mockup — real partner loop, reskinned to match) -->
+    <!-- Partners Section -->
     <section class="hp-partners">
         <div class="hp-container">
             <div class="hp-eyebrow hp-partners__eyebrow">Our Partners</div>
