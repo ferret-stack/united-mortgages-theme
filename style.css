@@ -11309,7 +11309,26 @@ input#borrow-deposit::placeholder {
     border-radius: 16px;
 }
 
-/* -------------------- Partners (reskin, homepage-only, unique markup) -------------------- */
+/* -------------------- Partners (reskin, homepage-only, unique markup)
+   Card treatment matches the "Our Mortgages" card recipe (see
+   .um-mortgages-grid-wrap .mortgage-service-card in redesign.css / §5 of
+   REDESIGN_HANDOVER.md): white surface, hairline border, accent-on-hover.
+   These are informational tiles grouped by journey stage, not outbound
+   links or a logo wall — no grayscale-at-rest badge treatment.
+
+   Icon tint: every logo file checked in /assets/partners/ is pale/white
+   artwork built for a dark background (confirmed by pixel-sampling each
+   one — average RGB ~250-255, i.e. near-white ink), so none of them are
+   legible as-is on a white card. Reusing the same fix already established
+   in this codebase for pre-coloured source art (see the AIP Overview page
+   comment in redesign.css): `brightness(0)` flattens the opaque pixels to
+   solid black regardless of source colour, then the standard
+   invert/sepia/hue-rotate chain (REDESIGN_HANDOVER.md §3) tints that black
+   to --hp-accent. This does recolour third-party marks to our accent blue —
+   flagging that as an assumption to confirm, but it's the same treatment
+   these logos already got under the old dark-chip design (shown as a single
+   flat colour, just white-on-dark instead of accent-on-light), not a new
+   liberty. */
 .hp-partners {
     background: var(--hp-cream);
     padding: 64px 0 72px;
@@ -11320,48 +11339,87 @@ input#borrow-deposit::placeholder {
     color: var(--hp-muted);
 }
 
+.hp-partners__stage {
+    margin-top: 40px;
+}
+
+.hp-partners__stage:first-of-type {
+    margin-top: 28px;
+}
+
+.hp-partners__stage-label {
+    font-family: var(--hp-font-display);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--hp-accent-text);
+    text-align: center;
+    margin: 0 0 20px;
+}
+
 .hp-partners__grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
     max-width: 1000px;
     margin: 0 auto;
 }
 
 .hp-partners__tile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 190px;
-    height: 84px;
-    /* Partner logos are supplied as light/white artwork (designed for a dark
-       background) — a dark chip keeps them visible rather than reskinning
-       every third-party logo file. */
-    background: var(--hp-ink);
-    border: 1px solid var(--hp-ink);
-    border-radius: 12px;
-    transition: border-color .2s ease, transform .2s ease;
-    padding: 16px;
+    background: #fff;
+    border: 1px solid var(--hp-border);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: left;
+    transition: transform .2s ease, border-color .2s ease;
 }
 
 .hp-partners__tile:hover {
     border-color: var(--hp-accent);
-    transform: translateY(-2px);
+    transform: translateY(-4px);
 }
 
-.hp-partners__tile img {
-    max-width: 100%;
-    max-height: 100%;
+.hp-partners__icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 0 16px;
+    background: var(--hp-pill-bg);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hp-partners__icon img {
+    max-width: 70%;
+    max-height: 70%;
     width: auto;
     height: auto;
     object-fit: contain;
+    filter: brightness(0) invert(37%) sepia(93%) saturate(1352%) hue-rotate(180deg) brightness(93%) contrast(101%);
 }
 
-@media (max-width: 768px) {
-    .hp-partners__tile {
-        width: 140px;
-        height: 64px;
+.hp-partners__name {
+    font-family: var(--hp-font-display);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--hp-ink);
+    margin: 0 0 8px;
+}
+
+.hp-partners__desc {
+    font-family: var(--hp-font-body);
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--hp-body);
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .hp-partners__grid {
+        grid-template-columns: 1fr;
     }
 }
 
