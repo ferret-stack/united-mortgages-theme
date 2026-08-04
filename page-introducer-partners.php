@@ -51,6 +51,10 @@
         .um-introducers__name {
             font-weight: 600;
             color: var(--hp-ink, #16241f);
+            text-decoration: none;
+        }
+        .um-introducers__name:hover {
+            text-decoration: underline;
         }
         .um-introducers__role {
             color: var(--hp-muted, #6b7871);
@@ -60,33 +64,49 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<?php
+    $introducer_agents = [
+        [
+            'name' => 'Mark Newton',
+            'role' => 'eXp UK, Estate Agent',
+            'url'  => 'https://marknewton.exp.uk.com/',
+        ],
+        [
+            'name' => 'Paul Berg',
+            'role' => 'eXp UK, Estate Agent',
+            'url'  => 'https://paulberg.exp.uk.com/',
+        ],
+        [
+            'name' => 'Benn Colling',
+            'role' => 'eXp UK, Estate Agent',
+            'url'  => 'https://benncolling.exp.uk.com/',
+        ],
+        [
+            'name' => 'Michal Sikora',
+            'role' => 'eXp UK, Estate Agent',
+            'url'  => 'https://michalsikora.exp.uk.com/',
+        ],
+        [
+            'name' => 'Grant Boonzaier',
+            'role' => 'eXp UK, Estate Agent',
+            'url'  => 'https://grantboonzaier.exp.uk.com/',
+        ],
+        [
+            'name' => 'Richard Aves',
+            'role' => 'eXp UK, Estate Agent',
+            'url'  => 'https://richardaves.exp.uk.com/',
+        ],
+    ];
+?>
 <div class="um-introducers">
     <h1>Introducer Partners</h1>
     <ul class="um-introducers__list">
+        <?php foreach ($introducer_agents as $agent) : ?>
         <li>
-            <span class="um-introducers__name">Mark Newton</span>
-            &mdash; <span class="um-introducers__role">eXp UK, Estate Agent<!-- TODO(content): confirm area --></span>
+            <a class="um-introducers__name" href="<?php echo $agent['url']; ?>" target="_blank" rel="noopener noreferrer"><?php echo $agent['name']; ?></a>
+            &mdash; <span class="um-introducers__role"><?php echo $agent['role']; ?><!-- TODO(content): confirm area --></span>
         </li>
-        <li>
-            <span class="um-introducers__name">Paul Berg</span>
-            &mdash; <span class="um-introducers__role">eXp UK, Estate Agent<!-- TODO(content): confirm area --></span>
-        </li>
-        <li>
-            <span class="um-introducers__name">Benn Colling</span>
-            &mdash; <span class="um-introducers__role">eXp UK, Estate Agent<!-- TODO(content): confirm area --></span>
-        </li>
-        <li>
-            <span class="um-introducers__name">Michal Sikora</span>
-            &mdash; <span class="um-introducers__role">eXp UK, Estate Agent<!-- TODO(content): confirm area --></span>
-        </li>
-        <li>
-            <span class="um-introducers__name">Grant Boonzaier</span>
-            &mdash; <span class="um-introducers__role">eXp UK, Estate Agent<!-- TODO(content): confirm area --></span>
-        </li>
-        <li>
-            <span class="um-introducers__name">Richard Aves</span>
-            &mdash; <span class="um-introducers__role">eXp UK, Estate Agent<!-- TODO(content): confirm area --></span>
-        </li>
+        <?php endforeach; ?>
     </ul>
 </div>
 

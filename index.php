@@ -210,13 +210,12 @@ get_header(); ?>
          (06fiberpay.svg), Bine Properties (bine.png), Sokda Planner / SOK
          (20sok.png). Files are left untouched in /assets/partners/.
 
-         David Charles (05david-charles.svg) and Mortgage Direct
-         (10mortgage-direct.svg) are also held out of both loops for now,
-         pending confirmation of referral direction.
+         11fortress.svg — no longer a partner (confirmed), left untouched in
+         /assets/partners/ but not referenced anywhere.
 
-         11fortress.svg is not addressed by current sign-off at all (not in
-         the confirmed list, the removal list, or either hold-out list) — left
-         untouched and unplaced; flagging for the client to categorise. -->
+         David Charles (05david-charles.svg) is still held out for now,
+         pending a description/stage from the client — not yet placed in
+         either loop. -->
     <section class="hp-partners">
         <div class="hp-container">
             <div class="hp-eyebrow hp-partners__eyebrow">Our Partners</div>
@@ -233,6 +232,18 @@ get_header(); ?>
                                 // TODO(content): sign-off needed — writeup below reflects the
                                 // announced strategic partnership; confirm final wording.
                                 'description' => 'Our strategic property sourcing partner, helping clients find and secure investment-ready properties.',
+                            ],
+                        ],
+                    ],
+                    [
+                        'stage' => 'International Property',
+                        'partners' => [
+                            [
+                                'file' => '10mortgage-direct.svg',
+                                'name' => 'Mortgage Direct',
+                                // TODO(content): draft wording, please review — our contact
+                                // for mortgages on Spanish property.
+                                'description' => 'Our specialist contact for mortgages on Spanish property.',
                             ],
                         ],
                     ],
@@ -292,9 +303,11 @@ get_header(); ?>
                     echo "<div class='hp-partners__grid'>";
                     foreach ($stage['partners'] as $partner) {
                         echo "<div class='hp-partners__tile'>";
-                        echo "<div class='hp-partners__icon'><img src='" . $url . $partner['file'] . "' alt='" . $partner['name'] . " logo' /></div>";
+                        echo "<div class='hp-partners__logo'><img src='" . $url . $partner['file'] . "' alt='" . $partner['name'] . " logo' /></div>";
+                        echo "<div class='hp-partners__card'>";
                         echo "<h4 class='hp-partners__name'>" . $partner['name'] . "</h4>";
                         echo "<p class='hp-partners__desc'>" . $partner['description'] . "</p>";
+                        echo "</div>";
                         echo "</div>";
                     }
                     echo "</div>";

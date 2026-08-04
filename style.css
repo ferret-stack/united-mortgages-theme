@@ -11316,6 +11316,12 @@ input#borrow-deposit::placeholder {
    These are informational tiles grouped by journey stage, not outbound
    links or a logo wall — no grayscale-at-rest badge treatment.
 
+   Logo sits outside the text card, to the left, in its own larger white
+   chip (.hp-partners__logo) — the in-card icon-chip version cramped the
+   logo down to ~36px and read as scrunched/bunched on real screens, so
+   the logo and the name/description card are now two siblings inside
+   .hp-partners__tile rather than the logo living inside the card.
+
    Icon tint: every logo file checked in /assets/partners/ is pale/white
    artwork built for a dark background (confirmed by pixel-sampling each
    one — average RGB ~250-255, i.e. near-white ink), so none of them are
@@ -11360,45 +11366,60 @@ input#borrow-deposit::placeholder {
 
 .hp-partners__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 24px;
     max-width: 1000px;
     margin: 0 auto;
 }
 
 .hp-partners__tile {
-    background: #fff;
-    border: 1px solid var(--hp-border);
-    border-radius: 16px;
-    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
     text-align: left;
-    transition: transform .2s ease, border-color .2s ease;
+    transition: transform .2s ease;
 }
 
 .hp-partners__tile:hover {
-    border-color: var(--hp-accent);
     transform: translateY(-4px);
 }
 
-.hp-partners__icon {
-    width: 52px;
-    height: 52px;
-    margin: 0 0 16px;
-    background: var(--hp-pill-bg);
-    border-radius: 12px;
+.hp-partners__tile:hover .hp-partners__logo,
+.hp-partners__tile:hover .hp-partners__card {
+    border-color: var(--hp-accent);
+}
+
+.hp-partners__logo {
+    flex: 0 0 88px;
+    width: 88px;
+    height: 88px;
+    background: #fff;
+    border: 1px solid var(--hp-border);
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    transition: border-color .2s ease;
 }
 
-.hp-partners__icon img {
-    max-width: 70%;
-    max-height: 70%;
+.hp-partners__logo img {
+    max-width: 64%;
+    max-height: 64%;
     width: auto;
     height: auto;
     object-fit: contain;
     filter: brightness(0) invert(37%) sepia(93%) saturate(1352%) hue-rotate(180deg) brightness(93%) contrast(101%);
+}
+
+.hp-partners__card {
+    flex: 1 1 auto;
+    min-width: 0;
+    background: #fff;
+    border: 1px solid var(--hp-border);
+    border-radius: 16px;
+    padding: 18px 22px;
+    transition: border-color .2s ease;
 }
 
 .hp-partners__name {
@@ -11406,7 +11427,7 @@ input#borrow-deposit::placeholder {
     font-size: 15px;
     font-weight: 600;
     color: var(--hp-ink);
-    margin: 0 0 8px;
+    margin: 0 0 6px;
 }
 
 .hp-partners__desc {
@@ -11420,6 +11441,12 @@ input#borrow-deposit::placeholder {
 @media (max-width: 600px) {
     .hp-partners__grid {
         grid-template-columns: 1fr;
+    }
+
+    .hp-partners__logo {
+        flex-basis: 64px;
+        width: 64px;
+        height: 64px;
     }
 }
 
