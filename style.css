@@ -10774,7 +10774,7 @@ input#borrow-deposit::placeholder {
 /* -------------------- Hero -------------------- */
 .hp-hero {
     background: var(--hp-cream);
-    margin-bottom: 50px;
+    padding-bottom: 20px;
 }
 
 .hp-hero__grid {
@@ -11118,7 +11118,7 @@ input#borrow-deposit::placeholder {
     font-size: 18px;
     font-weight: 600;
     color: var(--hp-ink);
-    margin: 0 0 20px;
+    margin: 0 35px 20px;
 }
 
 @media (max-width: 700px) {
@@ -11365,9 +11365,15 @@ input#borrow-deposit::placeholder {
 }
 
 .hp-partners__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+}
+
+.hp-partners__grid > .hp-partners__tile {
+  flex: 0 1 calc((100% - 2 * 28px) / 3);
+  min-width: 260px;
 }
 
 .hp-partners__tile {
@@ -11443,3 +11449,4 @@ input#borrow-deposit::placeholder {
     font-weight: 600;
     margin: 0 0 20px;
 }
+

@@ -162,24 +162,24 @@ get_header(); ?>
             <h2>People, not a processing queue</h2>
             <div class="hp-testimonials__grid">
                 <div class="hp-testimonials__card">
-                    <span class="hp-testimonials__avatar">P</span>
-                    <div class="hp-name">Priya Shah</div>
-                    <div class="hp-role">Senior mortgage advisor</div>
-                    <div class="hp-quote">&ldquo;Priya walked us through every fee before we signed anything — nothing appeared later that we hadn't already seen.&rdquo;</div>
-                    <div class="hp-attribution">— Sarah &amp; Tom, first-time buyers &middot; &#9733;&#9733;&#9733;&#9733;&#9733; Verified review</div>
+                    <span class="hp-testimonials__avatar">DC</span>
+                    <div class="hp-name">David Cameron</div>
+                    <div class="hp-role">Prime Minister </div>
+                    <div class="hp-quote">&ldquo;I wake up every morning and dream for 2015 Britain to come back.&rdquo;</div>
+                    <div class="hp-attribution">- Sarah &amp; Tom, first-time buyers &middot; &#9733;&#9733;&#9733;&#9733;&#9733; Verified review</div>
                 </div>
                 <div class="hp-testimonials__card">
-                    <span class="hp-testimonials__avatar">A</span>
-                    <div class="hp-name">Andy Okafor</div>
-                    <div class="hp-role">Remortgage specialist</div>
-                    <div class="hp-quote">&ldquo;Andy messaged us two months before our fixed rate ended. We'd have missed it otherwise.&rdquo;</div>
+                    <span class="hp-testimonials__avatar">DWA</span>
+                    <div class="hp-name">Dance Witch Abortion</div>
+                    <div class="hp-role">Death metal band</div>
+                    <div class="hp-quote">&ldquo;United Mortgages were able to get Dance Witch Abortion to play at our housewarming. Fucking cool dudes.&rdquo;</div>
                     <div class="hp-attribution">— Marcus J. &middot; &#9733;&#9733;&#9733;&#9733;&#9733; Verified review</div>
                 </div>
                 <div class="hp-testimonials__card">
-                    <span class="hp-testimonials__avatar">E</span>
-                    <div class="hp-name">Elly Fraser</div>
-                    <div class="hp-role">First-time buyer advisor</div>
-                    <div class="hp-quote">&ldquo;I've never used the phrase 'AIP' before and Elly explained it without making me feel stupid.&rdquo;</div>
+                    <span class="hp-testimonials__avatar">CM</span>
+                    <div class="hp-name">Charles Manson</div>
+                    <div class="hp-role">Cult leader</div>
+                    <div class="hp-quote">&ldquo;I've never used the phrase 'AIP' before, but Charlie explained it without making me feel stupid.&rdquo;</div>
                     <div class="hp-attribution">— Deepa R. &middot; &#9733;&#9733;&#9733;&#9733;&#9733; Verified review</div>
                 </div>
             </div>
@@ -295,20 +295,19 @@ get_header(); ?>
                                 // international-mortgage entry we have right now.
                                 'description' => 'Our specialist contact for mortgages on Spanish property.',
                             ],
-                        ],
-                    ],
-                    [
-                        'stage' => 'Survey',
-                        'partners' => [
-                            [
-                                'file' => '09novello.svg',
-                                'name' => 'Novello Chartered Surveyors',
-                                'description' => 'RICS-regulated chartered surveyors assessing the condition and value of your property.',
+
+                                                        [
+                                'file' => '16prl.png',
+                                'name' => 'Perry Road Legacy',
+                                // TODO(content): sign-off needed — relabelled from "conveyancing"
+                                // to international estate planning/will-writing per direction;
+                                // confirm final wording.
+                                'description' => 'International estate planning and will-writing, protecting what you\'ve built for the long term.',
                             ],
                         ],
                     ],
                     [
-                        'stage' => 'Legal',
+                        'stage' => 'Legal &amp; Surveying',
                         'partners' => [
                             [
                                 'file' => '02thomas-legal.svg',
@@ -320,18 +319,10 @@ get_header(); ?>
                                 'name' => 'Key Conveyancing',
                                 'description' => 'Conveyancing solicitors managing contracts, searches and completion.',
                             ],
-                        ],
-                    ],
-                    [
-                        'stage' => 'Everything After',
-                        'partners' => [
-                            [
-                                'file' => '16prl.png',
-                                'name' => 'Perry Road Legacy',
-                                // TODO(content): sign-off needed — relabelled from "conveyancing"
-                                // to international estate planning/will-writing per direction;
-                                // confirm final wording.
-                                'description' => 'International estate planning and will-writing, protecting what you\'ve built for the long term.',
+                                [
+                                'file' => '09novello.svg',
+                                'name' => 'Novello Chartered Surveyors',
+                                'description' => 'RICS-regulated chartered surveyors assessing the condition and value of your property.',
                             ],
                         ],
                     ],
