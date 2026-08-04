@@ -11310,17 +11310,17 @@ input#borrow-deposit::placeholder {
 }
 
 /* -------------------- Partners (reskin, homepage-only, unique markup)
-   Card treatment matches the "Our Mortgages" card recipe (see
-   .um-mortgages-grid-wrap .mortgage-service-card in redesign.css / §5 of
-   REDESIGN_HANDOVER.md): white surface, hairline border, accent-on-hover.
+   Card treatment mirrors .hp-mortgages-wrap .mortgage-service-card exactly
+   (same file, the "Our Mortgages" section directly above this one) — that
+   is itself the live implementation of the §5 "Our Mortgages" card recipe
+   from REDESIGN_HANDOVER.md: white surface, hairline border, accent-on-
+   hover, 48px pill-bg icon chip. Icon + name + description sit together in
+   one bordered card (.hp-partners__tile), not a separate logo box beside a
+   separate text box. Grid is a fixed 3-column layout with the same 900px
+   collapse-to-1-column breakpoint as the Our Mortgages grid on this same
+   page, so cards align in rows instead of wrapping at inconsistent widths.
    These are informational tiles grouped by journey stage, not outbound
    links or a logo wall — no grayscale-at-rest badge treatment.
-
-   Logo sits outside the text card, to the left, in its own larger white
-   chip (.hp-partners__logo) — the in-card icon-chip version cramped the
-   logo down to ~36px and read as scrunched/bunched on real screens, so
-   the logo and the name/description card are now two siblings inside
-   .hp-partners__tile rather than the logo living inside the card.
 
    Icon tint: every logo file checked in /assets/partners/ is pale/white
    artwork built for a dark background (confirmed by pixel-sampling each
@@ -11366,87 +11366,66 @@ input#borrow-deposit::placeholder {
 
 .hp-partners__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-    gap: 24px;
-    max-width: 1000px;
-    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
 }
 
 .hp-partners__tile {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    background: #fff;
+    color: var(--hp-body-2);
+    border: 1px solid var(--hp-border);
+    border-radius: 16px;
+    padding: 26px;
     text-align: left;
-    transition: transform .2s ease;
+    transition: transform .2s ease, border-color .2s ease;
 }
 
 .hp-partners__tile:hover {
+    border-color: var(--hp-accent);
     transform: translateY(-4px);
 }
 
-.hp-partners__tile:hover .hp-partners__logo,
-.hp-partners__tile:hover .hp-partners__card {
-    border-color: var(--hp-accent);
-}
-
-.hp-partners__logo {
-    flex: 0 0 88px;
-    width: 88px;
-    height: 88px;
-    background: #fff;
-    border: 1px solid var(--hp-border);
-    border-radius: 16px;
+.hp-partners__icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 0 14px;
+    background: var(--hp-pill-bg);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    transition: border-color .2s ease;
 }
 
-.hp-partners__logo img {
-    max-width: 64%;
-    max-height: 64%;
+.hp-partners__icon img {
+    max-width: 55%;
+    max-height: 55%;
     width: auto;
     height: auto;
     object-fit: contain;
     filter: brightness(0) invert(37%) sepia(93%) saturate(1352%) hue-rotate(180deg) brightness(93%) contrast(101%);
 }
 
-.hp-partners__card {
-    flex: 1 1 auto;
-    min-width: 0;
-    background: #fff;
-    border: 1px solid var(--hp-border);
-    border-radius: 16px;
-    padding: 18px 22px;
-    transition: border-color .2s ease;
-}
-
 .hp-partners__name {
     font-family: var(--hp-font-display);
     font-size: 15px;
-    font-weight: 600;
+    letter-spacing: .04em;
     color: var(--hp-ink);
-    margin: 0 0 6px;
+    margin: 0 0 10px;
 }
 
 .hp-partners__desc {
     font-family: var(--hp-font-body);
-    font-size: 13.5px;
+    font-size: 14px;
     line-height: 1.6;
+    font-weight: 400;
     color: var(--hp-body);
     margin: 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
     .hp-partners__grid {
         grid-template-columns: 1fr;
-    }
-
-    .hp-partners__logo {
-        flex-basis: 64px;
-        width: 64px;
-        height: 64px;
     }
 }
 

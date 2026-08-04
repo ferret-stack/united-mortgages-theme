@@ -219,7 +219,14 @@ get_header(); ?>
 
          David Charles (05david-charles.svg) is still held out for now,
          pending a description/stage from the client — not yet placed in
-         either loop. -->
+         either loop.
+
+         Only the five confirmed stages (Property Sourcing, Financial &
+         Protection, Survey, Legal, Everything After) get their own heading.
+         Mortgage Direct doesn't cleanly fit an existing stage on its own,
+         but per direction a single-entry stage shouldn't get a standalone
+         heading, so it's folded into Financial & Protection rather than
+         given its own "International Property" heading. -->
     <section class="hp-partners">
         <div class="hp-container">
             <div class="hp-eyebrow hp-partners__eyebrow">Our Partners</div>
@@ -256,18 +263,6 @@ get_header(); ?>
                         ],
                     ],
                     [
-                        'stage' => 'International Property',
-                        'partners' => [
-                            [
-                                'file' => '10mortgage-direct.svg',
-                                'name' => 'Mortgage Direct',
-                                // TODO(content): draft wording, please review — our contact
-                                // for mortgages on Spanish property.
-                                'description' => 'Our specialist contact for mortgages on Spanish property.',
-                            ],
-                        ],
-                    ],
-                    [
                         'stage' => 'Financial &amp; Protection',
                         'partners' => [
                             [
@@ -290,6 +285,15 @@ get_header(); ?>
                                 // returned 403 to this environment's fetch tool, description is
                                 // a guess from the company name only. Please replace with real copy.
                                 'description' => 'Our financial planning partner.',
+                            ],
+                            [
+                                'file' => '10mortgage-direct.svg',
+                                'name' => 'Mortgage Direct',
+                                // TODO(content): draft wording, please review — our contact for
+                                // mortgages on Spanish property. Folded in here rather than a
+                                // one-off "International Property" heading — it's the only
+                                // international-mortgage entry we have right now.
+                                'description' => 'Our specialist contact for mortgages on Spanish property.',
                             ],
                         ],
                     ],
@@ -319,7 +323,7 @@ get_header(); ?>
                         ],
                     ],
                     [
-                        'stage' => 'After Completion',
+                        'stage' => 'Everything After',
                         'partners' => [
                             [
                                 'file' => '16prl.png',
@@ -339,11 +343,9 @@ get_header(); ?>
                     echo "<div class='hp-partners__grid'>";
                     foreach ($stage['partners'] as $partner) {
                         echo "<div class='hp-partners__tile'>";
-                        echo "<div class='hp-partners__logo'><img src='" . $url . $partner['file'] . "' alt='" . $partner['name'] . " logo' /></div>";
-                        echo "<div class='hp-partners__card'>";
+                        echo "<div class='hp-partners__icon'><img src='" . $url . $partner['file'] . "' alt='" . $partner['name'] . " logo' /></div>";
                         echo "<h4 class='hp-partners__name'>" . $partner['name'] . "</h4>";
                         echo "<p class='hp-partners__desc'>" . $partner['description'] . "</p>";
-                        echo "</div>";
                         echo "</div>";
                     }
                     echo "</div>";
