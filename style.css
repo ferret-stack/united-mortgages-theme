@@ -11468,3 +11468,7 @@ input#borrow-deposit::placeholder {
     margin: 0 0 20px;
 }
 
+.more-mortgages {
+    text-align: center;
+    transform: translateY(25px);
+}
