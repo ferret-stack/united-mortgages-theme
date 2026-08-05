@@ -50,6 +50,37 @@ get_header(); ?>
                     <p>Time for a better deal? Whether your fixed rate is ending or you want to release equity, we'll find the right remortgage to save you money.</p>
                     <a href="<?php echo home_url('/remortgaging'); ?>" class="btn-service">I'M REMORTGAGING</a>
                 </div>
+
+                <div class="mortgage-service-card">
+                    <div class="service-icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-mortgages/self-employed.svg" alt="Entrepreneurs, Founders, and Self-Employed">
+                    </div>
+                    <h3>Entrepreneurs, Founders, and Self-Employed</h3>
+                    <p>Traditional lenders don't understand your business model. We do. Whether you're
+                    a contractor on day rates, a director taking dividends, or a founder with equity
+                    compensation, we know how to present your income in a way that gets you approved.</p>
+                    <a href="<?php echo home_url('/efse'); ?>" class="btn-service">I'M SELF EMPLOYED</a>
+                </div>
+
+                <div class="mortgage-service-card">
+                    <div class="service-icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-mortgages/handshake.svg" alt="Expats">
+                    </div>
+                    <h3>EXPATS</h3>
+                    <p>You've put in the miles, and we'll go the distance. A mortgage in the UK shouldn't feel out of reach; we understand which lenders offer expat mortgages and their expat mortgage criteria</p>
+                    <a href="<?php echo home_url('/expats'); ?>" class="btn-service">I'M AN EXPAT</a>
+                </div>
+
+                <div class="mortgage-service-card">
+                    <div class="service-icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-mortgages/other-mortgages.svg" alt="BtL Investors">
+                    </div>
+                    <h3>Buy-to-Let Investors</h3>
+                    <p>Building a property portfolio requires lenders who understand rental yields,
+                    stress tests, and portfolio strategies. We work with specialist BTL lenders
+                    who see investment properties as business assets, not consumer purchases.</p>
+                    <a href="<?php echo home_url('/buy-to-let'); ?>" class="btn-service">I'M AN INVESTOR</a>
+                </div>
             </div>
         </div>
     </section>

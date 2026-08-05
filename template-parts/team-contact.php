@@ -11,10 +11,10 @@
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/michael-team.png" alt="Team Member" class="team-avatar">
                     </div>
       
-                    <h2 class="team-title">Speak to <span class="bold-text">Our Team</span></h2>
+                    <h2 class="team-title"><span class="bold-text">One adviser. </span>Evenings, weekends, and bank holidays included.</span></h2>
                     
                     <p class="team-description">
-                        Our team is available <strong>365 days a year.</strong> Yep; that includes evenings, weekends, and bank holidays. Questions at 10pm on a Sunday? We're here. Reach out to begin your journey with us.
+                        Whether you're just starting to explore your options or partway through a case, you'll deal with one named adviser - <strong>not whoever's free.</strong><br>Reach out below and that's who you'll speak to, right through to completion.
                     </p>
                     
                     <div class="trustpilot-widget">

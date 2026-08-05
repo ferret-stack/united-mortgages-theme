@@ -22,10 +22,10 @@ get_header(); ?>
                 <!-- Calculator Tabs -->
                 <div class="calculator-tabs">
                     <button class="calculator-tab active" data-calculator="borrow">HOW MUCH CAN I BORROW?</button>
-                    <button class="calculator-tab" data-calculator="incometax">INCOME TAX CALCULATOR</button>
                     <button class="calculator-tab" data-calculator="repayment">REPAYMENT CALCULATOR</button>
                     <button class="calculator-tab" data-calculator="overpayment">OVERPAYMENT CALCULATOR</button>
                     <button class="calculator-tab" data-calculator="stampduty">STAMP DUTY CALCULATOR</button>
+                    <button class="calculator-tab" data-calculator="incometax">INCOME TAX CALCULATOR</button>
                     <button class="calculator-tab" data-calculator="dividend">DIVIDEND TAX CALCULATOR</button>
                 </div>
                 
