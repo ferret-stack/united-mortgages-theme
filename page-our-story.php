@@ -183,9 +183,8 @@ get_header(); ?>
                         <p class="um-founder-title">Technical Advisor<span class="postnom"> &middot; CeMAP</span></p>
                     </div>
                     <div class="um-founder-bio">
-                        <p>Muki built her career in communications across the green energy sector, working with Evident, Drax Group, and National Grid.</p>
-                        <p>Educated at Beijing International Studies University and the University of Edinburgh, Muki embraces diverse voices and believes in the power of listening: communication comes after understanding what is truly desired.</p>
-                        <p>As Technical Advisor at United Mortgages&reg;, she creatively leads the firm's marketing and communications strategy.</p>
+                        <p>One of the founding members, Muki brings her love for innovation, creativity, and communication to the team. Muki embraces diverse voices and believes in the power of connection and deep listening. A holder of CEMAP and BSC in Business & Marketing, she prides herself on understanding clients and partners by asking the right questions, before developing solutions to achieve their goals.</p>
+                        <p>As Founders Associate at United Mortgages&reg;, she focuses her effort on mortgage advisory, as well as supporting the firm's partnership and communications.</p>
                     </div>
                 </div>
 
