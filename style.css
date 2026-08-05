@@ -11183,7 +11183,7 @@ input#borrow-deposit::placeholder {
 
 /* -------------------- Testimonials -------------------- */
 .hp-testimonials {
-    background: var(--hp-cream-2);
+    background: var(--hp-cream-blue);
     padding: 64px 0;
 }
 
