@@ -68,6 +68,7 @@ get_header(); ?>
                 <p>Find and apply for the right mortgage with our expert support. Whether you're buying your first home or planning your next move, it all starts here.</p>
             </div>
             <?php get_template_part('template-parts/mortgage-type-grid'); ?>
+            <div class="more-mortgages"><a href="/our-mortgages">See more mortgage options</a></div>
         </div>
     </section>
 
@@ -251,13 +252,14 @@ get_header(); ?>
                         'stage' => 'Property Sourcing',
                         'partners' => [
                             [
-                                'file' => '12plap.png',
-                                'name' => 'Property Like a Pro (PLAP)',
-                                // TODO(content): sign-off needed — writeup below reflects the
-                                // announced strategic partnership; confirm final wording.
-                                'description' => 'Our strategic property sourcing partner, helping clients find and secure investment-ready properties.',
+                                'file' => 'bine.png',
+                                'name' => 'Bine Properties',
+                                // TODO(content): UNVERIFIED placeholder — bineproperties.co.uk
+                                // returned 403 to this environment's fetch tool, description is
+                                // a guess from the company name only. Please replace with real copy.
+                                'description' => 'Property sourcing and lettings partner.',
                             ],
-                            [
+                                [
                                 'file' => '03drifthome.svg',
                                 'name' => 'Drifthome',
                                 // TODO(content): UNVERIFIED placeholder — drifthome.ai returned
@@ -266,12 +268,11 @@ get_header(); ?>
                                 'description' => 'Technology partner supporting your home search and move.',
                             ],
                             [
-                                'file' => 'bine.png',
-                                'name' => 'Bine Properties',
-                                // TODO(content): UNVERIFIED placeholder — bineproperties.co.uk
-                                // returned 403 to this environment's fetch tool, description is
-                                // a guess from the company name only. Please replace with real copy.
-                                'description' => 'Property sourcing and lettings partner.',
+                                'file' => '12plap.png',
+                                'name' => 'Property Like a Pro',
+                                // TODO(content): sign-off needed — writeup below reflects the
+                                // announced strategic partnership; confirm final wording.
+                                'description' => 'Our strategic property sourcing partner, helping clients find and secure investment-ready properties.',
                             ],
                         ],
                     ],
@@ -291,15 +292,7 @@ get_header(); ?>
                                 // from the company name only. Please replace with real copy.
                                 'description' => 'Our payments technology partner.',
                             ],
-                            [
-                                'file' => '20sok.png',
-                                'name' => 'Sokda Planner',
-                                // TODO(content): UNVERIFIED placeholder — sokdaplanner.com
-                                // returned 403 to this environment's fetch tool, description is
-                                // a guess from the company name only. Please replace with real copy.
-                                'description' => 'Our financial planning partner.',
-                            ],
-                            [
+                                [
                                 'file' => '10mortgage-direct.svg',
                                 'name' => 'Mortgage Direct',
                                 // TODO(content): draft wording, please review — our contact for
@@ -308,7 +301,7 @@ get_header(); ?>
                                 // international-mortgage entry we have right now.
                                 'description' => 'Our specialist contact for mortgages on Spanish property.',
                             ],
-                            [
+                                [
                                 'file' => '16prl.png',
                                 'name' => 'Perry Road Legacy',
                                 // TODO(content): sign-off needed — relabelled from "conveyancing"
@@ -316,16 +309,19 @@ get_header(); ?>
                                 // confirm final wording.
                                 'description' => 'International estate planning and will-writing, protecting what you\'ve built for the long term.',
                             ],
+                            [
+                                'file' => '20sok.png',
+                                'name' => 'Sokda Planner',
+                                // TODO(content): UNVERIFIED placeholder — sokdaplanner.com
+                                // returned 403 to this environment's fetch tool, description is
+                                // a guess from the company name only. Please replace with real copy.
+                                'description' => 'Our financial planning partner.',
+                            ],
                         ],
                     ],
                     [
                         'stage' => 'Legal &amp; Surveying',
                         'partners' => [
-                            [
-                                'file' => '02thomas-legal.svg',
-                                'name' => 'Thomas Legal',
-                                'description' => 'Conveyancing solicitors handling the legal transfer of your property.',
-                            ],
                             [
                                 'file' => '04key-conveyencing.svg',
                                 'name' => 'Key Conveyancing',
@@ -334,7 +330,12 @@ get_header(); ?>
                             [
                                 'file' => '09novello.svg',
                                 'name' => 'Novello Chartered Surveyors',
-                                'description' => 'RICS-regulated chartered surveyors assessing the condition and value of your property.',
+                                'description' => 'Chartered surveyors assessing the condition and value of your property.',
+                            ],
+                            [
+                                'file' => '02thomas-legal.svg',
+                                'name' => 'Thomas Legal',
+                                'description' => 'Conveyancing solicitors handling the legal transfer of your property.',
                             ],
                         ],
                     ],
