@@ -180,7 +180,7 @@ get_header(); ?>
                     </div>
                     <div class="um-founder-header">
                         <h3 class="um-founder-name">MUKI LIU <a href="https://www.linkedin.com/in/muki-liu-844444193" target="_blank" class="um-founder-link">in</a></h3>
-                        <p class="um-founder-title">Technical Advisor<span class="postnom"> &middot; CeMAP</span></p>
+                        <p class="um-founder-title">Founder's Associate<span class="postnom"> &middot; CeMAP</span></p>
                     </div>
                     <div class="um-founder-bio">
                         <p>One of the founding members, Muki brings her love for innovation, creativity, and communication to the team. Muki embraces diverse voices and believes in the power of connection and deep listening. A holder of CEMAP and BSC in Business & Marketing, she prides herself on understanding clients and partners by asking the right questions, before developing solutions to achieve their goals.</p>
