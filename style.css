@@ -13,7 +13,7 @@ Version: 4.0
     --pinky-boi: #ff109d;
 
     /* Homepage redesign (Option 2a — warm & balanced, blue) */
-    --hp-cream: #faf7f2;
+    --hp-cream: #F6F8FB;
     --hp-cream-blue: #eef7ff;
     --hp-cream-2: #f3efe6;
     --hp-pill-bg: #e7f3ff;
@@ -10774,7 +10774,7 @@ input#borrow-deposit::placeholder {
 /* -------------------- Hero -------------------- */
 .hp-hero {
     background: var(--hp-cream);
-    padding-bottom: 50px; /* Changed from marign-bottom as was giving whitespace otherwise */
+    padding: 50px 0;
 }
 
 .hp-hero__grid {
@@ -10905,7 +10905,7 @@ input#borrow-deposit::placeholder {
 /* -------------------- USP block -------------------- */
 .hp-usp {
     background: var(--hp-accent);
-    padding: 52px 0;
+    padding: 67px 0;
     color: #eaf6ff;
 }
 
@@ -10945,7 +10945,7 @@ input#borrow-deposit::placeholder {
 
 .hp-mortgages-wrap .hp-head {
     max-width: 640px;
-    margin: 0 auto 32px;
+    margin: 0 10px 32px;
 }
 
 .hp-mortgages-wrap .hp-head h2 {

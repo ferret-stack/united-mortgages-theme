@@ -178,7 +178,7 @@ body.is-front-redesign {
 /* -------------------- Hero -------------------- */
 .um-story-hero {
     position: relative;
-    min-height: 78vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     background-image: url('../our-story/story-hero-bg.png');

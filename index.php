@@ -56,7 +56,7 @@ get_header(); ?>
             </div>
             <div class="hp-usp__item">
                 <div class="hp-usp__num">03 &middot; Beyond the mortgage</div>
-                <p>We don't disappear after completion. Our network of conveyancers, surveyors and partners is there for what comes next.</p>
+                <p>We don't disappear after completion. Our network of conveyancers, surveyors, and partners is there for what comes next.</p>
             </div>
         </div>
     </section>
