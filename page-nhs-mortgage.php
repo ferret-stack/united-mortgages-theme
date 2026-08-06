@@ -36,7 +36,7 @@ get_header(); ?>
                 <div class="data-card" style="text-align:left;">
                     <h4>We Speak "NHS Payslip"</h4>
                     <p style="color:#666; line-height:1.7; margin-top:0.75rem;">
-                        Bank shifts, overtime, locum hours, and unsocial increments aren't "complex" to us - they're just your income. Our tech and advisors are trained to calculate your true earning power, not just your base salary.
+                        Bank shifts, overtime, locum hours, and unsocial increments aren't "complex" to us - they're just your income. Our tech and advisers are trained to calculate your true earning power, not just your base salary.
                     </p>
                 </div>
 

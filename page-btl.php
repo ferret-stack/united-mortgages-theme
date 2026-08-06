@@ -116,7 +116,7 @@ get_header(); ?>
             <div class="um-section-header">
                 <h2 class="um-section-title">Buy to Let <span class="bold-text">FAQs</span></h2>
             </div>
-            <p class="um-faq__intro">Whether you're buying your first rental or expanding a portfolio, speaking to a buy to let advisor early can shape your entire strategy. United Mortgages&reg; understands lender stress testing, tax positioning, limited company structures, and portfolio exposure limits, all of which materially affect borrowing capacity. Buy to let lending is commercial in nature. The numbers must stack before keys change hands.</p>
+            <p class="um-faq__intro">Whether you're buying your first rental or expanding a portfolio, speaking to a buy to let adviser early can shape your entire strategy. United Mortgages&reg; understands lender stress testing, tax positioning, limited company structures, and portfolio exposure limits, all of which materially affect borrowing capacity. Buy to let lending is commercial in nature. The numbers must stack before keys change hands.</p>
 
             <div class="faq-list">
 

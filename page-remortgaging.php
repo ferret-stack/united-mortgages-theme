@@ -118,7 +118,7 @@ get_header(); ?>
             <div class="um-section-header">
                 <h2 class="um-section-title">Remortgage <span class="bold-text">FAQs</span></h2>
             </div>
-            <p class="um-faq__intro">Before your current deal expires, it's sensible to seek remortgage advice from a professional. A good remortgage broker advice reviews rates, fees, equity position and long-term goals. Many borrowers choose to speak to a mortgage advisor about remortgaging around 4 to 6 months before their deal ends. If your situation is complex, a specialist remortgage advisor may be more appropriate. <a href="#contact-form">Send us an inquiry</a> and we'll be happy to assist based on your circumstances.</p>
+            <p class="um-faq__intro">Before your current deal expires, it's sensible to seek remortgage advice from a professional. A good remortgage broker advice reviews rates, fees, equity position and long-term goals. Many borrowers choose to speak to a mortgage adviser about remortgaging around 4 to 6 months before their deal ends. If your situation is complex, a specialist remortgage adviser may be more appropriate. <a href="#contact-form">Send us an inquiry</a> and we'll be happy to assist based on your circumstances.</p>
 
             <div class="faq-list">
                 <div class="faq-item">

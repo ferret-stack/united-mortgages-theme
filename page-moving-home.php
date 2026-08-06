@@ -126,7 +126,7 @@ get_header(); ?>
                     </button>
                     <div class="faq-answer">
                         <p>When moving house with a mortgage, your current loan does not automatically follow you. You usually either repay and take a new mortgage, use mortgage porting to transfer your existing rate, or blend your current deal with additional borrowing.</p>
-                        <p>If you're in a chain, timing matters. Managing a mortgage while in a chain requires coordination between lenders, solicitors, and buyers. A chain break can delay completion or collapse the transaction entirely. This is why it's wise to speak to a mortgage advisor about chain risk before listing your property.</p>
+                        <p>If you're in a chain, timing matters. Managing a mortgage while in a chain requires coordination between lenders, solicitors, and buyers. A chain break can delay completion or collapse the transaction entirely. This is why it's wise to speak to a mortgage adviser about chain risk before listing your property.</p>
                         <p><b>Key timeline factors:</b></p>
                         <ul>
                             <li><b>Mortgage application time:</b> typically 2 to 4 weeks</li>
@@ -196,7 +196,7 @@ get_header(); ?>
                             <li><b>Bridging loans for limited companies:</b> Common for investors purchasing via a corporate structure.</li>
                             <li><b>Development bridging finance:</b> Used for heavier refurbishment or development projects.</li>
                         </ul>
-                        <p>Because bridging is higher cost and short term, working with a bridging loan advisor ensures there is a clear and realistic exit strategy.</p>
+                        <p>Because bridging is higher cost and short term, working with a bridging loan adviser ensures there is a clear and realistic exit strategy.</p>
                         <!-- briding blog post here -->
                     </div>
                 </div>

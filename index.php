@@ -32,7 +32,7 @@ get_header(); ?>
 
                 <h1>Most mortgage advice happens 9&#8209;to&#8209;5.<br><span>Ours doesn't.</span></h1>
 
-                <p class="hp-hero__lead">One named adviser from your first conversation through to completion - reachable evenings and weekends, not just office hours.</p>
+                <p class="hp-hero__lead">Your personal adviser from your first conversation through to completion - reachable evenings and weekends, not just office hours.</p>
 
                 <div class="hp-hero__cta-row">
                     <a href="#calculator" class="hp-btn">Check what you could borrow</a>
@@ -95,7 +95,7 @@ get_header(); ?>
                     <div class="hp-value hp-value--range">&pound;348,000</div>
                 </div>
             </div>
-            <p class="hp-borrow__example-note">Based on 4.5&times;-6.0&times; joint income, standard affordability rules. Your actual offer depends on credit history, existing debt and each lender's own criteria - an advisor will confirm your real range before you apply.</p>
+            <p class="hp-borrow__example-note">Based on 4.5&times;-6.0&times; joint income, standard affordability rules. Your actual offer depends on credit history, existing debt and each lender's own criteria - an adviser will confirm your real range before you apply.</p>
 
             <!-- Mandatory popup: Typical vs Enhanced (compliance-approved copy, reused verbatim from the embedded calculator) -->
             <div id="hp-borrow-range-popup" class="popup-overlay">

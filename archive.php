@@ -171,7 +171,7 @@ if (is_page('blog')) {
                     <!-- CTA Widget -->
                     <div class="um-sidebar-cta">
                         <h3>Need Mortgage Advice?</h3>
-                        <p>Our expert advisors are here to help you find the perfect mortgage solution.</p>
+                        <p>Our expert advisers are here to help you find the perfect mortgage solution.</p>
                         <a href="/contact" class="hp-btn">Get In Touch</a>
                     </div>
 

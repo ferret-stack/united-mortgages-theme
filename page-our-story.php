@@ -37,11 +37,11 @@ get_header(); ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/dw-col.png" alt="David Woodford" class="um-founder-image um-founder-image--color">
                     </div>
                     <div class="um-founder-header">
-                        <h3 class="um-founder-name">DAVID WOODFORD <a href="https://www.linkedin.com/in/davidwoodforduk" target="_blank" class="um-founder-link">in</a><a href="mailto:david@united-mortgages.com" class="um-founder-link"><img src="<?php echo get_template_directory_uri(); ?>/assets/advisor-mail.svg" alt="Email"></a></h3>
+                        <h3 class="um-founder-name">DAVID WOODFORD <a href="https://www.linkedin.com/in/davidwoodforduk" target="_blank" class="um-founder-link">in</a><a href="mailto:david@united-mortgages.com" class="um-founder-link"><img src="<?php echo get_template_directory_uri(); ?>/assets/adviser-mail.svg" alt="Email"></a></h3>
                         <p class="um-founder-title">Chief Executive Officer<span class="postnom"> &middot; CeMAP</span></p>
                     </div>
                     <div class="um-founder-bio">
-                        <p>Co-Founder and Chief Executive Officer of United Mortgages&reg;  with responsibility for overall leadership, GTM, and strategy, in addition to adeptly leading the firm's commercial advisory operations.</p>
+                        <p>Co-Founder and Chief Executive Officer of United Mortgages&reg;  with responsibility for overall leadership, GTM, and strategy, in addition to adeptly leading the firm's commercial advisery operations.</p>
                         <p>Before co-founding United, he held management roles at two Fortune 500 firms (Renault Group and Geely), and later helped scale Deloitte Fast 50 and Fast 500 recipients, Hypervolt, where he built enterprise and partnership channels with a relentless focus on the customer journey. </p>
                         <p>An alumnus of Edinburgh Business School, David's energetic leadership, and relentless focus on the customer experience enables him to build and scale high-performance teams, and mutually profitable partnerships.</p>
                     </div>
@@ -147,15 +147,15 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- Advisory Board Section -->
-    <section class="um-founders um-founders--advisory">
+    <!-- advisery Board Section -->
+    <section class="um-founders um-founders--advisery">
         <div class="hp-container">
             <div class="um-section-header">
                 <h2 class="um-section-title">Our <span class="bold-text">Team</span></h2>
                 <p class="um-section-subtitle">Bringing together visionary strategists dedicated to shaping the future of home financing</p>
             </div>
 
-            <div class="um-founders-grid um-founders-grid--advisory">
+            <div class="um-founders-grid um-founders-grid--advisery">
                 <!-- Mike -->
                 <div class="um-founder-card">
                     <div class="um-founder-image-wrap">
@@ -163,8 +163,8 @@ get_header(); ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/mike-col.png" alt="Mike Buttigieg" class="um-founder-image um-founder-image--color">
                     </div>
                     <div class="um-founder-header">
-                        <h3 class="um-founder-name">MIKE BUTTIGIEG<a href="https://www.linkedin.com/in/michaelbuttigieg/" target="_blank" class="um-founder-link">in</a><a href="mailto:mike@united-mortgages.com" class="um-founder-link"><img src="<?php echo get_template_directory_uri(); ?>/assets/advisor-mail.svg" alt="Email"></a></h3>
-                        <p class="um-founder-title">Senior Mortgage Advisor<span class="postnom"> &middot; CeMAP</span></p>
+                        <h3 class="um-founder-name">MIKE BUTTIGIEG<a href="https://www.linkedin.com/in/michaelbuttigieg/" target="_blank" class="um-founder-link">in</a><a href="mailto:mike@united-mortgages.com" class="um-founder-link"><img src="<?php echo get_template_directory_uri(); ?>/assets/adviser-mail.svg" alt="Email"></a></h3>
+                        <p class="um-founder-title">Senior Mortgage adviser<span class="postnom"> &middot; CeMAP</span></p>
                     </div>
                     <div class="um-founder-bio">
                         <p>Having qualified as a Mortgage Consultant after years of hands-on experience developing property projects, he understands both the financial and real-world considerations involved in buying, investing and building wealth through property.</p>
@@ -184,7 +184,7 @@ get_header(); ?>
                     </div>
                     <div class="um-founder-bio">
                         <p>One of the founding members, Muki brings her love for innovation, creativity, and communication to the team. Muki embraces diverse voices and believes in the power of connection and deep listening. A holder of CEMAP and BSC in Business & Marketing, she prides herself on understanding clients and partners by asking the right questions, before developing solutions to achieve their goals.</p>
-                        <p>As Founders Associate at United Mortgages&reg;, she focuses her effort on mortgage advisory, as well as supporting the firm's partnership and communications.</p>
+                        <p>As Founders Associate at United Mortgages&reg;, she focuses her effort on mortgage advisery, as well as supporting the firm's partnership and communications.</p>
                     </div>
                 </div>
 
@@ -196,11 +196,11 @@ get_header(); ?>
                     </div>
                     <div class="um-founder-header">
                         <h3 class="um-founder-name">DEANDRE BRUCE<a href="https://www.linkedin.com/in/deandregoocho/" target="_blank" class="um-founder-link">in</a></h3>
-                        <p class="um-founder-title">Board Advisor<span class="postnom"> &middot; CeMAP CeRER</span></p>
+                        <p class="um-founder-title">Board adviser<span class="postnom"> &middot; CeMAP CeRER</span></p>
                     </div>
                     <div class="um-founder-bio">
                         <p>As the founder of GooCho Mortgages, DeAndre brings over a decade of industry expertise and has successfully guided over 500 clients through the complexities of the UK property market.</p>
-                        <p>As an advisor to the board, DeAndre leverages his deep understanding of the buyer's journey to champion United Mortgages&reg; A+ service and ethical lending. His advisory focus centres on creating inclusive and tailor-made strategies that streamline the mortgage process.</p>
+                        <p>As an adviser to the board, DeAndre leverages his deep understanding of the buyer's journey to champion United Mortgages&reg; A+ service and ethical lending. His advisery focus centres on creating inclusive and tailor-made strategies that streamline the mortgage process.</p>
                     </div>
                 </div>
             </div>
@@ -215,7 +215,7 @@ get_header(); ?>
                 <h2 class="um-charter__title">The <span class="bold-text">Integrity Charter</span></h2>
 
                 <p class="um-charter__intro">
-                    In line with our overarching mission to become Britain's most trusted team of mortgage advisors, we commit to upholding the highest standards of integrity, professionalism, and ethical conduct in all our interactions with clients, lenders, and partners.
+                    In line with our overarching mission to become Britain's most trusted team of mortgage advisers, we commit to upholding the highest standards of integrity, professionalism, and ethical conduct in all our interactions with clients, lenders, and partners.
                 </p>
 
                 <p class="um-charter__purpose">

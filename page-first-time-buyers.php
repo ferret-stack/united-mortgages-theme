@@ -116,7 +116,7 @@ get_header(); ?>
             <div class="um-section-header">
                 <h2 class="um-section-title">First Time Buyer <span class="bold-text">FAQs</span></h2>
             </div>
-            <p class="um-faq__intro">Buying your first home is exciting, but it also comes with decisions that shape your finances for years. Getting structured first time buyer mortgage advice early can prevent costly mistakes and improve your chances of approval. Speaking to a mortgage advisor, even before viewing properties, helps clarify borrowing power, deposit requirements, and lender criteria before emotions get involved. Early advice turns uncertainty into a plan. And a plan turns a first purchase into a confident one.</p>
+            <p class="um-faq__intro">Buying your first home is exciting, but it also comes with decisions that shape your finances for years. Getting structured first time buyer mortgage advice early can prevent costly mistakes and improve your chances of approval. Speaking to a mortgage adviser, even before viewing properties, helps clarify borrowing power, deposit requirements, and lender criteria before emotions get involved. Early advice turns uncertainty into a plan. And a plan turns a first purchase into a confident one.</p>
 
             <div class="faq-list">
 
@@ -190,7 +190,7 @@ get_header(); ?>
                             <li>Dependents</li>
                             <li>Credit profile</li>
                         </ul>
-                        <p>The first time buyer single income rules are not different rules, but the same affordability framework applied to one income rather than two. If affordability is stretched, options may include a longer mortgage term, lower purchase price, family gifted deposit, or shared ownership. Working with a mortgage advisor can help identify lenders that are more flexible with single income cases.</p>
+                        <p>The first time buyer single income rules are not different rules, but the same affordability framework applied to one income rather than two. If affordability is stretched, options may include a longer mortgage term, lower purchase price, family gifted deposit, or shared ownership. Working with a mortgage adviser can help identify lenders that are more flexible with single income cases.</p>
                         <p>For many, the average mortgage deposit now exceeds a year's salary. Read <a href="/united-mortgages.com/2026/03/09/in-much-of-britain-the-average-mortgage-deposit-now-exceeds-a-years-salary/" target="_blank">here</a> to learn more
                     </div>
                 </div>
