@@ -4,7 +4,7 @@
  *
  * @package UnitedMortgages
  */
-/*V3.4 — Homepage redesign: Option 2a (warm & balanced, blue)*/
+/*V4 — Homepage redesign: Option 2a (warm & balanced, blue)*/
 get_header(); ?>
 
 <main id="primary" class="site-main">
@@ -38,7 +38,7 @@ get_header(); ?>
                     <a href="#calculator" class="hp-btn">Check what you could borrow</a>
                     <span class="hp-hero__note">Takes 3 minutes &middot; soft search, no credit impact</span>
                 </div>
-                <p class="hp-hero__secondary">Prefer to talk it through first? <a href="#contact-form">Request a call back</a>.</p>
+                <p class="hp-hero__secondary">Prefer to talk it through first? <a href="https://calendly.com/unitedmortgages/15min">Book a time to chat with us</a>.</p>
             </div>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/herov4_ph.png" style="width:100%;aspect-ratio:4/3.2;object-fit:cover;border-radius:20px;">
         </div>
