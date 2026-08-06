@@ -604,7 +604,16 @@ const app = createApp({
                 const draft = localStorage.getItem(STORAGE_KEY);
                 if (draft) {
                     const parsed = JSON.parse(draft);
-                    this.formData = parsed.data;
+                    const saved = parsed.data || {};
+                    // Merge saved data onto the current default shape instead of
+                    // replacing it outright, so drafts saved under an older field
+                    // structure don't wipe out fields added since.
+                    this.formData = {
+                        ...this.formData,
+                        ...saved,
+                        applicant1: { ...createEmptyApplicant(), ...(saved.applicant1 || {}) },
+                        applicant2: { ...createEmptyApplicant(), ...(saved.applicant2 || {}) }
+                    };
                     this.currentStep = parsed.currentStep || 1;
                     console.log('✓ Draft loaded from', parsed.timestamp);
                 }
