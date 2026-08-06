@@ -26,6 +26,8 @@ get_header(); ?>
 
 <p>Through our Lifetime Mortgage Membership, our dedicated team is with you every step of your homeowning journey, through each renewal, remortgage, and move, ensuring your mortgage continues to work as hard as you do.</p>
 
+<img src="<?php echo get_template_directory_uri(); ?>/assets/lifetime.png" alt="United Mortgages Lifetime Membership card">
+
 <h2>Here's what that means for you</h2>
 
 <div class="um-policy-step">
