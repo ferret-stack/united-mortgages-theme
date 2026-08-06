@@ -3120,4 +3120,12 @@ body.is-front-redesign {
     margin-bottom: 0;
 }
 
+/* -------------------- Standalone article layout (short policy pages with no
+   TOC-worthy section count — e.g. TCF — that don't need the two-column
+   .um-policy-layout sidebar treatment) -------------------- */
+.um-policy-main--standalone {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
 /* -------------------- CTA band (reuses .um-cta-band verbatim) -------------------- */
