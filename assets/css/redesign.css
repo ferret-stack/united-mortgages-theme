@@ -457,7 +457,10 @@ body.is-front-redesign {
     text-align: left;
     backdrop-filter: none;
     min-height: 0;
-    display: block;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     transition: transform .2s ease, border-color .2s ease;
 }
 
@@ -498,7 +501,7 @@ body.is-front-redesign {
     font-weight: 400;
     color: var(--hp-body);
     margin: 0 0 18px;
-    flex-grow: 0;
+    flex-grow: 1;
 }
 
 .um-who-we-help .btn-service {
@@ -511,6 +514,7 @@ body.is-front-redesign {
     font-weight: 600;
     letter-spacing: .03em;
     white-space: normal;
+    margin-top: auto;
 }
 
 .um-who-we-help .btn-service::after {

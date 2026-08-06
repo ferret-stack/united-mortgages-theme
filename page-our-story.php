@@ -75,75 +75,7 @@ get_header(); ?>
                 <p class="um-section-subtitle">We work with ambitious professionals, entrepreneurs, and families across London and the Home Counties <span class="strong">who refuse to accept that mortgages have to be complicated</span>.<br><br>We don't just arrange mortgages; we build relationships with people who value clarity, speed, and expertise.</p>
             </div>
 
-            <div class="mortgage-services-grid">
-                <!-- First Time Buyers -->
-                <div class="mortgage-service-card">
-                    <div class="service-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-mortgages/first-time-buyers.svg" alt="First Time Buyers">
-                    </div>
-                    <h3>FIRST TIME BUYERS</h3>
-                    <p>Taking your first step onto the property ladder shouldn't feel like decoding
-                    ancient hieroglyphics. We translate the jargon, explain what actually matters,
-                    and make sure you're equipped with a mortgage that sets you up for success - not
-                    just approval.</p>
-                    <a href="<?php echo home_url('/first-time-buyers'); ?>" class="btn-service">I'M A FIRST TIME BUYER</a>
-                </div>
-
-                <!-- Moving Home -->
-                <div class="mortgage-service-card">
-                    <div class="service-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-mortgages/moving-home.svg" alt="Moving Home">
-                    </div>
-                    <h3>MOVING HOME</h3>
-                    <p>Outgrowing your flat? Ready for that extra bedroom or garden? We help you
-                    navigate the remortgage-or-port decision, find better rates, and move without
-                    the mortgage becoming the stressful part of the process.</p>
-                    <a href="<?php echo home_url('/moving-home'); ?>" class="btn-service">I'M MOVING HOME</a>
-                </div>
-
-                <!-- Remortgaging -->
-                <div class="mortgage-service-card">
-                    <div class="service-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-mortgages/remortgaging.svg" alt="Remortgaging">
-                    </div>
-                    <h3>REMORTGAGING</h3>
-                    <p>Your fixed rate is ending and you're facing a payment jump. Or maybe your
-                    property's increased in value and you want to release equity. Either way, we'll
-                    find you a better deal than your current lender's retention offer.</p>
-                    <a href="<?php echo home_url('/remortgaging'); ?>" class="btn-service">I'M REMORTGAGING</a>
-                </div>
-
-                <div class="mortgage-service-card">
-                    <div class="service-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-mortgages/self-employed.svg" alt="Entrepreneurs, Founders, and Self-Employed">
-                    </div>
-                    <h3>Entrepreneurs, Founders, and Self-Employed</h3>
-                    <p>Traditional lenders don't understand your business model. We do. Whether you're
-                    a contractor on day rates, a director taking dividends, or a founder with equity
-                    compensation, we know how to present your income in a way that gets you approved.</p>
-                    <a href="<?php echo home_url('/efse'); ?>" class="btn-service">I'M SELF EMPLOYED</a>
-                </div>
-
-                <div class="mortgage-service-card">
-                    <div class="service-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-mortgages/handshake.svg" alt="Expats">
-                    </div>
-                    <h3>EXPATS</h3>
-                    <p>You've put in the miles, and we'll go the distance. A mortgage in the UK shouldn't feel out of reach; we understand which lenders offer expat mortgages and their expat mortgage criteria</p>
-                    <a href="<?php echo home_url('/expats'); ?>" class="btn-service">I'M AN EXPAT</a>
-                </div>
-
-                <div class="mortgage-service-card">
-                    <div class="service-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/our-mortgages/other-mortgages.svg" alt="BtL Investors">
-                    </div>
-                    <h3>Buy-to-Let Investors</h3>
-                    <p>Building a property portfolio requires lenders who understand rental yields,
-                    stress tests, and portfolio strategies. We work with specialist BTL lenders
-                    who see investment properties as business assets, not consumer purchases.</p>
-                    <a href="<?php echo home_url('/buy-to-let'); ?>" class="btn-service">I'M AN INVESTOR</a>
-                </div>
-            </div>
+            <?php get_template_part('template-parts/mortgage-type-grid'); ?>
         </div>
     </section>
 

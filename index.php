@@ -67,7 +67,7 @@ get_header(); ?>
                 <h2>Our Mortgages</h2>
                 <p>Find and apply for the right mortgage with our expert support. Whether you're buying your first home or planning your next move, it all starts here.</p>
             </div>
-            <?php get_template_part('template-parts/mortgage-type-grid'); ?>
+            <?php get_template_part('template-parts/mortgage-type-grid', null, array('limit' => 3)); ?>
             <div class="more-mortgages"><a href="/our-mortgages">See more mortgage options</a></div>
         </div>
     </section>
