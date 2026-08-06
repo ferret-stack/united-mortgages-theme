@@ -281,7 +281,7 @@ get_header(); ?>
                             [
                                 'file' => '01charterwells.svg',
                                 'name' => 'Charterwells',
-                                'description' => 'Chartered accountants providing Big Four rigour and a human touch',
+                                'description' => 'Chartered accountants providing Big Four rigour and a human touch.',
                             ],
                             [
                                 'file' => '13cmf.png',
@@ -321,7 +321,7 @@ get_header(); ?>
                             [
                                 'file' => '05david-charles.svg',
                                 'name' => 'David Charles',
-                                'description' => 'Property consultants dealing in commercial property with over 30 years experience',
+                                'description' => 'Property consultants dealing in commercial property with over 30 years experience.',
                             ],
                             [
                                 'file' => '04key-conveyencing.svg',
