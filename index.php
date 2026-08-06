@@ -292,6 +292,11 @@ get_header(); ?>
                                 'description' => 'Independent protection specialists, covering life, income and critical illness cover alongside your mortgage.',
                             ],
                             [
+                                'file' => '13cmf.png',
+                                'name' => 'Check My File',
+                                'description' => 'poo'
+                            ],
+                            [
                                 'file' => '06fiberpay.svg',
                                 'name' => 'Fiberpay',
                                 // TODO(content): UNVERIFIED placeholder — fiberpay.com returned
@@ -324,11 +329,21 @@ get_header(); ?>
                                 // a guess from the company name only. Please replace with real copy.
                                 'description' => 'Our financial planning partner.',
                             ],
+                            [
+                                'file' => '15uw.png',
+                                'name' => 'Utility Warehouse',
+                                'description' => 'poo',
+                            ],
                         ],
                     ],
                     [
                         'stage' => 'Legal &amp; Surveying',
                         'partners' => [
+                            [
+                                'file' => '05david-charles.svg',
+                                'name' => 'David Charles',
+                                'description' => 'Property consultants dealing in commercial property with over 30 years experience',
+                            ],
                             [
                                 'file' => '04key-conveyencing.svg',
                                 'name' => 'Key Conveyancing',
@@ -365,18 +380,20 @@ get_header(); ?>
 
                 // B2B referral network (eXp agents) — icons only, no name/description,
                 // no card styling. Same six agents/files as page-introducer-partners.php.
-                $exp_agents = [
+                $estate_agents = [
                     ['file' => '07mn-eXp.svg', 'name' => 'Mark Newton'],
                     ['file' => '08pb-exp.png', 'name' => 'Paul Berg'],
                     ['file' => '14bc-exp.png', 'name' => 'Benn Colling'],
                     ['file' => '17ms-exp.png', 'name' => 'Michal Sikora'],
                     ['file' => '18gb-exp.png', 'name' => 'Grant Boonzaier'],
                     ['file' => '19ra-exp.png', 'name' => 'Richard Aves'],
+                    ['file' => 'wheal.png', 'name => Wilson Heal'],
                 ];
 
                 echo "<div class='hp-partners__b2b'>";
+                echo "<h3 class='hp-partners__stage-label'>" . "Estate Agents" . "</h3>";
                 echo "<div class='hp-partners__b2b-grid'>";
-                foreach ($exp_agents as $agent) {
+                foreach ($estate_agents as $agent) {
                     echo "<div class='hp-partners__b2b-logo'><img src='" . $url . $agent['file'] . "' alt='" . $agent['name'] . " logo' /></div>";
                 }
                 echo "</div>";
