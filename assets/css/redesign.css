@@ -2115,6 +2115,18 @@ body.is-front-redesign {
     margin: 34px 0 14px;
 }
 
+/* Bare sub-heading (not inside a card) — e.g. fee-structure's "Application
+   Fee Structure", "Law", "Force Majeure". Cards with their own h4 (.um-policy-step,
+   .um-policy-data-card, .um-policy-contact-card, .um-policy-info-box) define
+   their own more specific h4 rule, so this generic one only reaches bare ones. */
+.um-post-content h4 {
+    font-family: var(--hp-font-display);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--hp-ink);
+    margin: 28px 0 12px;
+}
+
 .um-post-content p {
     margin: 0 0 22px;
 }
