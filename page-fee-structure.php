@@ -5,251 +5,247 @@
  * Updated for Homekey AR relationship (FRN 967597)
  */
 get_header(); ?>
-
 <main id="primary" class="site-main">
 
-    <!-- Hero Section -->
-    <section class="policy-hero">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="policy-title">About Our Mortgage Services and Costs</h1>
-                <p class="policy-subtitle">Understanding how we work with you</p>
-            </div>
-        </div>
-    </section>
+<!-- Hero Section -->
+<section class="um-product-hero">
+<div class="hp-container">
+<div class="um-product-hero__content">
+<h1 class="um-product-hero__title">About Our Mortgage Services and Costs</h1>
+<p class="um-product-hero__subtitle">Understanding how we work with you</p>
+</div>
+</div>
+</section>
 
-    <!-- Policy Content -->
-    <section class="policy-content">
-        <div class="container">
-            <div class="policy-wrapper">
+<!-- Policy Content -->
+<section class="um-policy-content">
+<div class="hp-container">
+<div class="um-policy-layout">
 
-                <!-- Table of Contents -->
-                <aside class="policy-toc">
-                    <h3>Contents</h3>
-                    <nav class="toc-nav">
-                        <a href="#fca" class="toc-link">The Financial Conduct Authority</a>
-                        <a href="#services" class="toc-link">Our Mortgage Services</a>
-                        <a href="#costs" class="toc-link">What You'll Pay</a>
-                        <a href="#refunds" class="toc-link">Refund of Fees</a>
-                        <a href="#regulation" class="toc-link">Who Regulates Us</a>
-                        <a href="#complaints" class="toc-link">Complaints</a>
-                        <a href="#compensation" class="toc-link">Compensation Scheme</a>
-                        <a href="#verification" class="toc-link">Client Verification</a>
-                        <a href="#legal" class="toc-link">Legal Terms</a>
-                    </nav>
-                </aside>
+<!-- Table of Contents -->
+<aside class="um-policy-sidebar">
+<div class="um-sidebar-widget um-policy-toc">
+<h3 class="um-sidebar-widget__title">Contents</h3>
+<nav class="um-toc-nav">
+<a href="#fca">The Financial Conduct Authority</a>
+<a href="#services">Our Mortgage Services</a>
+<a href="#costs">What You'll Pay</a>
+<a href="#refunds">Refund of Fees</a>
+<a href="#regulation">Who Regulates Us</a>
+<a href="#complaints">Complaints</a>
+<a href="#compensation">Compensation Scheme</a>
+<a href="#verification">Client Verification</a>
+<a href="#legal">Legal Terms</a>
+</nav>
+</div>
+</aside>
 
-                <!-- Main Content -->
-                <div class="policy-main">
+<!-- Main Content -->
+<div class="um-policy-main um-post-content">
 
-                    <section id="fca" class="policy-section">
-                        <h2>The Financial Conduct Authority (FCA)</h2>
-                        <p>Homekey Mortgages Limited is authorised and regulated by the Financial Conduct Authority (FCA). The FCA regulates financial services in the UK and you can check our authorisation and permitted activities on the Financial Services Register by visiting the FCA's website <a href="https://www.fca.org.uk/firms/systems-reporting/register" target="_blank">www.fca.org.uk/firms/systems-reporting/register</a>.</p>
-                        <div class="info-box">
-                            <p><strong>FCA Register Number:</strong> 967597<br>
-                            <strong>Registered Name:</strong> Homekey Mortgages Limited</p>
-                        </div>
-                        <p>United Mortgages Limited is an appointed representative of Homekey Mortgage Solutions Ltd. United Mortgages Limited is registered in England and Wales, company number 16154790. Registered office: 167-169 Great Portland Street, London, W1W 7PF.</p>
-                    </section>
+<section id="fca">
+<h2>The Financial Conduct Authority (FCA)</h2>
+<p>Homekey Mortgages Limited is authorised and regulated by the Financial Conduct Authority (FCA). The FCA regulates financial services in the UK and you can check our authorisation and permitted activities on the Financial Services Register by visiting the FCA's website <a href="https://www.fca.org.uk/firms/systems-reporting/register" target="_blank">www.fca.org.uk/firms/systems-reporting/register</a>.</p>
+<div class="um-policy-info-box">
+<p><strong>FCA Register Number:</strong> 967597<br>
+<strong>Registered Name:</strong> Homekey Mortgages Limited</p>
+</div>
+<p>United Mortgages Limited is an appointed representative of Homekey Mortgage Solutions Ltd. United Mortgages Limited is registered in England and Wales, company number 16154790. Registered office: 167-169 Great Portland Street, London, W1W 7PF.</p>
+</section>
 
-                    <section id="services" class="policy-section">
-                        <h2>Our Mortgage Services</h2>
-                        <p>For mortgages we are <strong>independent mortgage advisers</strong> and we will recommend a mortgage product that is suitable for you following an assessment of your personal needs and circumstances.</p>
+<section id="services">
+<h2>Our Mortgage Services</h2>
+<p>For mortgages we are <strong>independent mortgage advisers</strong> and we will recommend a mortgage product that is suitable for you following an assessment of your personal needs and circumstances.</p>
 
-                        <div class="use-item">
-                            <h4>🏠 What We Offer</h4>
-                            <p>We offer mortgage advice and arrange mortgage products from a wide range of lenders. Our service covers residential mortgages, remortgages, buy-to-let, and associated protection products.</p>
-                        </div>
+<div class="um-policy-step">
+<h4>🏠 What We Offer</h4>
+<p>We offer mortgage advice and arrange mortgage products from a wide range of lenders. Our service covers residential mortgages, remortgages, buy-to-let, and associated protection products.</p>
+</div>
 
-                        <div class="use-item">
-                            <h4>📋 Our Process</h4>
-                            <p>We assess your personal needs and circumstances before making any recommendation. We will provide you with a key facts illustration setting out the details of any mortgage we recommend, including all fees and charges.</p>
-                        </div>
+<div class="um-policy-step">
+<h4>📋 Our Process</h4>
+<p>We assess your personal needs and circumstances before making any recommendation. We will provide you with a key facts illustration setting out the details of any mortgage we recommend, including all fees and charges.</p>
+</div>
 
-                        <div class="info-box">
-                            <p>The interest of our customers is paramount to us and to achieve this we have designed our systems and procedures to place you at the heart of our business.</p>
-                        </div>
+<div class="um-policy-info-box">
+<p>The interest of our customers is paramount to us and to achieve this we have designed our systems and procedures to place you at the heart of our business.</p>
+</div>
 
-                        <h4>Our Commitments to You</h4>
-                        <div class="use-item">
-                            <h4>✓ Transparency</h4>
-                            <p>Be open, honest and transparent in the way we deal with you.</p>
-                        </div>
-                        <div class="use-item">
-                            <h4>✓ Client First</h4>
-                            <p>Not place our interests above yours.</p>
-                        </div>
-                        <div class="use-item">
-                            <h4>✓ Clear Communication</h4>
-                            <p>Communicate clearly, promptly and without jargon.</p>
-                        </div>
-                        <div class="use-item">
-                            <h4>✓ Continuous Improvement</h4>
-                            <p>Seek your views and perception of our dealings with you to ensure it meets your expectations or to identify any improvements required.</p>
-                        </div>
-                    </section>
+<h4>Our Commitments to You</h4>
+<div class="um-policy-step">
+<h4>✓ Transparency</h4>
+<p>Be open, honest and transparent in the way we deal with you.</p>
+</div>
+<div class="um-policy-step">
+<h4>✓ Client First</h4>
+<p>Not place our interests above yours.</p>
+</div>
+<div class="um-policy-step">
+<h4>✓ Clear Communication</h4>
+<p>Communicate clearly, promptly and without jargon.</p>
+</div>
+<div class="um-policy-step">
+<h4>✓ Continuous Improvement</h4>
+<p>Seek your views and perception of our dealings with you to ensure it meets your expectations or to identify any improvements required.</p>
+</div>
+</section>
 
-                    <section id="costs" class="policy-section">
-                        <h2>What You'll Pay</h2>
-                        <p>We do not charge you a fee for assistance in choosing the most suitable mortgage for your circumstances.</p>
+<section id="costs">
+<h2>What You'll Pay</h2>
+<p>We do not charge you a fee for assistance in choosing the most suitable mortgage for your circumstances.</p>
 
-                        <h4>Application Fee Structure</h4>
-                        <p>We charge a non-refundable application fee, payable upfront before we begin the application process, based on the time spent on preparing your mortgage application for submission to the recommended lender, supervision of the application process up to the mortgage offer stage, providing you with regular updates and liaising on your behalf with your Solicitor or Estate Agent.</p>
-                        <div class="data-grid">
-                            <div class="data-card">
-                                <h4>Standard Applications</h4>
-                                    <p><strong>Fee:</strong> £699</p>
-                                    <p><strong>Due:</strong> Upon submission of the full mortgage application</p>
-                            </div>
+<h4>Application Fee Structure</h4>
+<p>We charge a non-refundable application fee, payable upfront before we begin the application process, based on the time spent on preparing your mortgage application for submission to the recommended lender, supervision of the application process up to the mortgage offer stage, providing you with regular updates and liaising on your behalf with your Solicitor or Estate Agent.</p>
+<div class="um-policy-data-grid">
+<div class="um-policy-data-card">
+<h4>Standard Applications</h4>
+<p><strong>Fee:</strong> £699</p>
+<p><strong>Due:</strong> Upon submission of the full mortgage application</p>
+</div>
 
-                            <div class="data-card">
-                                <h4>Adverse Credit Applications</h4>
+<div class="um-policy-data-card">
+<h4>Adverse Credit Applications</h4>
+<p><strong>Fee:</strong> £999</p>
+<p><strong>Applies to:</strong> Applicants who have missed two or more secured and/or unsecured payments on credit accounts within the last 24 months</p>
+<p><strong>Due:</strong> Upon submission of the full mortgage application</p>
+</div>
 
-								<p><strong>Fee:</strong> £999</p>
-                                    <p><strong>Applies to:</strong> Applicants who have missed two or more secured and/or unsecured payments on credit accounts within the last 24 months</p>
-                                    <p><strong>Due:</strong> Upon submission of the full mortgage application</p>
+<div class="um-policy-data-card">
+<h4>Lender Commission</h4>
+<p>We receive and retain commission paid by the lender when your mortgage completes</p>
+<p>Amount confirmed in the lender's disclosure document</p>
+<p>You can request to view commission rates at recommendation stage</p>
+</div>
+</div>
 
-                            </div>
+<div class="um-policy-info-box">
+<p><strong>Important:</strong> The fee becomes due upon the submission of the full mortgage application. For all cases where a fee is payable, you will be required to sign a Client Agreement prior to applying for your mortgage. Invoices are payable on the day the invoice is issued.</p>
+</div>
 
-                            <div class="data-card">
-                                <h4>Lender Commission</h4>
-                                <ul>
-                                    <p>We receive and retain commission paid by the lender when your mortgage completes</p>
-                                    <p>Amount confirmed in the lender's disclosure document</p>
-                                    <p>You can request to view commission rates at recommendation stage</p>
-                            </div>
-                        </div>
+<p>In all cases, you will receive a key facts illustration, which will tell you about any fees relating to a particular mortgage and any commission payable to us.</p>
+</section>
 
-                        <div class="info-box">
-                            <p><strong>Important:</strong> The fee becomes due upon the submission of the full mortgage application. For all cases where a fee is payable, you will be required to sign a Client Agreement prior to applying for your mortgage. Invoices are payable on the day the invoice is issued.</p>
-                        </div>
+<section id="refunds">
+<h2>Refund of Fees</h2>
+<p>Please note our fee will still be charged should the lender reject your mortgage application due to you not disclosing any material information about your personal situation.</p>
 
-                        <p>In all cases, you will receive a key facts illustration, which will tell you about any fees relating to a particular mortgage and any commission payable to us.</p>
-                    </section>
+<div class="um-policy-info-box">
+<p><strong>No Refund Policy:</strong> We do not provide a refund should you decide not to proceed with the mortgage loan after we have made a recommendation to you.</p>
+</div>
 
-                    <section id="refunds" class="policy-section">
-                        <h2>Refund of Fees</h2>
-                        <p>Please note our fee will still be charged should the lender reject your mortgage application due to you not disclosing any material information about your personal situation.</p>
+<p>This policy reflects the work and resources committed to researching, preparing and submitting your application, which cannot be recovered once completed.</p>
+</section>
 
-                        <div class="info-box">
-                            <p><strong>No Refund Policy:</strong> We do not provide a refund should you decide not to proceed with the mortgage loan after we have made a recommendation to you.</p>
-                        </div>
+<section id="regulation">
+<h2>Who Regulates Us?</h2>
+<p>We are committed to providing the highest standard of advice and service possible. United Mortgages Limited is an appointed representative of Homekey Mortgage Solutions Ltd, which is authorised and regulated by the Financial Conduct Authority.</p>
 
-                        <p>This policy reflects the work and resources committed to researching, preparing and submitting your application, which cannot be recovered once completed.</p>
-                    </section>
+<div class="um-policy-info-box">
+<p><strong>Regulatory Details:</strong><br>
+Homekey Mortgage Solutions Ltd is authorised and regulated by the Financial Conduct Authority.<br>
+FCA Register Number: 967597.</p>
+<p>You can check this on the FCA's Register by visiting the FCA's website (<a href="https://www.fca.org.uk" target="_blank">www.fca.org.uk</a>) or by contacting the FCA on 020 7066 1000.</p>
+</div>
 
-                    <section id="regulation" class="policy-section">
-                        <h2>Who Regulates Us?</h2>
-                        <p>We are committed to providing the highest standard of advice and service possible. United Mortgages Limited is an appointed representative of Homekey Mortgage Solutions Ltd, which is authorised and regulated by the Financial Conduct Authority.</p>
+<p>Homekey Mortgage Solutions Ltd's permitted business is advising on and arranging mortgages and general and pure protection insurance.</p>
+</section>
 
-                        <div class="info-box">
-                            <p><strong>Regulatory Details:</strong><br>
-                            Homekey Mortgage Solutions Ltd is authorised and regulated by the Financial Conduct Authority.<br>
-                            FCA Register Number: 967597.</p>
-                            <p>You can check this on the FCA's Register by visiting the FCA's website (<a href="https://www.fca.org.uk" target="_blank">www.fca.org.uk</a>) or by contacting the FCA on 020 7066 1000.</p>
-                        </div>
+<section id="complaints">
+<h2>What to Do If You Have a Complaint</h2>
+<p>If you wish to register a complaint, please contact us in the first instance:</p>
 
-                        <p>Homekey Mortgage Solutions Ltd's permitted business is advising on and arranging mortgages and general and pure protection insurance.</p>
-                    </section>
+<div class="um-policy-contact-cards">
+<div class="um-policy-contact-card">
+<h4>United Mortgages Limited</h4>
+<p>📧 <a href="mailto:legal@united-mortgages.com">legal@united-mortgages.com</a><br>
+📞 <a href="tel:03330914776">0333 091 4776</a><br>
+✉️ 167-169 Great Portland Street, London, W1W 7PF</p>
+</div>
 
-                    <section id="complaints" class="policy-section">
-                        <h2>What to Do If You Have a Complaint</h2>
-                        <p>If you wish to register a complaint, please contact us in the first instance:</p>
+<div class="um-policy-contact-card">
+<h4>Homekey Mortgage Solutions Ltd</h4>
+<p>📧 <a href="mailto:info@homekeymortgages.co.uk">info@homekeymortgages.co.uk</a><br>
+📞 <a href="tel:01908915685">0190 891 5685</a><br>
+✉️ 5 Drakes Mews, Crownhill Milton Keynes, MK8 0ER</p>
+</div>
+</div>
+<p>For more, please see our <a href="/complaints-policy" target="_blank">complaints policy.</a></p>
+<div class="um-policy-info-box">
+<p><strong>Financial Ombudsman Service:</strong><br>
+If you cannot settle your complaint with us, you may be entitled to refer it to the Financial Ombudsman Service at <a href="https://www.financial-ombudsman.org.uk" target="_blank">www.financial-ombudsman.org.uk</a> or by contacting them on 0800 023 4567.</p>
+</div>
+</section>
 
-                        <div class="contact-cards">
-                            <div class="contact-card">
-                                <h4>United Mortgages Limited</h4>
-                                <p>📧 <a href="mailto:legal@united-mortgages.com">legal@united-mortgages.com</a><br>
-                                📞 <a href="tel:03330914776">0333 091 4776</a><br>
-                                ✉️ 167-169 Great Portland Street, London, W1W 7PF</p>
-                            </div>
+<section id="compensation">
+<h2>Compensation Scheme (FSCS)</h2>
+<p>If you make a complaint and we are unable to meet our liabilities, you may be entitled to compensation from the Financial Services Compensation Scheme.</p>
 
-                            <div class="contact-card">
-                                <h4>Homekey Mortgage Solutions Ltd</h4>
-                                <p>📧 <a href="mailto:info@homekeymortgages.co.uk">info@homekeymortgages.co.uk</a><br>
-                                📞 <a href="tel:01908 915685">0190 891 5685</a><br>
-                                ✉️ 5 Drakes Mews, Crownhill Milton Keynes, MK8 0ER</p>
-                            </div>
-                        </div>
-                        <p>For more, please see our <a href="/complaints-policy" target="_blank">complaints policy.</a></p>
-                        <div class="info-box" style="margin-top: 2rem;">
-                            <p><strong>Financial Ombudsman Service:</strong><br>
-                            If you cannot settle your complaint with us, you may be entitled to refer it to the Financial Ombudsman Service at <a href="https://www.financial-ombudsman.org.uk" target="_blank">www.financial-ombudsman.org.uk</a> or by contacting them on 0800 023 4567.</p>
-                        </div>
-                    </section>
+<div class="um-policy-step">
+<h4>🛡️ Your Protection</h4>
+<p>The FSCS is the UK's statutory compensation scheme for customers of authorised financial services firms. It can pay compensation if a firm is unable, or likely to be unable, to pay claims against it.</p>
+</div>
 
-                    <section id="compensation" class="policy-section">
-                        <h2>Compensation Scheme (FSCS)</h2>
-                        <p>If you make a complaint and we are unable to meet our liabilities, you may be entitled to compensation from the Financial Services Compensation Scheme.</p>
+<div class="um-policy-info-box">
+<p><strong>Coverage Limits:</strong><br>
+Further information about the limits applicable to the different product types is available from the FSCS at <a href="http://www.fscs.org.uk/what-we-cover/products" target="_blank">www.fscs.org.uk/what-we-cover/products</a></p>
+</div>
+</section>
 
-                        <div class="use-item">
-                            <h4>🛡️ Your Protection</h4>
-                            <p>The FSCS is the UK's statutory compensation scheme for customers of authorised financial services firms. It can pay compensation if a firm is unable, or likely to be unable, to pay claims against it.</p>
-                        </div>
+<section id="verification">
+<h2>Client Verification</h2>
+<p>We may be required to verify the identity of our clients, to obtain information as to the purpose and nature of the business which we conduct on their behalf, and to ensure that the information we hold is up-to-date.</p>
 
-                        <div class="info-box">
-                            <p><strong>Coverage Limits:</strong><br>
-                            Further information about the limits applicable to the different product types is available from the FSCS at <a href="http://www.fscs.org.uk/what-we-cover/products" target="_blank">www.fscs.org.uk/what-we-cover/products</a></p>
-                        </div>
-                    </section>
+<div class="um-policy-step">
+<h4>🔍 Identity Verification</h4>
+<p>For this purpose we may use electronic identity verification systems and we may conduct these checks from time to time throughout our relationship, not just at the beginning.</p>
+</div>
 
-                    <section id="verification" class="policy-section">
-                        <h2>Client Verification</h2>
-                        <p>We may be required to verify the identity of our clients, to obtain information as to the purpose and nature of the business which we conduct on their behalf, and to ensure that the information we hold is up-to-date.</p>
+<div class="um-policy-step">
+<h4>📋 Why We Verify</h4>
+<p>These requirements are part of anti-money laundering regulations and help protect both you and us from fraud and financial crime.</p>
+</div>
 
-                        <div class="use-item">
-                            <h4>🔍 Identity Verification</h4>
-                            <p>For this purpose we may use electronic identity verification systems and we may conduct these checks from time to time throughout our relationship, not just at the beginning.</p>
-                        </div>
+<div class="um-policy-info-box">
+<p>All information collected is handled in accordance with our Privacy Policy and relevant data protection legislation.</p>
+</div>
+</section>
 
-                        <div class="use-item">
-                            <h4>📋 Why We Verify</h4>
-                            <p>These requirements are part of anti-money laundering regulations and help protect both you and us from fraud and financial crime.</p>
-                        </div>
+<section id="legal">
+<h2>Legal Terms</h2>
 
-                        <div class="info-box">
-                            <p>All information collected is handled in accordance with our Privacy Policy and relevant data protection legislation.</p>
-                        </div>
-                    </section>
+<h4>Law</h4>
+<p>This agreement is governed and shall be construed in accordance with the Laws of England and Wales, and the parties shall submit to the exclusive jurisdiction of the English Courts.</p>
 
-                    <section id="legal" class="policy-section">
-                        <h2>Legal Terms</h2>
+<h4>Force Majeure</h4>
+<p>United Mortgages Limited shall not be in breach of this Agreement and shall not incur any liability to you if there is any failure to perform its duties due to any circumstances reasonably beyond its control.</p>
 
-                        <h4>Law</h4>
-                        <p>This agreement is governed and shall be construed in accordance with the Laws of England and Wales, and the parties shall submit to the exclusive jurisdiction of the English Courts.</p>
+<div class="um-policy-info-box">
+<h4>Termination</h4>
+<p>The authority to act on your behalf may be terminated at any time without penalty by either party giving 7 days notice in writing to that effect to the other, but without prejudice to the completion of transactions already initiated.</p>
+<p>Any transactions effected before termination and a due proportion of any period charges for services shall be settled to that date.</p>
+</div>
+</section>
 
-                        <h4>Force Majeure</h4>
-                        <p>United Mortgages Limited shall not be in breach of this Agreement and shall not incur any liability to you if there is any failure to perform its duties due to any circumstances reasonably beyond its control.</p>
+<div class="um-policy-info-box">
+<p><strong>Company Information:</strong><br>
+United Mortgages&reg; is a trademark of United Mortgages Limited, registered in England and Wales at 167-169 Great Portland Street, London, W1W 7PF. Company Number: 16154790. United Mortgages Limited is an appointed representative of Homekey Mortgage Solutions Ltd, which is authorised and regulated by the Financial Conduct Authority: FCA Register Number 967597.</p>
+</div>
 
-                        <div class="info-box">
-                            <h4>Termination</h4>
-                            <p>The authority to act on your behalf may be terminated at any time without penalty by either party giving 7 days notice in writing to that effect to the other, but without prejudice to the completion of transactions already initiated.</p>
-                            <p>Any transactions effected before termination and a due proportion of any period charges for services shall be settled to that date.</p>
-                        </div>
-                    </section>
+</div>
+</div>
+</div>
+</section>
 
-                    <div class="info-box" style="margin-top: 3rem;">
-                        <p><strong>Company Information:</strong><br>
-                        United Mortgages&reg; is a trademark of United Mortgages Limited, registered in England and Wales at 167-169 Great Portland Street, London, W1W 7PF. Company Number: 16154790. United Mortgages Limited is an appointed representative of Homekey Mortgage Solutions Ltd, which is authorised and regulated by the Financial Conduct Authority: FCA Register Number 967597.</p>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="policy-cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Get Started?</h2>
-                <p>Our team is here to guide you through your mortgage journey</p>
-                <a href="<?php echo home_url('/aip-overview'); ?>" class="btn-primary">Start Your Application</a>
-            </div>
-        </div>
-    </section>
+<!-- CTA Section -->
+<section class="um-cta-band">
+<div class="hp-container">
+<h2 class="um-cta-band__title">Ready to Get Started?</h2>
+<p class="um-cta-band__subtitle">Our team is here to guide you through your mortgage journey</p>
+<div class="um-cta-band__actions">
+<a href="<?php echo home_url('/aip-overview'); ?>" class="hp-btn">Start Your Application</a>
+</div>
+</div>
+</section>
 
 </main>
-
 <?php get_footer(); ?>
