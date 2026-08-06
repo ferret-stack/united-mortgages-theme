@@ -281,13 +281,13 @@ body.is-front-redesign {
     }
 }
 
-/* -------------------- Founders / Advisory board -------------------- */
+/* -------------------- Founders / advisery board -------------------- */
 .um-founders {
     background: #fff;
     padding: 72px 0;
 }
 
-.um-founders--advisory {
+.um-founders--advisery {
     background: var(--hp-cream);
 }
 
@@ -297,7 +297,7 @@ body.is-front-redesign {
     gap: 40px;
 }
 
-.um-founders-grid--advisory {
+.um-founders-grid--advisery {
     grid-template-columns: repeat(3, 1fr);
 }
 
@@ -421,7 +421,7 @@ body.is-front-redesign {
 
 @media (max-width: 1024px) {
     .um-founders-grid,
-    .um-founders-grid--advisory {
+    .um-founders-grid--advisery {
         grid-template-columns: 1fr;
         max-width: 480px;
         margin: 0 auto;

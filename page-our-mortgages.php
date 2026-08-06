@@ -27,7 +27,7 @@ get_header(); ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-mortgages/first-time-buyers.svg" alt="First Time Buyers">
                     </div>
                     <h3>FIRST TIME BUYERS</h3>
-                    <p>Take that exciting step onto the property ladder. Let us help you buy the right mortgage deal and secure that first set of keys.</p>
+                    <p>Buying your first home is a lot of "what happens next." You'll have one adviser from application to completion who actually knows your file - not a call centre rotation.</p>
                     <a href="<?php echo home_url('/first-time-buyers'); ?>" class="btn-service">I'M A FIRST TIME BUYER</a>
                 </div>
 
@@ -37,7 +37,7 @@ get_header(); ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-mortgages/moving-home.svg" alt="Moving Home">
                     </div>
                     <h3>MOVING HOME</h3>
-                    <p>Need more room or ready to downsize? No matter what your next move looks like, we're here to help you find the right mortgage to make it happen.</p>
+                    <p>Whether you need more space or less, we source the right deal for your next move and manage the process end&#8209;to&#8209;end, alongside your existing mortgage where relevant.</p>
                     <a href="<?php echo home_url('/moving-home'); ?>" class="btn-service">I'M MOVING HOME</a>
                 </div>
 
@@ -47,7 +47,7 @@ get_header(); ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-mortgages/remortgaging.svg" alt="Remortgaging">
                     </div>
                     <h3>REMORTGAGING</h3>
-                    <p>Time for a better deal? Whether your fixed rate is ending or you want to release equity, we'll find the right remortgage to save you money.</p>
+                    <p>If your fixed rate is ending or you want to release equity, we'll compare the market and tell you honestly whether moving is worth it &#8209; not just find you a deal.</p>
                     <a href="<?php echo home_url('/remortgaging'); ?>" class="btn-service">I'M REMORTGAGING</a>
                 </div>
 
@@ -56,9 +56,7 @@ get_header(); ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-mortgages/self-employed.svg" alt="Entrepreneurs, Founders, and Self-Employed">
                     </div>
                     <h3>Entrepreneurs, Founders, and Self-Employed</h3>
-                    <p>Traditional lenders don't understand your business model. We do. Whether you're
-                    a contractor on day rates, a director taking dividends, or a founder with equity
-                    compensation, we know how to present your income in a way that gets you approved.</p>
+                    <p>We started United as founders ourselves, so we know business income doesn't look like a payslip. Our advisers know which lenders read dividends, day rates, and equity comp properly &#8209; and how to present yours the way they want to see it.</p>
                     <a href="<?php echo home_url('/efse'); ?>" class="btn-service">I'M SELF EMPLOYED</a>
                 </div>
 
@@ -76,9 +74,7 @@ get_header(); ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-mortgages/other-mortgages.svg" alt="BtL Investors">
                     </div>
                     <h3>Buy-to-Let Investors</h3>
-                    <p>Building a property portfolio requires lenders who understand rental yields,
-                    stress tests, and portfolio strategies. We work with specialist BTL lenders
-                    who see investment properties as business assets, not consumer purchases.</p>
+                    <p>Portfolio lending runs on rental yield and stress-test maths, not personal income. We work with specialist BTL lenders who assess it that way.</p>
                     <a href="<?php echo home_url('/buy-to-let'); ?>" class="btn-service">I'M AN INVESTOR</a>
                 </div>
             </div>

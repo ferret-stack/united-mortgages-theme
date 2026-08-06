@@ -164,7 +164,7 @@ get_header(); ?>
                     <span class="hp-testimonials__avatar">SB</span>
                     <div class="hp-name">Saffron Sims-Brydon</div>
                     <div class="hp-role"> </div>
-                    <div class="hp-quote">&ldquo;As a first time buyer, I was nervous about the process, but United Mortgages are making it really simple. Clear advice, easy process and even picked up the phone on a Sunday when I have urgent questions. Highly recommend!&rdquo;</div>
+                    <div class="hp-quote">&ldquo;As a first time buyer, I was nervous about the process, but United Mortgages made it really simple. Clear advice, easy process and even picked up the phone on a Sunday when I have urgent questions. Highly recommend!&rdquo;</div>
                     <div class="hp-attribution">September 2025 &middot; &#9733;&#9733;&#9733;&#9733;&#9733; Verified review</div>
                 </div>
                 <div class="hp-testimonials__card">
