@@ -13,7 +13,6 @@ get_header(); ?>
     <section class="um-product-hero">
         <div class="hp-container">
             <div class="um-product-hero__content">
-                <span class="hp-pill">Moving Home</span>
                 <h1 class="um-product-hero__title">Moving home is stressful. <span class="bold-text">It doesn't have to be.</span></h1>
                 <p class="um-product-hero__subtitle">Whatever your next chapter looks like, we're here to help.</p>
             </div>

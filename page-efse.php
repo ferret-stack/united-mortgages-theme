@@ -13,7 +13,6 @@ get_header(); ?>
     <section class="um-product-hero">
         <div class="hp-container">
             <div class="um-product-hero__content">
-                <span class="hp-pill">Entrepreneurs, Founders &amp; Self Employed</span>
                 <h1 class="um-product-hero__title">You do your thing. <span class="bold-text">We'll do ours.</span></h1>
                 <p class="um-product-hero__subtitle">You know your business, and we know mortgages. We're here to help so you can focus on the important things.</p>
             </div>

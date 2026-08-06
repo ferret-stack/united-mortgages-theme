@@ -13,7 +13,6 @@ get_header(); ?>
     <section class="um-product-hero">
         <div class="hp-container">
             <div class="um-product-hero__content">
-                <span class="hp-pill">Expats</span>
                 <h1 class="um-product-hero__title">Relocating to the <span class="bold-text">United Kingdom?</span></h1>
                 <p class="um-product-hero__subtitle">United Mortgages&reg; can help.</p>
             </div>

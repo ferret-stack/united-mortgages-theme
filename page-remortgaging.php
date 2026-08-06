@@ -13,7 +13,6 @@ get_header(); ?>
     <section class="um-product-hero">
         <div class="hp-container">
             <div class="um-product-hero__content">
-                <span class="hp-pill">Remortgaging</span>
                 <h1 class="um-product-hero__title">Want a better deal? Looking to release equity?</h1>
                 <p class="um-product-hero__subtitle">Same house. New mortgage. Your terms.</p>
             </div>

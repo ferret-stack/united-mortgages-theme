@@ -13,7 +13,6 @@ get_header(); ?>
     <section class="um-product-hero">
         <div class="hp-container">
             <div class="um-product-hero__content">
-                <span class="hp-pill">Buy-to-Let</span>
                 <h1 class="um-product-hero__title">Buy-to-let. <span class="bold-text">Done Right.</span></h1>
                 <p class="um-product-hero__subtitle">We leverage our exclusive network to help you have a smooth investment journey.</p>
             </div>

@@ -12,7 +12,6 @@ get_header(); ?>
     <section class="um-aip-hero">
         <div class="hp-container">
             <div class="um-aip-hero__content">
-                <div class="hp-pill">Takes less than 10 minutes</div>
                 <h1 class="um-aip-hero__title">Secure Your <span class="um-aip-hero__accent">Agreement in Principle</span></h1>
                 <p class="um-aip-hero__subtitle">Know how much you can borrow before you fall in love with a property. It gives you clarity on your budget and shows sellers you're serious.</p>
             </div>
