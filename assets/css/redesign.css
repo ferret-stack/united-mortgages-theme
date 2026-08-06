@@ -3079,4 +3079,45 @@ body.is-front-redesign {
     color: var(--hp-body);
 }
 
+/* -------------------- Data grid (privacy policy: "Information We Collect",
+   "Your Rights" — reuses the same card look as .um-policy-contact-card,
+   just a distinct name since it's semantically a different section type) -------------------- */
+.um-policy-data-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 24px 0;
+}
+
+@media (max-width: 640px) {
+    .um-policy-data-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.um-policy-data-card {
+    background: #fff;
+    border: 1px solid var(--hp-border);
+    border-radius: 16px;
+    padding: 24px 26px;
+}
+
+.um-policy-data-card h4 {
+    font-family: var(--hp-font-display);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--hp-ink);
+    margin: 0 0 10px;
+}
+
+.um-policy-data-card p {
+    margin: 0 0 8px;
+    color: var(--hp-body);
+    font-size: 14.5px;
+}
+
+.um-policy-data-card p:last-child {
+    margin-bottom: 0;
+}
+
 /* -------------------- CTA band (reuses .um-cta-band verbatim) -------------------- */
