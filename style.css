@@ -11379,8 +11379,8 @@ input#borrow-deposit::placeholder {
 }
 
 .hp-partners__grid > .hp-partners__tile {
-  flex: 0 1 calc((100% - 2 * 28px) / 3);
-  min-width: 260px;
+  flex: 0 1 calc((100% - 3 * 28px) / 4);
+  min-width: 220px;
 }
 
 .hp-partners__tile {
