@@ -11453,6 +11453,41 @@ input#borrow-deposit::placeholder {
     }
 }
 
+/* -------------------- Partners: B2B referral network (eXp agents)
+   Icons only — no name, no description, no card border/background. This is
+   a referral network, not a client-facing service recommendation, so it's
+   deliberately styled apart from the partner cards above rather than
+   folded into one of those stages. Hairline top border + margin separates
+   it from the cards without needing a text heading. Same tint recipe as
+   .hp-partners__logo img — these source files are the same pale/white-on-
+   transparent artwork as the rest of /assets/partners/. -------------------- */
+.hp-partners__b2b {
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px solid var(--hp-border);
+}
+
+.hp-partners__b2b-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
+}
+
+.hp-partners__b2b-grid > .hp-partners__b2b-logo {
+    flex: 0 1 calc((100% - 3 * 28px) / 4);
+    min-width: 140px;
+    height: 56px;
+}
+
+.hp-partners__b2b-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(0) invert(37%) sepia(93%) saturate(1352%) hue-rotate(180deg) brightness(93%) contrast(101%);
+}
+
 /* -------------------- Final CTA banner -------------------- */
 .hp-cta-banner {
     background: var(--hp-accent);

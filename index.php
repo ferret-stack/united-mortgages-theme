@@ -202,8 +202,15 @@ get_header(); ?>
          links, per direction already agreed with the client.
 
          Referral/introducer relationships — not client-facing services.
-         See /introducer-partners. (Covers all eXp agents, CheckMyFile and
-         Utility Warehouse — real business relationships, just not shown here.)
+         CheckMyFile and Utility Warehouse stay off this page entirely; see
+         /introducer-partners for those. The eXp agents are the exception:
+         client + cofounder confirmed a B2B reason to surface them here too,
+         so they're appended below as a plain logo-only grid (no name, no
+         description, no card styling) rather than folded into the service-
+         partner cards above — this is a referral network, not a
+         recommended service, so it's deliberately styled differently. They
+         also remain on /introducer-partners unchanged, for the direct-link
+         use case (sending an agent their own page).
 
          Drifthome, Fiberpay, Bine Properties and Sokda Planner (SOK) are now
          placed below too, per direction that nothing should be missing from
@@ -355,6 +362,25 @@ get_header(); ?>
                     echo "</div>";
                     echo "</div>";
                 }
+
+                // B2B referral network (eXp agents) — icons only, no name/description,
+                // no card styling. Same six agents/files as page-introducer-partners.php.
+                $exp_agents = [
+                    ['file' => '07mn-eXp.svg', 'name' => 'Mark Newton'],
+                    ['file' => '08pb-exp.png', 'name' => 'Paul Berg'],
+                    ['file' => '14bc-exp.png', 'name' => 'Benn Colling'],
+                    ['file' => '17ms-exp.png', 'name' => 'Michal Sikora'],
+                    ['file' => '18gb-exp.png', 'name' => 'Grant Boonzaier'],
+                    ['file' => '19ra-exp.png', 'name' => 'Richard Aves'],
+                ];
+
+                echo "<div class='hp-partners__b2b'>";
+                echo "<div class='hp-partners__b2b-grid'>";
+                foreach ($exp_agents as $agent) {
+                    echo "<div class='hp-partners__b2b-logo'><img src='" . $url . $agent['file'] . "' alt='" . $agent['name'] . " logo' /></div>";
+                }
+                echo "</div>";
+                echo "</div>";
             ?>
         </div>
     </section>
