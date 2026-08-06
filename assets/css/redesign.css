@@ -18,6 +18,9 @@
    7. Blog pages (archive.php, single.php)
    8. AIP Overview page (page-aip-overview.php)
    9. AIP Form page (page-aip-form.php)
+   10. Legal/policy pages — shared components (page-complaints-policy.php;
+       intended for reuse on page-privacy-policy.php, page-tcf.php,
+       page-fee-structure.php when they're migrated)
    ============================================================ */
 
 /* -------------------- 1. Sitewide header/nav -------------------- */
@@ -2945,3 +2948,135 @@ body.is-front-redesign {
         padding: 32px 15px 60px;
     }
 }
+
+/* ============================================================
+   10. LEGAL/POLICY PAGES — shared components
+   (page-complaints-policy.php; built for reuse across the other
+   regulated pages — page-privacy-policy.php, page-tcf.php,
+   page-fee-structure.php — as each is migrated)
+
+   Hero reuses .um-product-hero verbatim (flat/no-photo, cream bg,
+   same treatment as the mortgage product pages and Calculators page).
+   Layout below is the blog's two-column pattern (.um-blog-layout)
+   with a policy-specific sidebar TOC; article typography reuses
+   .um-post-content verbatim. Copy on every page using these
+   components must stay word-for-word identical to the pre-redesign
+   version — these are FCA-regulated documents, restyle only.
+   ============================================================ */
+
+.um-policy-content {
+    background: #fff;
+    padding: 64px 0 80px;
+}
+
+.um-policy-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .um-policy-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+/* -------------------- Sidebar TOC (reuses .um-sidebar-widget /
+   .um-toc-nav verbatim; sticky on desktop) -------------------- */
+.um-policy-toc {
+    position: sticky;
+    top: 190px;
+}
+
+@media (max-width: 1024px) {
+    .um-policy-toc {
+        position: static;
+    }
+}
+
+/* -------------------- Info box (key facts / timeframes callout) -------------------- */
+.um-policy-info-box {
+    background: var(--hp-cream-blue);
+    border-left: 3px solid var(--hp-accent);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 24px;
+    margin: 28px 0;
+}
+
+.um-policy-info-box p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.um-policy-info-box p + p {
+    margin-top: 10px;
+}
+
+/* -------------------- Step cards ("Simple Issues" / "Complex Issues") -------------------- */
+.um-policy-step {
+    background: var(--hp-cream);
+    border: 1px solid var(--hp-border);
+    border-radius: 16px;
+    padding: 24px 26px;
+    margin: 0 0 18px;
+}
+
+.um-policy-step h4 {
+    font-family: var(--hp-font-display);
+    font-size: 16.5px;
+    font-weight: 600;
+    color: var(--hp-ink);
+    margin: 0 0 10px;
+}
+
+.um-policy-step p,
+.um-policy-step ul {
+    margin: 0 0 0;
+    color: var(--hp-body);
+}
+
+.um-policy-step ul {
+    margin-top: 10px;
+}
+
+/* -------------------- Contact cards -------------------- */
+.um-policy-contact-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 24px 0;
+}
+
+.um-policy-contact-cards--single {
+    grid-template-columns: 1fr;
+}
+
+@media (max-width: 640px) {
+    .um-policy-contact-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.um-policy-contact-card {
+    background: #fff;
+    border: 1px solid var(--hp-border);
+    border-radius: 16px;
+    padding: 24px 26px;
+}
+
+.um-policy-contact-card h4 {
+    font-family: var(--hp-font-display);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--hp-ink);
+    margin: 0 0 10px;
+}
+
+.um-policy-contact-card p {
+    margin: 0;
+    color: var(--hp-body);
+}
+
+/* -------------------- CTA band (reuses .um-cta-band verbatim) -------------------- */
