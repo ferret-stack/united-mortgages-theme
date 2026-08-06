@@ -261,25 +261,17 @@ get_header(); ?>
                             [
                                 'file' => 'bine.png',
                                 'name' => 'Bine Properties',
-                                // TODO(content): UNVERIFIED placeholder — bineproperties.co.uk
-                                // returned 403 to this environment's fetch tool, description is
-                                // a guess from the company name only. Please replace with real copy.
-                                'description' => 'Property sourcing and lettings partner.',
+                                'description' => 'Property consultancy focused on sourcing and managing off-market real estate in Prime Central London.',
                             ],
                                 [
                                 'file' => '03drifthome.svg',
                                 'name' => 'Drifthome',
-                                // TODO(content): UNVERIFIED placeholder — drifthome.ai returned
-                                // 403 to this environment's fetch tool, description is a guess
-                                // from the company name only. Please replace with real copy.
-                                'description' => 'Technology partner supporting your home search and move.',
+                                'description' => 'A smart UK home finder app making property search fun, fast, and personalised.',
                             ],
                             [
                                 'file' => '12plap.png',
                                 'name' => 'Property Like a Pro',
-                                // TODO(content): sign-off needed — writeup below reflects the
-                                // announced strategic partnership; confirm final wording.
-                                'description' => 'Our strategic property sourcing partner, helping clients find and secure investment-ready properties.',
+                                'description' => 'UK property investment advice and sourcing for residential investors seeking strategic acquisitions and long-term portfolio growth.'
                             ],
                         ],
                     ],
@@ -289,50 +281,37 @@ get_header(); ?>
                             [
                                 'file' => '01charterwells.svg',
                                 'name' => 'Charterwells',
-                                'description' => 'Independent protection specialists, covering life, income and critical illness cover alongside your mortgage.',
+                                'description' => 'Chartered accountants providing Big Four rigour and a human touch',
                             ],
                             [
                                 'file' => '13cmf.png',
                                 'name' => 'Check My File',
-                                'description' => 'poo'
+                                'description' => 'Check your credit score across major scoring companies in one single place.'
                             ],
                             [
                                 'file' => '06fiberpay.svg',
                                 'name' => 'Fiberpay',
-                                // TODO(content): UNVERIFIED placeholder — fiberpay.com returned
-                                // 403 to this environment's fetch tool, description is a guess
-                                // from the company name only. Please replace with real copy.
-                                'description' => 'Our payments technology partner.',
+                                'description' => 'Making cross-border money transfers simple, fast, and secure.',
                             ],
                                 [
                                 'file' => '10mortgage-direct.svg',
                                 'name' => 'Mortgage Direct',
-                                // TODO(content): draft wording, please review — our contact for
-                                // mortgages on Spanish property. Folded in here rather than a
-                                // one-off "International Property" heading — it's the only
-                                // international-mortgage entry we have right now.
                                 'description' => 'Our specialist contact for mortgages on Spanish property.',
                             ],
                                 [
                                 'file' => '16prl.png',
                                 'name' => 'Perry Road Legacy',
-                                // TODO(content): sign-off needed — relabelled from "conveyancing"
-                                // to international estate planning/will-writing per direction;
-                                // confirm final wording.
-                                'description' => 'International estate planning and will-writing, protecting what you\'ve built for the long term.',
+                                'description' => 'Estate planning and will-writing, protecting what you\'ve built for the long term.',
                             ],
                             [
                                 'file' => '20sok.png',
                                 'name' => 'Sokda Planner',
-                                // TODO(content): UNVERIFIED placeholder — sokdaplanner.com
-                                // returned 403 to this environment's fetch tool, description is
-                                // a guess from the company name only. Please replace with real copy.
-                                'description' => 'Our financial planning partner.',
+                                'description' => 'Handles property coordination and home setup after you\'ve got the keys.',
                             ],
                             [
                                 'file' => '15uw.png',
                                 'name' => 'Utility Warehouse',
-                                'description' => 'poo',
+                                'description' => 'Get all your home and utility services, including gas, electricity, broadband, mobile and home insurance from one company.',
                             ],
                         ],
                     ],
@@ -347,7 +326,7 @@ get_header(); ?>
                             [
                                 'file' => '04key-conveyencing.svg',
                                 'name' => 'Key Conveyancing',
-                                'description' => 'Conveyancing solicitors managing contracts, searches and completion.',
+                                'description' => 'Conveyancing solicitors managing contracts, searches, and completion.',
                             ],
                             [
                                 'file' => '09novello.svg',
