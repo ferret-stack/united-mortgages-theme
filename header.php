@@ -56,7 +56,7 @@
                 <div class="site-branding">
                     <h1 class="site-title">
                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                          <img src="<?php echo get_template_directory_uri(); ?>/assets/united-2.png" alt="United Mortgages" class="site-logo">
+                          <img src="<?php echo get_template_directory_uri(); ?>/assets/um-header.png" alt="United Mortgages" class="site-logo">
                         </a>
                     </h1>
                 </div>

@@ -3991,7 +3991,7 @@ input#borrow-deposit::placeholder {
 }
 
 .social-icon:hover {
-    background-color: var(--um-gold);
+    background-color: var(--dannyboy-blue);
     transform: translateY(-3px);
 }
 
@@ -4065,11 +4065,11 @@ input#borrow-deposit::placeholder {
 
 .contact-item i {
     font-size: 14px;
-    color: var(--um-gold);
+    color: var(--dannyboy-blue);
 }
 
 .contact-item:hover {
-    color: var(--um-gold);
+    color: var(--dannyboy-blue);
 }
 
 /* Footer Bottom */
@@ -9331,11 +9331,6 @@ input#borrow-deposit::placeholder {
     text-decoration: none;
 }
 
-.social-icon:hover {
-    background-color: var(--um-gold);
-    transform: translateY(-3px);
-}
-
 .social-icon i {
     font-size: 18px;
 }
@@ -9406,7 +9401,7 @@ input#borrow-deposit::placeholder {
 
 .contact-item i {
     font-size: 14px;
-    color: var(--um-gold);
+    color: var(--dannyboy-blue);
 }
 
 .contact-item:hover {
