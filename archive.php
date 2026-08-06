@@ -21,7 +21,6 @@ if (is_page('blog')) {
     <section class="um-product-hero">
         <div class="hp-container">
             <div class="um-product-hero__content">
-                <span class="hp-pill">Insights &amp; Advice</span>
                 <h1 class="um-product-hero__title"><span class="bold-text">United Mortgages&reg;</span> Blog</h1>
                 <p class="um-product-hero__subtitle">Expert insights, mortgage tips, and property market updates.</p>
             </div>
