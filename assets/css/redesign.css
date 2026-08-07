@@ -324,7 +324,7 @@ body.is-front-redesign {
     overflow: hidden;
     border-radius: 12px;
     margin-bottom: 22px;
-    background: var(--hp-ink);
+    background: #202027;
 }
 
 .um-founder-image {
@@ -335,6 +335,7 @@ body.is-front-redesign {
     object-fit: cover;
     object-position: top center;
     transition: opacity .5s ease;
+    color: #232526;
 }
 
 .um-founder-image--bw {
