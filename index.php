@@ -202,6 +202,11 @@ get_header(); ?>
             <?php
                 $url = get_template_directory_uri() . '/assets/partners/';
 
+                // Every partner link carries rel="sponsored" by default: there's a
+                // commission relationship behind all of them (confirmed), and
+                // Google's `sponsored` rel is about that paid/compensated
+                // relationship, not which way referrals flow. See the render loops
+                // below — rel is applied uniformly, no per-entry flag needed.
                 $partner_journey_stages = [
                     [
                         'stage' => 'Property Sourcing',
@@ -210,21 +215,25 @@ get_header(); ?>
                                 'file' => 'bine.png',
                                 'name' => 'Bine Properties',
                                 'description' => 'Property consultancy focused on sourcing and managing off-market real estate in Prime Central London.',
+                                'url' => 'https://bineproperties.co.uk/',
                             ],
                                 [
                                 'file' => '03drifthome.svg',
                                 'name' => 'Drifthome',
                                 'description' => 'A smart UK home finder app making property search fun, fast, and personalised.',
+                                'url' => 'https://drifthome.ai/',
                             ],
                             [
                                 'file' => '12plap.png',
                                 'name' => 'Property Like a Pro',
-                                'description' => 'UK property investment advice and sourcing for residential investors seeking strategic acquisitions and long-term portfolio growth.'
+                                'description' => 'UK property investment advice and sourcing for residential investors seeking strategic acquisitions and long-term portfolio growth.',
+                                'url' => 'https://www.propertylikeapro.co.uk/',
                             ],
                             [
                                 'file' => '20sok.png',
                                 'name' => 'Sokda Planner',
                                 'description' => 'Handles property coordination and home setup after you\'ve got the keys.',
+                                'url' => '#', // TODO(content): URL not confirmed for Sokda Planner
                             ],
                         ],
                     ],
@@ -235,31 +244,37 @@ get_header(); ?>
                                 'file' => '01charterwells.svg',
                                 'name' => 'Charterwells',
                                 'description' => 'Chartered accountants providing Big Four rigour and a human touch.',
+                                'url' => 'https://www.charterwells.co.uk/',
                             ],
                             [
                                 'file' => '13cmf.png',
                                 'name' => 'Check My File',
-                                'description' => 'Check your credit score across major scoring companies in one single place.'
+                                'description' => 'Check your credit score across major scoring companies in one single place.',
+                                'url' => 'https://www.checkmyfile.partners/GZBMKJ9/FGXLG/',
                             ],
                             [
                                 'file' => '06fiberpay.svg',
                                 'name' => 'Fiberpay',
                                 'description' => 'Making cross-border money transfers simple, fast, and secure.',
+                                'url' => 'https://fiberpay.com/',
                             ],
                                 [
                                 'file' => '10mortgage-direct.svg',
                                 'name' => 'Mortgage Direct',
                                 'description' => 'Our specialist contact for mortgages on Spanish property.',
+                                'url' => 'https://mortgagedirectsl.com/initial-enquiry/',
                             ],
                                 [
                                 'file' => '16prl.png',
                                 'name' => 'Perry Road Legacy',
                                 'description' => 'Estate planning and will-writing, protecting what you\'ve built for the long term.',
+                                'url' => 'https://www.perryroadlegacy.com/',
                             ],
                             [
                                 'file' => '15uw.png',
                                 'name' => 'Utility Warehouse',
                                 'description' => 'Get all your home and utility services, including gas, electricity, broadband, mobile and home insurance from one company.',
+                                'url' => 'http://connectors.uw.co.uk/CN-ZM82',
                             ],
                         ],
                     ],
@@ -270,16 +285,19 @@ get_header(); ?>
                                 'file' => '04key-conveyencing.svg',
                                 'name' => 'Key Conveyancing',
                                 'description' => 'Conveyancing solicitors managing contracts, searches, and completion.',
+                                'url' => 'https://www.keyconveyancing.co.uk/',
                             ],
                             [
                                 'file' => '09novello.svg',
                                 'name' => 'Novello Chartered Surveyors',
                                 'description' => 'Chartered surveyors assessing the condition and value of your property.',
+                                'url' => 'https://novellosurveyors.co.uk/',
                             ],
                             [
                                 'file' => '02thomas-legal.svg',
                                 'name' => 'Thomas Legal',
                                 'description' => 'Conveyancing solicitors handling the legal transfer of your property.',
+                                'url' => 'https://thomaslegal.co.uk/',
                             ],
                         ],
                     ],
@@ -290,34 +308,37 @@ get_header(); ?>
                     echo "<h3 class='hp-partners__stage-label'>" . $stage['stage'] . "</h3>";
                     echo "<div class='hp-partners__grid'>";
                     foreach ($stage['partners'] as $partner) {
-                        echo "<div class='hp-partners__tile'>";
+                        echo "<a class='hp-partners__tile' href='" . esc_url($partner['url']) . "' target='_blank' rel='noopener noreferrer sponsored'>";
                         echo "<div class='hp-partners__logo'><img src='" . $url . $partner['file'] . "' alt='" . $partner['name'] . " logo' /></div>";
                         echo "<h4 class='hp-partners__name'>" . $partner['name'] . "</h4>";
                         echo "<p class='hp-partners__desc'>" . $partner['description'] . "</p>";
-                        echo "</div>";
+                        echo "</a>";
                     }
                     echo "</div>";
+                    // TODO(content): fee/commission disclosure copy for this B2C tier is
+                    // not yet confirmed — placeholder only, no visible text added here.
+                    // Wording to go here (near the B2C grid only) once confirmed.
                     echo "</div>";
                 }
 
-                // B2B referral network (eXp agents) — icons only, no name/description,
-                // no card styling. Same six agents/files as page-introducer-partners.php.
+                // B2B referral network — icons only, no name/description, no card
+                // styling. Same default-sponsored rel as the B2C tier above.
                 $estate_agents = [
-                    ['file' => '07mn-eXp.svg', 'name' => 'Mark Newton'],
-                    ['file' => '08pb-exp.png', 'name' => 'Paul Berg'],
-                    ['file' => '14bc-exp.png', 'name' => 'Benn Colling'],
-                    ['file' => '17ms-exp.png', 'name' => 'Michal Sikora'],
-                    ['file' => '18gb-exp.png', 'name' => 'Grant Boonzaier'],
-                    ['file' => '19ra-exp.png', 'name' => 'Richard Aves'],
-                    ['file' => 'wheal.png', 'name' => 'Wilson Heal'],
-                    ['file' => '05david-charles.svg', 'name' => 'David Charles'],
+                    ['file' => '07mn-eXp.svg', 'name' => 'Mark Newton', 'url' => 'https://marknewton.exp.uk.com/'],
+                    ['file' => '08pb-exp.png', 'name' => 'Paul Berg', 'url' => 'https://paulberg.exp.uk.com/'],
+                    ['file' => '14bc-exp.png', 'name' => 'Benn Colling', 'url' => 'https://benncolling.exp.uk.com/'],
+                    ['file' => '17ms-exp.png', 'name' => 'Michal Sikora', 'url' => 'https://michalsikora.exp.uk.com/'],
+                    ['file' => '18gb-exp.png', 'name' => 'Grant Boonzaier', 'url' => 'https://grantboonzaier.exp.uk.com/'],
+                    ['file' => '19ra-exp.png', 'name' => 'Richard Aves', 'url' => 'https://richardaves.exp.uk.com/'],
+                    ['file' => 'wheal.png', 'name' => 'Wilson Heal', 'url' => 'https://www.wilsonheal.co.uk/'],
+                    ['file' => '05david-charles.svg', 'name' => 'David Charles', 'url' => 'https://davidcharles.co.uk/'],
                 ];
 
                 echo "<div class='hp-partners__b2b'>";
                 echo "<h3 class='hp-partners__stage-label'>" . "Estate Agents" . "</h3>";
                 echo "<div class='hp-partners__b2b-grid'>";
                 foreach ($estate_agents as $agent) {
-                    echo "<div class='hp-partners__b2b-logo'><img src='" . $url . $agent['file'] . "' alt='" . $agent['name'] . " logo' /></div>";
+                    echo "<a class='hp-partners__b2b-logo' href='" . esc_url($agent['url']) . "' target='_blank' rel='noopener noreferrer sponsored'><img src='" . $url . $agent['file'] . "' alt='" . $agent['name'] . " logo' /></a>";
                 }
                 echo "</div>";
                 echo "</div>";
