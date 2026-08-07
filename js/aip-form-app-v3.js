@@ -73,7 +73,6 @@ function createEmptyApplicant() {
         credit_history_info: '',
         documents: {
             proof_of_identity: null,
-            proof_of_address: null,
             bank_statement_1: null,
             bank_statement_2: null,
             bank_statement_3: null,
@@ -161,7 +160,7 @@ const app = createApp({
             const docs = applicant.documents;
             
             // Universal documents
-            if (!docs.proof_of_identity || !docs.proof_of_address) {
+            if (!docs.proof_of_identity) {
                 return false;
             }
             

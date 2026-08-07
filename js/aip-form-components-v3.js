@@ -818,7 +818,6 @@ const DocumentUploads = {
             uploadedFiles: {
                 // Universal documents (ALL applicants)
                 proof_of_identity: null,
-                proof_of_address: null,
                 bank_statement_1: null,
                 bank_statement_2: null,
                 bank_statement_3: null,
@@ -883,8 +882,7 @@ const DocumentUploads = {
         allRequiredDocumentsUploaded() {
             // Universal documents
             const universalDocs = [
-                'proof_of_identity',
-                'proof_of_address'
+                'proof_of_identity'
             ];
             
             for (let doc of universalDocs) {
@@ -1027,36 +1025,6 @@ const DocumentUploads = {
                             <button 
                                 v-if="uploadedFiles.proof_of_identity" 
                                 @click.prevent="removeFile('proof_of_identity')"
-                                class="remove-file-btn"
-                                type="button"
-                            >
-                                Remove
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Proof of Address -->
-                    <div class="document-upload-field">
-                        <label>Proof of Address *</label>
-                        <p class="helper-text">e.g. UK Driving License (if ont already provided), Utility Bill (gas, electirc, water - not mobile phone), Bank Statement, valid Council Tax Bill, Credit Card Statement, Mortgage Statement, Tenancy Agreement, HMRC Correspondence</p>
-                        <div class="file-upload-wrapper">
-                            <input 
-                                type="file" 
-                                :ref="'proof_of_address'"
-                                @change="handleFileUpload($event, 'proof_of_address')"
-                                accept=".pdf,.jpg,.jpeg,.png"
-                                :id="'proof_of_address_' + applicantNumber"
-                            />
-                            <label :for="'proof_of_address_' + applicantNumber" class="file-upload-label">
-                                <span v-if="!uploadedFiles.proof_of_address">Choose file</span>
-                                <span v-else class="file-uploaded">
-                                    ✓ {{ getFileName(uploadedFiles.proof_of_address) }} 
-                                    ({{ formatFileSize(uploadedFiles.proof_of_address.size) }})
-                                </span>
-                            </label>
-                            <button 
-                                v-if="uploadedFiles.proof_of_address" 
-                                @click.prevent="removeFile('proof_of_address')"
                                 class="remove-file-btn"
                                 type="button"
                             >
