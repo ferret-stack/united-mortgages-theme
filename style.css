@@ -11505,8 +11505,7 @@ input#borrow-deposit::placeholder {
 }
 
 .more-mortgages {
-    text-align: center;
-    transform: translateY(25px);
+    color: var(--dannyboy-blue);
 }
 
 .mortgage-service-card {
