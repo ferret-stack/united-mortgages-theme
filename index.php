@@ -202,6 +202,13 @@ get_header(); ?>
             <?php
                 $url = get_template_directory_uri() . '/assets/partners/';
 
+                // 'sponsored' => true marks a confirmed commission-bearing relationship
+                // (Google's `sponsored` rel is about the paid/compensated relationship
+                // behind the link, not which way referrals flow — so this is set per
+                // confirmed commercial arrangement, not per partner "importance").
+                // Firms below without a confirmed commission arrangement are left
+                // unmarked; see summary for the flagged/unconfirmed list rather than
+                // guessing here.
                 $partner_journey_stages = [
                     [
                         'stage' => 'Property Sourcing',
@@ -210,21 +217,25 @@ get_header(); ?>
                                 'file' => 'bine.png',
                                 'name' => 'Bine Properties',
                                 'description' => 'Property consultancy focused on sourcing and managing off-market real estate in Prime Central London.',
+                                'url' => 'https://bineproperties.co.uk/',
                             ],
                                 [
                                 'file' => '03drifthome.svg',
                                 'name' => 'Drifthome',
                                 'description' => 'A smart UK home finder app making property search fun, fast, and personalised.',
+                                'url' => 'https://drifthome.ai/',
                             ],
                             [
                                 'file' => '12plap.png',
                                 'name' => 'Property Like a Pro',
-                                'description' => 'UK property investment advice and sourcing for residential investors seeking strategic acquisitions and long-term portfolio growth.'
+                                'description' => 'UK property investment advice and sourcing for residential investors seeking strategic acquisitions and long-term portfolio growth.',
+                                'url' => 'https://www.propertylikeapro.co.uk/',
                             ],
                             [
                                 'file' => '20sok.png',
                                 'name' => 'Sokda Planner',
                                 'description' => 'Handles property coordination and home setup after you\'ve got the keys.',
+                                'url' => '#', // TODO(content): URL not confirmed for Sokda Planner
                             ],
                         ],
                     ],
@@ -235,31 +246,38 @@ get_header(); ?>
                                 'file' => '01charterwells.svg',
                                 'name' => 'Charterwells',
                                 'description' => 'Chartered accountants providing Big Four rigour and a human touch.',
+                                'url' => 'https://www.charterwells.co.uk/',
                             ],
                             [
                                 'file' => '13cmf.png',
                                 'name' => 'Check My File',
-                                'description' => 'Check your credit score across major scoring companies in one single place.'
+                                'description' => 'Check your credit score across major scoring companies in one single place.',
+                                'url' => 'https://www.checkmyfile.partners/GZBMKJ9/FGXLG/',
                             ],
                             [
                                 'file' => '06fiberpay.svg',
                                 'name' => 'Fiberpay',
                                 'description' => 'Making cross-border money transfers simple, fast, and secure.',
+                                'url' => 'https://fiberpay.com/',
                             ],
                                 [
                                 'file' => '10mortgage-direct.svg',
                                 'name' => 'Mortgage Direct',
                                 'description' => 'Our specialist contact for mortgages on Spanish property.',
+                                'url' => 'https://mortgagedirectsl.com/initial-enquiry/',
+                                'sponsored' => true, // confirmed commission-bearing
                             ],
                                 [
                                 'file' => '16prl.png',
                                 'name' => 'Perry Road Legacy',
                                 'description' => 'Estate planning and will-writing, protecting what you\'ve built for the long term.',
+                                'url' => 'https://www.perryroadlegacy.com/',
                             ],
                             [
                                 'file' => '15uw.png',
                                 'name' => 'Utility Warehouse',
                                 'description' => 'Get all your home and utility services, including gas, electricity, broadband, mobile and home insurance from one company.',
+                                'url' => 'http://connectors.uw.co.uk/CN-ZM82',
                             ],
                         ],
                     ],
@@ -270,16 +288,19 @@ get_header(); ?>
                                 'file' => '04key-conveyencing.svg',
                                 'name' => 'Key Conveyancing',
                                 'description' => 'Conveyancing solicitors managing contracts, searches, and completion.',
+                                'url' => 'https://www.keyconveyancing.co.uk/',
                             ],
                             [
                                 'file' => '09novello.svg',
                                 'name' => 'Novello Chartered Surveyors',
                                 'description' => 'Chartered surveyors assessing the condition and value of your property.',
+                                'url' => 'https://novellosurveyors.co.uk/',
                             ],
                             [
                                 'file' => '02thomas-legal.svg',
                                 'name' => 'Thomas Legal',
                                 'description' => 'Conveyancing solicitors handling the legal transfer of your property.',
+                                'url' => 'https://thomaslegal.co.uk/',
                             ],
                         ],
                     ],
@@ -290,34 +311,41 @@ get_header(); ?>
                     echo "<h3 class='hp-partners__stage-label'>" . $stage['stage'] . "</h3>";
                     echo "<div class='hp-partners__grid'>";
                     foreach ($stage['partners'] as $partner) {
-                        echo "<div class='hp-partners__tile'>";
+                        $rel = !empty($partner['sponsored']) ? 'noopener noreferrer sponsored' : 'noopener noreferrer';
+                        echo "<a class='hp-partners__tile' href='" . esc_url($partner['url']) . "' target='_blank' rel='" . $rel . "'>";
                         echo "<div class='hp-partners__logo'><img src='" . $url . $partner['file'] . "' alt='" . $partner['name'] . " logo' /></div>";
                         echo "<h4 class='hp-partners__name'>" . $partner['name'] . "</h4>";
                         echo "<p class='hp-partners__desc'>" . $partner['description'] . "</p>";
-                        echo "</div>";
+                        echo "</a>";
                     }
                     echo "</div>";
+                    // TODO(content): fee/commission disclosure copy for this B2C tier is
+                    // not yet confirmed — placeholder only, no visible text added here.
+                    // Wording to go here (near the B2C grid only) once confirmed.
                     echo "</div>";
                 }
 
-                // B2B referral network (eXp agents) — icons only, no name/description,
-                // no card styling. Same six agents/files as page-introducer-partners.php.
+                // B2B referral network — icons only, no name/description, no card
+                // styling. Confirmed commission-bearing: all eXp agents, David Charles.
+                // Wilson Heal's commercial arrangement is not confirmed here — left
+                // unmarked/flagged rather than guessed; see summary.
                 $estate_agents = [
-                    ['file' => '07mn-eXp.svg', 'name' => 'Mark Newton'],
-                    ['file' => '08pb-exp.png', 'name' => 'Paul Berg'],
-                    ['file' => '14bc-exp.png', 'name' => 'Benn Colling'],
-                    ['file' => '17ms-exp.png', 'name' => 'Michal Sikora'],
-                    ['file' => '18gb-exp.png', 'name' => 'Grant Boonzaier'],
-                    ['file' => '19ra-exp.png', 'name' => 'Richard Aves'],
-                    ['file' => 'wheal.png', 'name' => 'Wilson Heal'],
-                    ['file' => '05david-charles.svg', 'name' => 'David Charles'],
+                    ['file' => '07mn-eXp.svg', 'name' => 'Mark Newton', 'url' => 'https://marknewton.exp.uk.com/', 'sponsored' => true],
+                    ['file' => '08pb-exp.png', 'name' => 'Paul Berg', 'url' => 'https://paulberg.exp.uk.com/', 'sponsored' => true],
+                    ['file' => '14bc-exp.png', 'name' => 'Benn Colling', 'url' => 'https://benncolling.exp.uk.com/', 'sponsored' => true],
+                    ['file' => '17ms-exp.png', 'name' => 'Michal Sikora', 'url' => 'https://michalsikora.exp.uk.com/', 'sponsored' => true],
+                    ['file' => '18gb-exp.png', 'name' => 'Grant Boonzaier', 'url' => 'https://grantboonzaier.exp.uk.com/', 'sponsored' => true],
+                    ['file' => '19ra-exp.png', 'name' => 'Richard Aves', 'url' => 'https://richardaves.exp.uk.com/', 'sponsored' => true],
+                    ['file' => 'wheal.png', 'name' => 'Wilson Heal', 'url' => '#'], // TODO(content): URL not confirmed for Wilson Heal
+                    ['file' => '05david-charles.svg', 'name' => 'David Charles', 'url' => 'https://david-charles.co.uk/', 'sponsored' => true],
                 ];
 
                 echo "<div class='hp-partners__b2b'>";
                 echo "<h3 class='hp-partners__stage-label'>" . "Estate Agents" . "</h3>";
                 echo "<div class='hp-partners__b2b-grid'>";
                 foreach ($estate_agents as $agent) {
-                    echo "<div class='hp-partners__b2b-logo'><img src='" . $url . $agent['file'] . "' alt='" . $agent['name'] . " logo' /></div>";
+                    $rel = !empty($agent['sponsored']) ? 'noopener noreferrer sponsored' : 'noopener noreferrer';
+                    echo "<a class='hp-partners__b2b-logo' href='" . esc_url($agent['url']) . "' target='_blank' rel='" . $rel . "'><img src='" . $url . $agent['file'] . "' alt='" . $agent['name'] . " logo' /></a>";
                 }
                 echo "</div>";
                 echo "</div>";
