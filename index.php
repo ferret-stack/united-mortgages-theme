@@ -195,57 +195,7 @@ get_header(); ?>
         <?php get_template_part('template-parts/team-contact'); ?>
     </div>
 
-    <!-- Partners Section (not in the 2a mockup — client-facing partner grid,
-         grouped by journey stage. These are informational tiles, not outbound
-         links, per direction already agreed with the client.
-
-         Referral/introducer relationships — not client-facing services.
-         CheckMyFile and Utility Warehouse stay off this page entirely; see
-         /introducer-partners for those. The eXp agents are the exception:
-         client + cofounder confirmed a B2B reason to surface them here too,
-         so they're appended below as a plain logo-only grid (no name, no
-         description, no card styling) rather than folded into the service-
-         partner cards above — this is a referral network, not a
-         recommended service, so it's deliberately styled differently. They
-         also remain on /introducer-partners unchanged, for the direct-link
-         use case (sending an agent their own page).
-
-         Drifthome, Fiberpay, Bine Properties and Sokda Planner (SOK) are now
-         placed below too, per direction that nothing should be missing from
-         the site. Their descriptions and stage placement are UNVERIFIED —
-         drifthome.ai, fiberpay.com, bineproperties.co.uk and
-         sokdaplanner.com all blocked/refused this environment's fetch tool
-         (403), so the copy below is a placeholder inferred from the company
-         name only, not from anything the companies themselves published.
-         Each is marked TODO(content) — please replace with a real one-liner
-         and confirm the stage before this goes live.
-
-         11fortress.svg — no longer a partner (confirmed), left untouched in
-         /assets/partners/ but not referenced anywhere.
-
-         David Charles (05david-charles.svg) is still held out for now,
-         pending a description/stage from the client — not yet placed in
-         either loop.
-
-         Stages only get their own heading once they've got enough entries to
-         justify one — Survey and Everything After were folded into
-         Financial & Protection / Legal (now "Legal & Surveying") rather than
-         staying as one-partner headings.
-
-         Logo sizing: fixed-height container (see .hp-partners__logo),
-         flexible width, object-fit: contain — no per-partner scale/pad
-         values. This was tried in an earlier pass (a 'scale' multiplier per
-         partner, measured from each logo's actual pixel footprint) and
-         deliberately removed per direction: the fixed-height-container +
-         contain approach should handle sizing generically for any future
-         partner without a bespoke measured constant per logo file. Known
-         trade-off, flagged rather than silently fixed: source logo files
-         have very different amounts of built-in whitespace around the
-         actual mark (e.g. Thomas Legal's visible logotype fills well under
-         half its own file's canvas, Drifthome's fills nearly all of it), so
-         even at an identical box height some logos will still read as
-         visually smaller/larger than others — that's the source files, not
-         the container, and isn't corrected here. -->
+    <!-- Partners -->
     <section class="hp-partners">
         <div class="hp-container">
             <div class="hp-eyebrow hp-partners__eyebrow">Our Partners</div>
@@ -270,6 +220,11 @@ get_header(); ?>
                                 'file' => '12plap.png',
                                 'name' => 'Property Like a Pro',
                                 'description' => 'UK property investment advice and sourcing for residential investors seeking strategic acquisitions and long-term portfolio growth.'
+                            ],
+                            [
+                                'file' => '20sok.png',
+                                'name' => 'Sokda Planner',
+                                'description' => 'Handles property coordination and home setup after you\'ve got the keys.',
                             ],
                         ],
                     ],
@@ -302,11 +257,6 @@ get_header(); ?>
                                 'description' => 'Estate planning and will-writing, protecting what you\'ve built for the long term.',
                             ],
                             [
-                                'file' => '20sok.png',
-                                'name' => 'Sokda Planner',
-                                'description' => 'Handles property coordination and home setup after you\'ve got the keys.',
-                            ],
-                            [
                                 'file' => '15uw.png',
                                 'name' => 'Utility Warehouse',
                                 'description' => 'Get all your home and utility services, including gas, electricity, broadband, mobile and home insurance from one company.',
@@ -316,11 +266,6 @@ get_header(); ?>
                     [
                         'stage' => 'Legal &amp; Surveying',
                         'partners' => [
-                            [
-                                'file' => '05david-charles.svg',
-                                'name' => 'David Charles',
-                                'description' => 'Property consultants dealing in commercial property with over 30 years experience.',
-                            ],
                             [
                                 'file' => '04key-conveyencing.svg',
                                 'name' => 'Key Conveyancing',
@@ -364,7 +309,8 @@ get_header(); ?>
                     ['file' => '17ms-exp.png', 'name' => 'Michal Sikora'],
                     ['file' => '18gb-exp.png', 'name' => 'Grant Boonzaier'],
                     ['file' => '19ra-exp.png', 'name' => 'Richard Aves'],
-                    ['file' => 'wheal.png', 'name => Wilson Heal'],
+                    ['file' => 'wheal.png', 'name' => 'Wilson Heal'],
+                    ['file' => '05david-charles.svg', 'name' => 'David Charles'],
                 ];
 
                 echo "<div class='hp-partners__b2b'>";
