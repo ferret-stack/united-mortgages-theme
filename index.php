@@ -330,8 +330,8 @@ get_header(); ?>
                     ['file' => '17ms-exp.png', 'name' => 'Michal Sikora', 'url' => 'https://michalsikora.exp.uk.com/'],
                     ['file' => '18gb-exp.png', 'name' => 'Grant Boonzaier', 'url' => 'https://grantboonzaier.exp.uk.com/'],
                     ['file' => '19ra-exp.png', 'name' => 'Richard Aves', 'url' => 'https://richardaves.exp.uk.com/'],
-                    ['file' => 'wheal.png', 'name' => 'Wilson Heal', 'url' => '#'], // TODO(content): URL not confirmed for Wilson Heal
-                    ['file' => '05david-charles.svg', 'name' => 'David Charles', 'url' => 'https://david-charles.co.uk/'],
+                    ['file' => 'wheal.png', 'name' => 'Wilson Heal', 'url' => 'https://www.wilsonheal.co.uk/'],
+                    ['file' => '05david-charles.svg', 'name' => 'David Charles', 'url' => 'https://davidcharles.co.uk/'],
                 ];
 
                 echo "<div class='hp-partners__b2b'>";
