@@ -202,13 +202,11 @@ get_header(); ?>
             <?php
                 $url = get_template_directory_uri() . '/assets/partners/';
 
-                // 'sponsored' => true marks a confirmed commission-bearing relationship
-                // (Google's `sponsored` rel is about the paid/compensated relationship
-                // behind the link, not which way referrals flow — so this is set per
-                // confirmed commercial arrangement, not per partner "importance").
-                // Firms below without a confirmed commission arrangement are left
-                // unmarked; see summary for the flagged/unconfirmed list rather than
-                // guessing here.
+                // Every partner link carries rel="sponsored" by default: there's a
+                // commission relationship behind all of them (confirmed), and
+                // Google's `sponsored` rel is about that paid/compensated
+                // relationship, not which way referrals flow. See the render loops
+                // below — rel is applied uniformly, no per-entry flag needed.
                 $partner_journey_stages = [
                     [
                         'stage' => 'Property Sourcing',
@@ -265,7 +263,6 @@ get_header(); ?>
                                 'name' => 'Mortgage Direct',
                                 'description' => 'Our specialist contact for mortgages on Spanish property.',
                                 'url' => 'https://mortgagedirectsl.com/initial-enquiry/',
-                                'sponsored' => true, // confirmed commission-bearing
                             ],
                                 [
                                 'file' => '16prl.png',
@@ -311,8 +308,7 @@ get_header(); ?>
                     echo "<h3 class='hp-partners__stage-label'>" . $stage['stage'] . "</h3>";
                     echo "<div class='hp-partners__grid'>";
                     foreach ($stage['partners'] as $partner) {
-                        $rel = !empty($partner['sponsored']) ? 'noopener noreferrer sponsored' : 'noopener noreferrer';
-                        echo "<a class='hp-partners__tile' href='" . esc_url($partner['url']) . "' target='_blank' rel='" . $rel . "'>";
+                        echo "<a class='hp-partners__tile' href='" . esc_url($partner['url']) . "' target='_blank' rel='noopener noreferrer sponsored'>";
                         echo "<div class='hp-partners__logo'><img src='" . $url . $partner['file'] . "' alt='" . $partner['name'] . " logo' /></div>";
                         echo "<h4 class='hp-partners__name'>" . $partner['name'] . "</h4>";
                         echo "<p class='hp-partners__desc'>" . $partner['description'] . "</p>";
@@ -326,26 +322,23 @@ get_header(); ?>
                 }
 
                 // B2B referral network — icons only, no name/description, no card
-                // styling. Confirmed commission-bearing: all eXp agents, David Charles.
-                // Wilson Heal's commercial arrangement is not confirmed here — left
-                // unmarked/flagged rather than guessed; see summary.
+                // styling. Same default-sponsored rel as the B2C tier above.
                 $estate_agents = [
-                    ['file' => '07mn-eXp.svg', 'name' => 'Mark Newton', 'url' => 'https://marknewton.exp.uk.com/', 'sponsored' => true],
-                    ['file' => '08pb-exp.png', 'name' => 'Paul Berg', 'url' => 'https://paulberg.exp.uk.com/', 'sponsored' => true],
-                    ['file' => '14bc-exp.png', 'name' => 'Benn Colling', 'url' => 'https://benncolling.exp.uk.com/', 'sponsored' => true],
-                    ['file' => '17ms-exp.png', 'name' => 'Michal Sikora', 'url' => 'https://michalsikora.exp.uk.com/', 'sponsored' => true],
-                    ['file' => '18gb-exp.png', 'name' => 'Grant Boonzaier', 'url' => 'https://grantboonzaier.exp.uk.com/', 'sponsored' => true],
-                    ['file' => '19ra-exp.png', 'name' => 'Richard Aves', 'url' => 'https://richardaves.exp.uk.com/', 'sponsored' => true],
+                    ['file' => '07mn-eXp.svg', 'name' => 'Mark Newton', 'url' => 'https://marknewton.exp.uk.com/'],
+                    ['file' => '08pb-exp.png', 'name' => 'Paul Berg', 'url' => 'https://paulberg.exp.uk.com/'],
+                    ['file' => '14bc-exp.png', 'name' => 'Benn Colling', 'url' => 'https://benncolling.exp.uk.com/'],
+                    ['file' => '17ms-exp.png', 'name' => 'Michal Sikora', 'url' => 'https://michalsikora.exp.uk.com/'],
+                    ['file' => '18gb-exp.png', 'name' => 'Grant Boonzaier', 'url' => 'https://grantboonzaier.exp.uk.com/'],
+                    ['file' => '19ra-exp.png', 'name' => 'Richard Aves', 'url' => 'https://richardaves.exp.uk.com/'],
                     ['file' => 'wheal.png', 'name' => 'Wilson Heal', 'url' => '#'], // TODO(content): URL not confirmed for Wilson Heal
-                    ['file' => '05david-charles.svg', 'name' => 'David Charles', 'url' => 'https://david-charles.co.uk/', 'sponsored' => true],
+                    ['file' => '05david-charles.svg', 'name' => 'David Charles', 'url' => 'https://david-charles.co.uk/'],
                 ];
 
                 echo "<div class='hp-partners__b2b'>";
                 echo "<h3 class='hp-partners__stage-label'>" . "Estate Agents" . "</h3>";
                 echo "<div class='hp-partners__b2b-grid'>";
                 foreach ($estate_agents as $agent) {
-                    $rel = !empty($agent['sponsored']) ? 'noopener noreferrer sponsored' : 'noopener noreferrer';
-                    echo "<a class='hp-partners__b2b-logo' href='" . esc_url($agent['url']) . "' target='_blank' rel='" . $rel . "'><img src='" . $url . $agent['file'] . "' alt='" . $agent['name'] . " logo' /></a>";
+                    echo "<a class='hp-partners__b2b-logo' href='" . esc_url($agent['url']) . "' target='_blank' rel='noopener noreferrer sponsored'><img src='" . $url . $agent['file'] . "' alt='" . $agent['name'] . " logo' /></a>";
                 }
                 echo "</div>";
                 echo "</div>";
