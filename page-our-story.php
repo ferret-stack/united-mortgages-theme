@@ -37,7 +37,7 @@ get_header(); ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/dw-col.png" alt="David Woodford" class="um-founder-image um-founder-image--color">
                     </div>
                     <div class="um-founder-header">
-                        <h3 class="um-founder-name">DAVID WOODFORD <a href="https://www.linkedin.com/in/davidwoodforduk" target="_blank" class="um-founder-link">in</a><a href="mailto:david@united-mortgages.com" class="um-founder-link"><img src="<?php echo get_template_directory_uri(); ?>/assets/adviser-mail.svg" alt="Email"></a></h3>
+                        <h3 class="um-founder-name">DAVID WOODFORD <a href="https://www.linkedin.com/in/davidwoodforduk" target="_blank" class="um-founder-link">in</a><a href="mailto:david@united-mortgages.com" class="um-founder-link"><img src="<?php echo get_template_directory_uri(); ?>/assets/advisor-mail.svg" alt="Email"></a></h3>
                         <p class="um-founder-title">Chief Executive Officer<span class="postnom"> &middot; CeMAP</span></p>
                     </div>
                     <div class="um-founder-bio">
@@ -95,7 +95,7 @@ get_header(); ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/mike-col.png" alt="Mike Buttigieg" class="um-founder-image um-founder-image--color">
                     </div>
                     <div class="um-founder-header">
-                        <h3 class="um-founder-name">MIKE BUTTIGIEG<a href="https://www.linkedin.com/in/michaelbuttigieg/" target="_blank" class="um-founder-link">in</a><a href="mailto:mike@united-mortgages.com" class="um-founder-link"><img src="<?php echo get_template_directory_uri(); ?>/assets/adviser-mail.svg" alt="Email"></a></h3>
+                        <h3 class="um-founder-name">MIKE BUTTIGIEG<a href="https://www.linkedin.com/in/michaelbuttigieg/" target="_blank" class="um-founder-link">in</a><a href="mailto:mike@united-mortgages.com" class="um-founder-link"><img src="<?php echo get_template_directory_uri(); ?>/assets/advisor-mail.svg" alt="Email"></a></h3>
                         <p class="um-founder-title">Senior Mortgage Adviser<span class="postnom"> &middot; CeMAP</span></p>
                     </div>
                     <div class="um-founder-bio">
@@ -128,7 +128,7 @@ get_header(); ?>
                     </div>
                     <div class="um-founder-header">
                         <h3 class="um-founder-name">DEANDRE BRUCE<a href="https://www.linkedin.com/in/deandregoocho/" target="_blank" class="um-founder-link">in</a></h3>
-                        <p class="um-founder-title">Board adviser<span class="postnom"> &middot; CeMAP CeRER</span></p>
+                        <p class="um-founder-title">Board Adviser<span class="postnom"> &middot; CeMAP CeRER</span></p>
                     </div>
                     <div class="um-founder-bio">
                         <p>As the founder of GooCho Mortgages, DeAndre brings over a decade of industry expertise and has successfully guided over 500 clients through the complexities of the UK property market.</p>

@@ -389,13 +389,13 @@ body.is-front-redesign {
 }
 
 .um-founder-link img {
-    width: 13px;
-    height: 13px;
-    filter: invert(37%) sepia(93%) saturate(1352%) hue-rotate(180deg) brightness(93%) contrast(101%);
+    width: 20px;
+    height: 20x;
 }
 
 .um-founder-link:hover img {
-    filter: brightness(0) invert(1);
+    background: var(--hp-accent);
+    color: #fff;
 }
 
 .um-founder-title {

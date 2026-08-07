@@ -155,33 +155,33 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- People, not a processing queue.  -->
-    <section class="hp-testimonials">
-        <div class="hp-container">
-            <h2>People, not a processing queue</h2>
-            <div class="hp-testimonials__grid">
-                <div class="hp-testimonials__card">
-                    <span class="hp-testimonials__avatar">SB</span>
-                    <div class="hp-name">Saffron Sims-Brydon</div>
-                    <div class="hp-role"> </div>
-                    <div class="hp-quote">&ldquo;As a first time buyer, I was nervous about the process, but United Mortgages made it really simple. Clear advice, easy process and even picked up the phone on a Sunday when I have urgent questions. Highly recommend!&rdquo;</div>
-                    <div class="hp-attribution">September 2025 &middot; &#9733;&#9733;&#9733;&#9733;&#9733; Verified review</div>
-                </div>
-                <div class="hp-testimonials__card">
-                    <span class="hp-testimonials__avatar">RC</span>
-                    <div class="hp-name">Rose Crosby</div>
-                    <div class="hp-role"> </div>
-                    <div class="hp-quote">&ldquo;David and the team at United Mortgages have been advising us on our second house move. United have been incredibly helpful and proactive, guiding us through every step, talking us through the variety of options available to us - as well as advising us in regard to being locked into a current 5-year fix and how that affects the move. They have made the process of getting our agreement in principle completely stress-free. Their communication is excellent!&rdquo;</div>
-                    <div class="hp-attribution">October 2025 &middot; &#9733;&#9733;&#9733;&#9733;&#9733; Verified review</div>
-                </div>
-                <div class="hp-testimonials__card">
-                    <span class="hp-testimonials__avatar">H</span>
-                    <div class="hp-name">Hannah</div>
-                    <div class="hp-role"> </div>
-                    <div class="hp-quote">&ldquo;After a frustrating start elsewhere, and stuck with a mortgage that didn't suit us, David turned things around. He spotted that a holiday let mortgage was actually the right fit, releasing more equity than we expected. With the chain close to completing, the team kept us updated every step and nudged the lender to hit a tight deadline. This was the foundation of our dream to build a life abroad, and they treated it that way.&rdquo;</div>
-                    <div class="hp-attribution">April 2026 &middot; &#9733;&#9733;&#9733;&#9733;&#9733; Verified review</div>
-                </div>
+<!-- People, not a processing queue.  -->
+<section class="hp-testimonials">
+    <div class="hp-container">
+        <h2>People, not a processing queue</h2>
+        <div class="hp-testimonials__grid">
+            <div class="hp-testimonials__card">
+                <span class="hp-testimonials__avatar">JA</span>
+                <div class="hp-name">JA</div>
+                <div class="hp-role"> </div>
+                <div class="hp-quote">&ldquo;United has been very helpful and knowledgeable in advising my fiance and I around contractor mortgages and a situation involving multiple income streams.&rdquo;</div>
+                <div class="hp-attribution">June 2026 &middot; &#9733;&#9733;&#9733;&#9733;&#9733; Verified review</div>
             </div>
+            <div class="hp-testimonials__card">
+                <span class="hp-testimonials__avatar">H</span>
+                <div class="hp-name">Hannah</div>
+                <div class="hp-role"> </div>
+                <div class="hp-quote">&ldquo;After a frustrating start elsewhere, and stuck with a mortgage that didn't suit us, David turned things around. He spotted that a holiday let mortgage was actually the right fit, releasing more equity than we expected&hellip; This was the foundation of our dream to build a life abroad, and they treated it that way.&rdquo;</div>
+                <div class="hp-attribution">April 2026 &middot; &#9733;&#9733;&#9733;&#9733;&#9733; Verified review</div>
+            </div>
+            <div class="hp-testimonials__card">
+                <span class="hp-testimonials__avatar">RC</span>
+                <div class="hp-name">Rose Crosby</div>
+                <div class="hp-role"> </div>
+                <div class="hp-quote">&ldquo;United Mortgages have been advising us on our second house move. United have been incredibly helpful and proactive, guiding us through every step&hellip; They have made the process of getting our agreement in principle completely stress-free. Their communication is excellent!&rdquo;</div>
+                <div class="hp-attribution">October 2025 &middot; &#9733;&#9733;&#9733;&#9733;&#9733; Verified review</div>
+            </div>
+        </div>
             <!--<div class="hp-testimonials__rating">
                 <strong>4.9 / 5</strong>
                 <span>from 2,140 verified reviews on Trustpilot &amp; Google</span>
