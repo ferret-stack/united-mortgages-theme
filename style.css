@@ -4556,7 +4556,7 @@ input#borrow-deposit::placeholder {
 }
 
 .trustpilot-image {
-    height: 35px;
+    height: 40px;
     width: auto;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -9891,11 +9891,6 @@ input#borrow-deposit::placeholder {
     margin: 20px 0;
 }
 
-.trustpilot-image {
-    height: 35px;
-    width: auto;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
 
 .trustpilot-widget a:hover .trustpilot-image {
     transform: translateY(-3px);
@@ -9912,6 +9907,7 @@ input#borrow-deposit::placeholder {
     height: 35px;
     width: auto;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateY(-3px);
 }
 
 .bark-widget a:hover .bark-image {
