@@ -2,7 +2,7 @@
 Theme Name: UnitedMortgagesTheme
 Author: Dannyboy
 Description: United Mortgages website
-Version: 4.0.1
+Version: 4.0.2
 */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
@@ -4579,7 +4579,7 @@ input#borrow-deposit::placeholder {
 }
 
 .bark-widget a:hover .bark-image {
-    transform: translateY(-3px);
+    transform: translateY(-6px);
     opacity: 0.9;
 }
 
@@ -9910,10 +9910,6 @@ input#borrow-deposit::placeholder {
     transform: translateY(-3px);
 }
 
-.bark-widget a:hover .bark-image {
-    transform: translateY(-3px);
-    opacity: 0.9;
-}
 
 /* If you want them side by side */
 .review-widgets-container {
