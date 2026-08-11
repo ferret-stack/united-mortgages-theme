@@ -37,7 +37,7 @@ get_header(); ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/dw-col.png" alt="David Woodford" class="um-founder-image um-founder-image--color">
                     </div>
                     <div class="um-founder-header">
-                        <h3 class="um-founder-name">DAVID WOODFORD <a href="https://www.linkedin.com/in/davidwoodforduk" target="_blank" class="um-founder-link">in</a><a href="mailto:david@united-mortgages.com" class="um-founder-link"><img src="<?php echo get_template_directory_uri(); ?>/assets/advisor-mail.svg" alt="Email"></a></h3>
+                        <h3 class="um-founder-name">DAVID WOODFORD <a href="https://www.linkedin.com/in/davidwoodforduk" target="_blank" class="um-founder-link">in</a><a href="mailto:david@united-mortgages.com" class="um-founder-link"><img src="<?php echo get_template_directory_uri(); ?>/assets/advisor-mail.svg?v=2" alt="Email"></a></h3>
                         <p class="um-founder-title">Chief Executive Officer<span class="postnom"> &middot; CeMAP</span></p>
                     </div>
                     <div class="um-founder-bio">
