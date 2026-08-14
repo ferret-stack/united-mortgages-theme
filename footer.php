@@ -71,10 +71,16 @@
               <a href="#" class="btn-secondary">Join our community</a> -->
             </div>
             <div class="spacer"></div>
-            <a href="https://www.credly.com/badges/01c157dd-bfdc-45dd-8a2f-7fa9308f10c8/embedded" target="_blank">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/libf.png"
-                class="libf">
+            <div class="footer-badges">
+              <a href="https://www.credly.com/badges/01c157dd-bfdc-45dd-8a2f-7fa9308f10c8/embedded" target="_blank">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/libf.png"
+                    class="libf">
               </a>
+              <a href="https://goodbusinesscharter.com/what-good-business-charter-accreditation-means-and-why-it-matters/" target="_blank">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/gbc.png"
+                    class="gbc" alt="Good Business Charter accredited">
+              </a>
+            </div>
           </div>
         </div>
         

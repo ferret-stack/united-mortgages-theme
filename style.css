@@ -10457,6 +10457,16 @@ input#borrow-deposit::placeholder {
     height:100px;
 }
 
+.footer-badges {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.gbc{
+    height:100px;
+}
+
 
 /* =============================================
    FAQ STYLING
