@@ -358,7 +358,7 @@ get_header(); ?>
                 echo "</div>";
 
                 echo "<div class='hp-partners__b2b-exp'>";
-                echo "<div class='hp-partners__b2b-exp-logo'><img src='" . $url . "07mn-eXp.svg' alt='eXp logo' /></div>";
+                echo "<div class='hp-partners__b2b-exp-logo'><img src='" . $url . "eXp-logo.png' alt='eXp logo' /></div>";
                 echo "<div class='hp-partners__b2b-exp-names'>";
                 foreach ($exp_agents as $agent) {
                     echo "<a class='hp-partners__b2b-exp-name' href='" . esc_url($agent['url']) . "' target='_blank' rel='noopener noreferrer sponsored'>" . $agent['name'] . "</a>";
