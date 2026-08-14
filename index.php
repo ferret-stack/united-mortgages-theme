@@ -30,9 +30,9 @@ get_header(); ?>
                     </div>
                 </div>
 
-                <h1>Most mortgage advice happens 9&#8209;to&#8209;5.<br><span>Ours doesn't.</span></h1>
+               <h1>Your home, our advice,<br><span>United beyond the mortgage.</span></h1>
 
-                <p class="hp-hero__lead">Your personal adviser from your first conversation through to completion - reachable evenings and weekends, not just office hours.</p>
+<p class="hp-hero__lead">Your personal adviser, with you from your first conversation onward - reachable evenings and weekends, not just office hours.</p>
 
                 <div class="hp-hero__cta-row">
                     <a href="#calculator" class="hp-btn">Check what you could borrow</a>
