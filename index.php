@@ -299,6 +299,12 @@ get_header(); ?>
                                 'description' => 'Conveyancing solicitors handling the legal transfer of your property.',
                                 'url' => 'https://thomaslegal.co.uk/',
                             ],
+                            [
+                                'file' => 'YouConvey.png',
+                                'name' => 'YouConvey',
+                                'description' => 'Guiding you through the home buying journey, minimising stress and reducing moving times by up to 8 weeks',
+                                'url' => 'https://you-convey.co.uk/',
+                            ],  
                         ],
                     ],
                 ];
