@@ -347,20 +347,23 @@ get_header(); ?>
                 echo "<div class='hp-partners__b2b'>";
                 echo "<h3 class='hp-partners__stage-label'>" . "Estate Agents" . "</h3>";
 
+                // Wilson Heal / David Charles lead the section — distinct branded
+                // logos of their own, not part of the eXp network — so they're
+                // shown first to avoid any visual ambiguity that they might be
+                // eXp-affiliated before the eXp group appears below.
+                echo "<div class='hp-partners__b2b-grid'>";
+                foreach ($other_estate_agents as $agent) {
+                    echo "<a class='hp-partners__b2b-logo' href='" . esc_url($agent['url']) . "' target='_blank' rel='noopener noreferrer sponsored'><img src='" . $url . $agent['file'] . "' alt='" . $agent['name'] . " logo' /></a>";
+                }
+                echo "</div>";
+
                 echo "<div class='hp-partners__b2b-exp'>";
                 echo "<div class='hp-partners__b2b-exp-logo'><img src='" . $url . "07mn-eXp.svg' alt='eXp logo' /></div>";
-                echo "<p class='hp-partners__b2b-exp-caption'>eXp Estate Agents</p>";
                 echo "<div class='hp-partners__b2b-exp-names'>";
                 foreach ($exp_agents as $agent) {
                     echo "<a class='hp-partners__b2b-exp-name' href='" . esc_url($agent['url']) . "' target='_blank' rel='noopener noreferrer sponsored'>" . $agent['name'] . "</a>";
                 }
                 echo "</div>";
-                echo "</div>";
-
-                echo "<div class='hp-partners__b2b-grid'>";
-                foreach ($other_estate_agents as $agent) {
-                    echo "<a class='hp-partners__b2b-logo' href='" . esc_url($agent['url']) . "' target='_blank' rel='noopener noreferrer sponsored'><img src='" . $url . $agent['file'] . "' alt='" . $agent['name'] . " logo' /></a>";
-                }
                 echo "</div>";
                 echo "</div>";
             ?>
