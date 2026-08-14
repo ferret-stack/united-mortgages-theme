@@ -321,23 +321,44 @@ get_header(); ?>
                     echo "</div>";
                 }
 
-                // B2B referral network — icons only, no name/description, no card
-                // styling. Same default-sponsored rel as the B2C tier above.
-                $estate_agents = [
-                    ['file' => '07mn-eXp.svg', 'name' => 'Mark Newton', 'url' => 'https://marknewton.exp.uk.com/'],
-                    ['file' => '08pb-exp.png', 'name' => 'Paul Berg', 'url' => 'https://paulberg.exp.uk.com/'],
-                    ['file' => '14bc-exp.png', 'name' => 'Benn Colling', 'url' => 'https://benncolling.exp.uk.com/'],
-                    ['file' => '17ms-exp.png', 'name' => 'Michal Sikora', 'url' => 'https://michalsikora.exp.uk.com/'],
-                    ['file' => '18gb-exp.png', 'name' => 'Grant Boonzaier', 'url' => 'https://grantboonzaier.exp.uk.com/'],
-                    ['file' => '19ra-exp.png', 'name' => 'Richard Aves', 'url' => 'https://richardaves.exp.uk.com/'],
+                // B2B referral network. The eXp agents are one network under one
+                // brand, so they get a single eXp wordmark as a group label rather
+                // than the same eXp logo repeated once per agent (five/six repeats
+                // of the identical mark read as a placeholder/stock image to
+                // visitors unfamiliar with eXp). Agent names are listed underneath
+                // as plain live links — all visible on load, no accordion/expand.
+                // Same default-sponsored rel as the B2C tier above.
+                $exp_agents = [
+                    ['name' => 'Mark Newton', 'url' => 'https://marknewton.exp.uk.com/'],
+                    ['name' => 'Paul Berg', 'url' => 'https://paulberg.exp.uk.com/'],
+                    ['name' => 'Benn Colling', 'url' => 'https://benncolling.exp.uk.com/'],
+                    ['name' => 'Michal Sikora', 'url' => 'https://michalsikora.exp.uk.com/'],
+                    ['name' => 'Grant Boonzaier', 'url' => 'https://grantboonzaier.exp.uk.com/'],
+                    ['name' => 'Richard Aves', 'url' => 'https://richardaves.exp.uk.com/'],
+                ];
+
+                // Not eXp — kept in the original per-agent logo tile treatment,
+                // untouched by the eXp consolidation above.
+                $other_estate_agents = [
                     ['file' => 'wheal.png?v=2', 'name' => 'Wilson Heal', 'url' => 'https://www.wilsonheal.co.uk/'],
                     ['file' => '05david-charles.svg?v=2', 'name' => 'David Charles', 'url' => 'https://davidcharles.co.uk/'],
                 ];
 
                 echo "<div class='hp-partners__b2b'>";
                 echo "<h3 class='hp-partners__stage-label'>" . "Estate Agents" . "</h3>";
+
+                echo "<div class='hp-partners__b2b-exp'>";
+                echo "<div class='hp-partners__b2b-exp-logo'><img src='" . $url . "07mn-eXp.svg' alt='eXp logo' /></div>";
+                echo "<p class='hp-partners__b2b-exp-caption'>eXp Estate Agents</p>";
+                echo "<div class='hp-partners__b2b-exp-names'>";
+                foreach ($exp_agents as $agent) {
+                    echo "<a class='hp-partners__b2b-exp-name' href='" . esc_url($agent['url']) . "' target='_blank' rel='noopener noreferrer sponsored'>" . $agent['name'] . "</a>";
+                }
+                echo "</div>";
+                echo "</div>";
+
                 echo "<div class='hp-partners__b2b-grid'>";
-                foreach ($estate_agents as $agent) {
+                foreach ($other_estate_agents as $agent) {
                     echo "<a class='hp-partners__b2b-logo' href='" . esc_url($agent['url']) . "' target='_blank' rel='noopener noreferrer sponsored'><img src='" . $url . $agent['file'] . "' alt='" . $agent['name'] . " logo' /></a>";
                 }
                 echo "</div>";
