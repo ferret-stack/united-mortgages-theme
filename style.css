@@ -6,6 +6,8 @@ Version: 4.0.4
 */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
 :root {
     --dannyboy-blue: #109dff;
 	--um-gold: #bba177;
@@ -11548,11 +11550,12 @@ input#borrow-deposit::placeholder {
     justify-content: center;
     min-height: 44px;
     padding: 8px 4px;
-    font-family: var(--hp-font-body);
-    font-size: 15px;
-    color: var(--hp-ink);
+    font-family: 'Quicksand';
+    font-size: 30px;
+    color: var(--dannyboy-blue);
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 15px;
+
 }
 
 .hp-partners__b2b-exp-name:hover {
