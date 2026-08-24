@@ -16,14 +16,14 @@ get_header(); ?>
                 <div class="review-widgets-container hp-hero__reviews">
                     <div class="trustpilot-widget">
                         <a href="https://uk.trustpilot.com/review/united-mortgages.com" target="_blank" rel="noopener noreferrer">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/trustpilot-rev.svg"
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/trustpilot-blue.svg"
                                 alt="Trustpilot Rating"
                                 class="trustpilot-image">
                         </a>
                     </div>
                     <div class="bark-widget">
                         <a href="https://share.google/lrCoqIgJxYIiv6Biu" target="_blank" rel="noopener noreferrer">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/google-rev.svg"
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/google-blue.svg"
                                 alt="Google Reviews"
                                 class="bark-image">
                         </a>

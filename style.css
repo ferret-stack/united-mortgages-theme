@@ -10786,7 +10786,7 @@ input#borrow-deposit::placeholder {
 .hp-hero__reviews.review-widgets-container {
     margin: 0 0 20px;
     justify-content: flex-start;
-    gap: 22px;
+    gap: 10px;
 }
 
 .hp-hero h1 {
