@@ -30,12 +30,12 @@ get_header(); ?>
                     </div>
                 </div>
 
-               <h1>Your home, our advice,<br><span>United beyond the mortgage.</span></h1>
+               <h1>One adviser. Every chapter.<br><span>United together.</span></h1>
 
-<p class="hp-hero__lead">Your personal adviser, with you from your first conversation onward - reachable evenings and weekends, not just office hours.</p>
+<p class="hp-hero__lead">Your personal adviser, with you as your story unfolds.</p>
 
                 <div class="hp-hero__cta-row">
-                    <a href="#calculator" class="hp-btn">Check what you could borrow</a>
+                    <a href="/aip-form" class="hp-btn">Start your AIP</a>
                     <span class="hp-hero__note">Takes 3 minutes &middot; soft search, no credit impact</span>
                 </div>
                 <p class="hp-hero__secondary">Prefer to talk it through first? <a href="https://calendly.com/unitedmortgages/15min">Book a time to chat with us</a>.</p>
