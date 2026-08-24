@@ -335,12 +335,12 @@ get_header(); ?>
                 // as plain live links — all visible on load, no accordion/expand.
                 // Same default-sponsored rel as the B2C tier above.
                 $exp_agents = [
-                    ['name' => 'Mark Newton', 'url' => 'https://marknewton.exp.uk.com/'],
-                    ['name' => 'Paul Berg', 'url' => 'https://paulberg.exp.uk.com/'],
-                    ['name' => 'Benn Colling', 'url' => 'https://benncolling.exp.uk.com/'],
-                    ['name' => 'Michal Sikora', 'url' => 'https://michalsikora.exp.uk.com/'],
-                    ['name' => 'Grant Boonzaier', 'url' => 'https://grantboonzaier.exp.uk.com/'],
                     ['name' => 'Richard Aves', 'url' => 'https://richardaves.exp.uk.com/'],
+                    ['name' => 'Paul Berg', 'url' => 'https://paulberg.exp.uk.com/'],
+                    ['name' => 'Grant Boonzaier', 'url' => 'https://grantboonzaier.exp.uk.com/'],
+                    ['name' => 'Benn Colling', 'url' => 'https://benncolling.exp.uk.com/'],
+                    ['name' => 'Mark Newton', 'url' => 'https://marknewton.exp.uk.com/'],
+                    ['name' => 'Michal Sikora', 'url' => 'https://michalsikora.exp.uk.com/'],                    
                 ];
 
                 $iad_agents = [
