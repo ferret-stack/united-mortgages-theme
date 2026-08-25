@@ -346,6 +346,7 @@ get_header(); ?>
                 $iad_agents = [
                     ['name' => 'Stuart Aimer', 'url' => 'https://www.iad.uk.com/staff/stuart-aimer'],
                     ['name' => 'Robert Roze', 'url' => 'https://www.iad.uk.com/staff/robert-roze'],
+                    ['name' => 'Steve Moyse', 'url' => 'https://www.iad.uk.com/staff/steve-moyse'],
                 ];
 
                 // Not eXp — kept in the original per-agent logo tile treatment,
