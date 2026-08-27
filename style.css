@@ -11537,11 +11537,9 @@ input#borrow-deposit::placeholder {
     margin: 0 auto;
 }
 
-@media (min-width: 480px) {
-    .hp-partners__b2b-exp-names {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(160px, 1fr));
-    }
+.hp-partners__b2b-exp-names > .hp-partners__b2b-exp-name {
+    flex: 0 1 calc((100% - 3 * 32px) / 4);
+    min-width: 160px;
 }
 
 .hp-partners__b2b-exp-name {
