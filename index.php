@@ -345,15 +345,17 @@ get_header(); ?>
 
                 $iad_agents = [
                     ['name' => 'Stuart Aimer', 'url' => 'https://www.iad.uk.com/staff/stuart-aimer'],
-                    ['name' => 'Robert Roze', 'url' => 'https://www.iad.uk.com/staff/robert-roze'],
+                    ['name' => 'Neil Jacobs', 'url' => 'https://www.iad.uk.com/staff/neil-jacobs'],
                     ['name' => 'Steve Moyse', 'url' => 'https://www.iad.uk.com/staff/steve-moyse'],
+                    ['name' => 'Robert Roze', 'url' => 'https://www.iad.uk.com/staff/robert-roze'],
                 ];
 
                 // Not eXp — kept in the original per-agent logo tile treatment,
                 // untouched by the eXp consolidation above.
                 $other_estate_agents = [
-                    ['file' => 'wheal.png?v=2', 'name' => 'Wilson Heal', 'url' => 'https://www.wilsonheal.co.uk/'],
                     ['file' => '05david-charles.svg?v=2', 'name' => 'David Charles', 'url' => 'https://davidcharles.co.uk/'],
+                    ['file' => 'wheal.png?v=2', 'name' => 'Wilson Heal', 'url' => 'https://www.wilsonheal.co.uk/'],
+                    ['file' => 'penvale.png', 'name' => 'Penvale', 'url' => 'https://penvale.co/'],
                 ];
 
                 echo "<div class='hp-partners__b2b'>";
