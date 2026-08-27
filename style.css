@@ -11532,14 +11532,14 @@ input#borrow-deposit::placeholder {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0 32px;
+    gap: 30px 15px;
     /* max-width: 560px;*/
     margin: 0 auto;
 }
 
 .hp-partners__b2b-exp-names > .hp-partners__b2b-exp-name {
     flex: 0 1 calc((100% - 3 * 32px) / 4);
-    min-width: 160px;
+    min-width: 225px;
 }
 
 .hp-partners__b2b-exp-name {
