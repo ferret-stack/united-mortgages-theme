@@ -2,7 +2,7 @@
 Theme Name: UnitedMortgagesTheme
 Author: Dannyboy
 Description: United Mortgages website
-Version: 4.0.4
+Version: 4.0.5
 */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pinyon+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
@@ -80,7 +80,6 @@ Version: 4.0.4
     font-size: 3.5rem;
     font-weight: 200;
     margin-bottom: 1.5rem;
-    line-height: 1.2;
     margin-top: 5rem;
 }
 
@@ -10794,7 +10793,6 @@ input#borrow-deposit::placeholder {
 .hp-hero h1 {
     font-family: var(--hp-font-display);
     font-size: 40px;
-    line-height: 1.05;
     letter-spacing: -.02em;
     margin: 0 0 22px;
     font-weight: 600;
