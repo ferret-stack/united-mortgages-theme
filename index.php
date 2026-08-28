@@ -348,6 +348,7 @@ get_header(); ?>
                     ['name' => 'Neil Jacobs', 'url' => 'https://www.iad.uk.com/staff/neil-jacobs'],
                     ['name' => 'Steve Moyse', 'url' => 'https://www.iad.uk.com/staff/steve-moyse'],
                     ['name' => 'Robert Roze', 'url' => 'https://www.iad.uk.com/staff/robert-roze'],
+                    ['name' => 'Won Thiel', 'url' => 'https://www.iad.uk.com/staff/won-thein'],
                 ];
 
                 // Not eXp — kept in the original per-agent logo tile treatment,
