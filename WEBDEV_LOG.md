@@ -138,23 +138,25 @@ edits `js/calculators.js` expecting it to take effect will lose time.
 **To fix:** either correct the path to `/js/calculators.js` and delete the
 inline block, or drop the enqueue. Pick one; don't leave both.
 
-### 7. Triage answers that currently go nowhere
+### 7. Four triage questions removed — resolved
 
-**Status:** Working as specified — flagged for a product decision.
+**Status:** Closed. Cut on 2026-09-04 by decision.
 
-Four questions in the §0.5 branch map do not change which CTAs appear and are
-not persisted anywhere (this flow stores and transmits nothing by design):
+The §0.5 branch map specified four questions that did not change which CTAs
+appeared and were not persisted anywhere (this flow stores and transmits
+nothing by design):
 
 - Buy-to-let: "Are you buying through a company?"
 - Buy-to-let: "How many buy-to-let mortgages do you have?"
-- Remortgage: "Do you live in this property, or let it out?"
-- Remortgage branch: the live-in/let-out answer, which does not alter the
-  endpoint either
+- Remortgage: "Do you live in this property, or let it out?" (and the
+  live-in/let-out answer, which did not alter the endpoint either)
 
-They were built because the branch map specifies them, but each one is a step
-a visitor must complete for no change in outcome. Either they should route to
-different CTAs/copy, or they should be dropped to shorten the flow. Worth a
-decision before the copy pass.
+Each was a step the visitor had to complete for no change in outcome, so all
+three steps were removed. The branch map in the source spec is now ahead of
+the build on this point — if these questions come back, they need to route
+somewhere different or be captured, otherwise they are pure friction.
+
+Effect on flow length: buying is 3 questions, remortgaging is 2.
 
 ### 8. AIP deep-link has no situation value for the "buying to live in it" branch
 

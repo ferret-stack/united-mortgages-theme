@@ -20,14 +20,93 @@
 
     var steps = Array.prototype.slice.call(root.querySelectorAll('[data-um-step]'));
     var backBtn = root.querySelector('[data-um-back]');
+    var progress = root.querySelector('[data-um-progress]');
+    var progressTrack = root.querySelector('[data-um-progress-track]');
+    var progressLabel = root.querySelector('[data-um-progress-label]');
     if (!steps.length) {
         return;
+    }
+
+    /**
+     * Branch graph, read off the markup so the two never drift apart.
+     * { stepId: [nextStepId, ...] } — outcome nodes map to an empty array.
+     */
+    var graph = {};
+    steps.forEach(function (step) {
+        var nexts = step.querySelectorAll('[data-um-next]');
+        graph[step.getAttribute('data-um-step')] = Array.prototype.map.call(nexts, function (btn) {
+            return btn.getAttribute('data-um-next');
+        });
+    });
+
+    /**
+     * Questions still to answer from `id` onwards, counting `id` itself.
+     * Outcome nodes are 0. Where a branch forks to different lengths this
+     * takes the longest, so the total never grows underneath the visitor.
+     */
+    var depthCache = {};
+    function questionsFrom(id) {
+        if (id in depthCache) {
+            return depthCache[id];
+        }
+        var nexts = graph[id] || [];
+        if (!nexts.length) {
+            depthCache[id] = 0;
+            return 0;
+        }
+        depthCache[id] = 0; // guards against a cycle if the map ever gains one
+        var deepest = 0;
+        nexts.forEach(function (next) {
+            deepest = Math.max(deepest, questionsFrom(next));
+        });
+        depthCache[id] = deepest + 1;
+        return depthCache[id];
+    }
+
+    function isOutcome(id) {
+        return !(graph[id] || []).length;
+    }
+
+    /**
+     * "Step 2 of 3" plus a matching dot track.
+     *
+     * Totals are per-branch: remortgaging is genuinely two questions and
+     * buying is three, so a single hard-coded total would misreport one of
+     * them. Hidden on outcome nodes — there's no step left to be on.
+     */
+    function renderProgress(id) {
+        if (!progress || !progressTrack || !progressLabel) {
+            return;
+        }
+
+        if (isOutcome(id)) {
+            progress.hidden = true;
+            return;
+        }
+
+        var answered = trail.filter(function (step) {
+            return !isOutcome(step);
+        }).length;
+        var position = Math.max(1, answered);
+        var total = Math.max(position, (position - 1) + questionsFrom(id));
+
+        progress.hidden = false;
+        progressLabel.textContent = 'Step ' + position + ' of ' + total;
+
+        progressTrack.textContent = '';
+        for (var i = 1; i <= total; i++) {
+            var dot = document.createElement('li');
+            dot.className = 'um-triage__progress-dot'
+                + (i < position ? ' is-done' : '')
+                + (i === position ? ' is-current' : '');
+            progressTrack.appendChild(dot);
+        }
     }
 
     // Entry points the homepage buttons can jump straight to.
     var INTENT_STEPS = {
         buying: 'buy-use',
-        remortgaging: 'rem-property'
+        remortgaging: 'rem-term'
     };
 
     var FIRST_STEP = 'intent';
@@ -71,14 +150,42 @@
             backBtn.hidden = (trail.length < 2);
         }
 
-        if (moveFocus) {
-            var heading = target.querySelector('.um-triage__question');
-            if (heading) {
-                heading.focus();
+        renderProgress(id);
+
+        var heading = target.querySelector('.um-triage__question');
+
+        // Announce progress along with the question for screen reader users,
+        // who don't get the dot track. Set on every render, not just focused
+        // ones — the first step is painted without moving focus.
+        if (heading) {
+            if (progress && progressLabel && !progress.hidden) {
+                heading.setAttribute('aria-describedby', 'um-triage-progress-label');
+            } else {
+                heading.removeAttribute('aria-describedby');
             }
-            // Keep the flow in view when steps differ in height.
-            var top = root.getBoundingClientRect().top + window.pageYOffset - 100;
-            window.scrollTo({ top: top > 0 ? top : 0, behavior: 'smooth' });
+        }
+
+        if (moveFocus) {
+            if (heading) {
+                // preventScroll: focusing alone would otherwise yank the
+                // page, which is the jump we're trying to avoid below.
+                try {
+                    heading.focus({ preventScroll: true });
+                } catch (error) {
+                    heading.focus();
+                }
+            }
+
+            // Only scroll when the flow has actually been scrolled out of
+            // view. Previously this ran on every choice, so the first click
+            // from the top of the page jumped the window down for no reason.
+            var rect = root.getBoundingClientRect();
+            if (rect.top < 0) {
+                window.scrollTo({
+                    top: rect.top + window.pageYOffset - 100,
+                    behavior: 'smooth'
+                });
+            }
         }
     }
 

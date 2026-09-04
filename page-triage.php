@@ -108,13 +108,21 @@ get_header(); ?>
 		<div class="hp-container">
 
 			<div class="um-triage__intro">
-				<h1 class="um-triage__title">Let's find the <span class="um-triage__accent">right next step</span></h1>
-				<p class="um-triage__lead">A few quick questions — no personal details, nothing submitted anywhere.</p>
+				<h1 class="um-triage__title">Find your <span class="um-triage__accent">next step</span></h1>
+				<p class="um-triage__lead">A few questions. No personal details, and nothing is submitted anywhere.</p>
 			</div>
 
 			<div class="um-triage__flow"
 				data-um-triage
 				data-um-intent="<?php echo esc_attr( $um_triage_intent ); ?>">
+
+				<!-- Filled in by triage.js. Totals are derived from the branch
+				     graph rather than hard-coded, so they stay honest if a
+				     branch changes length. Hidden until the script runs. -->
+				<div class="um-triage__progress" data-um-progress hidden>
+					<ol class="um-triage__progress-track" data-um-progress-track aria-hidden="true"></ol>
+					<p class="um-triage__progress-label" id="um-triage-progress-label" data-um-progress-label></p>
+				</div>
 
 				<button type="button" class="um-triage__back" data-um-back hidden>
 					<span aria-hidden="true">&larr;</span> Back
@@ -127,7 +135,7 @@ get_header(); ?>
 					<h2 class="um-triage__question" id="um-step-intent-h" tabindex="-1">What are you looking to do?</h2>
 					<div class="um-triage__options">
 						<button type="button" class="um-triage__option" data-um-next="buy-use">I'm buying a home</button>
-						<button type="button" class="um-triage__option" data-um-next="rem-property">I'm remortgaging</button>
+						<button type="button" class="um-triage__option" data-um-next="rem-term">I'm remortgaging</button>
 					</div>
 				</section>
 
@@ -138,7 +146,7 @@ get_header(); ?>
 					<h2 class="um-triage__question" id="um-step-buy-use-h" tabindex="-1">Will you live in the property?</h2>
 					<div class="um-triage__options">
 						<button type="button" class="um-triage__option" data-um-next="buy-live-stage">Yes, I'll live in it</button>
-						<button type="button" class="um-triage__option" data-um-next="btl-company">No, I'll let it out</button>
+						<button type="button" class="um-triage__option" data-um-next="btl-stage">No, I'll let it out</button>
 					</div>
 				</section>
 
@@ -151,8 +159,8 @@ get_header(); ?>
 				</section>
 
 				<section class="um-triage__step um-triage__step--outcome" data-um-step="out-buy-live-research" aria-labelledby="um-out-buy-live-research-h">
-					<h2 class="um-triage__question" id="um-out-buy-live-research-h" tabindex="-1">Good place to start</h2>
-					<p class="um-triage__outcome-lead">Get a realistic sense of your range, then talk it through when you're ready.</p>
+					<h2 class="um-triage__question" id="um-out-buy-live-research-h" tabindex="-1">Where to start</h2>
+					<p class="um-triage__outcome-lead">Check your likely range first, then talk it through when you're ready.</p>
 					<div class="um-triage__ctas">
 						<a class="um-triage__cta um-triage__cta--primary" href="<?php echo esc_url( $um_borrow_url ); ?>">See how much I could borrow</a>
 						<a class="um-triage__cta um-triage__cta--secondary" href="<?php echo esc_url( $um_calendly_url ); ?>">Talk to an adviser</a>
@@ -170,8 +178,8 @@ get_header(); ?>
 				</section>
 
 				<section class="um-triage__step um-triage__step--outcome" data-um-step="out-buy-live-offer" aria-labelledby="um-out-buy-live-offer-h">
-					<h2 class="um-triage__question" id="um-out-buy-live-offer-h" tabindex="-1">Let's get moving</h2>
-					<p class="um-triage__outcome-lead">At this stage a conversation moves things faster than a calculator.</p>
+					<h2 class="um-triage__question" id="um-out-buy-live-offer-h" tabindex="-1">Speak to an adviser</h2>
+					<p class="um-triage__outcome-lead">At this stage an adviser is more use than a calculator.</p>
 					<div class="um-triage__ctas">
 						<a class="um-triage__cta um-triage__cta--primary" href="<?php echo esc_url( $um_calendly_url ); ?>">Talk to an adviser</a>
 						<?php if ( $um_triage_show_aip_fallback ) : ?>
@@ -183,24 +191,6 @@ get_header(); ?>
 				<!-- ==========================================================
 				     BUY TO LET
 				     ========================================================== -->
-				<section class="um-triage__step" data-um-step="btl-company" aria-labelledby="um-step-btl-company-h">
-					<h2 class="um-triage__question" id="um-step-btl-company-h" tabindex="-1">Are you buying through a company?</h2>
-					<div class="um-triage__options">
-						<button type="button" class="um-triage__option" data-um-next="btl-count">Yes</button>
-						<button type="button" class="um-triage__option" data-um-next="btl-count">No</button>
-						<button type="button" class="um-triage__option" data-um-next="btl-count">Not sure yet</button>
-					</div>
-				</section>
-
-				<section class="um-triage__step" data-um-step="btl-count" aria-labelledby="um-step-btl-count-h">
-					<h2 class="um-triage__question" id="um-step-btl-count-h" tabindex="-1">How many buy-to-let mortgages do you have?</h2>
-					<div class="um-triage__options">
-						<button type="button" class="um-triage__option" data-um-next="btl-stage">This would be my first</button>
-						<button type="button" class="um-triage__option" data-um-next="btl-stage">1 to 3</button>
-						<button type="button" class="um-triage__option" data-um-next="btl-stage">4 or more</button>
-					</div>
-				</section>
-
 				<section class="um-triage__step" data-um-step="btl-stage" aria-labelledby="um-step-btl-stage-h">
 					<h2 class="um-triage__question" id="um-step-btl-stage-h" tabindex="-1">Where are you up to?</h2>
 					<div class="um-triage__options">
@@ -210,7 +200,7 @@ get_header(); ?>
 				</section>
 
 				<section class="um-triage__step um-triage__step--outcome" data-um-step="out-btl-research" aria-labelledby="um-out-btl-research-h">
-					<h2 class="um-triage__question" id="um-out-btl-research-h" tabindex="-1">Good place to start</h2>
+					<h2 class="um-triage__question" id="um-out-btl-research-h" tabindex="-1">Where to start</h2>
 					<p class="um-triage__outcome-lead">Work out the numbers first, then bring an adviser in.</p>
 					<div class="um-triage__ctas">
 						<a class="um-triage__cta um-triage__cta--primary" href="<?php echo esc_url( $um_borrow_url ); ?>">See what I could borrow</a>
@@ -227,8 +217,8 @@ get_header(); ?>
 				</section>
 
 				<section class="um-triage__step um-triage__step--outcome" data-um-step="out-btl-offer" aria-labelledby="um-out-btl-offer-h">
-					<h2 class="um-triage__question" id="um-out-btl-offer-h" tabindex="-1">Let's get moving</h2>
-					<p class="um-triage__outcome-lead">Buy-to-let lending criteria vary a lot between lenders — worth a conversation.</p>
+					<h2 class="um-triage__question" id="um-out-btl-offer-h" tabindex="-1">Speak to an adviser</h2>
+					<p class="um-triage__outcome-lead">Buy-to-let criteria vary between lenders.</p>
 					<div class="um-triage__ctas">
 						<a class="um-triage__cta um-triage__cta--primary" href="<?php echo esc_url( $um_calendly_url ); ?>">Talk to an adviser</a>
 						<?php if ( $um_triage_show_aip_fallback ) : ?>
@@ -240,14 +230,6 @@ get_header(); ?>
 				<!-- ==========================================================
 				     REMORTGAGING
 				     ========================================================== -->
-				<section class="um-triage__step" data-um-step="rem-property" aria-labelledby="um-step-rem-property-h">
-					<h2 class="um-triage__question" id="um-step-rem-property-h" tabindex="-1">Do you live in this property, or let it out?</h2>
-					<div class="um-triage__options">
-						<button type="button" class="um-triage__option" data-um-next="rem-term">I live in it</button>
-						<button type="button" class="um-triage__option" data-um-next="rem-term">I let it out</button>
-					</div>
-				</section>
-
 				<section class="um-triage__step" data-um-step="rem-term" aria-labelledby="um-step-rem-term-h">
 					<h2 class="um-triage__question" id="um-step-rem-term-h" tabindex="-1">When does your fixed term end?</h2>
 					<div class="um-triage__options">
@@ -258,8 +240,8 @@ get_header(); ?>
 				</section>
 
 				<section class="um-triage__step um-triage__step--outcome" data-um-step="out-rem-urgent" aria-labelledby="um-out-rem-urgent-h">
-					<h2 class="um-triage__question" id="um-out-rem-urgent-h" tabindex="-1">Worth speaking to someone now</h2>
-					<p class="um-triage__outcome-lead">If your term has ended or is close to it, you may already be on a higher rate. An adviser can look at your actual deal.</p>
+					<h2 class="um-triage__question" id="um-out-rem-urgent-h" tabindex="-1">Your term has ended or is ending soon</h2>
+					<p class="um-triage__outcome-lead">If your term has ended, you may already be on a higher rate. An adviser can look at your actual deal.</p>
 					<div class="um-triage__ctas">
 						<a class="um-triage__cta um-triage__cta--primary" href="<?php echo esc_url( $um_calendly_url ); ?>">Talk to an adviser</a>
 					</div>
@@ -272,7 +254,7 @@ get_header(); ?>
 				</section>
 
 				<section class="um-triage__step um-triage__step--outcome" data-um-step="out-rem-later" aria-labelledby="um-out-rem-later-h">
-					<h2 class="um-triage__question" id="um-out-rem-later-h" tabindex="-1">Plenty of time to plan</h2>
+					<h2 class="um-triage__question" id="um-out-rem-later-h" tabindex="-1">Your term ends in more than six months</h2>
 					<p class="um-triage__outcome-lead">Most lenders let you lock a new rate up to six months ahead. An adviser can tell you when to start.</p>
 					<div class="um-triage__ctas">
 						<a class="um-triage__cta um-triage__cta--primary" href="<?php echo esc_url( $um_calendly_url ); ?>">Speak to an expert</a>

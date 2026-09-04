@@ -3217,13 +3217,62 @@ body.is-front-redesign {
     border-top: 1px solid var(--hp-border);
 }
 
+/* -------------------- Progress tracker -------------------- */
+
+.um-triage__progress {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.um-triage__progress-track {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.um-triage__progress-dot {
+    width: 28px;
+    height: 5px;
+    border-radius: 100px;
+    background: var(--hp-border);
+    transition: background-color .2s ease, width .2s ease;
+}
+
+.um-triage__progress-dot.is-done {
+    background: var(--hp-accent);
+}
+
+.um-triage__progress-dot.is-current {
+    width: 40px;
+    background: var(--hp-accent);
+}
+
+.um-triage__progress-label {
+    font-family: var(--hp-font-body);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--hp-muted);
+    margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .um-triage__progress-dot {
+        transition: none;
+    }
+}
+
 .um-triage__back {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     min-height: 44px;
     padding: 10px 14px 10px 4px;
-    margin: -10px 0 8px -4px;
+    margin: -6px 0 8px -4px;
     background: none;
     border: none;
     cursor: pointer;
