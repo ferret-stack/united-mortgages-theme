@@ -43,12 +43,12 @@ get_header(); ?>
                     <a href="<?php echo esc_url( home_url( '/get-started/?intent=remortgaging' ) ); ?>" class="hp-btn hp-hero__intent-btn">I'm remortgaging</a>
                 </div>
 
-                <div class="hp-hero__cta-row">
+                <!-- <div class="hp-hero__cta-row">
                     <a href="/aip-form" class="hp-btn hp-btn--inverse">Start your AIP</a>
                     <span class="hp-hero__note">Takes 3 minutes &middot; soft search, no credit impact</span>
                 </div>
                 <p class="hp-hero__secondary">Prefer to talk it through first? <a href="https://calendly.com/unitedmortgages/15min">Book a time to chat with us</a>.</p>
-            </div>
+--></div>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/hero-v2.png" style="width:130%; height:80%; margin-top:120px; aspect-ratio:4/3.2;object-fit:cover;border-radius:20px;">
         </div>
     </section>
