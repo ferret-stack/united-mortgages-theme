@@ -65,6 +65,10 @@ function united_mortgages_create_pages() {
             'title' => 'Other Mortgages',
             'template' => 'page-other-mortgages.php'
         ),
+        'get-started' => array(
+            'title' => 'Get Started',
+            'template' => 'page-triage.php'
+        ),
     );
 
     foreach ($pages as $slug => $page) {
@@ -394,6 +398,22 @@ function united_enqueue_aip_exit_popup() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'united_enqueue_aip_exit_popup' );
+
+// TRIAGE FLOW (page-triage.php)
+// Keyed off the template rather than the slug so renaming the page in WP
+// admin doesn't silently break the flow.
+function um_enqueue_triage_script() {
+    if ( is_page_template( 'page-triage.php' ) ) {
+        wp_enqueue_script(
+            'um-triage',
+            get_template_directory_uri() . '/js/triage.js',
+            array(),
+            '1.0.0',
+            true
+        );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'um_enqueue_triage_script' );
 
 function um_enqueue_faq_accordion() {
     wp_enqueue_script(

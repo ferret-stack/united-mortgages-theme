@@ -111,7 +111,7 @@ get_header(); ?>
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/our-story/muki-col.png" alt="Muki Liu" class="um-founder-image um-founder-image--color">
                     </div>
                     <div class="um-founder-header">
-                        <h3 class="um-founder-name">MUKI LIU <a href="https://www.linkedin.com/in/muki-liu-844444193" target="_blank" class="um-founder-link">in</a></h3>
+                        <h3 class="um-founder-name">MUKI LIU<a href="mailto:muki@united-mortgages.com" class="um-founder-link"><img src="<?php echo get_template_directory_uri(); ?>/assets/advisor-mail.svg" alt="Email"></a></h3>
                         <p class="um-founder-title">Founder's Associate<span class="postnom"> &middot; CeMAP</span></p>
                     </div>
                     <div class="um-founder-bio">

@@ -3142,3 +3142,337 @@ body.is-front-redesign {
 }
 
 /* -------------------- CTA band (reuses .um-cta-band verbatim) -------------------- */
+
+/* ============================================================
+   11. Triage flow (page-triage.php)
+
+   Consumes the existing --hp-* tokens only; defines no new colours.
+
+   KNOWN DEVIATION FROM SPEC (accepted, logged in WEBDEV_LOG.md V4 §5):
+   the brand accent --hp-accent (#109dff) gives 2.88:1 against white, so
+   white-on-accent button text does not meet WCAG AA for normal-size text.
+   The spec asked for --um-action/--um-brand tokens, which do not exist in
+   this theme; the instruction was to use existing CSS, so this reuses the
+   sitewide accent and inherits its contrast debt rather than inventing a
+   token. Everything here that can meet AA without a new colour does:
+   body/heading copy uses --hp-ink/--hp-body, and the secondary CTA puts
+   --hp-accent-text on white.
+   ============================================================ */
+
+.um-triage {
+    background: var(--hp-cream);
+    padding: 72px 0 96px;
+}
+
+/* Several components below set an explicit `display`, which beats the UA's
+   `[hidden] { display: none }` and leaves "hidden" elements rendered and
+   focusable. Both the step machine and the not-yet-published blog CTAs rely
+   on the hidden attribute, so restore it for this subtree. */
+.um-triage [hidden] {
+    display: none !important;
+}
+
+.um-triage__intro {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 40px;
+}
+
+.um-triage__title {
+    font-family: var(--hp-font-display);
+    font-size: 40px;
+    line-height: 1.15;
+    font-weight: 700;
+    color: var(--hp-ink);
+    margin: 0 0 14px;
+}
+
+.um-triage__accent {
+    color: var(--hp-accent-text);
+}
+
+.um-triage__lead {
+    font-family: var(--hp-font-body);
+    font-size: 16.5px;
+    line-height: 1.55;
+    color: var(--hp-body);
+    margin: 0;
+}
+
+.um-triage__flow {
+    position: relative;
+    max-width: 680px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid var(--hp-border);
+    border-radius: 20px;
+    padding: 36px 40px 40px;
+}
+
+/* Without JS every step renders in document order and stays usable — the
+   one-at-a-time behaviour is added only once the script has run. */
+.um-triage__flow:not(.is-js) .um-triage__step + .um-triage__step {
+    margin-top: 40px;
+    padding-top: 36px;
+    border-top: 1px solid var(--hp-border);
+}
+
+/* -------------------- Progress tracker -------------------- */
+
+.um-triage__progress {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.um-triage__progress-track {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.um-triage__progress-dot {
+    width: 28px;
+    height: 5px;
+    border-radius: 100px;
+    background: var(--hp-border);
+    transition: background-color .2s ease, width .2s ease;
+}
+
+.um-triage__progress-dot.is-done {
+    background: var(--hp-accent);
+}
+
+.um-triage__progress-dot.is-current {
+    width: 40px;
+    background: var(--hp-accent);
+}
+
+.um-triage__progress-label {
+    font-family: var(--hp-font-body);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--hp-muted);
+    margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .um-triage__progress-dot {
+        transition: none;
+    }
+}
+
+.um-triage__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 44px;
+    padding: 10px 14px 10px 4px;
+    margin: -6px 0 8px -4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--hp-font-body);
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--hp-body);
+    border-radius: 8px;
+}
+
+.um-triage__back:hover {
+    color: var(--hp-ink);
+}
+
+.um-triage__back:focus-visible {
+    outline: 2px solid var(--hp-accent-text);
+    outline-offset: 2px;
+}
+
+.um-triage__question {
+    font-family: var(--hp-font-display);
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 700;
+    color: var(--hp-ink);
+    margin: 0 0 24px;
+    outline: none;
+}
+
+/* The heading takes focus on every step change; show that clearly for
+   keyboard users without flashing an outline on mouse users. */
+.um-triage__question:focus-visible {
+    outline: 2px solid var(--hp-accent-text);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+.um-triage__options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.um-triage__option {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 56px; /* comfortably over the 44px minimum */
+    padding: 16px 20px;
+    text-align: left;
+    background: #fff;
+    border: 1.5px solid var(--hp-border);
+    border-radius: 14px;
+    cursor: pointer;
+    font-family: var(--hp-font-body);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--hp-ink);
+    transition: border-color .18s ease, background-color .18s ease, transform .18s ease;
+}
+
+.um-triage__option:hover {
+    border-color: var(--hp-accent);
+    background: var(--hp-pill-bg);
+    transform: translateY(-1px);
+}
+
+.um-triage__option:focus-visible {
+    outline: 2px solid var(--hp-accent-text);
+    outline-offset: 3px;
+    border-color: var(--hp-accent);
+}
+
+.um-triage__option.is-chosen {
+    border-color: var(--hp-accent);
+    background: var(--hp-pill-bg);
+}
+
+/* -------------------- Outcome nodes -------------------- */
+
+.um-triage__outcome-lead {
+    font-family: var(--hp-font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--hp-body);
+    margin: -8px 0 26px;
+}
+
+.um-triage__ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.um-triage__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 14px 24px;
+    border-radius: 100px;
+    text-align: center;
+    text-decoration: none;
+    font-family: var(--hp-font-display);
+    font-size: 15.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.um-triage__cta:focus-visible {
+    outline: 2px solid var(--hp-accent-text);
+    outline-offset: 3px;
+}
+
+.um-triage__cta--primary {
+    background: var(--hp-accent);
+    color: #fff;
+    border: 1.5px solid var(--hp-accent);
+}
+
+.um-triage__cta--primary:hover {
+    background: #0d84d9;
+    border-color: #0d84d9;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.um-triage__cta--secondary {
+    background: #fff;
+    color: var(--hp-accent-text);
+    border: 1.5px solid var(--hp-border);
+}
+
+.um-triage__cta--secondary:hover {
+    border-color: var(--hp-accent);
+    background: var(--hp-pill-bg);
+    color: var(--hp-accent-text);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+    .um-triage {
+        padding: 48px 0 64px;
+    }
+
+    .um-triage__title {
+        font-size: 30px;
+    }
+
+    .um-triage__flow {
+        padding: 26px 22px 30px;
+        border-radius: 16px;
+    }
+
+    .um-triage__question {
+        font-size: 21px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .um-triage__option,
+    .um-triage__cta {
+        transition: none;
+    }
+
+    .um-triage__option:hover,
+    .um-triage__cta:hover {
+        transform: none;
+    }
+}
+
+/* -------------------- Homepage hero intent split (index.php) --------------------
+   Two equal-weight buttons: the choice between them is the point, so neither
+   is styled as secondary to the other. Both inherit .hp-btn (16px padding +
+   15.5px/1 type ≈ 51px tall), comfortably over the 44px tap-target minimum;
+   min-height is pinned anyway so a copy change can't shrink them under it. */
+.hp-hero__intent-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.hp-hero__intent-btn {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hp-hero__intent-btn:focus-visible {
+    outline: 2px solid var(--hp-accent-text);
+    outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+    .hp-hero__intent-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
