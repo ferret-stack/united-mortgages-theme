@@ -34,8 +34,17 @@ get_header(); ?>
 
 <p class="hp-hero__lead">Your personal adviser, with you as your story unfolds.</p>
 
+                <!-- Intent split. Placeholder copy — confirm final wording before
+                     shipping. Each button drops the visitor into the triage flow
+                     with that intent pre-set; nothing else is pre-filled and no
+                     assessment has happened at this point. -->
+                <div class="hp-hero__intent-row">
+                    <a href="<?php echo esc_url( home_url( '/get-started/?intent=buying' ) ); ?>" class="hp-btn hp-hero__intent-btn">I'm buying a home</a>
+                    <a href="<?php echo esc_url( home_url( '/get-started/?intent=remortgaging' ) ); ?>" class="hp-btn hp-hero__intent-btn">I'm remortgaging</a>
+                </div>
+
                 <div class="hp-hero__cta-row">
-                    <a href="/aip-form" class="hp-btn">Start your AIP</a>
+                    <a href="/aip-form" class="hp-btn hp-btn--inverse">Start your AIP</a>
                     <span class="hp-hero__note">Takes 3 minutes &middot; soft search, no credit impact</span>
                 </div>
                 <p class="hp-hero__secondary">Prefer to talk it through first? <a href="https://calendly.com/unitedmortgages/15min">Book a time to chat with us</a>.</p>

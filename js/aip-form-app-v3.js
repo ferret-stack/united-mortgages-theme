@@ -2,6 +2,36 @@ const { createApp } = Vue;
 
 const STORAGE_KEY = 'united_mortgages_aip_draft';
 
+/**
+ * Situation deep-link support (added for the triage flow).
+ *
+ * The triage flow links here with ?situation=<value>. This is the ONLY
+ * addition to this form: no field was added, removed or renamed, and the
+ * submission payload and its Flask/HubSpot handling are untouched. All this
+ * does is pre-select one radio the visitor would otherwise click themselves.
+ *
+ * The whitelist is the form's own existing step-1 values, verbatim. Anything
+ * not on it is ignored, so a bad or stale link can never inject a value the
+ * form doesn't already offer.
+ */
+const VALID_SITUATIONS = [
+    'First-time-buyer',
+    'Remortgage',
+    'Shared ownership/help to buy',
+    'Buy to Let',
+    'Guarantor',
+    'Commercial'
+];
+
+function getSituationFromUrl() {
+    try {
+        const value = new URLSearchParams(window.location.search).get('situation');
+        return VALID_SITUATIONS.includes(value) ? value : '';
+    } catch (error) {
+        return '';
+    }
+}
+
 // Create empty applicant template
 function createEmptyApplicant() {
     return {
@@ -117,6 +147,10 @@ const app = createApp({
     mounted() {
         console.log('✓ AIP Form Vue app mounted');
         this.loadDraft();
+        // Must run AFTER loadDraft(): loadDraft() replaces formData wholesale,
+        // so a returning visitor's saved draft would otherwise silently
+        // overwrite the situation the branch link just asked for.
+        this.applySituationFromUrl();
     },
     watch: {
         formData: {
@@ -127,6 +161,15 @@ const app = createApp({
         }
     },
     methods: {
+        // Apply ?situation= from a triage deep-link. No-op when absent or
+        // unrecognised — see VALID_SITUATIONS above.
+        applySituationFromUrl() {
+            const situation = getSituationFromUrl();
+            if (situation) {
+                this.formData.applicant_situation = situation;
+            }
+        },
+
         // Navigation
         nextStep() {
             if (this.validateCurrentStep()) {

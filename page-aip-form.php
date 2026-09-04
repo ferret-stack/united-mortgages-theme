@@ -84,7 +84,11 @@ get_header(); ?>
                             <input type="radio" name="applicant_situation" value="Shared ownership/help to buy" v-model="formData.applicant_situation" />
                             <span class="radio-label">Shared ownership/Help to Buy</span>
                         </label>
-                        <label class="radio-option" :class="{ 'selected': formData.applicant_situation === 'buy to Let' }">
+                        <!-- Case must match the input's value exactly ('Buy to Let'); it
+                             previously read 'buy to Let', so this option never showed as
+                             selected. Display binding only — the submitted value is
+                             unchanged. -->
+                        <label class="radio-option" :class="{ 'selected': formData.applicant_situation === 'Buy to Let' }">
                             <input type="radio" name="applicant_situation" value="Buy to Let" v-model="formData.applicant_situation" />
                             <span class="radio-label">Buy to Let</span>
                         </label>
