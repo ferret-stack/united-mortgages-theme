@@ -360,6 +360,11 @@ get_header(); ?>
                     ['name' => 'Won Thein', 'url' => 'https://www.iad.uk.com/staff/won-thein'],
                 ];
 
+                $moveli_agents = [
+                    ['name' => 'Carole Bratt', 'url' => 'https://www.moveli.co.uk/agents/carole-bratt'],
+                    ['name' => 'Gavin Fein', 'url' => 'https://www.moveli.co.uk/agents/gavin-fein'],
+                ];
+
                 // Not eXp — kept in the original per-agent logo tile treatment,
                 // untouched by the eXp consolidation above.
                 $other_estate_agents = [
@@ -388,10 +393,20 @@ get_header(); ?>
                     echo "<a class='hp-partners__b2b-exp-name' href='" . esc_url($agent['url']) . "' target='_blank' rel='noopener noreferrer sponsored'>" . $agent['name'] . "</a>";
                 }
                 echo "</div>";
-                                echo "<div class='hp-partners__b2b-exp'>";
+
+                echo "<div class='hp-partners__b2b-exp'>";
                 echo "<div class='hp-partners__b2b-exp-logo'>IAD agents</div>";
                 echo "<div class='hp-partners__b2b-exp-names'>";
                 foreach ($iad_agents as $agent) {
+                    echo "<a class='hp-partners__b2b-exp-name' href='" . esc_url($agent['url']) . "' target='_blank' rel='noopener noreferrer sponsored'>" . $agent['name'] . "</a>";
+                }
+                echo "</div>";
+
+                echo "</div>";
+                echo "<div class='hp-partners__b2b-exp'>";
+                echo "<div class='hp-partners__b2b-exp-logo'>Moveli agents</div>";
+                echo "<div class='hp-partners__b2b-exp-names'>";
+                foreach ($moveli_agents as $agent) {
                     echo "<a class='hp-partners__b2b-exp-name' href='" . esc_url($agent['url']) . "' target='_blank' rel='noopener noreferrer sponsored'>" . $agent['name'] . "</a>";
                 }
                 echo "</div>";
