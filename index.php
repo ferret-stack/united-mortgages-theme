@@ -56,16 +56,16 @@ get_header(); ?>
     <section class="hp-usp">
         <div class="hp-container hp-usp__grid">
             <div class="hp-usp__item">
-                <div class="hp-usp__num">01 &middot; One adviser</div>
+                <div class="hp-usp__num">One adviser</div>
                 <p>The same person handles your case from first enquiry to completion - not whoever's free that day.</p>
             </div>
             <div class="hp-usp__item">
-                <div class="hp-usp__num">02 &middot; Real availability</div>
-                <p>Reachable evenings and weekends, not just 9&#8209;to&#8209;5.</p>
+                <div class="hp-usp__num">Beyond the mortgage</div>
+                <p>Benefit from our network of conveyancers, surveyors, and partners to help prepare for what comes next.</p>
             </div>
             <div class="hp-usp__item">
-                <div class="hp-usp__num">03 &middot; Beyond the mortgage</div>
-                <p>We don't disappear after completion. Our network of conveyancers, surveyors, and partners is there for what comes next.</p>
+                <div class="hp-usp__num">Lifetime guarantee</div>
+                <p>We don't disappear after completion; we're here with you through each renewal, remortgage, and move.</p>
             </div>
         </div>
     </section>
