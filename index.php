@@ -363,6 +363,11 @@ get_header(); ?>
                 $moveli_agents = [
                     ['name' => 'Carole Bratt', 'url' => 'https://www.moveli.co.uk/agents/carole-bratt'],
                     ['name' => 'Gavin Fein', 'url' => 'https://www.moveli.co.uk/agents/gavin-fein'],
+                    ['name' => 'Edd Holt', 'url' => 'https://www.moveli.co.uk/agents/edd-holt'],
+                ];
+
+                $tauk_agents = [
+                    ['name' => 'Grant Budd', 'url' => 'https://theagencyuk.com/our-agents/grant-budd'],
                 ];
 
                 // Not eXp — kept in the original per-agent logo tile treatment,
@@ -410,6 +415,16 @@ get_header(); ?>
                     echo "<a class='hp-partners__b2b-exp-name' href='" . esc_url($agent['url']) . "' target='_blank' rel='noopener noreferrer sponsored'>" . $agent['name'] . "</a>";
                 }
                 echo "</div>";
+
+                echo "<div class='hp-partners__b2b-exp'>";
+                echo "<div class='hp-partners__b2b-exp-logo'>TAUK agents</div>";
+                echo "<div class='hp-partners__b2b-exp-names'>";
+                foreach ($tauk_agents as $agent) {
+                    echo "<a class='hp-partners__b2b-exp-name' href='" . esc_url($agent['url']) . "' target='_blank' rel='noopener noreferrer sponsored'>" . $agent['name'] . "</a>";
+                }
+                echo "</div>";
+
+
                 echo "</div>";
             ?>
         </div>
