@@ -13,47 +13,27 @@ get_header(); ?>
 
     <!-- ============================================================
          Section 1: Hero + Why Enter
-         Combined into a single viewport (see .um-awards-hero, min-height: 100vh
-         wraps both blocks). PLACEHOLDER COPY throughout — award name, subtitle,
-         and the three "why enter" cards are all provisional pending final copy.
+         The "why enter" beat the brief calls for is carried as prose in the
+         standfirst rather than a card grid. PLACEHOLDER COPY throughout —
+         award name and standfirst are provisional pending final copy.
          ============================================================ -->
     <section class="um-awards-hero">
         <div class="hp-container">
-
             <div class="um-awards-hero__top">
-                <span class="hp-pill"><!-- PLACEHOLDER --> Nominations Open</span>
                 <h1 class="um-awards-hero__title">United <span class="bold-text">Mortgages</span> Awards</h1>
                 <p class="um-awards-hero__subtitle">
-                    <!-- PLACEHOLDER COPY: standing in for the real award strapline -->
+                    <!-- PLACEHOLDER COPY: standing in for the real award strapline, and
+                         for the "why enter / what winners get" line pending real detail -->
                     Recognising the estate agents who go above and beyond for their clients.
-                    Nominate yourself or your team for this year's United Mortgages Awards.
+                    Nominate yourself or your team — entry is free, and winners are recognised
+                    across United Mortgages' channels and partner network.
                 </p>
             </div>
-
-            <div class="um-awards-why">
-                <div class="um-awards-why__grid">
-                    <!-- PLACEHOLDER COPY: "why enter" points below are illustrative, not final -->
-                    <div class="um-awards-why__card">
-                        <h3>Industry Recognition</h3>
-                        <p>Placeholder copy — winners are recognised publicly across United Mortgages' channels and partner network.</p>
-                    </div>
-                    <div class="um-awards-why__card">
-                        <h3>Prizes for Winners</h3>
-                        <p>Placeholder copy — details of the winners' prize package to be confirmed.</p>
-                    </div>
-                    <div class="um-awards-why__card">
-                        <h3>Free to Enter</h3>
-                        <p>Placeholder copy — self-nomination is quick, free, and open to agents nationwide.</p>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
     <!-- ============================================================
          Section 2: Eligibility & Deadline
-         Own full viewport (.um-awards-eligibility, min-height: 100vh).
          All criteria and the deadline shown are PLACEHOLDER — no dates or
          numbers here are confirmed; do not treat as real copy.
          ============================================================ -->
@@ -77,14 +57,13 @@ get_header(); ?>
                 </ul>
 
                 <!-- PLACEHOLDER DEADLINE: no real date has been confirmed -->
-                <div class="um-awards-deadline">Entries close: [placeholder date]</div>
+                <p class="um-awards-deadline">Entries close <strong>[placeholder date]</strong>.</p>
             </div>
         </div>
     </section>
 
     <!-- ============================================================
          Section 3: Form Embed Slot
-         Own full viewport (.um-awards-form-section, min-height: 100vh).
          Styled shell only — matches the HubSpot contact form visual treatment
          from template-parts/team-contact.php (.contact-form card + .hs-form-frame
          field styling in style.css), translated into this page's card/input/

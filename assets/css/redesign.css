@@ -3486,19 +3486,17 @@ body.is-front-redesign {
    tokens. No new colours or spacing scale introduced.
    ============================================================ */
 
+/* body.is-front-redesign already clears the fixed header with 140px of
+   top padding — this section only adds its own breathing room. */
 .um-awards-hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     background: var(--hp-cream);
-    padding: 140px 0 64px;
+    padding: 44px 0 52px;
 }
 
 .um-awards-hero__top {
     text-align: center;
     max-width: 760px;
-    margin: 0 auto 56px;
+    margin: 0 auto;
 }
 
 .um-awards-hero__title {
@@ -3508,7 +3506,7 @@ body.is-front-redesign {
     letter-spacing: -.01em;
     font-weight: 600;
     color: var(--hp-ink);
-    margin: 20px 0 16px;
+    margin: 0 0 16px;
 }
 
 .um-awards-hero__title .bold-text {
@@ -3524,63 +3522,20 @@ body.is-front-redesign {
     margin: 0 auto;
 }
 
-.um-awards-why {
-    max-width: 900px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.um-awards-why__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.um-awards-why__card {
-    background: #fff;
-    border: 1px solid var(--hp-border);
-    border-radius: 16px;
-    padding: 26px;
-    text-align: left;
-}
-
-.um-awards-why__card h3 {
-    font-family: var(--hp-font-display);
-    font-size: 17px;
-    font-weight: 600;
-    color: var(--hp-ink);
-    margin: 0 0 8px;
-}
-
-.um-awards-why__card p {
-    font-family: var(--hp-font-body);
-    font-size: 14.5px;
-    line-height: 1.6;
-    color: var(--hp-muted);
-    margin: 0;
-}
-
 @media (max-width: 900px) {
     .um-awards-hero {
-        padding: 120px 0 48px;
+        padding: 32px 0 40px;
     }
 
     .um-awards-hero__title {
         font-size: 34px;
     }
-
-    .um-awards-why__grid {
-        grid-template-columns: 1fr;
-    }
 }
 
 /* -------------------- Eligibility & deadline -------------------- */
 .um-awards-eligibility {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
     background: #fff;
-    padding: 80px 0;
+    padding: 52px 0 56px;
 }
 
 .um-awards-eligibility__inner {
@@ -3594,7 +3549,7 @@ body.is-front-redesign {
     border: 1px solid var(--hp-border);
     border-radius: 16px;
     padding: 8px 32px;
-    margin-top: 32px;
+    margin-top: 24px;
     list-style: none;
 }
 
@@ -3612,18 +3567,16 @@ body.is-front-redesign {
 }
 
 .um-awards-deadline {
-    display: inline-flex;
-    align-items: center;
-    min-height: 44px;
-    gap: 10px;
-    margin-top: 32px;
-    background: var(--hp-cream-blue);
-    color: var(--hp-accent-text);
-    font-family: var(--hp-font-display);
+    font-family: var(--hp-font-body);
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--hp-body-2);
+    margin: 20px 0 0;
+}
+
+.um-awards-deadline strong {
+    color: var(--hp-ink);
     font-weight: 600;
-    font-size: 15px;
-    padding: 12px 20px;
-    border-radius: 100px;
 }
 
 @media (max-width: 768px) {
@@ -3634,11 +3587,8 @@ body.is-front-redesign {
 
 /* -------------------- Form embed slot -------------------- */
 .um-awards-form-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
     background: var(--hp-cream);
-    padding: 80px 0;
+    padding: 56px 0 64px;
 }
 
 .um-awards-form-shell {
