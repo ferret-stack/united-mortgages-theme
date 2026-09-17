@@ -69,6 +69,10 @@ function united_mortgages_create_pages() {
             'title' => 'Get Started',
             'template' => 'page-triage.php'
         ),
+        'awards' => array(
+            'title' => 'United Mortgages Awards',
+            'template' => 'page-awards.php'
+        ),
     );
 
     foreach ($pages as $slug => $page) {
