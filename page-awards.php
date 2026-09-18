@@ -2,10 +2,6 @@
 /**
  * Template Name: Awards
  * Description: United Mortgages Awards — self-nomination programme for estate agents.
- * Mock-up for local demo only: hero/why-enter/eligibility copy is placeholder
- * pending final wording, and the nomination form is a styled shell awaiting
- * the HubSpot embed from David. See inline PLACEHOLDER and TODO(hubspot-embed)
- * comments below.
  */
 get_header(); ?>
 
@@ -13,20 +9,15 @@ get_header(); ?>
 
     <!-- ============================================================
          Section 1: Hero + Why Enter
-         The "why enter" beat the brief calls for is carried as prose in the
-         standfirst rather than a card grid. PLACEHOLDER COPY throughout —
-         award name and standfirst are provisional pending final copy.
          ============================================================ -->
     <section class="um-awards-hero">
         <div class="hp-container">
             <div class="um-awards-hero__top">
-                <h1 class="um-awards-hero__title">United <span class="bold-text">Mortgages</span> Awards</h1>
+                <h1 class="um-awards-hero__title bold-text"><span class="bold-text">United Mortgages&reg;</span> Awards</h1>
                 <p class="um-awards-hero__subtitle">
-                    <!-- PLACEHOLDER COPY: standing in for the real award strapline, and
-                         for the "why enter / what winners get" line pending real detail -->
-                    Recognising the estate agents who go above and beyond for their clients.
-                    Nominate yourself or your team — entry is free, and winners are recognised
-                    across United Mortgages' channels and partner network.
+                    We didn't build United Mortgages to be another mortgag broker doing things the old way. No call centres. No queue of "whoever's free". Just one adviser with real availability offering honest advice from first message to completion.
+                    Our awards recognise those in the industry who, like us, refuse to do things by default.<br><br>
+                    We're here to shoutout the independents outworking the chains; the teams raising the bar on client care, not just chasing volume; the people who'd rather be brilliant at five branches than average at 50.
                 </p>
             </div>
         </div>
@@ -34,26 +25,36 @@ get_header(); ?>
 
     <!-- ============================================================
          Section 2: Eligibility & Deadline
-         All criteria and the deadline shown are PLACEHOLDER — no dates or
-         numbers here are confirmed; do not treat as real copy.
          ============================================================ -->
     <section class="um-awards-eligibility">
         <div class="hp-container">
             <div class="um-awards-eligibility__inner">
                 <div class="um-section-header" style="text-align:left; margin: 0;">
-                    <h2 class="um-section-title">Eligibility <span class="bold-text">&amp; Deadline</span></h2>
+                    <h2 class="um-section-title">Eligibility &amp; Categories</h2>
                     <p class="um-section-subtitle">
-                        <!-- PLACEHOLDER COPY -->
-                        Who can enter, and by when — final wording pending.
+                        Read here to find the category best suited to you.
                     </p>
                 </div>
 
                 <!-- PLACEHOLDER CRITERIA: illustrative only, not confirmed eligibility rules -->
                 <ul class="um-awards-eligibility__list">
-                    <li>Placeholder — open to UK-based estate agents and agency teams.</li>
-                    <li>Placeholder — nominee must be currently practising as an estate agent.</li>
-                    <li>Placeholder — self-nominations and third-party nominations both accepted.</li>
-                    <li>Placeholder — one entry per nominee for this award cycle.</li>
+                    <li><span style="font-weight:700;">Regional Agency of the Year (England)</span><br>
+                    - London<br>
+                    - South of England<br>
+                    - Midlands &amp; East of England<br>
+                    - North of England
+                    </li>
+                    <li><span style="font-weight:700;">Nations Award</span><br>
+                    Estate Agency of the Year, Scotland, Wales, and Northern Ireland.
+                    </li>
+                    <li><span style="font-weight: 700;">National / Scale Award</span><br>
+                    Estate agencies with 25+ branches.
+                </li>
+                    <li><span style="font-weight:700;">The Headline</span><br>
+                        <span style="font-weight:700;">Agency of the Year:</span> Chosen from seven regional winners plus the Nations and National winners<br>
+                        <span style="font-weight: 700;">Social &amp; Environmental Impact Award:</span> Leadership in sustainability, community investment, and social value.<br>
+                        <span style="font-weight: 700;">Rising Star of the Year:</span> Under 30 <em>or</em> under 2 years in the industry.
+                </li>
                 </ul>
 
                 <!-- PLACEHOLDER DEADLINE: no real date has been confirmed -->
@@ -88,28 +89,7 @@ get_header(); ?>
                 // Everything in this block is a non-functional visual placeholder —
                 // no name attributes, no <form> element, all fields disabled.
                 ?>
-                <div class="um-awards-form-shell__row">
-                    <div>
-                        <label for="um-awards-mock-first-name">First name</label>
-                        <input type="text" id="um-awards-mock-first-name" placeholder="First name" disabled aria-disabled="true">
-                    </div>
-                    <div>
-                        <label for="um-awards-mock-last-name">Last name</label>
-                        <input type="text" id="um-awards-mock-last-name" placeholder="Last name" disabled aria-disabled="true">
-                    </div>
-                </div>
-
-                <label for="um-awards-mock-agency">Agency name</label>
-                <input type="text" id="um-awards-mock-agency" placeholder="Agency name" disabled aria-disabled="true">
-
-                <label for="um-awards-mock-email">Email address</label>
-                <input type="email" id="um-awards-mock-email" placeholder="you@agency.com" disabled aria-disabled="true">
-
-                <label for="um-awards-mock-reason">Why should they win?</label>
-                <textarea id="um-awards-mock-reason" placeholder="Tell us why this nomination stands out&hellip;" disabled aria-disabled="true"></textarea>
-
-                <button type="button" class="um-awards-form-shell__submit" disabled aria-disabled="true">Submit Nomination</button>
-                <!-- END TODO(hubspot-embed) placeholder block -->
+<script src="https://js-eu1.hsforms.net/forms/embed/146069825.js" defer></script> <div class="hs-form-frame" data-region="eu1" data-form-id="212983cf-522f-412e-9042-701399415af1" data-portal-id="146069825"></div>
             </div>
         </div>
     </section>
