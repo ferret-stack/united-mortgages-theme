@@ -31,7 +31,7 @@ get_header(); ?>
                 <div class="um-section-header um-awards-section-header">
                     <h2 class="um-section-title"><span class="bold-text">Award Categories</span></h2>
                     <p class="um-section-subtitle">
-                        Seven regional titles, two nation-wide awards, and three headline honours chosen from them all. Judged by a panel of independent property journalists, a consumer advocate, and agents from outside the region.
+                        Seven regional titles, two nation-wide awards, and three headline honours.<br>Judged by a panel of independent property journalists, a consumer advocate, and agents from outside the region.
                     </p>
                 </div>
 
