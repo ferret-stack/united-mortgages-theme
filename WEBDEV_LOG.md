@@ -15,6 +15,47 @@ header move together.
 
 ---
 
+## V4.3.0 — Inline Calendly booking in the contact section
+
+### Shipped
+
+- **Inline booking calendar** — `template-parts/team-contact.php` now embeds
+  Calendly's inline widget in the contact card instead of the V4.2.0 button +
+  popup. `js/calendly-contact.js` mounts it when the section comes within
+  ~600px of the viewport (IntersectionObserver; immediate mount if
+  unsupported). Nothing from Calendly loads before that. URL params:
+  `utm_source=team_contact`, `hide_event_type_details=1`,
+  `hide_landing_page_details=1`, and existing theme colours
+  (`primary_color=109dff` = `--hp-accent`, `text_color=16241f` = `--hp-ink`,
+  `background_color=ffffff`).
+- The calendar area reserves 700px to avoid layout shift. The plain booking
+  link inside it is the no-JS fallback and stays if the widget fails to load.
+
+### Removed
+
+- The V4.2.0 "Book a call" button popup behaviour. No popup remains on the site.
+
+### Known gaps
+
+- **Calendly's cookie banner shows inside the embed** for UK/EU visitors. It
+  was left on deliberately (no `hide_gdpr_banner`) because the theme has no
+  consent mechanism. Hide it only once a site-wide consent banner exists and
+  gates Calendly.
+- Colour params only take effect on paid Calendly plans. If the account is on
+  the free tier, the calendar uses Calendly's default blue.
+- The fixed 700px height means Calendly's iframe can scroll internally on small
+  screens, for example after a date is picked on mobile. Calendly's
+  auto-resize option was not used.
+- The section is now ~700px taller on all 17 templates that include it, and
+  every visitor who scrolls near it loads Calendly's script and iframe
+  (third-party content and cookies).
+- The real calendar could not be rendered in the sandbox (Calendly is
+  blocked). Verified with a stubbed `widget.js`: lazy mount, single init,
+  URL params, and the fallback when the widget is blocked. **Check the live
+  calendar visually after deploy.**
+
+---
+
 ## V4.2.0 — Calendly contact button + AIP saved-progress notices
 
 Part of Gunslinger (moving UM off HubSpot by 3 Nov).
