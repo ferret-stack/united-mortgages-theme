@@ -22,7 +22,7 @@
        intended for reuse on page-privacy-policy.php, page-tcf.php,
        page-fee-structure.php when they're migrated)
    11. Triage flow / Awards page
-   12. Team contact Calendly CTA (template-parts/team-contact.php)
+   12. Team contact inline Calendly booking (template-parts/team-contact.php)
    ============================================================ */
 
 /* -------------------- 1. Sitewide header/nav -------------------- */
@@ -3705,27 +3705,43 @@ body.is-front-redesign {
 }
 
 /* ============================================================
-   12. TEAM CONTACT — Calendly CTA (template-parts/team-contact.php)
-   Replaces the HubSpot form embed. Reuses .hp-btn and the existing
-   .contact-form card from style.css; spacing/type only, no new colours.
+   12. TEAM CONTACT — inline Calendly booking (template-parts/team-contact.php)
+   Replaced the HubSpot form embed. The calendar fills the existing
+   .contact-form card from style.css; height is reserved up front so the
+   lazy-mounted iframe doesn't shift the page. No new colours.
    ============================================================ */
 .um-contact-cta {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
+    padding: 0;
+    overflow: hidden;
     text-align: center;
-    gap: 16px;
 }
 
-.um-contact-cta .hp-btn:focus-visible {
+.um-calendly-inline {
+    position: relative;
+    min-width: 280px;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.um-calendly-inline iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.um-calendly-fallback:focus-visible {
     outline: 2px solid var(--hp-accent-text);
     outline-offset: 3px;
 }
 
 .um-contact-alt {
     margin: 0;
+    padding: 16px 24px 20px;
+    border-top: 1px solid var(--hp-border);
     font-family: var(--hp-font-body);
     font-size: 15px;
     line-height: 1.6;
@@ -3742,4 +3758,10 @@ body.is-front-redesign {
 .um-contact-alt a:hover,
 .um-contact-alt a:focus-visible {
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .contact-form.um-contact-cta {
+        padding: 0;
+    }
 }

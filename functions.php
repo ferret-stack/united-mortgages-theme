@@ -390,9 +390,9 @@ function um_nhs_og_tags() {
 add_action( 'wp_head', 'um_nhs_og_tags' );
 
 
-// CALENDLY CONTACT BUTTON (template-parts/team-contact.php)
-// Tiny click handler only. Calendly's own widget.js/css are injected by
-// this script on first click, so nothing from Calendly loads on page load.
+// CALENDLY INLINE BOOKING (template-parts/team-contact.php)
+// Small loader only. Calendly's own widget.js/css are injected by this
+// script when the contact section scrolls near, not on page load.
 function um_enqueue_calendly_contact() {
     wp_enqueue_script(
         'um-calendly-contact',

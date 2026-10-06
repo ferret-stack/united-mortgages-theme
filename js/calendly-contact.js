@@ -1,28 +1,44 @@
 /**
- * Calendly contact button (template-parts/team-contact.php)
+ * Inline Calendly booking (template-parts/team-contact.php)
  *
- * The button is a plain link to the Calendly URL, so it works without JS.
- * With JS, the first click lazy-loads Calendly's widget.css + widget.js and
- * opens the booking popup. Nothing from Calendly is requested on page load.
+ * Mounts Calendly's inline booking calendar into .um-calendly-inline once the
+ * contact section scrolls near the viewport. Nothing from Calendly is
+ * requested before that. The link inside the container is the no-JS
+ * fallback, and it stays in place if the widget fails to load.
+ *
+ * Calendly's own cookie banner is deliberately left on (no hide_gdpr_banner):
+ * the theme has no consent mechanism of its own.
  */
 (function () {
     'use strict';
 
     var WIDGET_JS  = 'https://assets.calendly.com/assets/external/widget.js';
     var WIDGET_CSS = 'https://assets.calendly.com/assets/external/widget.css';
-    var UTM_SOURCE = 'team_contact';
+    var LOAD_MARGIN = '600px 0px'; // start loading about a screen before it's visible
+
+    // Display params use existing theme tokens: --hp-accent, --hp-ink, white.
+    // Colour params only take effect on paid Calendly plans.
+    var URL_PARAMS = {
+        utm_source: 'team_contact',
+        hide_event_type_details: '1',
+        hide_landing_page_details: '1',
+        primary_color: '109dff',
+        text_color: '16241f',
+        background_color: 'ffffff'
+    };
 
     var widgetPromise = null;
 
-    // Always sends utm_source=team_contact, whatever the markup carries.
     function buildCalendlyUrl(baseUrl) {
         var url = new URL(baseUrl, window.location.href);
-        url.searchParams.set('utm_source', UTM_SOURCE);
+        Object.keys(URL_PARAMS).forEach(function (key) {
+            url.searchParams.set(key, URL_PARAMS[key]);
+        });
         return url.toString();
     }
 
     function loadWidget() {
-        if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
+        if (window.Calendly && typeof window.Calendly.initInlineWidget === 'function') {
             return Promise.resolve();
         }
         if (widgetPromise) return widgetPromise;
@@ -37,7 +53,7 @@
             script.src = WIDGET_JS;
             script.async = true;
             script.onload = function () {
-                if (window.Calendly && typeof window.Calendly.initPopupWidget === 'function') {
+                if (window.Calendly && typeof window.Calendly.initInlineWidget === 'function') {
                     resolve();
                 } else {
                     reject(new Error('Calendly widget unavailable'));
@@ -47,32 +63,57 @@
                 reject(new Error('Calendly widget failed to load'));
             };
             document.head.appendChild(script);
-        }).catch(function (error) {
-            widgetPromise = null; // allow a retry on the next click
-            throw error;
         });
 
         return widgetPromise;
     }
 
-    document.addEventListener('click', function (event) {
-        var button = event.target.closest ? event.target.closest('.um-calendly-btn') : null;
-        if (!button) return;
+    function mount(container) {
+        if (container.getAttribute('data-calendly-mounted')) return;
+        container.setAttribute('data-calendly-mounted', 'pending');
 
-        // Let modified clicks (new tab/window) behave as a normal link.
-        if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button > 0) return;
-
-        event.preventDefault();
-
-        var url = buildCalendlyUrl(button.getAttribute('data-calendly-url') || button.href);
+        var url = buildCalendlyUrl(container.getAttribute('data-calendly-url'));
 
         loadWidget().then(function () {
-            window.Calendly.initPopupWidget({ url: url });
-        }).catch(function () {
-            // Widget blocked or offline: fall back to the booking page itself.
-            window.location.href = url;
+            var fallback = container.querySelector('.um-calendly-fallback');
+            if (fallback) fallback.remove();
+            window.Calendly.initInlineWidget({ url: url, parentElement: container });
+            container.setAttribute('data-calendly-mounted', 'true');
+        }).catch(function (error) {
+            // Leave the fallback link in place; the visitor can still book.
+            container.setAttribute('data-calendly-mounted', 'failed');
+            console.warn('[Calendly] inline widget not loaded:', error.message);
         });
-    });
+    }
+
+    function init() {
+        var containers = document.querySelectorAll('.um-calendly-inline[data-calendly-url]');
+        if (!containers.length) return;
+
+        if (!('IntersectionObserver' in window)) {
+            containers.forEach(mount);
+            return;
+        }
+
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    observer.unobserve(entry.target);
+                    mount(entry.target);
+                }
+            });
+        }, { rootMargin: LOAD_MARGIN });
+
+        containers.forEach(function (container) {
+            observer.observe(container);
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
 
     window.umBuildCalendlyUrl = buildCalendlyUrl;
 })();
