@@ -3710,6 +3710,11 @@ body.is-front-redesign {
    .contact-form card from style.css; height is reserved up front so the
    lazy-mounted iframe doesn't shift the page. No new colours.
    ============================================================ */
+/* The calendar card is taller than the copy beside it; centre the pair. */
+.team-contact-wrapper {
+    align-items: center;
+}
+
 .um-contact-cta {
     display: flex;
     flex-direction: column;
@@ -3731,6 +3736,30 @@ body.is-front-redesign {
     width: 100%;
     height: 100%;
     border: 0;
+}
+
+.um-contact-cta__title {
+    margin: 0;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--hp-border);
+    font-family: var(--hp-font-display);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--hp-ink);
+    text-align: left;
+}
+
+.um-calendly-inline.is-js .um-calendly-fallback {
+    display: none;
+}
+
+.um-calendly-inline.is-js .um-calendly-loading {
+    display: block;
+    margin: 0;
+    font-family: var(--hp-font-body);
+    font-size: 15px;
+    color: var(--hp-muted);
 }
 
 .um-calendly-fallback:focus-visible {

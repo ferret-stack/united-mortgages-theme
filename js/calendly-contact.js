@@ -68,6 +68,11 @@
         return widgetPromise;
     }
 
+    function removeLoading(container) {
+        var loading = container.querySelector('.um-calendly-loading');
+        if (loading) loading.remove();
+    }
+
     function mount(container) {
         if (container.getAttribute('data-calendly-mounted')) return;
         container.setAttribute('data-calendly-mounted', 'pending');
@@ -77,10 +82,13 @@
         loadWidget().then(function () {
             var fallback = container.querySelector('.um-calendly-fallback');
             if (fallback) fallback.remove();
+            removeLoading(container);
             window.Calendly.initInlineWidget({ url: url, parentElement: container });
             container.setAttribute('data-calendly-mounted', 'true');
         }).catch(function (error) {
-            // Leave the fallback link in place; the visitor can still book.
+            // Bring the fallback link back; the visitor can still book.
+            removeLoading(container);
+            container.classList.remove('is-js');
             container.setAttribute('data-calendly-mounted', 'failed');
             console.warn('[Calendly] inline widget not loaded:', error.message);
         });
@@ -89,6 +97,12 @@
     function init() {
         var containers = document.querySelectorAll('.um-calendly-inline[data-calendly-url]');
         if (!containers.length) return;
+
+        // JS is running: swap the fallback button for a quiet loading line
+        // until the calendar mounts (or fails, which restores the button).
+        containers.forEach(function (container) {
+            container.classList.add('is-js');
+        });
 
         if (!('IntersectionObserver' in window)) {
             containers.forEach(mount);

@@ -14,7 +14,7 @@
                     <h2 class="team-title"><span class="bold-text">One adviser. </span>Evenings, weekends, and bank holidays included.</span></h2>
                     
                     <p class="team-description">
-                        Whether you're just starting to explore your options or partway through a case, you'll deal with one named adviser - <strong>not whoever's free.</strong><br>Reach out below and that's who you'll speak to, right through to completion.
+                        Whether you're just starting to explore your options or partway through a case, you'll deal with one named adviser - <strong>not whoever's free.</strong><br>Book a time and that's who you'll speak to, right through to completion.
                     </p>
                     
                     <div class="trustpilot-widget">
@@ -29,8 +29,10 @@
                     // scrolls near the viewport. The link inside is the no-JS / load-failure fallback.
                     $um_contact_calendly_url = 'https://calendly.com/unitedmortgages/15min';
                     ?>
+                    <h3 class="um-contact-cta__title">Pick a time with your adviser</h3>
                     <div class="um-calendly-inline" data-calendly-url="<?php echo esc_url( $um_contact_calendly_url ); ?>">
                         <a class="hp-btn um-calendly-fallback" href="<?php echo esc_url( $um_contact_calendly_url . '?utm_source=team_contact' ); ?>">Book a call with an adviser</a>
+                        <p class="um-calendly-loading" hidden>Loading available times…</p>
                     </div>
                     <p class="um-contact-alt">
                         Prefer to talk now? Call <a href="tel:03330914776">0333 091 4776</a> or email <a href="mailto:hello@united-mortgages.com">hello@united-mortgages.com</a>
