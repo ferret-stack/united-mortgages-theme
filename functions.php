@@ -403,6 +403,20 @@ function united_enqueue_aip_exit_popup() {
 }
 add_action( 'wp_enqueue_scripts', 'united_enqueue_aip_exit_popup' );
 
+// CALENDLY CONTACT BUTTON (template-parts/team-contact.php)
+// Tiny click handler only. Calendly's own widget.js/css are injected by
+// this script on first click, so nothing from Calendly loads on page load.
+function um_enqueue_calendly_contact() {
+    wp_enqueue_script(
+        'um-calendly-contact',
+        get_template_directory_uri() . '/js/calendly-contact.js',
+        array(),
+        '1.0.0',
+        true
+    );
+}
+add_action( 'wp_enqueue_scripts', 'um_enqueue_calendly_contact' );
+
 // TRIAGE FLOW (page-triage.php)
 // Keyed off the template rather than the slug so renaming the page in WP
 // admin doesn't silently break the flow.

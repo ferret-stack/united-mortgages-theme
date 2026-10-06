@@ -21,6 +21,8 @@
    10. Legal/policy pages — shared components (page-complaints-policy.php;
        intended for reuse on page-privacy-policy.php, page-tcf.php,
        page-fee-structure.php when they're migrated)
+   11. Triage flow / Awards page
+   12. Team contact Calendly CTA (template-parts/team-contact.php)
    ============================================================ */
 
 /* -------------------- 1. Sitewide header/nav -------------------- */
@@ -3666,4 +3668,44 @@ body.is-front-redesign {
     .um-awards-form-shell__row {
         grid-template-columns: 1fr;
     }
+}
+
+/* ============================================================
+   12. TEAM CONTACT — Calendly CTA (template-parts/team-contact.php)
+   Replaces the HubSpot form embed. Reuses .hp-btn and the existing
+   .contact-form card from style.css; spacing/type only, no new colours.
+   ============================================================ */
+.um-contact-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    gap: 16px;
+}
+
+.um-contact-cta .hp-btn:focus-visible {
+    outline: 2px solid var(--hp-accent-text);
+    outline-offset: 3px;
+}
+
+.um-contact-alt {
+    margin: 0;
+    font-family: var(--hp-font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--hp-body);
+}
+
+.um-contact-alt a {
+    color: var(--hp-accent-text);
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.um-contact-alt a:hover,
+.um-contact-alt a:focus-visible {
+    text-decoration: underline;
 }

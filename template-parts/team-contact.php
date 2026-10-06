@@ -22,10 +22,17 @@
                     </div>
                 </div>
                 
-               <div class="contact-form">
-                    <!-- HubSpot Form Embed -->
-                    <script src="https://js-eu1.hsforms.net/forms/embed/146069825.js" defer></script>
-                    <div class="hs-form-frame" data-region="eu1" data-form-id="056e70dd-777c-46b3-8804-c2345bae99f9" data-portal-id="146069825"></div>
+               <div class="contact-form um-contact-cta">
+                    <?php
+                    // Calendly booking replaces the HubSpot form embed (Gunslinger, V4.2.0).
+                    // Same team link as page-triage.php. The href is the no-JS fallback;
+                    // js/calendly-contact.js lazy-loads Calendly's popup on first click.
+                    $um_contact_calendly_url = 'https://calendly.com/unitedmortgages/15min?utm_source=team_contact';
+                    ?>
+                    <a class="hp-btn um-calendly-btn" href="<?php echo esc_url( $um_contact_calendly_url ); ?>" data-calendly-url="<?php echo esc_url( $um_contact_calendly_url ); ?>">Book a call with an adviser</a>
+                    <p class="um-contact-alt">
+                        Prefer to talk now? Call <a href="tel:03330914776">0333 091 4776</a> or email <a href="mailto:hello@united-mortgages.com">hello@united-mortgages.com</a>
+                    </p>
                 </div>
             </div>
         </div>
