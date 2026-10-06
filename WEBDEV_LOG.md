@@ -3,13 +3,90 @@
 Scoped future work and known deviations, logged so they can be picked up
 without re-deriving context. Newest version block at the top.
 
+**Versioning:** Vx.y.z — x major, y minor, z patch. The first block (V4) is
+V4.0.0. The theme header (`style.css` `Version:`) had already reached 4.1.3
+before this scheme was adopted, so the log skips 4.1.x and goes to V4.2.0,
+keeping the version number going up. From V4.2.0 the log and the theme
+header move together.
+
 > No webdev log existed in this repo when V4 was written. `REDESIGN_HANDOVER.md`
 > is a handover brief for the sitewide restyle, not a log, so this file was
 > created rather than appending future-work items to it.
 
 ---
 
-## V4 — Homepage intent split + capture-on-commit triage flow
+## V4.2.0 — Calendly contact button + AIP saved-progress notices
+
+Part of Gunslinger (moving UM off HubSpot by 3 Nov).
+
+### Shipped
+
+- **Calendly contact button** — `template-parts/team-contact.php` no longer
+  embeds the HubSpot form. It shows a `.hp-btn` "Book a call with an adviser"
+  linking to `https://calendly.com/unitedmortgages/15min?utm_source=team_contact`,
+  plus a "Prefer to talk now?" line with the header/footer phone and email.
+  `js/calendly-contact.js` (sitewide, footer) injects Calendly's `widget.css` /
+  `widget.js` on the **first click only** and opens the popup. Nothing from
+  Calendly loads on page load. Without JS, or if the widget is blocked, the
+  link goes straight to the Calendly page. This applies to every template that
+  includes the part (17, including `page-calculators.php`, which was not edited).
+- **AIP saved-progress notices** — inline, non-modal, in `page-aip-form.php`:
+  "Your answers are saved on this device." after a successful localStorage
+  write, and "Welcome back. We've restored your answers." with a **Start
+  over** link when a draft is restored on load. Start over clears the draft
+  and reloads, keeping `?situation=`. Neither notice shows if storage throws.
+- **AIP draft expiry** — drafts older than **7 days** are discarded on load
+  (new). Clear-on-successful-submit already existed and is unchanged.
+
+What the draft holds: localStorage key `united_mortgages_aip_draft` =
+`{timestamp, currentStep, data}`. `data` is the full `formData`
+(`applicant_type`, `applicant_situation`, `privacy_accepted`, and every
+applicant 1/2 field, including contact, address, income and credit details).
+Uploaded files are **not** stored (`File` objects are nulled).
+
+### Removed
+
+- **Exit-intent popup** (`js/aip-exit-popup.js` and its `functions.php`
+  enqueue). It fired on mouseleave toward the top (desktop) and on
+  `visibilitychange` (mobile).
+- **Email-resume capture** — the popup's email + consent form and its
+  "pick up right from where you left off" prompt. It POSTed
+  `{email, exit_intent_consent, form_step_reached}` to the **relative**
+  `/api/exit-intent-submit`, i.e. the WordPress origin, not the Flask service
+  at `unitedmortgages.eu.pythonanywhere.com`. That is the likely reason the
+  email never arrived. `app.py` is not in this repo, so this is unconfirmed.
+
+### Known gaps
+
+- A restored draft does not bring back uploaded documents. The visitor has
+  to re-upload them, and the banner doesn't say so.
+- The draft is saved on field changes, not on step navigation, so a
+  restore lands on the step of the last edit.
+- A `?situation=` deep link pre-selects a radio, which writes a draft. A
+  visitor who only landed via the triage flow will see "Welcome back" next time.
+- Orphan `.exit-popup-*` rules remain in `style.css` (that file was limited
+  to the `Version:` line in this pass).
+- The AIP submit-error alert still quotes `0208 446 4488`. The header, footer
+  and the new contact line use `0333 091 4776`. Needs confirming which is right.
+- No cookie-consent mechanism exists in the theme. GA loads unconditionally,
+  and the AIP draft (which includes PII) sits in localStorage for up to 7 days
+  on the device.
+- HubSpot is still live elsewhere: form embeds in `template-parts/hero-form.php`,
+  `page-other-mortgages.php`, `page-high-earners.php` and `page-awards.php`;
+  hsforms share links in `footer.php`, `page-chorleywood.php` and
+  `page-northwood.php`; and the AIP submission path via Flask. No HubSpot
+  tracking script (`hs-scripts`) is loaded by the theme itself. HubSpot
+  removal is V5.0.0.
+- Calendly could not be loaded in the verification sandbox. Only the URL and
+  the lazy-load requests were checked, not the popup itself.
+
+### Deferred
+
+- Resume-by-email: removed because the email never fired; revisit only if AIP abandonment becomes measurable.
+
+---
+
+## V4.0.0 — Homepage intent split + capture-on-commit triage flow
 
 Shipped in this pass: homepage intent buttons, `/get-started/` triage flow,
 Calendly handoff, whitelisted `?situation=` deep-link into the existing
