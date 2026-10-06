@@ -113,9 +113,9 @@ get_header(); ?>
                                 </div>
                                 <div class="form-group">
                                     <label for="repayment-term-yrs">Loan Term (years)
-                                    <span class="info-tooltip" data-tooltip="Maximum term is 40 years. Longer terms reduce monthly payments but increase total interest paid; shorter terms lead to interest savings">ⓘ</span>
+                                    <span class="info-tooltip" data-tooltip="Maximum term is 55 years. Longer terms reduce monthly payments but increase total interest paid; shorter terms lead to interest savings">ⓘ</span>
                                     </label>
-                                    <input type="number" id="repayment-term-yrs" name="loanTerm-yrs" required min="1" max="40" step="1">
+                                    <input type="number" id="repayment-term-yrs" name="loanTerm-yrs" required min="1" max="55" step="1">
                                 </div>
 
                                 <div class="form-group">
