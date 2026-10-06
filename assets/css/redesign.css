@@ -2964,6 +2964,40 @@ body.is-front-redesign {
     }
 }
 
+/* Saved-progress notices (V4.2.0). Inline, non-modal; existing tokens only. */
+.um-aip-form-page .um-aip-notice {
+    font-family: var(--hp-font-body);
+    font-size: 14.5px;
+    line-height: 1.5;
+}
+
+.um-aip-form-page .um-aip-notice--restored {
+    background: var(--hp-pill-bg);
+    color: var(--hp-ink);
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin: 0 0 20px;
+}
+
+.um-aip-form-page .um-aip-notice__action {
+    color: var(--hp-accent-text);
+    font-weight: 600;
+    margin-left: 6px;
+    white-space: nowrap;
+}
+
+.um-aip-form-page .um-aip-notice__action:hover,
+.um-aip-form-page .um-aip-notice__action:focus-visible {
+    text-decoration: underline;
+}
+
+.um-aip-form-page .um-aip-notice--saved {
+    color: var(--hp-muted);
+    font-size: 13.5px;
+    text-align: center;
+    margin: 16px 0 0;
+}
+
 /* ============================================================
    10. LEGAL/POLICY PAGES — shared components
    (page-complaints-policy.php; built for reuse across the other
