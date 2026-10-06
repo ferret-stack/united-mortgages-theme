@@ -15,6 +15,38 @@ header move together.
 
 ---
 
+## V4.3.1 — Inline Calendly booking: visual polish
+
+Patch: presentation and copy only. No behaviour change to loading, URL
+params or fallback.
+
+### Shipped
+
+- Card heading **"Pick a time with your adviser"** above the calendar. It
+  replaces the event details that `hide_event_type_details=1` hides.
+- Left-column copy in `template-parts/team-contact.php`: "Reach out below and
+  that's who you'll speak to" becomes "Book a time and that's who you'll speak
+  to". On desktop the calendar sits beside the copy, not below it.
+- With JS on, a quiet "Loading available times…" line shows until the
+  calendar mounts, instead of the fallback button flashing. If the widget
+  fails to load, the button comes back. Without JS, the button shows as before.
+- The copy column is vertically centred against the taller calendar card
+  (`.team-contact-wrapper { align-items: center; }` in `redesign.css`).
+
+### Resolved from V4.3.0
+
+- Colour params: the account is on a **paid Calendly plan**, so
+  `primary_color` / `text_color` / `background_color` apply live.
+
+### Still open
+
+- Calendly's cookie banner inside the embed (no site consent banner yet).
+- Fixed 700px height; the iframe can scroll internally on small screens.
+- Real calendar not rendered in the sandbox. **Check it visually on the live
+  site.**
+
+---
+
 ## V4.3.0 — Inline Calendly booking in the contact section
 
 ### Shipped
