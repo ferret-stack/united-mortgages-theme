@@ -1,6 +1,8 @@
 const { createApp } = Vue;
 
 const STORAGE_KEY = 'united_mortgages_aip_draft';
+// Saved drafts older than this are discarded on load (7 days).
+const DRAFT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 
 /**
  * Situation deep-link support (added for the triage flow).
@@ -129,6 +131,8 @@ const app = createApp({
             isSubmitting: false,
             validationErrors: [], // NEW: Array to store current validation errors
             fieldErrors: {}, // NEW: Object to store field-specific errors for inline display
+            draftSaved: false,    // true only after a successful localStorage write
+            draftRestored: false, // true only when a saved draft was restored on load
             formData: {
                 applicant_type: '',
                 applicant_situation: '',
@@ -636,7 +640,9 @@ const app = createApp({
                     currentStep: this.currentStep
                 };
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
+                this.draftSaved = true;
             } catch (error) {
+                this.draftSaved = false;
                 console.error('Error saving draft:', error);
             }
         },
@@ -646,8 +652,14 @@ const app = createApp({
                 const draft = localStorage.getItem(STORAGE_KEY);
                 if (draft) {
                     const parsed = JSON.parse(draft);
+                    const savedAt = Date.parse(parsed && parsed.timestamp);
+                    if (!parsed || !parsed.data || isNaN(savedAt) || Date.now() - savedAt > DRAFT_MAX_AGE_MS) {
+                        this.clearDraft();
+                        return;
+                    }
                     this.formData = parsed.data;
                     this.currentStep = parsed.currentStep || 1;
+                    this.draftRestored = true;
                     console.log('✓ Draft loaded from', parsed.timestamp);
                 }
             } catch (error) {
@@ -662,6 +674,16 @@ const app = createApp({
             } catch (error) {
                 console.error('Error clearing draft:', error);
             }
+        },
+
+        // "Start over" on the restored-answers banner. Reloads rather than
+        // resetting formData in place: the document-uploads component keeps
+        // its own state, which an in-place reset would leave stale. Clearing
+        // storage doesn't touch formData, so the watcher can't re-save first.
+        // The query string is kept so a ?situation= deep-link still applies.
+        startOver() {
+            this.clearDraft();
+            window.location.replace(window.location.pathname + window.location.search);
         }
     }
 });

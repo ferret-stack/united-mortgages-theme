@@ -53,6 +53,12 @@ get_header(); ?>
                     </li>
                 </ul>
             </div>
+            <!-- Restored-draft notice (inline, non-modal). Only shown when a saved draft was read back from this device. -->
+            <div v-if="draftRestored && currentStep <= 3" class="um-aip-notice um-aip-notice--restored" role="status">
+                Welcome back. We've restored your answers.
+                <a href="#" class="um-aip-notice__action" @click.prevent="startOver">Start over</a>
+            </div>
+
             <!-- STEP 1: Application Type -->
             <div v-if="currentStep === 1" class="step-content">
                 <div class="form-section-card">
@@ -279,6 +285,11 @@ get_header(); ?>
                     {{ isSubmitting ? 'Submitting...' : 'Submit Application' }}
                 </button>
             </div>
+
+            <!-- Saved-progress notice. Only shown after a successful localStorage write. -->
+            <p v-if="draftSaved && currentStep <= 3" class="um-aip-notice um-aip-notice--saved" role="status">
+                Your answers are saved on this device.
+            </p>
             
         </div>
     </div>

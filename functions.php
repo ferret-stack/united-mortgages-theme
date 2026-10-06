@@ -390,18 +390,19 @@ function um_nhs_og_tags() {
 add_action( 'wp_head', 'um_nhs_og_tags' );
 
 
-function united_enqueue_aip_exit_popup() {
-    if ( is_page( 'aip-form' ) ) {
-        wp_enqueue_script(
-            'aip-exit-popup',
-            get_template_directory_uri() . '/js/aip-exit-popup.js',
-            array(),    // No dependencies — runs independently of Vue
-            '1.0.0',
-            true        // Load in footer
-        );
-    }
+// CALENDLY INLINE BOOKING (template-parts/team-contact.php)
+// Small loader only. Calendly's own widget.js/css are injected by this
+// script when the contact section scrolls near, not on page load.
+function um_enqueue_calendly_contact() {
+    wp_enqueue_script(
+        'um-calendly-contact',
+        get_template_directory_uri() . '/js/calendly-contact.js',
+        array(),
+        '1.0.0',
+        true
+    );
 }
-add_action( 'wp_enqueue_scripts', 'united_enqueue_aip_exit_popup' );
+add_action( 'wp_enqueue_scripts', 'um_enqueue_calendly_contact' );
 
 // TRIAGE FLOW (page-triage.php)
 // Keyed off the template rather than the slug so renaming the page in WP
