@@ -15,6 +15,72 @@ header move together.
 
 ---
 
+## V4.4.0 — Gunsling: AIP to soft fact-find, awards form off HubSpot
+
+Part of Gunsling (moving UM off HubSpot before 3 Nov 2026). Both forms now
+go Flask to email; a person at UM keys the details into the CRM. The backend
+(`united-aip-api`, private) ships first: `/api/submit-aip` emails each AIP,
+and the new `/api/submit-awards` emails each nomination.
+
+### Shipped
+
+- **AIP trimmed to a soft fact-find.** Removed: all document uploads (the
+  `DocumentUploads` component and the additional self-employed income
+  question that only chose which documents to ask for), NI number, date of
+  birth, current and previous street and county, and employer address.
+  Everything else is unchanged. The review step shows town and postcode only.
+- **AIP drafts** move to `united_mortgages_aip_draft_v2`. The old key, which
+  can hold NI numbers, is deleted unread on load, so a returning visitor with
+  an old draft starts again.
+- **AIP errors** quote 0333 091 4776 (the old alert quoted 0208 446 4488) and
+  no longer depend on the word "HubSpot". Server messages are shown for
+  400/429, a generic message otherwise. Still `alert()`, as before.
+- **AIP progress indicator now works.** It sat outside `#aip-app`, so Vue
+  never compiled it and no step was ever highlighted. Moved inside the mount;
+  no CSS change. On phones it now sits inside the margins instead of 5px
+  off-screen.
+- **Awards nomination form** replaces the HubSpot embed in `page-awards.php`:
+  same fields, labels and options, plus **Nominee Email** (approved 7 Oct),
+  required with the nominee's names when nominating someone else.
+  `js/awards-form.js`, vanilla, inline success and error states. Award
+  options and the consent line each live in one place at the top of the
+  template. The heading, intro and key dates are unchanged.
+- **Honeypot** field on both forms; the server discards any submission that
+  fills it.
+- **Caching.** Both AIP scripts and `awards-form.js` carry
+  `?ver=<file modified time>`. `redesign.css` moves from a fixed `'1.0'` to
+  its modified time, which means **a one-off cache refresh for every visitor**
+  on this deploy. `style.css` still uses WordPress's default version.
+- Deleted the unused `js/aip-form-app-v2.js` and `js/aip-form-components-v2.js`.
+- Privacy policy: form-data passages updated for the email route, plus the
+  "Secure Storage" bullet. Wording shown in full in the PR; it merges only
+  once Wesley approves it.
+
+### Still open
+
+- **Lower the Flask upload limit 48 hours after this theme deploy.** The
+  backend accepts up to 50 MB only so that cached copies of the old form,
+  which cannot submit without files, still go through (files are discarded
+  unread). Change `MAX_CONTENT_LENGTH` to 256 KB. Steps in the backend's
+  `DEPLOY.md`.
+- **Nominee notification is manual.** Each nomination email for someone else
+  ends with an action line asking UM to tell the nominee. The server never
+  mails the nominee.
+- Vue loads twice on the AIP page (`united_enqueue_vue` in `functions.php`
+  and the template's own tag), both the **unpinned dev build** `vue@3`. A new
+  Vue minor release reaches the form untested, whatever our own `?ver=` says.
+- AIP submit errors still use `alert()`; the awards form uses inline states.
+- The page's award headings ("Scale Award", "Agency of the Year") don't match
+  the form's options ("National Agency of the Year (25+ branches)", "Estate
+  Agency of the Year"), which were kept verbatim from the old HubSpot form.
+- HubSpot embeds remain on `page-other-mortgages.php` and
+  `page-high-earners.php`, plus the referral links and
+  `template-parts/hero-form.php`. Outside this release.
+- Walk-through ran in a stubbed harness (real templates and CSS, local
+  Flask, Chromium), not on WordPress. Real sends are checked at deploy.
+
+---
+
 ## V4.3.1 — Inline Calendly booking: visual polish
 
 Patch: presentation and copy only. No behaviour change to loading, URL
