@@ -129,13 +129,6 @@ get_header(); ?>
         @update="updateApplicant1">
     </financial-details>
     
-    <!-- NEW: Applicant 1 Document Uploads -->
-    <document-uploads
-        :applicant="formData.applicant1"
-        :applicant-number="1"
-        @update="updateApplicant1Documents">
-    </document-uploads> 
-    
     <!-- Applicant 2 (if joint) -->
     <template v-if="formData.applicant_type === 'Joint applicant'">
         <applicant-details 
@@ -149,14 +142,6 @@ get_header(); ?>
             applicant-number="2"
             @update="updateApplicant2">
         </financial-details>
-        
-        <!-- NEW: Applicant 2 Document Uploads -->
-        <document-uploads
-            :applicant="formData.applicant2"
-            :applicant-number="2"
-            @update="updateApplicant2Documents">
-        </document-uploads>
-
     </template>
 </div>
 
@@ -177,7 +162,7 @@ get_header(); ?>
             <p class="review-item"><strong>Name:</strong> {{ formData.applicant1.first_name }} {{ formData.applicant1.last_name }}</p>
             <p class="review-item"><strong>Email:</strong> {{ formData.applicant1.email }}</p>
             <p class="review-item"><strong>Phone:</strong> {{ formData.applicant1.phone }}</p>
-            <p class="review-item"><strong>Address:</strong> {{ formData.applicant1.current_address_street }}, {{ formData.applicant1.current_address_town }}, {{ formData.applicant1.address_postcode }}</p>
+            <p class="review-item"><strong>Address:</strong> {{ formData.applicant1.current_address_town }}, {{ formData.applicant1.address_postcode }}</p>
             <p class="review-item"><strong>Employment:</strong> {{ formData.applicant1.employment_type.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) }}</p>
             <p class="review-item" v-if="formData.applicant1.total_annual_salary">
                 <strong>Annual Salary:</strong> £{{ Number(formData.applicant1.total_annual_salary).toLocaleString() }}
@@ -197,7 +182,7 @@ get_header(); ?>
             <p class="review-item"><strong>Name:</strong> {{ formData.applicant2.first_name }} {{ formData.applicant2.last_name }}</p>
             <p class="review-item"><strong>Email:</strong> {{ formData.applicant2.email }}</p>
             <p class="review-item"><strong>Phone:</strong> {{ formData.applicant2.phone }}</p>
-            <p class="review-item"><strong>Address:</strong> {{ formData.applicant2.current_address_street }}, {{ formData.applicant2.current_address_town }}, {{ formData.applicant2.address_postcode }}</p>
+            <p class="review-item"><strong>Address:</strong> {{ formData.applicant2.current_address_town }}, {{ formData.applicant2.address_postcode }}</p>
             <p class="review-item"><strong>Employment:</strong> {{ formData.applicant2.employment_type.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) }}</p>
             <p class="review-item" v-if="formData.applicant2.total_annual_salary">
                 <strong>Annual Salary:</strong> £{{ Number(formData.applicant2.total_annual_salary).toLocaleString() }}
@@ -268,6 +253,15 @@ get_header(); ?>
                 </div>
             </div>
             
+            <!-- Spam honeypot: off-screen and skipped by keyboard and screen
+                 readers. People leave it empty; the server silently discards
+                 any submission where it is filled. Not part of formData, so
+                 it is never saved in drafts. -->
+            <div aria-hidden="true" style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">
+                <label for="um-aip-hp">Leave this field empty</label>
+                <input type="text" id="um-aip-hp" name="um_hp" tabindex="-1" autocomplete="off" value="" />
+            </div>
+
             <!-- Navigation Buttons -->
             <div class="form-navigation" v-if="currentStep <= 3">
                 <button @click="previousStep" class="btn-back" v-if="currentStep > 1">
@@ -296,7 +290,8 @@ get_header(); ?>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/aip-form-components-v3.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/aip-form-app-v3.js"></script>
+<?php // ?ver= is the file's modified time, so browsers fetch a fresh copy after every deploy. ?>
+<script src="<?php echo get_template_directory_uri(); ?>/js/aip-form-components-v3.js?ver=<?php echo filemtime( get_template_directory() . '/js/aip-form-components-v3.js' ); ?>"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/aip-form-app-v3.js?ver=<?php echo filemtime( get_template_directory() . '/js/aip-form-app-v3.js' ); ?>"></script>
 
 <?php get_footer(); ?>

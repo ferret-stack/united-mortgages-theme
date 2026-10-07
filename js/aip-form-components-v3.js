@@ -13,32 +13,28 @@ const ApplicantDetails = {
                 <div class="form-row">
                     <div class="form-field">
                         <label>First name *</label>
-                        <input type="text" v-model="applicant.first_name" placeholder="Enter first name" @input="update" />
+                        <input type="text" v-model="applicant.first_name" maxlength="100" placeholder="Enter first name" @input="update" />
                     </div>
                     <div class="form-field">
                         <label>Last name *</label>
-                        <input type="text" v-model="applicant.last_name" placeholder="Enter last name" @input="update" />
+                        <input type="text" v-model="applicant.last_name" maxlength="100" placeholder="Enter last name" @input="update" />
                     </div>
                 </div>
                 
                 <div class="form-row">
                     <div class="form-field">
                         <label>Email *</label>
-                        <input type="email" v-model="applicant.email" placeholder="your.email@example.com" @input="update" />
+                        <input type="email" v-model="applicant.email" maxlength="254" placeholder="your.email@example.com" @input="update" />
                         <span v-if="!isValidEmail && applicant.email" class="error-text">Invalid email format</span>
                     </div>
                     <div class="form-field">
                         <label>Phone *</label>
-                        <input type="tel" v-model="applicant.phone" placeholder="07123 456789" @input="update" />
+                        <input type="tel" v-model="applicant.phone" maxlength="30" placeholder="07123 456789" @input="update" />
                         <span v-if="!isValidPhone && applicant.phone" class="error-text">Invalid UK phone format</span>
                     </div>
                 </div>
                 
                 <div class="form-row">
-                    <div class="form-field">
-                        <label>Date of Birth *</label>
-                        <input type="date" v-model="applicant.date_of_birth" @input="update" />
-                    </div>
                     <div class="form-field">
                         <label>Marital Status *</label>
                         <select v-model="applicant.marital_status" @change="update">
@@ -52,9 +48,6 @@ const ApplicantDetails = {
                             <option value="Widowed">Widowed</option>
                         </select>
                     </div>
-                </div>
-                
-                <div class="form-row">
                     <div class="form-field">
                         <label>Nationality *</label>
                         <select v-model="applicant.nationality" placeholder="e.g. British" @input="update" >
@@ -151,14 +144,6 @@ const ApplicantDetails = {
                             <option value="Zimbabwe">Zimbabwean</option>
                         </select>
                     </div>
-                    <div class="form-field">
-                        <label>National Insurance Number *</label>
-                        <input type="text" v-model="applicant.national__insurance__number" 
-                               placeholder="AB123456C" 
-                               @input="update" 
-                               maxlength="9" />
-                        <span v-if="!isValidNI && applicant.national__insurance__number" class="error-text">Invalid NI format (e.g. AB123456C)</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -166,32 +151,23 @@ const ApplicantDetails = {
         <div class="form-section-card">
             <h3 class="section-subtitle">Current Address</h3>
             <div class="form-fields">
-                <div class="form-field">
-                    <label>Street Address *</label>
-                    <input type="text" v-model="applicant.current_address_street" placeholder="Enter street address" @input="update" />
-                </div>
-
-                
                 <div class="form-row">
                     <div class="form-field">
                         <label>Town/City *</label>
-                        <input type="text" v-model="applicant.current_address_town" placeholder="Enter town/city" @input="update" />
+                        <input type="text" v-model="applicant.current_address_town" placeholder="Enter town/city" maxlength="100" @input="update" />
                     </div>
-                    <div class="form-field">
-                        <label>County</label>
-                        <input type="text" v-model="applicant.current_address_county" placeholder="Enter county" @input="update" />
-                    </div>
-                </div>
-                
-                <div class="form-row">
                     <div class="form-field">
                         <label>Postcode *</label>
                         <input type="text" v-model="applicant.address_postcode" 
                                placeholder="SW1A 1AA" 
+                               maxlength="10"
                                @input="update" 
                                style="text-transform: uppercase" />
                         <span v-if="!isValidPostcode && applicant.address_postcode" class="error-text">Invalid UK postcode</span>
                     </div>
+                </div>
+                
+                <div class="form-row">
                     <div class="form-field">
                         <label>Months at this address *</label>
                         <input type="number" v-model="applicant.months_at_address" min="0" placeholder="0" @input="update" />
@@ -218,30 +194,22 @@ const ApplicantDetails = {
             <h3 class="section-subtitle">Previous Address</h3>
             <p class="helper-text">You've lived at your current address for less than 3 years, please provide your previous address</p>
             <div class="form-fields">
-                <div class="form-field">
-                    <label>Street Address *</label>
-                    <input type="text" v-model="applicant.previous_address_street" placeholder="Enter street address" @input="update" />
-                </div>
-                
                 <div class="form-row">
                     <div class="form-field">
                         <label>Town/City *</label>
-                        <input type="text" v-model="applicant.previous_address_town" placeholder="Enter town/city" @input="update" />
+                        <input type="text" v-model="applicant.previous_address_town" placeholder="Enter town/city" maxlength="100" @input="update" />
                     </div>
-                    <div class="form-field">
-                        <label>County</label>
-                        <input type="text" v-model="applicant.previous_address_county" placeholder="Enter county" @input="update" />
-                    </div>
-                </div>
-                
-                <div class="form-row">
                     <div class="form-field">
                         <label>Postcode *</label>
                         <input type="text" v-model="applicant.previous_address_postcode" 
                                placeholder="SW1A 1AA" 
+                               maxlength="10"
                                @input="update"
                                style="text-transform: uppercase" />
                     </div>
+                </div>
+                
+                <div class="form-row">
                     <div class="form-field">
                         <label>Months at previous address *</label>
                         <input type="number" v-model="applicant.months_at_previous_address" min="0" placeholder="0" @input="update" />
@@ -262,7 +230,7 @@ const ApplicantDetails = {
                 
                 <div v-if="applicant.number_of_dependents > 0" class="form-field">
                     <label>Ages of dependents (comma-separated)</label>
-                    <input type="text" v-model="applicant.ages_of_dependents" placeholder="e.g. 5, 8, 12" @input="update" />
+                    <input type="text" v-model="applicant.ages_of_dependents" maxlength="100" placeholder="e.g. 5, 8, 12" @input="update" />
                     <span class="helper-text">Enter ages separated by commas</span>
                 </div>
             </div>
@@ -279,10 +247,6 @@ const ApplicantDetails = {
         isValidPhone() {
             if (!this.applicant.phone) return true;
             return /^(\+44|0)[0-9]{10}$/.test(this.applicant.phone.replace(/\s/g, ''));
-        },
-        isValidNI() {
-            if (!this.applicant.national__insurance__number) return true;
-            return /^[A-Z]{2}[0-9]{6}[A-Z]$/i.test(this.applicant.national__insurance__number.replace(/\s/g, ''));
         },
         isValidPostcode() {
             if (!this.applicant.address_postcode) return true;
@@ -328,35 +292,14 @@ const FinancialDetails = {
                 <template v-if="isEmployed">
                     <div class="form-field">
                         <label>Job Title *</label>
-                        <input type="text" v-model="applicant.occupation_job_title" placeholder="Enter job title" @input="update" />
+                        <input type="text" v-model="applicant.occupation_job_title" maxlength="100" placeholder="Enter job title" @input="update" />
                     </div>
                     
                     <div class="form-field">
                         <label>Employer Name *</label>
-                        <input type="text" v-model="applicant.employer_name" placeholder="Enter employer name" @input="update" />
+                        <input type="text" v-model="applicant.employer_name" maxlength="100" placeholder="Enter employer name" @input="update" />
                     </div>
                     
-                    <div class="form-field">
-                        <label>Employer Street Address *</label>
-                        <input type="text" v-model="applicant.employer_address_street" placeholder="Enter employer address" @input="update" />
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-field">
-                            <label>Employer Town/City *</label>
-                            <input type="text" v-model="applicant.employer_address_city" placeholder="Enter town/city" @input="update" />
-                        </div>
-                        <div class="form-field">
-                            <label>Employer County</label>
-                            <input type="text" v-model="applicant.employer_county" placeholder="Enter county" @input="update" />
-                        </div>
-                    </div>
-                    
-                    <div class="form-field">
-                        <label>Employer Postcode *</label>
-                        <input type="text" v-model="applicant.employer_postcode" placeholder="SW1A 1AA" @input="update" style="text-transform: uppercase" />
-                    </div>
-
                     <div class="form-field">
                         <label>Employment Start Date *</label>
                         <input type="date" v-model="applicant.employment_start_date" @input="update" :max="today" />
@@ -398,7 +341,7 @@ const FinancialDetails = {
                 <template v-if="isContract">
                     <div class="form-field">
                         <label>Job Title/Role *</label>
-                        <input type="text" v-model="applicant.occupation_job_title" placeholder="Enter job title" @input="update" />
+                        <input type="text" v-model="applicant.occupation_job_title" maxlength="100" placeholder="Enter job title" @input="update" />
                     </div>
                     
                     <div class="form-row">
@@ -429,12 +372,12 @@ const FinancialDetails = {
                 <template v-if="isSelfEmployed">
                     <div class="form-field">
                         <label>Business Name / Trading As *</label>
-                        <input type="text" v-model="applicant.business_name" placeholder="Enter business name" @input="update" />
+                        <input type="text" v-model="applicant.business_name" maxlength="100" placeholder="Enter business name" @input="update" />
                     </div>
                     
                     <div class="form-field">
                         <label>Nature of Business *</label>
-                        <input type="text" v-model="applicant.occupation_job_title" placeholder="e.g. Freelance Designer, Plumbing Services" @input="update" />
+                        <input type="text" v-model="applicant.occupation_job_title" maxlength="100" placeholder="e.g. Freelance Designer, Plumbing Services" @input="update" />
                     </div>
                     
                     <h4 class="section-subtitle" style="margin-top: 20px;">Latest Financial Year</h4>
@@ -572,7 +515,7 @@ const FinancialDetails = {
                             
                             <div class="form-field">
                                 <label>Lender Name *</label>
-                                <input type="text" v-model="loan.provider" placeholder="Enter lender name" @input="update" />
+                                <input type="text" v-model="loan.provider" maxlength="100" placeholder="Enter lender name" @input="update" />
                             </div>
                             
                             <div class="form-row">
@@ -626,7 +569,7 @@ const FinancialDetails = {
                         <div class="form-fields">
                             <div class="form-field">
                                 <label>Card Provider *</label>
-                                <input type="text" v-model="card.provider" placeholder="e.g. Barclaycard, Amex" @input="update" />
+                                <input type="text" v-model="card.provider" maxlength="100" placeholder="e.g. Barclaycard, Amex" @input="update" />
                             </div>
                             
                             <div class="form-row">
@@ -713,7 +656,7 @@ const FinancialDetails = {
                     <div v-if="applicant.credit_history_issues === 'yes'" class="form-group" style="margin-top: 1rem;">
                         <input 
                             type="text" 
-                            v-model="applicant.credit_history_info" 
+                            v-model="applicant.credit_history_info" maxlength="2000" 
                             @input="update"
                             placeholder="Please provide details of your credit history issues"
                             class="form-control"
@@ -754,7 +697,6 @@ const FinancialDetails = {
                 provider: '',
                 outstanding_balance: '',
                 monthly_payment: '',
-                end_date: '',
                 will_be_settled: false
             });
             this.update();
@@ -778,452 +720,4 @@ const FinancialDetails = {
             this.update();
         }
     }
-};
-
-// ============================================================================
-// DOCUMENT UPLOAD COMPONENT
-// Handles conditional document requirements based on employment type
-// ============================================================================
-
-const DocumentUploads = {
-    props: {
-        applicant: {
-            type: Object,
-            required: true
-        },
-        applicantNumber: {
-            type: Number,
-            required: true
-        }
-    },
-    emits: ['update'],
-    mounted() {
-    // Restore any previously uploaded files from parent state
-    if (this.applicant.documents) {
-        Object.keys(this.applicant.documents).forEach(key => {
-            if (this.applicant.documents[key]) {
-                this.uploadedFiles[key] = this.applicant.documents[key];
-            }
-        });
-    }
-    
-    // Restore the additional income answer
-    if (this.applicant.hasAdditionalSelfEmployedIncome) {
-        this.hasAdditionalSelfEmployedIncome = this.applicant.hasAdditionalSelfEmployedIncome;
-    }
-},
-    data() {
-        return {
-            // Track which files have been uploaded
-            uploadedFiles: {
-                // Universal documents (ALL applicants)
-                proof_of_identity: null,
-                bank_statement_1: null,
-                bank_statement_2: null,
-                bank_statement_3: null,
-                proof_of_deposit: null,
-                
-                // Conditional documents
-                payslip_1: null,
-                payslip_2: null,
-                payslip_3: null,
-                sa302_current_year: null,
-                sa302_previous_year: null
-            },
-            
-            // Track upload progress
-            uploadProgress: {},
-            
-            // Track if user answered the follow-up question
-            hasAdditionalSelfEmployedIncome: null
-        };
-    },
-    
-    computed: {
-        // Check if employment type requires payslips
-        requiresPayslips() {
-            const type = this.applicant.employment_type;
-            return ['employed-ft', 'employed-pt', 'employed-ftc', 'limited-director', 'contract'].includes(type);
-        },
-        
-        // Check if employment type ALWAYS requires SA302s
-        requiresSA302Mandatory() {
-            const type = this.applicant.employment_type;
-            return ['sole-trader', 'partnership', 'limited-director', 'retired', 'high-net-worth'].includes(type);
-        },
-        
-        // Check if we should show the "additional self-employed income" question
-        showAdditionalIncomeQuestion() {
-            const type = this.applicant.employment_type;
-            return ['employed-ft', 'employed-pt', 'employed-ftc', 'contract'].includes(type);
-        },
-        
-        // Check if SA302s are required based on employment + user answer
-        requiresSA302() {
-            // Always required for these types
-            if (this.requiresSA302Mandatory) {
-                return true;
-            }
-            
-            // Conditionally required if user said "yes" to additional income
-            if (this.showAdditionalIncomeQuestion && this.hasAdditionalSelfEmployedIncome === 'yes') {
-                return true;
-            }
-            
-            return false;
-        },
-        
-        // For retired, only previous year SA302 is needed
-        isRetired() {
-            return this.applicant.employment_type === 'retired';
-        },
-        
-        // Validation: check all required documents are uploaded
-        allRequiredDocumentsUploaded() {
-            // Universal documents
-            const universalDocs = [
-                'proof_of_identity'
-            ];
-            
-            for (let doc of universalDocs) {
-                if (!this.uploadedFiles[doc]) return false;
-            }
-            
-            // Payslips (if required)
-            if (this.requiresPayslips) {
-                if (!this.uploadedFiles.payslip_1 || !this.uploadedFiles.payslip_2 || !this.uploadedFiles.payslip_3) {
-                    return false;
-                }
-            }
-            
-            // SA302s (if required)
-            if (this.requiresSA302) {
-                if (this.isRetired) {
-                    // Retired only needs previous year
-                    if (!this.uploadedFiles.sa302_previous_year) return false;
-                } else {
-                    // Everyone else needs both years
-                    if (!this.uploadedFiles.sa302_current_year || !this.uploadedFiles.sa302_previous_year) {
-                        return false;
-                    }
-                }
-            }
-            
-            return true;
-        }
-    },
-    
-    methods: {
-        handleFileUpload(event, documentType) {
-            const file = event.target.files[0];
-            
-            if (!file) return;
-            
-            // Validate file type (PDF, JPG, PNG)
-            const allowedTypes = ['application/pdf', 'image/jpeg', 'image/png', 'image/jpg'];
-            if (!allowedTypes.includes(file.type)) {
-                alert('Please upload PDF, JPG, or PNG files only');
-                event.target.value = ''; // Clear the input
-                return;
-            }
-            
-            // Validate file size (max 10MB)
-            const maxSize = 10 * 1024 * 1024; // 10MB in bytes
-            if (file.size > maxSize) {
-                alert('File size must be less than 10MB');
-                event.target.value = '';
-                return;
-            }
-            
-            // Store the file
-            this.uploadedFiles[documentType] = file;
-            
-            // Emit update to parent
-            this.$emit('update', {
-                documents: this.uploadedFiles,
-                hasAdditionalSelfEmployedIncome: this.hasAdditionalSelfEmployedIncome
-            });
-        },
-        
-        removeFile(documentType) {
-            this.uploadedFiles[documentType] = null;
-            
-            // Clear the file input
-            const input = this.$refs[documentType];
-            if (input) {
-                input.value = '';
-            }
-            
-            // Emit update
-            this.$emit('update', {
-                documents: this.uploadedFiles,
-                hasAdditionalSelfEmployedIncome: this.hasAdditionalSelfEmployedIncome
-            });
-        },
-        
-        updateAdditionalIncomeAnswer(value) {
-            this.hasAdditionalSelfEmployedIncome = value;
-            
-            // If user says "no", clear any SA302s they might have uploaded
-            if (value === 'no') {
-                this.uploadedFiles.sa302_current_year = null;
-                this.uploadedFiles.sa302_previous_year = null;
-            }
-            
-            // Emit update
-            this.$emit('update', {
-                documents: this.uploadedFiles,
-                hasAdditionalSelfEmployedIncome: this.hasAdditionalSelfEmployedIncome
-            });
-        },
-        
-        getFileName(file) {
-            if (!file) return '';
-            return file.name;
-        },
-        
-        formatFileSize(bytes) {
-            if (bytes === 0) return '0 Bytes';
-            const k = 1024;
-            const sizes = ['Bytes', 'KB', 'MB'];
-            const i = Math.floor(Math.log(bytes) / Math.log(k));
-            return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
-        }
-    },
-    
-    template: `
-        <div class="form-section-card">
-            <div class="section-header">
-                <h2 class="section-title">{{ applicantNumber === 1 ? 'Your' : 'Second Applicant' }} Documents</h2>
-                <span class="applicant-label">Applicant {{ applicantNumber }}</span>
-            </div>
-            
-            <div class="document-upload-section">
-                <!-- UNIVERSAL DOCUMENTS (ALL APPLICANTS) -->
-                <div class="document-category">
-                    <h3 class="category-title">Required Documents <span class="required-badge">Required for all applicants</span></h3>
-                    
-                    <!-- Proof of Identity -->
-                    <div class="document-upload-field">
-                        <label>Proof of Identity *</label>
-                        <p class="helper-text">e.g. UK Passport, Non-UK Passport (must include valid visa/immigration status if applicable), UK Driving License (full or provisional), National Identity Card (EU/EEA nationals), Biometric Residence Permit (BRP), UK Armed Forces ID Card</p>
-                        <div class="file-upload-wrapper">
-                            <input 
-                                type="file" 
-                                :ref="'proof_of_identity'"
-                                @change="handleFileUpload($event, 'proof_of_identity')"
-                                accept=".pdf,.jpg,.jpeg,.png"
-                                :id="'proof_of_identity_' + applicantNumber"
-                            />
-                            <label :for="'proof_of_identity_' + applicantNumber" class="file-upload-label">
-                                <span v-if="!uploadedFiles.proof_of_identity">Choose file</span>
-                                <span v-else class="file-uploaded">
-                                    ✓ {{ getFileName(uploadedFiles.proof_of_identity) }} 
-                                    ({{ formatFileSize(uploadedFiles.proof_of_identity.size) }})
-                                </span>
-                            </label>
-                            <button 
-                                v-if="uploadedFiles.proof_of_identity" 
-                                @click.prevent="removeFile('proof_of_identity')"
-                                class="remove-file-btn"
-                                type="button"
-                            >
-                                Remove
-                            </button>
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <!-- CONDITIONAL DOCUMENTS -->
-                <div class="document-category" v-if="requiresPayslips || requiresSA302 || showAdditionalIncomeQuestion">
-                    <h3 class="category-title">Income Verification Documents</h3>
-                    <p class="helper-text">Based on your employment type, the following documents are required:</p>
-                    
-                    <!-- PAYSLIPS (if required) -->
-                    <div v-if="requiresPayslips" class="document-upload-field">
-                        <label>Payslips (Last 3 Months) *</label>
-                        <p class="helper-text">Upload your 3 most recent payslips</p>
-                        
-                        <!-- Payslip 1 -->
-                        <div class="file-upload-wrapper" style="margin-bottom: 10px;">
-                            <span class="month-label">Payslip 1 (Most Recent)</span>
-                            <input 
-                                type="file" 
-                                :ref="'payslip_1'"
-                                @change="handleFileUpload($event, 'payslip_1')"
-                                accept=".pdf,.jpg,.jpeg,.png"
-                                :id="'payslip_1_' + applicantNumber"
-                            />
-                            <label :for="'payslip_1_' + applicantNumber" class="file-upload-label">
-                                <span v-if="!uploadedFiles.payslip_1">Choose file</span>
-                                <span v-else class="file-uploaded">
-                                    ✓ {{ getFileName(uploadedFiles.payslip_1) }}
-                                </span>
-                            </label>
-                            <button 
-                                v-if="uploadedFiles.payslip_1" 
-                                @click.prevent="removeFile('payslip_1')"
-                                class="remove-file-btn"
-                                type="button"
-                            >
-                                Remove
-                            </button>
-                        </div>
-                        
-                        <!-- Payslip 2 -->
-                        <div class="file-upload-wrapper" style="margin-bottom: 10px;">
-                            <span class="month-label">Payslip 2</span>
-                            <input 
-                                type="file" 
-                                :ref="'payslip_2'"
-                                @change="handleFileUpload($event, 'payslip_2')"
-                                accept=".pdf,.jpg,.jpeg,.png"
-                                :id="'payslip_2_' + applicantNumber"
-                            />
-                            <label :for="'payslip_2_' + applicantNumber" class="file-upload-label">
-                                <span v-if="!uploadedFiles.payslip_2">Choose file</span>
-                                <span v-else class="file-uploaded">
-                                    ✓ {{ getFileName(uploadedFiles.payslip_2) }}
-                                </span>
-                            </label>
-                            <button 
-                                v-if="uploadedFiles.payslip_2" 
-                                @click.prevent="removeFile('payslip_2')"
-                                class="remove-file-btn"
-                                type="button"
-                            >
-                                Remove
-                            </button>
-                        </div>
-                        
-                        <!-- Payslip 3 -->
-                        <div class="file-upload-wrapper">
-                            <span class="month-label">Payslip 3 (Oldest)</span>
-                            <input 
-                                type="file" 
-                                :ref="'payslip_3'"
-                                @change="handleFileUpload($event, 'payslip_3')"
-                                accept=".pdf,.jpg,.jpeg,.png"
-                                :id="'payslip_3_' + applicantNumber"
-                            />
-                            <label :for="'payslip_3_' + applicantNumber" class="file-upload-label">
-                                <span v-if="!uploadedFiles.payslip_3">Choose file</span>
-                                <span v-else class="file-uploaded">
-                                    ✓ {{ getFileName(uploadedFiles.payslip_3) }}
-                                </span>
-                            </label>
-                            <button 
-                                v-if="uploadedFiles.payslip_3" 
-                                @click.prevent="removeFile('payslip_3')"
-                                class="remove-file-btn"
-                                type="button"
-                            >
-                                Remove
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- ADDITIONAL INCOME QUESTION (for employed/contractors) -->
-                    <div v-if="showAdditionalIncomeQuestion" class="document-upload-field">
-                        <label>Do you have any additional self-employed income? *</label>
-                        <p class="helper-text">This includes rental income, freelance work, business income, or any other self-employed earnings</p>
-                        <div class="radio-group">
-                            <label class="radio-option">
-                                <input 
-                                    type="radio" 
-                                    name="additional_income"
-                                    value="yes"
-                                    :checked="hasAdditionalSelfEmployedIncome === 'yes'"
-                                    @change="updateAdditionalIncomeAnswer('yes')"
-                                />
-                                <span>Yes - I have additional self-employed income</span>
-                            </label>
-                            <label class="radio-option">
-                                <input 
-                                    type="radio" 
-                                    name="additional_income"
-                                    value="no"
-                                    :checked="hasAdditionalSelfEmployedIncome === 'no'"
-                                    @change="updateAdditionalIncomeAnswer('no')"
-                                />
-                                <span>No - My only income is from employment</span>
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <!-- SA302 DOCUMENTS (if required) -->
-                    <div v-if="requiresSA302" class="document-upload-field">
-                        <label>SA302 Tax Calculations *</label>
-                        <p class="helper-text" v-if="isRetired">Upload your most recent SA302 tax calculation</p>
-                        <p class="helper-text" v-else>Upload SA302 tax calculations for the current and previous tax year</p>
-                        
-                        <!-- Current Year SA302 (not needed for retired) -->
-                        <div v-if="!isRetired" class="file-upload-wrapper" style="margin-bottom: 10px;">
-                            <span class="month-label">Current Tax Year SA302</span>
-                            <input 
-                                type="file" 
-                                :ref="'sa302_current_year'"
-                                @change="handleFileUpload($event, 'sa302_current_year')"
-                                accept=".pdf,.jpg,.jpeg,.png"
-                                :id="'sa302_current_year_' + applicantNumber"
-                            />
-                            <label :for="'sa302_current_year_' + applicantNumber" class="file-upload-label">
-                                <span v-if="!uploadedFiles.sa302_current_year">Choose file</span>
-                                <span v-else class="file-uploaded">
-                                    ✓ {{ getFileName(uploadedFiles.sa302_current_year) }}
-                                </span>
-                            </label>
-                            <button 
-                                v-if="uploadedFiles.sa302_current_year" 
-                                @click.prevent="removeFile('sa302_current_year')"
-                                class="remove-file-btn"
-                                type="button"
-                            >
-                                Remove
-                            </button>
-                        </div>
-                        
-                        <!-- Previous Year SA302 -->
-                        <div class="file-upload-wrapper">
-                            <span class="month-label">Previous Tax Year SA302</span>
-                            <input 
-                                type="file" 
-                                :ref="'sa302_previous_year'"
-                                @change="handleFileUpload($event, 'sa302_previous_year')"
-                                accept=".pdf,.jpg,.jpeg,.png"
-                                :id="'sa302_previous_year_' + applicantNumber"
-                            />
-                            <label :for="'sa302_previous_year_' + applicantNumber" class="file-upload-label">
-                                <span v-if="!uploadedFiles.sa302_previous_year">Choose file</span>
-                                <span v-else class="file-uploaded">
-                                    ✓ {{ getFileName(uploadedFiles.sa302_previous_year) }}
-                                </span>
-                            </label>
-                            <button 
-                                v-if="uploadedFiles.sa302_previous_year" 
-                                @click.prevent="removeFile('sa302_previous_year')"
-                                class="remove-file-btn"
-                                type="button"
-                            >
-                                Remove
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- VALIDATION WARNING -->
-                <div v-if="applicant.employment_type && !allRequiredDocumentsUploaded" class="warning-box">
-                    <p><strong>⚠️ Document Upload Incomplete</strong></p>
-                    <p>Please upload all required documents before proceeding to the next step.</p>
-                </div>
-                
-                <!-- SUCCESS MESSAGE -->
-                <div v-if="applicant.employment_type && allRequiredDocumentsUploaded" class="success-box">
-                    <p><strong>✓ All Required Documents Uploaded</strong></p>
-                    <p>You can now proceed to the next step.</p>
-                </div>
-            </div>
-        </div>
-    `
 };
