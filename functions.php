@@ -421,6 +421,22 @@ function um_enqueue_triage_script() {
 }
 add_action( 'wp_enqueue_scripts', 'um_enqueue_triage_script' );
 
+// AWARDS NOMINATION FORM (page-awards.php)
+// Keyed off the template, like the triage flow. Versioned by modified time
+// so browsers fetch a fresh copy after every deploy.
+function um_enqueue_awards_form() {
+    if ( is_page_template( 'page-awards.php' ) ) {
+        wp_enqueue_script(
+            'um-awards-form',
+            get_template_directory_uri() . '/js/awards-form.js',
+            array(),
+            filemtime( get_template_directory() . '/js/awards-form.js' ),
+            true
+        );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'um_enqueue_awards_form' );
+
 function um_enqueue_faq_accordion() {
     wp_enqueue_script(
         'faq-accordion',
