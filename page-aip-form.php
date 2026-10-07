@@ -11,8 +11,15 @@ get_header(); ?>
         
         <div class="aip-form-header">
             <h1>Your <strong>Agreement in Principle</strong></h1>
-            
-            <!-- Progress Indicator -->
+        </div>
+
+
+
+        
+        <div id="aip-app">
+            <!-- Progress Indicator. Lives inside #aip-app so Vue compiles its
+                 v-if and :class bindings; outside the mount it was static
+                 markup and never highlighted the current step. -->
             <div class="progress-indicator" v-if="currentStep <= 3">
                 <div class="progress-steps">
                     <div class="progress-step" :class="{ active: currentStep === 1, completed: currentStep > 1 }">
@@ -31,12 +38,7 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-        </div>
 
-
-
-        
-        <div id="aip-app">
             <!-- VALIDATION ERROR BOX - Shows only when user tries to submit with errors -->
             <div v-if="validationErrors.length > 0 && currentStep === validationErrors[0].step" class="validation-error-box">
                 <div class="error-header">
