@@ -147,12 +147,17 @@ get_header(); ?>
 
 <div class="um-policy-step">
 <h4>💾 Form Data Storage</h4>
-<p>When you submit our Agreement in Principle (AIP) form, the details you enter are sent to our team by email. A member of our team then enters them into our customer relationship management (CRM) system. Our other online forms are provided by HubSpot and send your details to HubSpot directly. Details submitted through our online forms before October 2026 are held in HubSpot. HubSpot is a data processor that complies with UK GDPR.</p>
+<p>When you submit our Agreement in Principle (AIP) form or our awards nomination form, the details you enter are sent to our team by email. A member of our team then enters them into our customer relationship management (CRM) system. Our other online forms are provided by HubSpot and send your details to HubSpot directly. Details submitted through our online forms before October 2026 are held in HubSpot. HubSpot is a data processor that complies with UK GDPR.</p>
 </div>
 
 <div class="um-policy-step">
 <h4>🔄 Automatic Data Processing</h4>
-<p>When you submit our AIP form, your data passes through our backend systems hosted within the EU. These systems check and format your information and send it to our team by email; they do not keep a copy. Our other online forms send your details to HubSpot directly, not through these systems.</p>
+<p>When you submit our AIP form or our awards nomination form, your data passes through our backend systems hosted within the EU. These systems check and format your information and send it to our team by email; they do not keep a copy. Our other online forms send your details to HubSpot directly, not through these systems.</p>
+</div>
+
+<div class="um-policy-step">
+<h4>🏆 Awards Nominations</h4>
+<p>Anyone can nominate themselves or someone else for our awards. If someone nominates you, they will give us your name and email address and, if they choose, your job title, your company and their reasons for nominating you. We use these details to run the awards and to contact you and the person who nominated you about the nomination. We will contact you ourselves to tell you that you have been nominated.</p>
 </div>
 
 <div class="um-policy-step">
