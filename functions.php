@@ -2,7 +2,8 @@
 // STYLING
 function mytheme_enqueue_scripts() {
     wp_enqueue_style( 'main-style', get_stylesheet_uri() );
-    wp_enqueue_style( 'um-redesign', get_template_directory_uri() . '/assets/css/redesign.css', array( 'main-style' ), '1.0' );
+    // Versioned by modified time so browsers fetch a fresh copy after every deploy.
+    wp_enqueue_style( 'um-redesign', get_template_directory_uri() . '/assets/css/redesign.css', array( 'main-style' ), filemtime( get_template_directory() . '/assets/css/redesign.css' ) );
 
 }
 add_action( 'wp_enqueue_scripts', 'mytheme_enqueue_scripts' );
