@@ -3704,6 +3704,187 @@ body.is-front-redesign {
     }
 }
 
+/* Nomination form (replaced the HubSpot embed). Builds on the shell's
+   input, label, row and submit styles above. */
+.um-awards-form {
+    margin-top: 56px;
+}
+
+.um-awards-form__group {
+    border: 0;
+    padding: 0;
+    margin: 0 0 28px;
+    min-width: 0;
+}
+
+.um-awards-form__legend {
+    display: block;
+    width: 100%;
+    font-family: var(--hp-font-display);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--hp-ink);
+    padding: 0 0 12px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--hp-border);
+}
+
+.um-awards-form-shell .um-awards-form__label {
+    font-family: var(--hp-font-body);
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--hp-muted);
+    margin: 0 0 10px;
+}
+
+.um-awards-form__note {
+    font-family: var(--hp-font-body);
+    font-size: 14px;
+    color: var(--hp-muted);
+    margin: -6px 0 16px;
+}
+
+.um-awards-form__req {
+    color: var(--hp-accent-text);
+}
+
+.um-awards-form-shell select {
+    width: 100%;
+    min-height: 44px;
+    padding: 13px 18px;
+    margin-bottom: 20px;
+    background: var(--hp-cream);
+    border: 2px solid var(--hp-border);
+    border-radius: 10px;
+    font-family: var(--hp-font-body);
+    font-size: 15px;
+    color: var(--hp-ink);
+}
+
+.um-awards-form-shell input:focus,
+.um-awards-form-shell textarea:focus,
+.um-awards-form-shell select:focus {
+    outline: none;
+    border-color: var(--hp-accent);
+}
+
+/* Checkboxes: undo the shell's full-width text-input styling. */
+.um-awards-form__checks {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.um-awards-form-shell .um-awards-form__check {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 0;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.45;
+    color: var(--hp-ink);
+    cursor: pointer;
+}
+
+.um-awards-form-shell .um-awards-form__check input[type="checkbox"] {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    min-height: 0;
+    padding: 0;
+    margin: 2px 0 0;
+    accent-color: var(--hp-accent);
+}
+
+.um-awards-form__checks .um-awards-form__check {
+    padding: 10px 14px;
+    background: var(--hp-cream);
+    border: 2px solid var(--hp-border);
+    border-radius: 10px;
+}
+
+.um-awards-form__check a {
+    color: var(--hp-accent-text);
+}
+
+.um-awards-form__consent {
+    margin-bottom: 24px;
+}
+
+.um-awards-form__count {
+    font-family: var(--hp-font-body);
+    font-size: 12.5px;
+    color: var(--hp-muted);
+    text-align: right;
+    margin: -16px 0 16px;
+}
+
+.um-awards-form__error {
+    font-family: var(--hp-font-body);
+    font-size: 13.5px;
+    color: #b42318;
+    margin: -14px 0 18px;
+}
+
+.um-awards-form__checks + .um-awards-form__error,
+.um-awards-form__consent .um-awards-form__error {
+    margin-top: -8px;
+}
+
+.um-awards-form__field.is-invalid input:not([type="checkbox"]),
+.um-awards-form__field.is-invalid select,
+.um-awards-form__field.is-invalid textarea,
+.um-awards-form__field.is-invalid .um-awards-form__checks .um-awards-form__check {
+    border-color: #b42318;
+}
+
+.um-awards-form__status {
+    font-family: var(--hp-font-body);
+    font-size: 14.5px;
+    color: #b42318;
+    background: #fef3f2;
+    border: 1px solid #fecdca;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 0 0 16px;
+}
+
+.um-awards-form__success {
+    margin-top: 56px;
+    padding: 20px 22px;
+    background: var(--hp-cream-blue);
+    border: 1px solid var(--hp-border);
+    border-radius: 14px;
+    font-family: var(--hp-font-body);
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: var(--hp-ink);
+}
+
+.um-awards-form__success:focus {
+    outline: none;
+}
+
+.um-awards-form__success a {
+    color: var(--hp-accent-text);
+}
+
+.um-awards-form__hp {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.um-awards-form [hidden],
+.um-awards-form[hidden],
+.um-awards-form__success[hidden] {
+    display: none;
+}
+
 /* ============================================================
    12. TEAM CONTACT — inline Calendly booking (template-parts/team-contact.php)
    Replaced the HubSpot form embed. The calendar fills the existing

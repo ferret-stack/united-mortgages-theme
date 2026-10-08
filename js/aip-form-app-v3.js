@@ -1,6 +1,10 @@
 const { createApp } = Vue;
 
-const STORAGE_KEY = 'united_mortgages_aip_draft';
+// Gunsling: new key. Drafts under the old key can hold NI numbers and other
+// fields the form no longer asks for, so they are deleted on load, unread.
+const STORAGE_KEY = 'united_mortgages_aip_draft_v2';
+const OLD_STORAGE_KEYS = ['united_mortgages_aip_draft'];
+const PHONE_FALLBACK = '0333 091 4776';
 // Saved drafts older than this are discarded on load (7 days).
 const DRAFT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
 
@@ -9,8 +13,8 @@ const DRAFT_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
  *
  * The triage flow links here with ?situation=<value>. This is the ONLY
  * addition to this form: no field was added, removed or renamed, and the
- * submission payload and its Flask/HubSpot handling are untouched. All this
- * does is pre-select one radio the visitor would otherwise click themselves.
+ * submission payload and its Flask handling are untouched. All this does is
+ * pre-select one radio the visitor would otherwise click themselves.
  *
  * The whitelist is the form's own existing step-1 values, verbatim. Anything
  * not on it is ignored, so a bad or stale link can never inject a value the
@@ -41,19 +45,13 @@ function createEmptyApplicant() {
         last_name: '',
         email: '',
         phone: '',
-        date_of_birth: '',
         marital_status: '',
         nationality: '',
-        national__insurance__number: '',
-        current_address_street: '',
         current_address_town: '',
-        current_address_county: '',
         address_postcode: '',
         electoral_register: '',
         months_at_address: '',
-        previous_address_street: '',
         previous_address_town: '',
-        previous_address_county: '',
         previous_address_postcode: '',
         months_at_previous_address: '',
         number_of_dependents: 0,
@@ -62,10 +60,6 @@ function createEmptyApplicant() {
         // Employed fields
         occupation_job_title: '',
         employer_name: '',
-        employer_address_street: '',
-        employer_address_city: '',
-        employer_county: '',
-        employer_postcode: '',
         total_annual_salary: '',
         annual_bonus: '',
         annual_overtime: '',
@@ -102,28 +96,14 @@ function createEmptyApplicant() {
         deposit_amount: '',
         deposit_source: '',
         credit_history_issues: '',
-        credit_history_info: '',
-        documents: {
-            proof_of_identity: null,
-            bank_statement_1: null,
-            bank_statement_2: null,
-            bank_statement_3: null,
-            proof_of_deposit: null,
-            payslip_1: null,
-            payslip_2: null,
-            payslip_3: null,
-            sa302_current_year: null,
-            sa302_previous_year: null
-        },
-        hasAdditionalSelfEmployedIncome: null
+        credit_history_info: ''
     };
 }
 
 const app = createApp({
     components: {
         'applicant-details': ApplicantDetails,
-        'financial-details': FinancialDetails,
-        'document-uploads': DocumentUploads
+        'financial-details': FinancialDetails
     },
     data() {
         return {
@@ -191,58 +171,6 @@ const app = createApp({
             }
         },
         
-        updateApplicant1Documents(data) {
-            this.formData.applicant1.documents = data.documents;
-            this.formData.applicant1.hasAdditionalSelfEmployedIncome = data.hasAdditionalSelfEmployedIncome;
-            this.saveDraft();
-        },
-
-        updateApplicant2Documents(data) {
-            this.formData.applicant2.documents = data.documents;
-            this.formData.applicant2.hasAdditionalSelfEmployedIncome = data.hasAdditionalSelfEmployedIncome;
-            this.saveDraft();
-        },
-
-        areAllRequiredDocumentsUploaded(applicant) {
-            const docs = applicant.documents;
-            
-            // Universal documents
-            if (!docs.proof_of_identity) {
-                return false;
-            }
-            
-            // Check payslips requirement
-            const employmentType = applicant.employment_type;
-            const requiresPayslips = ['employed-ft', 'employed-pt', 'employed-ftc', 'limited-director', 'contract'].includes(employmentType);
-            
-            if (requiresPayslips) {
-                if (!docs.payslip_1 || !docs.payslip_2 || !docs.payslip_3) {
-                    return false;
-                }
-            }
-            
-            // Check SA302 requirement
-            const requiresSA302Mandatory = ['sole-trader', 'partnership', 'limited-director', 'retired', 'high-net-worth'].includes(employmentType);
-            const showAdditionalIncomeQuestion = ['employed-ft', 'employed-pt', 'employed-ftc', 'contract'].includes(employmentType);
-            
-            let requiresSA302 = requiresSA302Mandatory;
-            if (showAdditionalIncomeQuestion && applicant.hasAdditionalSelfEmployedIncome === 'yes') {
-                requiresSA302 = true;
-            }
-            
-            if (requiresSA302) {
-                const isRetired = employmentType === 'retired';
-                
-                if (isRetired) {
-                    if (!docs.sa302_previous_year) return false;
-                } else {
-                    if (!docs.sa302_current_year || !docs.sa302_previous_year) return false;
-                }
-            }
-            
-            return true;
-        },
-
         // Validation
         validateCurrentStep() {
             // For now, allow progression without strict validation
@@ -285,26 +213,6 @@ const app = createApp({
             if (this.formData.applicant_type === 'Joint applicant') {
                 errors.push(...this.validateApplicant(this.formData.applicant2, '2'));
             }
-
-            // Document validation for applicant 1
-                if (!this.areAllRequiredDocumentsUploaded(this.formData.applicant1)) {
-                    errors.push({
-                        field: 'applicant1_documents',
-                        message: 'Primary Applicant: Please upload all required documents',
-                        step: 2
-                    });
-                }
-
-                // Document validation for applicant 2 (if joint)
-                if (this.formData.applicant_type === 'Joint applicant') {
-                    if (!this.areAllRequiredDocumentsUploaded(this.formData.applicant2)) {
-                        errors.push({
-                            field: 'applicant2_documents',
-                            message: 'Second Applicant: Please upload all required documents',
-                            step: 2
-                        });
-                    }
-                }
             
             return errors;
         },
@@ -329,13 +237,10 @@ const app = createApp({
             if (!applicant.last_name) addError('last_name', 'Last name is required');
             if (!applicant.email) addError('email', 'Email is required');
             if (!applicant.phone) addError('phone', 'Phone is required');
-            if (!applicant.date_of_birth) addError('date_of_birth', 'Date of birth is required');
             if (!applicant.marital_status) addError('marital_status', 'Marital status is required');
             if (!applicant.nationality) addError('nationality', 'Nationality is required');
-            if (!applicant.national__insurance__number) addError('national__insurance__number', 'National Insurance number is required');
             
             // Address
-            if (!applicant.current_address_street) addError('current_address_street', 'Current address street is required');
             if (!applicant.current_address_town) addError('current_address_town', 'Current address town is required');
             if (!applicant.address_postcode) addError('address_postcode', 'Current address postcode is required');
             if (!applicant.months_at_address) addError('months_at_address', 'Months at current address is required');
@@ -343,7 +248,6 @@ const app = createApp({
             
             // Previous address if < 36 months
             if (parseInt(applicant.months_at_address) < 36) {
-                if (!applicant.previous_address_street) addError('previous_address_street', 'Previous address street is required');
                 if (!applicant.previous_address_town) addError('previous_address_town', 'Previous address town is required');
                 if (!applicant.previous_address_postcode) addError('previous_address_postcode', 'Previous address postcode is required');
                 if (!applicant.months_at_previous_address) addError('months_at_previous_address', 'Months at previous address is required');
@@ -358,9 +262,6 @@ const app = createApp({
             if (['employed-ft', 'employed-pt', 'employed-ftc'].includes(employmentType)) {
                 if (!applicant.occupation_job_title) addError('occupation_job_title', 'Job title is required');
                 if (!applicant.employer_name) addError('employer_name', 'Employer name is required');
-                if (!applicant.employer_address_street) addError('employer_address_street', 'Employer address is required');
-                if (!applicant.employer_address_city) addError('employer_address_city', 'Employer town is required');
-                if (!applicant.employer_postcode) addError('employer_postcode', 'Employer postcode is required');
                 if (!applicant.total_annual_salary) addError('total_annual_salary', 'Annual salary is required');
                 if (!applicant.employment_start_date) addError('employment_start_date', 'Employment start date is required');
             }
@@ -497,60 +398,23 @@ const app = createApp({
             this.isSubmitting = true;
             
             try {
-                // Create FormData for file uploads
+                // Multipart with one JSON 'data' field: a CORS "simple request",
+                // so no preflight. No files: the form no longer asks for any.
                 const formData = new FormData();
-                
-                // Prepare JSON data (WITHOUT documents - they'll be sent as files)
                 const jsonData = {
                     applicant_type: this.formData.applicant_type,
                     applicant_situation: this.formData.applicant_situation,
                     privacy_accepted: this.formData.privacy_accepted,
                     applicant1: this.flattenApplicantData(this.formData.applicant1),
                 };
-                
-                // Remove documents from JSON (sent separately as files)
-                delete jsonData.applicant1.documents;
-                delete jsonData.applicant1.hasAdditionalSelfEmployedIncome; // Will be sent in FormData
-                
-                // Add applicant 2 if joint
                 if (this.formData.applicant_type === 'Joint applicant') {
                     jsonData.applicant2 = this.flattenApplicantData(this.formData.applicant2);
-                    delete jsonData.applicant2.documents;
-                    delete jsonData.applicant2.hasAdditionalSelfEmployedIncome;
                 }
-                
-                // Add JSON data to FormData
                 formData.append('data', JSON.stringify(jsonData));
-                
-                // Append applicant1 documents as files
-                const app1Docs = this.formData.applicant1.documents;
-                Object.keys(app1Docs).forEach(key => {
-                    if (app1Docs[key]) {
-                        formData.append(`applicant1_${key}`, app1Docs[key]);
-                    }
-                });
-                
-                // Add applicant1's hasAdditionalSelfEmployedIncome
-                if (this.formData.applicant1.hasAdditionalSelfEmployedIncome) {
-                    formData.append('applicant1_hasAdditionalSelfEmployedIncome', this.formData.applicant1.hasAdditionalSelfEmployedIncome);
-                }
-                
-                // Append applicant2 documents (if joint)
-                if (this.formData.applicant_type === 'Joint applicant') {
-                    const app2Docs = this.formData.applicant2.documents;
-                    Object.keys(app2Docs).forEach(key => {
-                        if (app2Docs[key]) {
-                            formData.append(`applicant2_${key}`, app2Docs[key]);
-                        }
-                    });
-                    
-                    // Add applicant2's hasAdditionalSelfEmployedIncome
-                    if (this.formData.applicant2.hasAdditionalSelfEmployedIncome) {
-                        formData.append('applicant2_hasAdditionalSelfEmployedIncome', this.formData.applicant2.hasAdditionalSelfEmployedIncome);
-                    }
-                }
-                
-                console.log('Submitting to Flask with documents...');
+
+                // Spam honeypot: off-screen, left empty by people.
+                const honeypot = document.getElementById('um-aip-hp');
+                formData.append('um_hp', honeypot ? honeypot.value : '');
                 
                 // Determine which URL to use (localhost for local dev, pythonanywhere for production)
                 const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname === 'united-mortgages.local';
@@ -558,61 +422,40 @@ const app = createApp({
                     ? 'http://localhost:5000/api/submit-aip'
                     : 'https://unitedmortgages.eu.pythonanywhere.com/api/submit-aip';
                 
-                // Submit to Flask backend with FormData (no Content-Type header - browser sets it with boundary)
+                // No Content-Type header: the browser sets it with the multipart boundary.
                 const response = await fetch(apiUrl, {
                     method: 'POST',
                     body: formData
-                    // NOTE: Don't set Content-Type header - browser will set it automatically with multipart boundary
                 });
                 
-                const result = await response.json();
-                console.log('Flask response:', result);
+                let result = {};
+                try {
+                    result = await response.json();
+                } catch (parseError) {
+                    result = {};
+                }
                 
                 if (response.ok && result.success) {
-                    console.log('Success! Contacts:', result.contacts_created);
                     this.clearDraft();
                     this.validationErrors = []; // Clear errors on success
                     this.currentStep = 4; // Move to success step
+                } else if ((response.status === 400 || response.status === 429) && result.error) {
+                    // The server writes these messages for visitors; they
+                    // already end with the phone number where relevant.
+                    alert(result.error);
                 } else {
-                    // Show user-friendly error message
-                    let errorMessage = result.error || 'We couldn\'t process your submission. Please contact our team directly.';
-                    
-                    // Handle specific error types
-                    if (errorMessage.includes('email')) {
-                        errorMessage = 'There was an issue with the email address provided. Please check and try again.';
-                    } else if (errorMessage.includes('HubSpot') || errorMessage.includes('API')) {
-                        errorMessage = 'We\'re experiencing technical difficulties. Please try again in a few minutes.';
-                    } else if (errorMessage.includes('network') || errorMessage.includes('connection')) {
-                        errorMessage = 'Please check your internet and try again.';
-                    }
-                    
-                    alert(errorMessage + '\n\nIf the problem persists, please contact us at:\n📞 0208 446 4488\n✉️ hello@united-mortgages.com');
+                    alert('Sorry, we couldn\'t send your application just now. Please try again in a few minutes, or call us on ' + PHONE_FALLBACK + '.');
                 }
             } catch (error) {
-                console.error('Submission error:', error);
-                alert('Unable to submit your application. Please check your internet connection and try again, or contact our team directly.');
+                console.error('Submission error:', error.name);
+                alert('We couldn\'t reach our server. Please check your internet connection and try again, or call us on ' + PHONE_FALLBACK + '.');
             } finally {
                 this.isSubmitting = false;
             }
         },
-
-        
-        prepareHubSpotData() {
-            const data = {
-                applicant_type: this.formData.applicant_type,
-                applicant_situation: this.formData.applicant_situation,
-                applicant1: this.flattenApplicantData(this.formData.applicant1)
-            };
-            
-            if (this.formData.applicant_type === 'Joint applicant') {
-                data.applicant2 = this.flattenApplicantData(this.formData.applicant2);
-            }
-            
-            return data;
-        },
         
         flattenApplicantData(applicant) {
-            // Convert arrays to JSON strings for HubSpot
+            // loans and credit_cards travel as JSON strings, as before.
             return {
                 ...applicant,
                 loans: JSON.stringify(applicant.loans),
@@ -634,9 +477,7 @@ const app = createApp({
             try {
                 const draft = {
                     timestamp: new Date().toISOString(),
-                    data: JSON.parse(JSON.stringify(this.formData, (key, value) => {
-                        return value instanceof File ? null : value;
-                    })),
+                    data: JSON.parse(JSON.stringify(this.formData)),
                     currentStep: this.currentStep
                 };
                 localStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
@@ -647,7 +488,19 @@ const app = createApp({
             }
         },
         
+        // Delete drafts saved under any old key without reading them.
+        removeOldDrafts() {
+            OLD_STORAGE_KEYS.forEach(key => {
+                try {
+                    localStorage.removeItem(key);
+                } catch (error) {
+                    // Storage unavailable: nothing to remove.
+                }
+            });
+        },
+
         loadDraft() {
+            this.removeOldDrafts();
             try {
                 const draft = localStorage.getItem(STORAGE_KEY);
                 if (draft) {
@@ -677,10 +530,10 @@ const app = createApp({
         },
 
         // "Start over" on the restored-answers banner. Reloads rather than
-        // resetting formData in place: the document-uploads component keeps
-        // its own state, which an in-place reset would leave stale. Clearing
-        // storage doesn't touch formData, so the watcher can't re-save first.
-        // The query string is kept so a ?situation= deep-link still applies.
+        // resetting formData in place, so every component starts fresh.
+        // Clearing storage doesn't touch formData, so the watcher can't
+        // re-save first. The query string is kept so a ?situation=
+        // deep-link still applies.
         startOver() {
             this.clearDraft();
             window.location.replace(window.location.pathname + window.location.search);

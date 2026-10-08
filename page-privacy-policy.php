@@ -147,12 +147,17 @@ get_header(); ?>
 
 <div class="um-policy-step">
 <h4>💾 Form Data Storage</h4>
-<p>Information submitted through our online forms is securely transmitted and stored in our customer relationship management (CRM) system, HubSpot. HubSpot is a certified data processor that complies with UK GDPR and provides enterprise-level security for your data.</p>
+<p>When you submit our Agreement in Principle (AIP) form or our awards nomination form, the details you enter are sent to our team by email. A member of our team then enters them into our customer relationship management (CRM) system. Our other online forms are provided by HubSpot and send your details to HubSpot directly. Details submitted through our online forms before October 2026 are held in HubSpot. HubSpot is a data processor that complies with UK GDPR.</p>
 </div>
 
 <div class="um-policy-step">
 <h4>🔄 Automatic Data Processing</h4>
-<p>When you submit an online form, your data is automatically processed through our secure backend systems hosted within the EU. This processing includes validation and formatting of your information, creation of your client record in our CRM, and secure transmission of data to relevant third parties where required.</p>
+<p>When you submit our AIP form or our awards nomination form, your data passes through our backend systems hosted within the EU. These systems check and format your information and send it to our team by email; they do not keep a copy. Our other online forms send your details to HubSpot directly, not through these systems.</p>
+</div>
+
+<div class="um-policy-step">
+<h4>🏆 Awards Nominations</h4>
+<p>Anyone can nominate themselves or someone else for our awards. If someone nominates you, they will give us your name and email address and, if they choose, your job title, your company and their reasons for nominating you. We use these details to run the awards and to contact you and the person who nominated you about the nomination. We will contact you ourselves to tell you that you have been nominated.</p>
 </div>
 
 <div class="um-policy-step">
@@ -169,7 +174,7 @@ get_header(); ?>
 <p>We have security procedures in place to protect your login details as well as your personal information. We implement appropriate technical and organisational measures including:</p>
 <ul>
 <li><strong>Encryption:</strong> All data transmitted through our online forms is encrypted using industry-standard SSL/TLS protocols</li>
-<li><strong>Secure Storage:</strong> Data is stored in secure, UK-based data centres with enterprise-grade security</li>
+<li><strong>Secure Storage:</strong> Your details are held with established hosting and email providers that use industry-standard security. Where data is held outside the UK, it is held in the European Economic Area or protected by safeguards required under UK data protection law.</li>
 <li><strong>Access Controls:</strong> Only authorised personnel have access to your data, with role-based permissions</li>
 <li><strong>Staff Training:</strong> All staff receive regular training on data protection and security</li>
 </ul>
