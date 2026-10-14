@@ -23,8 +23,8 @@
           <div class="footer-column">
             <h3 class="footer-heading">FOR AGENTS</h3>
             <ul class="footer-links">
-              <li><a href="https://2eys75.share-eu1.hsforms.com/2cunAqDiHS_GA3IqP1eFT3A">Refer a client</a></li>
-              <li><a href="mailto:partnerships@united-mortgages.com">Partner with us</a></li>
+                <li><a href="mailto:partnerships@united-mortgages.com?subject=Client%20referral&body=Client%20name%3A%0AClient%20phone%20or%20email%3A%0ANature%20of%20enquiry%3A%0A%0AI%20confirm%20the%20client%20is%20happy%20for%20United%20Mortgages%20to%20contact%20them.">Refer a client</a></li>
+                <li><a href="mailto:partnerships@united-mortgages.com?subject=Partnership%20enquiry&body=Your%20name%3A%0ACompany%3A%0APhone%20or%20email%3A%0AWhat%20you%20have%20in%20mind%3A">Partner with us</a></li>
             </ul>
           </div> 
           
