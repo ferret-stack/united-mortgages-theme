@@ -147,17 +147,22 @@ get_header(); ?>
 
 <div class="um-policy-step">
 <h4>💾 Form Data Storage</h4>
-<p>When you submit our Agreement in Principle (AIP) form or our awards nomination form, the details you enter are sent to our team by email. A member of our team then enters them into our customer relationship management (CRM) system. Our other online forms are provided by HubSpot and send your details to HubSpot directly. Details submitted through our online forms before October 2026 are held in HubSpot. HubSpot is a data processor that complies with UK GDPR.</p>
+<p>When you submit our Agreement in Principle (AIP) form or our awards nomination form, the details you enter are sent to our team by email. A member of our team then enters them into our customer relationship management (CRM) system. Details submitted through our online forms before October 2026 were stored in HubSpot, a data processor that complies with UK GDPR. Copies of these records are held by us in a secure archive, and we are closing our HubSpot account.</p>
 </div>
 
 <div class="um-policy-step">
 <h4>🔄 Automatic Data Processing</h4>
-<p>When you submit our AIP form or our awards nomination form, your data passes through our backend systems hosted within the EU. These systems check and format your information and send it to our team by email; they do not keep a copy. Our other online forms send your details to HubSpot directly, not through these systems.</p>
+<p>When you submit our AIP form or our awards nomination form, your data passes through our backend systems hosted within the EU. These systems check and format your information and send it to our team by email; they do not keep a copy.</p>
 </div>
 
 <div class="um-policy-step">
 <h4>🏆 Awards Nominations</h4>
 <p>Anyone can nominate themselves or someone else for our awards. If someone nominates you, they will give us your name and email address and, if they choose, your job title, your company and their reasons for nominating you. We use these details to run the awards and to contact you and the person who nominated you about the nomination. We will contact you ourselves to tell you that you have been nominated.</p>
+</div>
+
+<div class="um-policy-step">
+<h4>📅 Booking a Call</h4>
+<p>You can book a call with one of our advisers using a booking calendar provided by Calendly. When you book, the details you enter, such as your name, email address and any information you add to your booking, are collected by Calendly and shared with our team so that we can speak to you. The calendar only loads when you scroll to the contact section of our website. How Calendly handles your information is set out in <a href="https://calendly.com/privacy" target="_blank" rel="noopener">Calendly's privacy notice</a>.</p>
 </div>
 
 <div class="um-policy-step">
@@ -233,12 +238,12 @@ get_header(); ?>
 </div>
 
 <div class="um-policy-step">
-<h4>Types of Cookies We Use</h4>
+<h4>Types of Cookies We Use (yum)</h4>
 <ul>
 <li><strong>Essential Cookies:</strong> Required for the website to function, including form functionality and security</li>
 <li><strong>Analytics Cookies:</strong> Help us understand how visitors use our website (Google Analytics)</li>
 <li><strong>Functional Cookies:</strong> Remember your preferences and settings</li>
-<li><strong>Marketing Cookies:</strong> Track your browsing to show relevant advertisements (with your consent)</li>
+<li><strong>Booking Calendar Cookies:</strong> When our booking calendar loads, Calendly may set its own cookies. Calendly shows its own cookie banner so you can manage these.</li>
 </ul>
 </div>
 
