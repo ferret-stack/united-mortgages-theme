@@ -15,6 +15,14 @@ header move together.
 
 ---
 
+## V4.4.2 - Footer updates
+- Refer a client and partner with us mailto setup as no longer using HubSpot for client referrals; fixed partnership email with autofields
+
+## V4.4.1 - Gunsling: Updates to PP and page removals
+- Updated privacy policy to reflect HubSpot death
+- Updated cookies info
+- Removed `hero-form` as this was HubSpot contact form that is no longer needed
+
 ## V4.4.0 — Gunsling: AIP to soft fact-find, awards form off HubSpot
 
 Part of Gunsling (moving UM off HubSpot before 3 Nov 2026). Both forms now
