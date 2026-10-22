@@ -370,6 +370,9 @@ get_header(); ?>
                 $tauk_agents = [
                     ['name' => 'Grant Budd', 'url' => 'https://theagencyuk.com/our-agents/grant-budd'],
                 ];
+                $tpe_agents = [
+                    ['name' => 'Ian&nbsp;Southon&#8209;Brawn', 'url' => 'https://thepropertyexperts.co.uk/staff/ian-southon-brawn'],
+                ];
 
                 // Not eXp — kept in the original per-agent logo tile treatment,
                 // untouched by the eXp consolidation above.
@@ -425,6 +428,13 @@ get_header(); ?>
                 }
                 echo "</div>";
 
+                echo "<div class='hp-partners__b2b-exp'>";
+                echo "<div class='hp-partners__b2b-exp-logo'>The Property Experts agents</div>";
+                echo "<div class='hp-partners__b2b-exp-names'>";
+                foreach ($tpe_agents as $agent) {
+                    echo "<a class='hp-partners__b2b-exp-name' href='" . esc_url($agent['url']) . "' target='_blank' rel='noopener noreferrer sponsored'>" . $agent['name'] . "</a>";
+                }
+                echo "</div>";
 
                 echo "</div>";
             ?>
