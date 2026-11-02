@@ -349,6 +349,7 @@ get_header(); ?>
                     ['name' => 'Grant Boonzaier', 'url' => 'https://grantboonzaier.exp.uk.com/'],
                     ['name' => 'Benn Colling', 'url' => 'https://benncolling.exp.uk.com/'],
                     ['name' => 'Frances Dare', 'url' => 'https://www.instagram.com/francesdare.property/'],
+                    ['name' => 'Michelle Killoran', 'url' => 'https://michellekilloran.exp.uk.com/properties-for-sale/'],
                     ['name' => 'Mark Newton', 'url' => 'https://marknewton.exp.uk.com/'],
                     ['name' => 'Michal Sikora', 'url' => 'https://michalsikora.exp.uk.com/'],                    
                 ];
