@@ -28,10 +28,26 @@
                     // js/calendly-contact.js mounts Calendly's inline widget when this section
                     // scrolls near the viewport. The link inside is the no-JS / load-failure fallback.
                     $um_contact_calendly_url = 'https://calendly.com/unitedmortgages/15min';
+
+                    // UTM tags. Callers can pass utm_source / utm_medium / utm_campaign as
+                    // get_template_part() $args (single.php does). With no args this keeps
+                    // the original behaviour: utm_source=team_contact only.
+                    $um_contact_args = ( isset( $args ) && is_array( $args ) ) ? $args : array();
+                    $um_contact_utm  = array( 'utm_source' => 'team_contact' );
+                    foreach ( array( 'utm_source', 'utm_medium', 'utm_campaign' ) as $um_utm_key ) {
+                        if ( ! empty( $um_contact_args[ $um_utm_key ] ) ) {
+                            $um_contact_utm[ $um_utm_key ] = (string) $um_contact_args[ $um_utm_key ];
+                        }
+                    }
+                    $um_contact_fallback_url = add_query_arg( array_map( 'rawurlencode', $um_contact_utm ), $um_contact_calendly_url );
                     ?>
                     <h3 class="um-contact-cta__title">Pick a time with your adviser</h3>
-                    <div class="um-calendly-inline" data-calendly-url="<?php echo esc_url( $um_contact_calendly_url ); ?>">
-                        <a class="hp-btn um-calendly-fallback" href="<?php echo esc_url( $um_contact_calendly_url . '?utm_source=team_contact' ); ?>">Book a call with an adviser</a>
+                    <div class="um-calendly-inline" data-calendly-url="<?php echo esc_url( $um_contact_calendly_url ); ?>"<?php
+                        foreach ( $um_contact_utm as $um_utm_key => $um_utm_value ) {
+                            echo ' data-' . esc_attr( str_replace( '_', '-', $um_utm_key ) ) . '="' . esc_attr( $um_utm_value ) . '"';
+                        }
+                    ?>>
+                        <a class="hp-btn um-calendly-fallback" href="<?php echo esc_url( $um_contact_fallback_url ); ?>">Book a call with an adviser</a>
                         <p class="um-calendly-loading" hidden>Loading available times…</p>
                     </div>
                     <p class="um-contact-alt">

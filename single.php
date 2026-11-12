@@ -159,6 +159,17 @@ get_header(); ?>
             </div>
         </section>
 
+        <!-- Speak to Our Team Section (inside the loop so the post slug is available for UTM tagging) -->
+        <div class="hp-team-wrap">
+            <?php
+            get_template_part( 'template-parts/team-contact', null, array(
+                'utm_source'   => 'blog',
+                'utm_medium'   => 'cta',
+                'utm_campaign' => get_post_field( 'post_name', get_the_ID() ),
+            ) );
+            ?>
+        </div>
+
         <!-- Comments Section -->
         <section class="um-comments">
             <div class="hp-container">
@@ -174,11 +185,6 @@ get_header(); ?>
         </section>
 
     <?php endwhile; ?>
-
-    <!-- Speak to Our Team Section -->
-    <div class="hp-team-wrap">
-        <?php get_template_part('template-parts/team-contact'); ?>
-    </div>
 
 </main>
 

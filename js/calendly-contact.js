@@ -19,7 +19,6 @@
     // Display params use existing theme tokens: --hp-accent, --hp-ink, white.
     // Colour params only take effect on paid Calendly plans.
     var URL_PARAMS = {
-        utm_source: 'team_contact',
         hide_event_type_details: '1',
         hide_landing_page_details: '1',
         primary_color: '109dff',
@@ -27,10 +26,33 @@
         background_color: 'ffffff'
     };
 
+    // UTM tags come from the container's data-utm-* attributes
+    // (set by team-contact.php). With none, utm_source falls back to
+    // 'team_contact' as before; medium/campaign are only set if present.
+    var UTM_DEFAULTS = { utm_source: 'team_contact' };
+    var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign'];
+
     var widgetPromise = null;
 
-    function buildCalendlyUrl(baseUrl) {
+    function readUtm(container) {
+        var utm = {};
+        UTM_KEYS.forEach(function (key) {
+            var value = container ? container.getAttribute('data-' + key.replace(/_/g, '-')) : null;
+            if (value) {
+                utm[key] = value;
+            } else if (UTM_DEFAULTS[key]) {
+                utm[key] = UTM_DEFAULTS[key];
+            }
+        });
+        return utm;
+    }
+
+    function buildCalendlyUrl(baseUrl, container) {
         var url = new URL(baseUrl, window.location.href);
+        var utm = readUtm(container);
+        Object.keys(utm).forEach(function (key) {
+            url.searchParams.set(key, utm[key]);
+        });
         Object.keys(URL_PARAMS).forEach(function (key) {
             url.searchParams.set(key, URL_PARAMS[key]);
         });
@@ -77,7 +99,7 @@
         if (container.getAttribute('data-calendly-mounted')) return;
         container.setAttribute('data-calendly-mounted', 'pending');
 
-        var url = buildCalendlyUrl(container.getAttribute('data-calendly-url'));
+        var url = buildCalendlyUrl(container.getAttribute('data-calendly-url'), container);
 
         loadWidget().then(function () {
             var fallback = container.querySelector('.um-calendly-fallback');
