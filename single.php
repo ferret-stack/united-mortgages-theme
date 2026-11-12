@@ -77,6 +77,24 @@ get_header(); ?>
                             <?php the_content(); ?>
                         </div>
 
+                        <!-- Sources (post meta um_sources, one source per line; renders only when filled in) -->
+                        <?php
+                        $um_sources_raw   = get_post_meta( get_the_ID(), 'um_sources', true );
+                        $um_sources_lines = array_filter(
+                            array_map( 'trim', preg_split( '/\r\n|\r|\n/', (string) $um_sources_raw ) ),
+                            'strlen'
+                        );
+                        if ( ! empty( $um_sources_lines ) ) : ?>
+                            <div class="um-post-sources">
+                                <p class="um-post-sources__title">Sources:</p>
+                                <ul class="um-post-sources__list">
+                                    <?php foreach ( $um_sources_lines as $um_source_line ) : ?>
+                                        <li><?php echo wp_kses( $um_source_line, array( 'a' => array( 'href' => array() ) ) ); ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
+
                         <!-- Post Tags -->
                         <?php if ( has_tag() ) : ?>
                             <div class="um-post-tags">
@@ -149,6 +167,8 @@ get_header(); ?>
                         <div class="um-sidebar-cta">
                             <h3>Ready to Get Started?</h3>
                             <p>Let our mortgage experts help you find the perfect solution.</p>
+                            <!-- Risk warnings (inside the CTA, above the button so they are visible whenever the button is) -->
+                            <?php get_template_part( 'template-parts/risk-warnings', null, array( 'variant' => 'cta' ) ); ?>
                             <a href="#contact-form" class="hp-btn">Request a Call Back</a>
                             <span class="um-sidebar-cta__phone">Or call us: <a href="tel:03330914776">0333 091 4776</a></span>
                         </div>
@@ -156,6 +176,13 @@ get_header(); ?>
                     </aside>
 
                 </div>
+            </div>
+        </section>
+
+        <!-- Risk warnings (directly above the calendar section) -->
+        <section class="um-risk-warnings-section">
+            <div class="hp-container">
+                <?php get_template_part( 'template-parts/risk-warnings' ); ?>
             </div>
         </section>
 

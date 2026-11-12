@@ -1597,6 +1597,66 @@ body.is-front-redesign {
     text-decoration: none;
 }
 
+/* -------------------- Single post: risk warnings (template-parts/risk-warnings.php) --------------------
+   Regulatory wording: must stay clearly visible and legible. Never collapse,
+   hide, truncate or shrink to small print. */
+.um-risk-warnings {
+    background: #fff;
+    border: 1px solid var(--hp-border);
+    border-left: 4px solid var(--hp-ink);
+    border-radius: 12px;
+    padding: 18px 22px;
+}
+
+.um-risk-warnings__item {
+    font-family: var(--hp-font-body);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--hp-ink);
+    margin: 0;
+}
+
+.um-risk-warnings__item + .um-risk-warnings__item {
+    margin-top: 10px;
+}
+
+.um-risk-warnings-section {
+    background: var(--hp-cream);
+    padding: 0 0 48px;
+}
+
+/* Inside the sidebar CTA: plain text, no box. Selectors are two classes deep
+   so they beat `.um-sidebar-cta p` (faded 13.5px description style). */
+.um-risk-warnings.um-risk-warnings--cta {
+    background: none;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.um-risk-warnings--cta .um-risk-warnings__item {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #fff;
+    margin: 0;
+}
+
+.um-risk-warnings--cta .um-risk-warnings__item + .um-risk-warnings__item {
+    margin-top: 10px;
+}
+
+/* Below 1024px the sidebar stacks under the article, so the CTA copy and the
+   standalone copy above the calendar end up next to each other. Show one:
+   the CTA copy stays; the standalone copy is not displayed at this width. */
+@media (max-width: 1024px) {
+    .um-risk-warnings-section {
+        display: none;
+    }
+}
+
 /* -------------------- Shared: post/article card (blog grid + related posts) -------------------- */
 .um-blog-grid {
     display: grid;
