@@ -114,21 +114,6 @@ function united_mortgages_header_scroll() {
 }
 add_action( 'wp_enqueue_scripts', 'united_mortgages_header_scroll' );
 
-// ANALYTICS
-function add_google_analytics() {
-    ?>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9B4GW2XP9"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-T9B4GW2XP9');
-    </script>
-    <?php
-}
-add_action('wp_head', 'add_google_analytics');
-
 /**
  * Enqueue calculator scripts
  */

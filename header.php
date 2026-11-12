@@ -6,7 +6,7 @@
   <title><?php wp_title( '|', true, 'right' ); ?><?php bloginfo( 'name' ); ?></title>
   <meta name="google-site-verification" content="qvL_aHS-0u8HrMAqG_jGjvmnKhphU4tMajW0ZbW6Zkc"/>
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) REMOVED PENDING AR STATUS Q3-26
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JP8VDWZCV8"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -14,7 +14,7 @@
     gtag('js', new Date());
 
     gtag('config', 'G-JP8VDWZCV8');
-    </script>
+    </script>-->
 
   <?php wp_head(); ?>
 </head>
